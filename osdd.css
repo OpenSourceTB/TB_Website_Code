@@ -1,0 +1,38 @@
+.open {
+    background-image: url("http://placehold.it/50x20/25e01b/000000&text=OPEN");
+    background-repeat: no-repeat;
+}
+
+.closed {
+    background-image: url("http://placehold.it/50x20/ed216c/000000&text=CLOSED");
+    background-repeat: no-repeat;
+}
+
+.comment {
+    background-image: url("http://placehold.it/50x20/edea21/000000&text=COMMENT");
+    background-repeat: no-repeat;
+}
+
+.logo {
+    height: 25px;
+}
+
+.gray {
+    color: gray;
+}
+
+.title {
+    margin-left: 60px;
+}
+
+.makespace{
+    margin-top: 20px;
+}
+
+.indented {
+    margin-left: 5%;
+    color: blue;
+    background-color: #ffffff;
+    text-wrap:normal;
+    overflow-wrap:break-word;
+}
