@@ -62,7 +62,7 @@ function loadTeam() {
       var lastTeamMember = Math.min(numTeamMembers, team_members.length);
 
       for (var i = 0; i < lastTeamMember; i++) {
-        name = team_members[i].name || "No name" ;
+        name = team_members[i].name || "Anonymous" ;
         url = team_members[i].url;
         if (team_members[i].letters) {
           letters = ", " + team_members[i].letters;
@@ -109,7 +109,6 @@ function loadSponsors() {
       var lastSponsor = Math.min(numSponsors, sponsors.length);
 
       for (var i = 0; i < lastSponsor; i++) {
-        var name = sponsors[i].name;
         var url = sponsors[i].url;
         var image = sponsors[i].image;
 
