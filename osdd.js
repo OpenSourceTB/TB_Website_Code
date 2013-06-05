@@ -62,7 +62,7 @@ function loadTeam() {
       var lastTeamMember = Math.min(numTeamMembers, team_members.length);
 
       for (var i = 0; i < lastTeamMember; i++) {
-        name = team_members[i].name || "No name" ;
+        name = team_members[i].name || "Anonymous" ;
         url = team_members[i].url;
         if (team_members[i].letters) {
           letters = ", " + team_members[i].letters;
@@ -76,7 +76,7 @@ function loadTeam() {
 
         var team_member;
         if (url) {
-          team_member = '<span class="span2"><a href="http:\\' + url + '" target="_blank" style="text-decoration: none;"> ' + name + letters + '</a></span>'
+          team_member = '<span class="span2"><a href="http://' + url + '" target="_blank" style="text-decoration: none;"> ' + name + letters + '</a></span>'
         } else
         {
           team_member = '<span class="span2">' + name + letters + '</span>'
@@ -84,7 +84,6 @@ function loadTeam() {
         $("#team_members").append(team_member);
         rowPosition++;
         if (rowPosition >= perRow) {
-          console.log("new row");
           $("#team_members").append('</div>');
           rowPosition = 0;
         }
@@ -112,6 +111,7 @@ function loadSponsors() {
       for (var i = 0; i < lastSponsor; i++) {
         var name = sponsors[i].name;
         var url = sponsors[i].url;
+        var name = sponsors[i].name? sponsors[i].name: url ;
         var image = sponsors[i].image;
 
 
@@ -121,9 +121,9 @@ function loadSponsors() {
 
         var sponsor;
         if (url) {
-          sponsor ='<span class="span3"><a href="http:\\' + url + '" target="_blank"><img src="https:\\' + image + '"></a></span>'
+          sponsor ='<span class="span3"><a href="http://' + url + '" target="_blank"><img src="https://' + image + '" title="' + name + '"></a></span>'
         } else {
-          sponsor ='<span class="span3"><img src="https:\\' + image + '"></span>'
+          sponsor ='<span class="span3"><img src="https://' + image + '"></span>'
         }
 
         $("#sponsorRow" + currentRow).append(sponsor);
