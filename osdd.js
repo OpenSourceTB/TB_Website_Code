@@ -121,7 +121,7 @@ function loadSponsors() {
 
         var sponsor;
         if (url) {
-          sponsor ='<span class="span3"><a href="http://' + url + '" target="_blank"><img src="https://' + image + '" title="' + name + '"></a></span>'
+          sponsor ='<span class="span3 sponsor_image"><a href="http://' + url + '" target="_blank"><img src="https://' + image + '" title="' + name + '"></a></span>'
         } else {
           sponsor ='<span class="span3"><img src="https://' + image + '"></span>'
         }

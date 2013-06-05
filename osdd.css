@@ -14,8 +14,13 @@
 }
 
 .logo {
-    height: 25px;
+    height: 60px;
 }
+.logo-text {
+    margin-top: 10px;
+    font-size: 45px;
+}
+
 
 .gray {
     color: gray;
@@ -27,6 +32,11 @@
 
 .makespace{
     margin-top: 20px;
+}
+
+.sponsor_image {
+    height: 64px;
+    width: 220px;
 }
 
 .indented {
