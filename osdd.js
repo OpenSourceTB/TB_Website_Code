@@ -109,7 +109,10 @@ function loadSponsors() {
       var lastSponsor = Math.min(numSponsors, sponsors.length);
 
       for (var i = 0; i < lastSponsor; i++) {
+        var name = sponsors[i].name;
         var url = sponsors[i].url;
+        var name = sponsors[i].name? sponsors[i].name: url ;
+
         var image = sponsors[i].image;
 
 
@@ -119,7 +122,7 @@ function loadSponsors() {
 
         var sponsor;
         if (url) {
-          sponsor ='<span class="span3"><a href="http://' + url + '" target="_blank"><img src="https://' + image + '"></a></span>'
+          sponsor ='<span class="span3"><a href="http://' + url + '" target="_blank"><img src="https://' + image + '" title="' + name + '"></a></span>'
         } else {
           sponsor ='<span class="span3"><img src="https://' + image + '"></span>'
         }

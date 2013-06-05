@@ -31,9 +31,9 @@ Team
 
   The different display cases are:
 
-   if name, letters, and url provided: "Member Name, letters" as a link to the url.
-   if name, url provided: "Member Name" as a link to the url.
-   if name, letters provided: "Member Name, letters" without a link.
+   If name, letters, and url provided: "Member Name, letters" as a link to the url.
+   If name, url provided: "Member Name" as a link to the url.
+   If name, letters provided: "Member Name, letters" without a link.
 
 
 Sponsors
@@ -42,7 +42,8 @@ Sponsors
   The body of the "sponsors" issue contains a JSON array, as follows:
 
       [
-        { "url": "www.gatesfoundation.org",
+        { "name": "The Bill and Melinda Gates Foundation",
+        "url": "www.gatesfoundation.org",
         "image": "f.cloud.github.com/assets/1546321/602530/9a850a40-cc9e-11e2-9b14-26127d6845b5.png"
         } ,
         { "url": "cloudcitydevelopment.com",
@@ -62,7 +63,9 @@ Sponsors
         }
       ]
 
-    The url element is optional.
+    The name and url elements are optional.
 
+    If the name element is omitted, it defaults to the url text, if that is provided.
     If the url element is not specified for a sponsor, only the image is displayed for that sponsor.
-    If both elements are specified for a sponsor, the image is displayed and is a link to the sponsor's url.
+    If all three elements are specified for a sponsor, the image is displayed and is a link to the sponsor's url,
+    and the hover text is the sponsor name.
