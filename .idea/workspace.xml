@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="019d3e1f-4754-491a-a9d9-d4d4c9d70f11" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/osdd.js" afterPath="$PROJECT_DIR$/osdd.js" />
-    </list>
+    <list default="true" id="019d3e1f-4754-491a-a9d9-d4d4c9d70f11" name="Default" comment="" />
     <ignored path="osdd.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/osdd.html" changelist="019d3e1f-4754-491a-a9d9-d4d4c9d70f11" time="1370381570705" ignored="false" />
