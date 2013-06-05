@@ -1,3 +1,6 @@
+.container{
+    margin-top: 30px;
+}
 .open {
     background-image: url("http://placehold.it/50x20/25e01b/000000&text=OPEN");
     background-repeat: no-repeat;
