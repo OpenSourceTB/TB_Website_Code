@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="019d3e1f-4754-491a-a9d9-d4d4c9d70f11" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="osdd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +35,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="90" selection-start="2375" selection-end="2375" vertical-scroll-proportion="0.5786802">
+            <state line="56" column="52" selection-start="2861" selection-end="2861" vertical-scroll-proportion="0.6912013">
               <folding>
                 <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -504,7 +502,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="90" selection-start="2375" selection-end="2375" vertical-scroll-proportion="0.5786802">
+        <state line="56" column="52" selection-start="2861" selection-end="2861" vertical-scroll-proportion="0.6912013">
           <folding>
             <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
