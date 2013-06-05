@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="019d3e1f-4754-491a-a9d9-d4d4c9d70f11" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/osdd.css" afterPath="$PROJECT_DIR$/osdd.css" />
     </list>
     <ignored path="osdd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -12,8 +12,8 @@
     <file path="/README.md" changelist="019d3e1f-4754-491a-a9d9-d4d4c9d70f11" time="1370446538843" ignored="false" />
     <file path="/.gitignore" changelist="019d3e1f-4754-491a-a9d9-d4d4c9d70f11" time="1370386153683" ignored="false" />
     <file path="/osdd.js" changelist="019d3e1f-4754-491a-a9d9-d4d4c9d70f11" time="1370453499725" ignored="false" />
-    <file path="/osdd.css" changelist="019d3e1f-4754-491a-a9d9-d4d4c9d70f11" time="1370456728391" ignored="false" />
-    <file path="/index.html" changelist="019d3e1f-4754-491a-a9d9-d4d4c9d70f11" time="1370457532566" ignored="false" />
+    <file path="/osdd.css" changelist="019d3e1f-4754-491a-a9d9-d4d4c9d70f11" time="1370457866305" ignored="false" />
+    <file path="/index.html" changelist="019d3e1f-4754-491a-a9d9-d4d4c9d70f11" time="1370457834439" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +36,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="27" selection-start="862" selection-end="862" vertical-scroll-proportion="0.321489">
+            <state line="47" column="60" selection-start="2161" selection-end="2161" vertical-scroll-proportion="0.56260574">
               <folding>
                 <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -79,7 +79,7 @@
       <file leaf-file-name="osdd.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/osdd.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="1" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0">
+            <state line="30" column="1" selection-start="557" selection-end="557" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -107,9 +107,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/osdd.js" />
-        <option value="$PROJECT_DIR$/osdd.css" />
         <option value="$PROJECT_DIR$/.idea/vcs.xml" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/osdd.css" />
       </list>
     </option>
   </component>
@@ -494,21 +494,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/osdd.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="1" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="182" selection-end="182" vertical-scroll-proportion="0.10874898" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/osdd.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="1" selection-start="557" selection-end="557" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="27" selection-start="862" selection-end="862" vertical-scroll-proportion="0.321489">
+        <state line="47" column="60" selection-start="2161" selection-end="2161" vertical-scroll-proportion="0.56260574">
           <folding>
             <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
