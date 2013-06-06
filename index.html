@@ -20,6 +20,12 @@
             loadSponsors();
         });
     </script>
+    <script>
+        function showGroupPhoto() {
+            $("#spinner").hide();
+            $("#group_photo").show();
+        }
+    </script>
 
 </head>
 <body>
@@ -94,7 +100,14 @@
             <h3>Just some of the Team</h3>
             <div class="span10">
                 <a href="MeetTheTeam.html" target="_blank">Some of the Team - click to see everyone!</a>
-                <a href="MeetTheTeam.html" target="_blank"><img src="images/OSDD_Jan13.jpg" alt="Some of the team!" alt="Click to see the entire team"/></a>
+                <div id="spinner">
+                    <div class="offset5 span1">
+                        <img src="images/ajax-loader.gif"/>
+                    </div>
+                </div>
+                <div id="group_photo" hidden >
+                    <a href="MeetTheTeam.html" target="_blank"><img src="images/OSDD_Jan13.jpg" onload="showGroupPhoto();" alt="Some of the team!" alt="Click to see the entire team"/></a>
+                </div>
             </div>
         </div>
 

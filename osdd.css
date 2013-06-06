@@ -29,6 +29,11 @@
     margin-bottom: 20px;
 }
 
+#spinner {
+    float:none;
+    margin:0 auto;
+}
+
 .gray {
     color: gray;
 }
