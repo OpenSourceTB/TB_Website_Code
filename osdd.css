@@ -15,6 +15,11 @@
     background-image: url("http://placehold.it/50x20/edea21/000000&text=COMMENT");
     background-repeat: no-repeat;
 }
+.head-text{
+    font-size: 20px;
+    margin-left: 40px;
+    vertical-align: bottom;
+}
 
 .logo {
     height: 60px;
@@ -22,6 +27,10 @@
 .logo-text {
     margin-top: 10px;
     font-size: 45px;
+}
+
+.project-activity{
+    background-color: #ebf6f8;
 }
 
 .intro {
@@ -54,7 +63,6 @@
 .indented {
     margin-left: 5%;
     color: blue;
-    background-color: #ffffff;
     text-wrap:normal;
     overflow-wrap:break-word;
 }

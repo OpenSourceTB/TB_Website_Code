@@ -70,12 +70,12 @@ function loadTeam() {
         name = teamMembers[i].name || "Anonymous" ;
         url = teamMembers[i].url;
         gravatarEmail = teamMembers[i].gravatar_email;
-        if (teamMembers[i].letters) {
-          letters = teamMembers[i].letters;
-          lettersWithComma = ", " + letters;
+        if (teamMembers[i].affiliation) {
+          affiliation = teamMembers[i].affiliation;
+          affiliationWithComma = ", " + affiliation;
         } else {
-          letters = "";
-          lettersWithComma = "";
+          affiliation = "";
+          affiliationWithComma = "";
         }
 
         gravatarUrl = getGravatar(gravatarEmail);
@@ -86,10 +86,10 @@ function loadTeam() {
 
         var teamMember;
         if (url) {
-          teamMember = '<span class="span2"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + lettersWithComma + '"/></a><div>' + name + '</div><div>' + letters + '</div></div></span>'
+          teamMember = '<span class="span2"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/></a><div>' + name + '</div><div>' + affiliation + '</div></div></span>'
         } else
         {
-          teamMember = '<span class="span2"><img src="' + gravatarUrl + '" title="' + name + lettersWithComma + '"/><div>' + name + '</div><div>' + letters + '</div></div></span>'
+          teamMember = '<span class="span2"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div>' + name + '</div><div>' + affiliation + '</div></div></span>'
         }
         $("#team_members").append(teamMember);
         rowPosition++;
@@ -156,8 +156,6 @@ function loadLatestGithubIssues() {
     for (var i = 0; i < lastGithubItem; i++) {
       var itemTitle = data[i].title;
       var itemBody = data[i].body;
-
-      //
       var created = parseGithubDate(data[i].created_at);
       var hours = created.getHours().toString();
       if (hours.length == 1) hours = '0' + hours;
