@@ -52,7 +52,7 @@ function loadLatestTweets() {
 
 function loadTeam() {
 
-  $.getJSON("https://api.github.com/repos/chuckfitzpatricksf/OSDD_test/issues", function (data) {
+  $.getJSON("https://api.github.com/repos/chuckfitzpatricksf/OSM_Data/issues", function (data) {
     var perRow = 5;
     var rowPosition = 0;
     var numTeamMembers = 100;
@@ -103,7 +103,7 @@ function loadTeam() {
 }
 
 function loadSponsors() {
-  $.getJSON("https://api.github.com/repos/chuckfitzpatricksf/OSDD_test/issues", function (data) {
+  $.getJSON("https://api.github.com/repos/chuckfitzpatricksf/OSM_Data/issues", function (data) {
     var perRow = 4;
     var rowPosition = 0;
     var numSponsors = 100;
