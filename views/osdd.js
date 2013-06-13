@@ -85,7 +85,7 @@ function loadTeam() {
         gravatarUrl = getGravatar(gravatarEmail);
 
         if (rowPosition == 0) { // starting a new row
-          $("#teamMembers").append('<div class="row-fluid">');
+          $("#team-members").append('<div class="row-fluid">');
         }
 
         var teamMember;
