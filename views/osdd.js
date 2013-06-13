@@ -95,10 +95,10 @@ function loadTeam() {
         {
           teamMember = '<span class="span2"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div>' + name + '</div><div>' + affiliation + '</div></div></span>'
         }
-        $("#team_members").append(teamMember);
+        $("#team-members").append(teamMember);
         rowPosition++;
         if (rowPosition >= perRow) {
-          $("#team_members").append('</div>');
+          $("#team-members").append('</div>');
           rowPosition = 0;
         }
       }
