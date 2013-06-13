@@ -189,7 +189,7 @@ function getGravatar(gravatarEmail, size) {
   if (gravatarEmail){
     return 'http://www.gravatar.com/avatar/' + MD5(gravatarEmail) + '.jpg?s=' + size;
   } else {
-    return '../images/osdd_avatar.png';
+    return 'images/osdd_avatar.png';
   }
 
 }
