@@ -35,6 +35,18 @@
                 $('#project-activity').hide();
             });
 
+            $("#project-activity-target").bind('click', function () {
+                $('#join-the-team').hide();
+                $('#meet-the-team').hide();
+                $('#project-activity').show();
+            });
+
+            $(".logo").bind('click', function () {
+                $('#join-the-team').hide();
+                $('#meet-the-team').hide();
+                $('#project-activity').show();
+            });
+
         });
     </script>
     <script>
@@ -49,162 +61,148 @@
 <body>
 
 <div class="container">
-    <div id="content" class="row-fluid">
-        <span class="span10">
-            <img class="logo" alt="OSDD Logo" src="../images/OSDD_Logo.png"/>
-            <span class="head-text">Looking for New Medicines for Malaria</span>
-            <div class="span12">
-                <span class="offset1 span6 intro">
-                    The OSDD Malaria project is trying a different approach to the discovery of new medicines to treat
-                    malaria.
-                    Guided by open source principles, everything about the project is open, and anyone can contribute.
-                </span>
-                <span class="offset3 span2">
-                   <a href="https://plus.google.com/u/0/b/114702323662314783325/114702323662314783325/posts"
-                      target="_blank"
-                      style="text-decoration: none;"><img src="../images/round-googleplus.png" alt="Google +"
-                                                          width="42"
-                                                          height="42" style="border: 0;"/></a>
+    <div id="content" class="row-fluid span12">
+        <img class="logo" alt="OSDD Logo" src="../images/OSDD_Logo.png"/>
+        <span class="head-text">Looking for New Medicines for Malaria</span>
+        <div class="span12">
+            <span class="offset1 span6 intro">
+                The OSDD Malaria project is trying a different approach to the discovery of new medicines to treat
+                malaria.
+                Guided by open source principles, everything about the project is open, and anyone can contribute.
+            </span>
+            <span class="offset3 span2">
+               <a href="https://plus.google.com/u/0/b/114702323662314783325/114702323662314783325/posts"
+                  target="_blank"
+                  style="text-decoration: none;"><img src="../images/round-googleplus.png" alt="Google +"
+                                                      width="42"
+                                                      height="42" style="border: 0;"/></a>
 
-                   <a href="http://facebook.com/OSDDforMalaria" target="_blank"><img src="../images/round-facebook.png"
-                                                                                     alt="Facebook" width="42" height="42" title="OSDDMalaria" border="0"/></a>
+               <a href="http://facebook.com/OSDDforMalaria" target="_blank"><img src="../images/round-facebook.png"
+                                                                                 alt="Facebook" width="42" height="42" title="OSDDMalaria" border="0"/></a>
 
-                    <a href="https://twitter.com/OSDDMalaria" target="_blank"><img src="../images/round-twitter.png" alt="Twitter"
-                                                                                   width="42" height="42"/></a>
-                </span>
+                <a href="https://twitter.com/OSDDMalaria" target="_blank"><img src="../images/round-twitter.png" alt="Twitter"
+                                                                               width="42" height="42"/></a>
+            </span>
+        </div>
+
+        <div class="span12">
+            <div class="span2">
+                <h4>Lab Notebook</h4>
+                <a href="http://malaria.ourexperiment.org/" target="_blank">View raw research data</a>
+                <a href="http://malaria.ourexperiment.org/" target="_blank"><img src="../images/lab-notebook.png"
+                                                                                 alt="Lab Notebook"/></a>
+
+                <div>
+                    <h4>Project Wiki</h4>
+                    <a href="http://openwetware.org/wiki/Open_Source_Drug_Discovery_-_Malaria" target="_blank">View The
+                        Wiki</a>
+
+                    <div></div>
+                    <a href="http://openwetware.org/wiki/Open_Source_Drug_Discovery_-_Malaria" target="_blank"><img
+                            src="../images/wiki.png" style="height: 142px" alt="Wiki"/></a>
+                </div>
+                <div id="join-target" >
+                    <h4>Join The Team</h4>
+                    <img src="../images/join.png" style="height: 124px" alt="Join the Team"/>
+                </div>
+
+                <div id="meet-the-team-target" >
+                    <h4>Meet The Team</h4>
+                    <img src="../images/join.png" style="height: 124px" alt="Meet the Team"/>
+                </div>
+
+                <div id="project-activity-target" >
+                    <h4>See Project Activity</h4>
+                    <img src="../images/join.png" style="height: 124px" alt="See Project Activity"/>
+                </div>
             </div>
 
-            <div class="span12">
-                <div class="span3">
-                    <h4>Lab Notebook</h4>
-                    <a href="http://malaria.ourexperiment.org/" target="_blank">View raw research data</a>
-                    <a href="http://malaria.ourexperiment.org/" target="_blank"><img src="../images/lab-notebook.png"
-                                                                                     alt="Lab Notebook"/></a>
+            <div id="center-part" class="span8 center-section">
+                <div id="project-activity">
+                    <span>
+                        <h3>Project Activity</h3>
+                        <a href="http://github.com/OSDDMalaria/OSDDMalaria_To_Do_List/issues?page=1" target="_blank">Go There</a>
+                    </span>
 
-                    <div>
-                        <h4>Project Wiki</h4>
-                        <a href="http://openwetware.org/wiki/Open_Source_Drug_Discovery_-_Malaria" target="_blank">View The
-                            Wiki</a>
-
-                        <div></div>
-                        <a href="http://openwetware.org/wiki/Open_Source_Drug_Discovery_-_Malaria" target="_blank"><img
-                                src="../images/wiki.png" style="height: 142px" alt="Wiki"/></a>
-                    </div>
-                    <div id="join-target" >
-                        <h4>Join The Team</h4>
-                        <img src="../images/join.png" style="height: 124px" alt="Join the Team"/>
+                    <div id="github-container">
+                        <div id="github-feed"></div>
                     </div>
                 </div>
 
-                <div id="center-part" class="span8">
-                    <div id="project-activity" class="project-activity">
-                        <span>
-                            <h2>Project Activity</h2>
-                            <a href="http://github.com/OSDDMalaria/OSDDMalaria_To_Do_List/issues?page=1" target="_blank">Go There</a>
-                        </span>
-
-                        <div id="github-container">
-                            <div id="github-feed"></div>
-                        </div>
-                    </div>
-
-                    <div id="meet-the-team">
-                        <h3>Meet the Team</h3>
-
-                        <div class="span1"></div>
-                        <div class="span11">
-                            <div id="team_members"></div>
-                        </div>
-                    </div>
-
-                    <div id="join-the-team">
-
-                        Open source drug discovery means that anyone can take part at any level of the project, that all data and ideas are shared and there are no patents.
-                        <br/>
-                        Anyone is welcome, whatever your expertise. You just have to adhere to the Six Laws:
-                        <br/>
-                        First Law: All data are open and all ideas are shared
-                        <br/>
-                        Second Law: Anyone can take part at any level of the project
-                        <br/>
-                        Third Law: There will be no patents
-                        <br/>
-                        Fourth Law: Suggestions are the best form of criticism
-                        <br/>
-                        Fifth Law: Public discussion is much more valuable than private email
-                        <br/>
-                        Sixth Law: The project is bigger than, and is not owned by, any given lab.
-                        <br/><br/><br/>
-                        So, if you like the sound of this, then join in! Here&#39s how:
-                        <br/>
-                        <br/>
-                        <ul>
-                            <li>
-                                Check out the current To Do list for details of what’s needed right now – help resolve an issue, comment on things that you think need to be done, or post any of your suggestions/ideas.
-                            </li>
-                            <li>
-                                Keep an eye on the front page for new developments/news.
-                            </li>
-                            <li>
-                                Follow the G+, Twitter and Facebook pages
-                            </li>
-                            <li>
-                                Read up on the project&#39s progress on the wiki and sign up if you want to make changes/add pages
-                            </li>
-                            <li>
-                                Check out the fresh chemical and biological data in the lab notebooks
-                            </li>
-                            <li>
-                                Watch the regular online meetings and maybe come along to the next one
-                            </li>
-                            <li>
-                                If you&#39re a chemist, make a molecule that the project needs so that it can be screened for activity
-                            </li>
-                            <li>
-                                If you&#39re a biologist, see if any of the compounds made by the project might be of interest to you for malaria or some other disease
-                            </li>
-                            <li>
-                                If you&#39re running a lab class that might want to contribute then contact us for how to do that [ways to contact]
-                            </li>
-                            <li>
-                                If you want to help in some other way, try [ways to contact]
-                            </li>
-                            <li>
-                                Buy a project T-shirt - money goes to supporting the science
-                            </li>
-                        </ul>
+                <div id="meet-the-team">
+                    <h3>Meet the Team</h3>
+                    <img src="../images/OSDD_Jan13.jpg" onload="showGroupPhoto();" alt="The team!"/>
+                    <div class="span1"></div>
+                    <div class="span11">
+                        <div id="team_members"></div>
                     </div>
                 </div>
 
+                <div id="join-the-team">
+                    <h3>Join The Team</h3>
+                    Open source drug discovery means that anyone can take part at any level of the project, that all data and ideas are shared and there are no patents.
+                    <br/><br/>
+                    Anyone is welcome, whatever your expertise. You just have to adhere to the Six Laws:
+                    <br/><br/>
+                    First Law: All data are open and all ideas are shared
+                    <br/>
+                    Second Law: Anyone can take part at any level of the project
+                    <br/>
+                    Third Law: There will be no patents
+                    <br/>
+                    Fourth Law: Suggestions are the best form of criticism
+                    <br/>
+                    Fifth Law: Public discussion is much more valuable than private email
+                    <br/>
+                    Sixth Law: The project is bigger than, and is not owned by, any given lab.
+                    <br/><br/>
+                    So, if you like the sound of this, then join in! Here&#39s how:
+                    <br/>
+                    <br/>
+                    <ul>
+                        <li>
+                            Check out the current To Do list for details of what’s needed right now – help resolve an issue, comment on things that you think need to be done, or post any of your suggestions/ideas.
+                        </li>
+                        <li>
+                            Keep an eye on the front page for new developments/news.
+                        </li>
+                        <li>
+                            Follow the G+, Twitter and Facebook pages
+                        </li>
+                        <li>
+                            Read up on the project&#39s progress on the wiki and sign up if you want to make changes/add pages
+                        </li>
+                        <li>
+                            Check out the fresh chemical and biological data in the lab notebooks
+                        </li>
+                        <li>
+                            Watch the regular online meetings and maybe come along to the next one
+                        </li>
+                        <li>
+                            If you&#39re a chemist, make a molecule that the project needs so that it can be screened for activity
+                        </li>
+                        <li>
+                            If you&#39re a biologist, see if any of the compounds made by the project might be of interest to you for malaria or some other disease
+                        </li>
+                        <li>
+                            If you&#39re running a lab class that might want to contribute then contact us for how to do that [ways to contact]
+                        </li>
+                        <li>
+                            If you want to help in some other way, try [ways to contact]
+                        </li>
+                        <li>
+                            Buy a project T-shirt - money goes to supporting the science
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="span2">
                 <h2>Twitter Activity</h2>
                 <div id="twitter-feed"></div>
-            </span>
-        </span>
-
-            </div>
-        </span>
-
-    </div>
-
-    <div class="row-fluid">
-        <h3>Some of the Team</h3>
-
-        <div class="span10">
-            <a href="MeetTheTeam.html" target="_blank">Click to See Everyone!</a>
-
-            <div id="spinner">
-                <div class="offset5 span1">
-                    <img src="../images/ajax-loader.gif"/>
-                </div>
-            </div>
-            <div id="group_photo" hidden>
-                <a href="MeetTheTeam.html" target="_blank"><img src="../images/OSDD_Jan13.jpg" onload="showGroupPhoto();"
-                                                                alt="Some of the team!"
-                                                                alt="Click to see the entire team"/></a>
             </div>
         </div>
     </div>
-
 
     <div class="row-fluid makespace"></div>
     <hr>
