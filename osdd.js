@@ -31,15 +31,16 @@ function parseGithubDate(str) {
 // End of Twitter parsers
 
 function loadLatestTweets() {
-  var numTweets = 5;
-//  var _url = 'https://api.twitter.com/1/statuses/user_timeline/OSDDMalaria.json?callback=?&count=' + numTweets + '&include_rts=1';
+
   var _url = 'https://osm-twitter.herokuapp.com/';
 
   $.getJSON(_url, function (data) {
-    console.log("From Heroku ", data);
-    for (var i = 0; i < data.length; i++) {
-      var tweet = data[i].text;
-      var created = parseTwitterDate(data[i].created_at);
+    var numTweets = 5;
+    var useTweetCount = Math.min(numTweets, data.tweets.length);
+
+    for (var i = 0; i < useTweetCount; i++) {
+      var tweet = data.tweets[i].text;
+      var created = parseTwitterDate(data.tweets[i].created_at);
       var hours = created.getHours().toString();
       if (hours.length == 1) hours = '0' + hours;
       var minutes = created.getMinutes().toString();
@@ -47,7 +48,7 @@ function loadLatestTweets() {
 
       var createdDate = created.getDate() + '-' + (created.getMonth() + 1) + '-' + created.getFullYear() + ' at ' + hours + ':' + minutes;
       tweet = tweet.parseURL().parseUsername().parseHashtag();
-      tweet += '<div class="tweeter-info"><div class="uppercase bold"></div><div class="right"><a href="https://twitter.com/#!/OSDDMalaria/status/' + data[i].id_str + '">' + createdDate + '</a></div></div>'
+      tweet += '<div class="tweeter-info"><div class="uppercase bold"></div><div class="right"><a href="https://twitter.com/#!/OSDDMalaria/status/' + data.tweets[i].id_str + '">' + createdDate + '</a></div></div>'
       $("#twitter-feed").append('<p>' + tweet + '</p>');
     }
   });
