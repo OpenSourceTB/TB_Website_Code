@@ -32,8 +32,11 @@ function parseGithubDate(str) {
 
 function loadLatestTweets() {
   var numTweets = 5;
-  var _url = 'https://api.twitter.com/1/statuses/user_timeline/OSDDMalaria.json?callback=?&count=' + numTweets + '&include_rts=1';
+//  var _url = 'https://api.twitter.com/1/statuses/user_timeline/OSDDMalaria.json?callback=?&count=' + numTweets + '&include_rts=1';
+  var _url = 'https://osm-twitter.herokuapp.com/';
+
   $.getJSON(_url, function (data) {
+    console.log("From Heroku ", data);
     for (var i = 0; i < data.length; i++) {
       var tweet = data[i].text;
       var created = parseTwitterDate(data[i].created_at);
