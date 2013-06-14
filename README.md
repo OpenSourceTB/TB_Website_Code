@@ -16,52 +16,46 @@ Team
   The body of the "team" issue contains a JSON array, as follows:
 
       [
-        { "name": "Tim Connor", "letters": "El Hefe", "url": "www.cloudcitydevelopment.com" },
-        { "name": "Mat Todd", "letters": "University of Sydney", "url": "groups.chem.usyd.edu.au/todd/the-boss.html" },
-        { "name": "Stephanie Geerlings" },
-        { "name": "Tom Terrific", "letters": "Top Hat" , "url": "www.google.com"},
-        { "name": "Austin Powers", "letters": "International Man of Mystery" },
-        { "name": "Peter Parker", "letters": "Web Slinger" },
-        { "name": "Bruce Banner", "letters": "Angry Guy" },
-        { "name": "Matt Murdock", "url": "marvel.com/comics/characters/1009262/daredevil"},
-        { "name": "Alfie La Peter", "url": "www.alfielapeter.com", "letters": "Code Reviews a Speciality"}
+        { "name": "Tim Connor", "affiliation": "El Hefe", "url": "www.cloudcity.io" },
+        { "name": "Mat Todd",
+          "affiliation": "University of Sydney",
+          "url": "groups.chem.usyd.edu.au/todd/the-boss.html",
+          "gravatar_email": "},
+        { "name": "Stephanie Geerlings" }
       ]
 
-  The elements: url, and letters are optional. If name is not provided, "Anonymous" is used for their name.
+  The elements: url, affiliation, and gravatar_email are optional. If name is not provided, "Anonymous" is used for their name.
 
   The different display cases are:
 
-   If name, letters, and url provided: "Member Name, letters" as a link to the url.
+   If name, affiliation, and url provided: "Member Name, letters" as a link to the url.
    If name, url provided: "Member Name" as a link to the url.
-   If name, letters provided: "Member Name, letters" without a link.
-
+   If name, affiliation provided: "Member Name, affiliation" without a link.
+   If gravatar_email provided, the member's gravatar is obtained and shown. If missing, a default image is shown.
 
 Sponsors
 --------
 
   The body of the "sponsors" issue contains a JSON array, as follows:
 
-      [
-        { "name": "The Bill and Melinda Gates Foundation",
-        "url": "www.gatesfoundation.org",
-        "image": "f.cloud.github.com/assets/1546321/602530/9a850a40-cc9e-11e2-9b14-26127d6845b5.png"
-        } ,
-        { "url": "cloudcitydevelopment.com",
-        "image": "f.cloud.github.com/assets/1546321/602548/1a07f9ee-cc9f-11e2-9b13-422751514e94.png"
-        },
-        { "url": "cloudcitydevelopment.com",
-        "image": "f.cloud.github.com/assets/1546321/602548/1a07f9ee-cc9f-11e2-9b13-422751514e94.png"
-        },
-        { "url": "cloudcitydevelopment.com",
-        "image": "f.cloud.github.com/assets/1546321/602548/1a07f9ee-cc9f-11e2-9b13-422751514e94.png"
-        },
-        { "url": "cloudcitydevelopment.com",
-        "image": "f.cloud.github.com/assets/1546321/602548/1a07f9ee-cc9f-11e2-9b13-422751514e94.png"
-        },
-        { "url": "cloudcitydevelopment.com",
-        "image": "f.cloud.github.com/assets/1546321/602548/1a07f9ee-cc9f-11e2-9b13-422751514e94.png"
-        }
-      ]
+  [
+    {"name": "University of Sydney",
+     "url": "sydney.edu.au",
+    "image": "f.cloud.github.com/assets/1546321/620163/037d300e-cede-11e2-8e2f-e2dd51ab963c.png"
+    },
+    { "name": "Medicines for Malaria Venture",
+    "url": "www.mmv.org",
+    "image": "f.cloud.github.com/assets/1546321/620180/651b7438-cede-11e2-8706-c56f89b70947.jpg"
+    },
+    {"name": "Australian Research Council",
+    "url": "arc.gov.au",
+    "image": "f.cloud.github.com/assets/1546321/620173/2663fc4c-cede-11e2-8725-753d3de70430.jpg"
+    },
+    { "name": "Cloud City Development",
+    "url": "cloudcity.io",
+    "image": "f.cloud.github.com/assets/1546321/621382/facee53c-cf01-11e2-9456-01eee6ca7577.png"
+    }
+  ]
 
     The name and url elements are optional.
 
