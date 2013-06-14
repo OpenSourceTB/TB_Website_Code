@@ -37,6 +37,7 @@ function loadLatestTweets() {
   $.getJSON(_url, function (data) {
     var numTweets = 5;
     var useTweetCount = Math.min(numTweets, data.tweets.length);
+    $("#twitter-feed").empty();
 
     for (var i = 0; i < useTweetCount; i++) {
       var tweet = data.tweets[i].text;
@@ -52,6 +53,37 @@ function loadLatestTweets() {
       $("#twitter-feed").append('<p>' + tweet + '</p>');
     }
   });
+}
+
+function loadLatestGithubIssues() {
+
+  $.getJSON("https://api.github.com/repos/OSDDMalaria/OSDDMalaria_To_Do_List/issues", function (data) {
+    var numGithubItems = 12;
+    var lastGithubItem = Math.min(numGithubItems, data.length);
+    $("#github-feed").empty();
+
+    for (var i = 0; i < lastGithubItem; i++) {
+      var itemTitle = data[i].title;
+      var itemBody = data[i].body;
+      var created = parseGithubDate(data[i].created_at);
+      var hours = created.getHours().toString();
+      if (hours.length == 1) hours = '0' + hours;
+      var minutes = created.getMinutes().toString();
+      if (minutes.length == 1) minutes = '0' + minutes;
+
+      var createdDate = created.getDate() + '-' + (created.getMonth() + 1) + '-' + created.getFullYear() + ' at ' + hours + ':' + minutes;
+      var created = parseGithubDate(data[i].updated_at);
+      var hours = created.getHours().toString();
+      if (hours.length == 1) hours = '0' + hours;
+      var minutes = created.getMinutes().toString();
+      if (minutes.length == 1) minutes = '0' + minutes;
+
+      var createdDate = created.getDate() + '-' + (created.getMonth() + 1) + '-' + created.getFullYear() + ' at ' + hours + ':' + minutes;
+
+      $("#github-feed").append('<span class=' + data[i].state + '><span class=title>' + createdDate + " ---" + itemTitle + '</span></span>');
+      $("#github-feed").append('<div class=indented>' + itemBody + '</div>');
+    }
+  })
 }
 
 function loadTeam() {
@@ -150,35 +182,6 @@ function loadSponsors() {
       }
     }
   });
-}
-
-function loadLatestGithubIssues() {
-
-  $.getJSON("https://api.github.com/repos/OSDDMalaria/OSDDMalaria_To_Do_List/issues", function (data) {
-    var numGithubItems = 12;
-    var lastGithubItem = Math.min(numGithubItems, data.length);
-    for (var i = 0; i < lastGithubItem; i++) {
-      var itemTitle = data[i].title;
-      var itemBody = data[i].body;
-      var created = parseGithubDate(data[i].created_at);
-      var hours = created.getHours().toString();
-      if (hours.length == 1) hours = '0' + hours;
-      var minutes = created.getMinutes().toString();
-      if (minutes.length == 1) minutes = '0' + minutes;
-
-      var createdDate = created.getDate() + '-' + (created.getMonth() + 1) + '-' + created.getFullYear() + ' at ' + hours + ':' + minutes;
-      var created = parseGithubDate(data[i].updated_at);
-      var hours = created.getHours().toString();
-      if (hours.length == 1) hours = '0' + hours;
-      var minutes = created.getMinutes().toString();
-      if (minutes.length == 1) minutes = '0' + minutes;
-
-      var createdDate = created.getDate() + '-' + (created.getMonth() + 1) + '-' + created.getFullYear() + ' at ' + hours + ':' + minutes;
-
-      $("#github-feed").append('<span class=' + data[i].state + '><span class=title>' + createdDate + " ---" + itemTitle + '</span></span>');
-      $("#github-feed").append('<div class=indented>' + itemBody + '</div>');
-    }
-  })
 }
 
 function getGravatar(gravatarEmail, size) {

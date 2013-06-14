@@ -13,8 +13,14 @@
     <script type="text/javascript" src="views/osdd.js"></script>
     <script>
         $(document).ready(function () {
+
+            var TwitterUpdateInterval = 600000; // 10 minutes is 600000 milliseconds
+            var GitHubUpdateInterval = 660000;  // 11 minutes
+
             loadLatestTweets();
+            setInterval(loadLatestTweets,TwitterUpdateInterval);
             loadLatestGithubIssues();
+            setInterval(loadLatestGithubIssues,GitHubUpdateInterval);
             loadTeam();
             loadSponsors();
 //            Set the Default view of the page
