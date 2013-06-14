@@ -18,7 +18,20 @@
 .head-text{
     font-size: 20px;
     margin-left: 40px;
-    vertical-align: bottom;
+    vertical-align: top;
+}
+
+#team-members{
+    margin-top: 30px;
+    margin-left: 45px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.member-row{
+    margin-bottom: 10px;
+    text-align: center;
+    width: auto;
 }
 
 #team-members img {
@@ -27,8 +40,9 @@
 
 .logo {
     margin-top: -40px;
-    height: 60px;
+    height: 150px;
 }
+
 .logo-text {
     margin-top: 10px;
     font-size: 45px;
@@ -36,6 +50,26 @@
 
 .center-section{
     background-color: #ebf6f8;
+}
+
+.center-section h3{
+    padding-left: 20px;
+}
+
+.center-section .center-content{
+    display: block;
+    margin: auto;
+    padding-left: 10%;
+    padding-right: 10%
+}
+
+.center-section .center-content img{
+    display: block;
+    margin: auto;
+}
+
+.center-section img{
+    max-width: 100%;
 }
 
 .intro {
