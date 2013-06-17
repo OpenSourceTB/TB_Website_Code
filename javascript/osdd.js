@@ -79,8 +79,6 @@ function loadLatestProjectActivity() {
 
       var createdDate = created.getDate() + '-' + (created.getMonth() + 1) + '-' + created.getFullYear() + ' at ' + hours + ':' + minutes;
 
-//      $("#project-activity-feed").append('<span class=' + data[i].state + '><span class=title>' + createdDate + " ---" + itemTitle + '</span></span>');
-
       $("#project-activity-feed").append('<span><img src="images/' + data[i].state + '.png"' + 'class="project_activity_image"/><span class=title>' + createdDate + " ---" + itemTitle + '</span></span>');
       $("#project-activity-feed").append('<div class=indented>' + itemBody + '</div>');
     }
@@ -90,7 +88,7 @@ function loadLatestProjectActivity() {
 function loadTeam() {
 
   $.getJSON("https://api.github.com/repos/chuckfitzpatricksf/OSM_Data/issues", function (data) {
-    var perRow = 5;
+    var perRow = 6;
     var rowPosition = 0;
     var currentRow = 0;
     var numTeamMembers = 100;
@@ -103,41 +101,40 @@ function loadTeam() {
     if (dataIndex > -1) {
       teamMembers = $.parseJSON(data[dataIndex].body);
       var lastTeamMember = Math.min(numTeamMembers, teamMembers.length);
-
       for (var i = 0; i < lastTeamMember; i++) {
-          name = teamMembers[i].name || "Anonymous";
-          url = teamMembers[i].url;
-          gravatarEmail = teamMembers[i].gravatar_email;
-          if (teamMembers[i].affiliation) {
-            affiliation = teamMembers[i].affiliation;
-            affiliationWithComma = ", " + affiliation;
-          } else {
-            affiliation = "";
-            affiliationWithComma = "";
-          }
+        name = teamMembers[i].name || "Anonymous";
+        url = teamMembers[i].url;
+        gravatarEmail = teamMembers[i].gravatar_email;
+        if (teamMembers[i].affiliation) {
+          affiliation = teamMembers[i].affiliation;
+          affiliationWithComma = ", " + affiliation;
+        } else {
+          affiliation = "";
+          affiliationWithComma = "";
+        }
 
-          gravatarUrl = getGravatar(gravatarEmail);
+        gravatarUrl = getGravatar(gravatarEmail);
 
-          if (rowPosition == 0) { // starting a new row
-            $("#team-members").append('<div class="row-fluid member-row" id="team-member-row' + currentRow + '">');
-          }
+        if (rowPosition == 0) { // starting a new row
+          $("#team-members").append('<div class="row-fluid member-row" id="team-member-row' + currentRow + '">');
+        }
 
-          var teamMember;
-          if (url) {
-            teamMember = '<span class="span2"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
-              '<div><a href="http://' + url + '" target="_blank">' + name + '</div><div>' + affiliation + '</div></div></span>'
+        var teamMember;
+        if (url) {
+          teamMember = '<span class="span2"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
+            '<div><a href="http://' + url + '" target="_blank">' + name + '</div><div>' + affiliation + '</div></div></span>'
 
-          } else {
-            teamMember = '<span class="span2"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div>' + name + '</div><div>' + affiliation + '</div></div></span>'
-          }
-          $("#team-member-row" + currentRow).append(teamMember);
-          rowPosition++;
+        } else {
+          teamMember = '<span class="span2"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div>' + name + '</div><div>' + affiliation + '</div></div></span>'
+        }
+        $("#team-member-row" + currentRow).append(teamMember);
+        rowPosition++;
 
-          if (rowPosition >= perRow) {
-            $("#team-member-row").append('</div>');
-            rowPosition = 0;
-            currentRow++;
-          }
+        if (rowPosition >= perRow) {
+          $("#team-member-row").append('</div>');
+          rowPosition = 0;
+          currentRow++;
+        }
       }
     }
   })
@@ -167,7 +164,7 @@ function loadSponsors() {
 
 
         if (rowPosition == 0) { // starting a new row
-          $("#sponsors").append('<div class="row-fluid makespace" id="sponsorRow' + currentRow + '">');
+          $("#sponsors").append('<div class="row-fluid offset1 makespace" id="sponsorRow' + currentRow + '">');
         }
 
         var sponsor;

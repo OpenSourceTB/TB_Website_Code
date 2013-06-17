@@ -104,8 +104,17 @@ img.project_activity_image{
     max-width: 100%;
 }
 
+.emphasis{
+    font-size: 20px;
+    color: #B0DFE4;
+}
+
 .social{
     margin-top: -1%;
+}
+
+.links{
+    margin-bottom: 2%;
 }
 
 .intro {
