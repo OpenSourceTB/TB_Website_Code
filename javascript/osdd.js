@@ -87,7 +87,7 @@ function loadLatestProjectActivity() {
 
 function loadTeam() {
 
-  $.getJSON("https://api.github.com/repos/chuckfitzpatricksf/OSM_Data/issues", function (data) {
+  $.getJSON("https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues", function (data) {
     var perRow = 6;
     var rowPosition = 0;
     var currentRow = 0;
@@ -141,7 +141,7 @@ function loadTeam() {
 }
 
 function loadSponsors() {
-  $.getJSON("https://api.github.com/repos/chuckfitzpatricksf/OSM_Data/issues", function (data) {
+  $.getJSON("https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues", function (data) {
     var perRow = 4;
     var rowPosition = 0;
     var numSponsors = 100;
