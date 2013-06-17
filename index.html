@@ -60,6 +60,20 @@
         });
     </script>
     <script>
+        $(document).ready(function() {
+            $.ajax
+            ({
+                dataType: "html",
+                error:function(xhr, status, errorThrown) {
+                    alert(errorThrown+'\n'+status+'\n'+xhr.statusText);
+                },
+                success:function(callback) {
+                    alert("I'm a success");
+                }
+            });
+        });
+    </script>
+    <script>
         function showGroupPhoto() {
             $("#spinner").hide();
             $("#group_photo").show();
@@ -96,7 +110,7 @@
         </span>
 
         <span class="span7 head-text">Looking for New Medicines for Malaria</span>
-            <span class="offset1 span2 social">
+            <span class="span3 social">
                <a href="https://plus.google.com/u/0/b/114702323662314783325/114702323662314783325/posts"
                   target="_blank"
                   style="text-decoration: none;"><img src="images/round-googleplus.png" alt="Google +"
