@@ -60,20 +60,6 @@
         });
     </script>
     <script>
-        $(document).ready(function() {
-            $.ajax
-            ({
-                dataType: "html",
-                error:function(xhr, status, errorThrown) {
-                    alert(errorThrown+'\n'+status+'\n'+xhr.statusText);
-                },
-                success:function(callback) {
-                    alert("I'm a success");
-                }
-            });
-        });
-    </script>
-    <script>
         function showGroupPhoto() {
             $("#spinner").hide();
             $("#group_photo").show();

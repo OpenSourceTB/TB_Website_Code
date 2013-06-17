@@ -34,6 +34,8 @@ function loadLatestTweets() {
   var _url = 'https://osm-twitter.herokuapp.com/';
 
   $.getJSON(_url, function (data) {
+    alert("Tweets inbound!");
+    alert(data);
     var numTweets = 5;
     var useTweetCount = Math.min(numTweets, data.tweets.length);
     $("#twitter-feed").empty();
