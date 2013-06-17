@@ -31,7 +31,6 @@ function parseGithubDate(str) {
 // End of Twitter parsers
 
 function loadLatestTweets() {
-
   var _url = 'https://osm-twitter.herokuapp.com/';
 
   $.getJSON(_url, function (data) {
@@ -55,12 +54,12 @@ function loadLatestTweets() {
   });
 }
 
-function loadLatestGithubIssues() {
+function loadLatestProjectActivity() {
 
   $.getJSON("https://api.github.com/repos/OSDDMalaria/OSDDMalaria_To_Do_List/issues", function (data) {
     var numGithubItems = 12;
     var lastGithubItem = Math.min(numGithubItems, data.length);
-    $("#github-feed").empty();
+    $("#project-activity-feed").empty();
 
     for (var i = 0; i < lastGithubItem; i++) {
       var itemTitle = data[i].title;
@@ -80,8 +79,10 @@ function loadLatestGithubIssues() {
 
       var createdDate = created.getDate() + '-' + (created.getMonth() + 1) + '-' + created.getFullYear() + ' at ' + hours + ':' + minutes;
 
-      $("#github-feed").append('<span class=' + data[i].state + '><span class=title>' + createdDate + " ---" + itemTitle + '</span></span>');
-      $("#github-feed").append('<div class=indented>' + itemBody + '</div>');
+//      $("#project-activity-feed").append('<span class=' + data[i].state + '><span class=title>' + createdDate + " ---" + itemTitle + '</span></span>');
+
+      $("#project-activity-feed").append('<span><img src="images/' + data[i].state + '.png"' + 'class="project_activity_image"/><span class=title>' + createdDate + " ---" + itemTitle + '</span></span>');
+      $("#project-activity-feed").append('<div class=indented>' + itemBody + '</div>');
     }
   })
 }
@@ -123,7 +124,9 @@ function loadTeam() {
 
           var teamMember;
           if (url) {
-            teamMember = '<span class="span2"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/></a><div>' + name + '</div><div>' + affiliation + '</div></div></span>'
+            teamMember = '<span class="span2"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
+              '<div><a href="http://' + url + '" target="_blank">' + name + '</div><div>' + affiliation + '</div></div></span>'
+
           } else {
             teamMember = '<span class="span2"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div>' + name + '</div><div>' + affiliation + '</div></div></span>'
           }

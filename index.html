@@ -15,12 +15,12 @@
         $(document).ready(function () {
 
             var TwitterUpdateInterval = 600000; // 10 minutes is 600000 milliseconds
-            var GitHubUpdateInterval = 660000;  // 11 minutes
+            var ProjectActivityUpdateInterval = 660000;  // 11 minutes
 
             loadLatestTweets();
             setInterval(loadLatestTweets, TwitterUpdateInterval);
-            loadLatestGithubIssues();
-            setInterval(loadLatestGithubIssues, GitHubUpdateInterval);
+            loadLatestProjectActivity();
+            setInterval(loadLatestProjectActivity, ProjectActivityUpdateInterval);
             loadTeam();
             loadSponsors();
 //            Set the Default view of the page
@@ -40,7 +40,7 @@
                 $('#project-activity').hide();
             });
 
-            $("#project-activity-target").bind('click', function () {
+            $(".project-activity-target").bind('click', function () {
                 $('#join-the-team').hide();
                 $('#meet-the-team').hide();
                 $('#project-activity').show();
@@ -66,30 +66,31 @@
 
 <div class="container">
     <div class="row-fluid span12">
-        <span class="offset7 span2">
+        <span class="offset4 span2">
+            <span class="project-activity-target">
+                <a href="#">SEE PROJECT ACTIVITY</a>
+            </span>
+        </span>
+        <span class="span2">
             <span class="join-target">
-                JOIN THE TEAM
+                <a href="#">JOIN THE TEAM</a>
             </span>
         </span>
         <span class="span2">
             <span class="meet-the-team-target">
-                MEET THE TEAM
+                <a href="#">MEET THE TEAM</a>
             </span>
         </span>
     </div>
 
 
     <div id="content" class="row-fluid span12">
-        <img class="logo" alt="OSM Logo" src="images/OSM_Logo.png"/>
-        <span class="head-text">Looking for New Medicines for Malaria</span>
+        <span class="span2">
+            <img class="logo" alt="OSM Logo" src="images/OSM_Logo.png"/>
+        </span>
 
-        <div class="span12">
-            <span class="offset1 span6 intro">
-                The OSDD Malaria project is trying a different approach to the discovery of new medicines to treat
-                malaria.
-                Guided by open source principles, everything about the project is open, and anyone can contribute.
-            </span>
-            <span class="offset3 span2">
+        <span class="span7 head-text">Looking for New Medicines for Malaria</span>
+            <span class="offset1 span2 social">
                <a href="https://plus.google.com/u/0/b/114702323662314783325/114702323662314783325/posts"
                   target="_blank"
                   style="text-decoration: none;"><img src="images/round-googleplus.png" alt="Google +"
@@ -104,17 +105,31 @@
                                                                                alt="Twitter"
                                                                                width="42" height="42"/></a>
             </span>
+    </div>
+
+    <div class="row-fluid span12">
+        <div class="span12">
+            <span class="offset2 span8 intro">
+                <img src="images/red-arrow.png" class="outdent"/>
+                <span class="para">
+                    The OSDD Malaria project is trying a different approach to the discovery of new medicines to treat
+                    malaria. Guided by open source principles, everything about the project is open, and anyone can contribute.
+                </span>
+            </span>
+            <span class="span2 right-nav">
+                <h4>Twitter Activity</h4>
+            </span>
         </div>
 
         <div class="span12">
-            <div class="span2">
+            <div class="span2 left-nav">
                 <h4>Lab Notebook</h4>
-                <a href="http://malaria.ourexperiment.org/" target="_blank">View raw research data</a>
+                <a href="http://malaria.ourexperiment.org/" target="_blank">View Raw Research Data</a>
                 <a href="http://malaria.ourexperiment.org/" target="_blank"><img src="images/lab-notebook.png"
                                                                                  alt="Lab Notebook"/></a>
                 <div>
                     <h4>Project Wiki</h4>
-                    <a href="http://openwetware.org/wiki/Open_Source_Drug_Discovery_-_Malaria" target="_blank">View The
+                    <a href="http://openwetware.org/wiki/Open_Source_Drug_Discovery_-_Malaria" target="_blank">View the
                         Wiki</a>
 
                     <div></div>
@@ -123,18 +138,18 @@
                 </div>
                 <div class="join-target">
                     <h4>Join The Team</h4>
-                    <img src="images/join.png" style="height: 124px" alt="Join the Team"/>
+                    <a href="#"><img src="images/join.png" style="height: 124px" alt="Join the Team"/></a>
                 </div>
 
-                <div class="meet-the-team-target">
-                    <h4>Meet The Team</h4>
-                    <img src="images/meettheteam.jpg" alt="Meet the Team"/>
-                </div>
+                <!--<div class="meet-the-team-target">-->
+                    <!--<h4>Meet The Team</h4>-->
+                    <!--<img src="images/meettheteam.jpg" alt="Meet the Team"/>-->
+                <!--</div>-->
 
-                <div id="project-activity-target">
-                    <h4>See Project Activity</h4>
-                    <img src="images/seeactivity.jpg" style="height: 124px" alt="See Project Activity"/>
-                </div>
+                <!--<div id="project-activity-target">-->
+                    <!--<h4>See Project Activity</h4>-->
+                    <!--<img src="images/seeactivity.jpg" style="height: 124px" alt="See Project Activity"/>-->
+                <!--</div>-->
             </div>
 
             <div class="span8 center-section">
@@ -144,8 +159,8 @@
                         <a href="http://github.com/OSDDMalaria/OSDDMalaria_To_Do_List/issues?page=1" target="_blank">See
                             More</a>
                     </span>
-                    <div class="center-content" id="github-container">
-                        <div id="github-feed"></div>
+                    <div class="center-content">
+                        <div id="project-activity-feed"></div>
                     </div>
                     <a href="http://github.com/OSDDMalaria/OSDDMalaria_To_Do_List/issues?page=1" target="_blank">See More</a>
                 </div>
@@ -153,9 +168,12 @@
                 <div id="meet-the-team">
                     <span>
                         <h3>Meet the Team</h3>
+                        <span class="start-your-own-project">
+                            <a href="http://www.thesynapticleap.org/malaria/community" target="_blank"><img src="images/start-your-own-project.png"/></a>
+                        </span>
                     </span>
                     <span class="center-content">
-                        <img src="images/OSDD_Jan13.jpg" onload="showGroupPhoto();" alt="The team!"/>
+                        <!--<img src="images/OSDD_Jan13.jpg" onload="showGroupPhoto();" alt="The team!"/>-->
                         <span class="span12">
                             <span id="team-members"></span>
                         </span>
@@ -230,10 +248,8 @@
                     </span>
                 </div>
             </div>
-
-            <div class="span2">
-                <h2>Twitter Activity</h2>
-                <div id="twitter-feed"></div>
+            <div>
+                <span class="span2 right-nav" id="twitter-feed"></span>
             </div>
         </div>
     </div>

@@ -1,24 +1,30 @@
 .container{
     margin-top: 30px;
 }
-.open {
-    background-image: url("http://placehold.it/50x20/25e01b/000000&text=OPEN");
+.activity-open {
+    background-image: url("../images/open.png");
     background-repeat: no-repeat;
 }
 
-.closed {
-    background-image: url("http://placehold.it/50x20/ed216c/000000&text=CLOSED");
+.activity-closed {
+    background-image: url("../images/closed.png");
     background-repeat: no-repeat;
 }
 
-.comment {
-    background-image: url("http://placehold.it/50x20/edea21/000000&text=COMMENT");
+.activity-comment {
+    background-image: url("../images/comment.jpg");
     background-repeat: no-repeat;
 }
 .head-text{
     font-size: 20px;
-    margin-left: 40px;
-    vertical-align: top;
+    margin-left: 60px;
+    vertical-align: 22px;
+}
+
+img.project_activity_image{
+    height: 30px;
+    margin-top: 1%;
+    margin-left: -10%;
 }
 
 #team-members{
@@ -43,12 +49,35 @@
     height: 150px;
 }
 
+.para{
+    display: inline-block;
+    margin-top: -10%;
+    margin-left: 5%;
+    margin-right: 15%;
+}
+
 .logo-text {
     margin-top: 10px;
     font-size: 45px;
 }
 
+/*.start-your-own-project{*/
+    /*margin-left: 80%;*/
+    /*margin-top: -20%;*/
+/*}*/
+
+.start-your-own-project img{
+    margin-left: 80%;
+    margin-top: -20%;
+}
+.outdent img{
+    margin-left: -30px;
+    width: 5%;
+}
+
 .center-section{
+    margin-top: -30px;
+    border-radius: 10px;
     background-color: #ebf6f8;
 }
 
@@ -58,23 +87,36 @@
 
 .center-section .center-content{
     display: block;
-    margin: auto;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
     padding-left: 10%;
     padding-right: 10%
 }
 
-.center-section .center-content img{
-    display: block;
-    margin: auto;
-}
+/*.center-section .center-content img{*/
+    /*display: inline;*/
+    /*margin: auto;*/
+/*}*/
 
 .center-section img{
     max-width: 100%;
 }
 
+.social{
+    margin-top: -1%;
+}
+
 .intro {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: -5%;
+    margin-bottom: 5%;
+    margin-left: 30px;
+}
+
+.right-nav{
+    padding-left: 1%;
+    margin-top: -5%;
 }
 
 #spinner {
@@ -86,8 +128,12 @@
     color: gray;
 }
 
+.left-nav{
+    margin-top: -30px;
+}
+
 .title {
-    margin-left: 60px;
+    margin-left: 1%;
 }
 
 .makespace{
