@@ -32,15 +32,20 @@ function parseGithubDate(str) {
 
 function loadLatestTweets() {
   var _url = 'https://osm-twitter.herokuapp.com/';
-  $.ajax(_url, { "cache": false }
-  ).done(function(data) {
+
+  $.ajax({
+    url: _url,
+    dataType: 'jsonp',
+    success: function(data){
+
       var numTweets = 5;
-      var useTweetCount = Math.min(numTweets, data.tweets.length);
+      var useTweetCount = Math.min(numTweets, data.length);
+
       $("#twitter-feed").empty();
 
       for (var i = 0; i < useTweetCount; i++) {
-        var tweet = data.tweets[i].text;
-        var created = parseTwitterDate(data.tweets[i].created_at);
+        var tweet = data[i].text;
+        var created = parseTwitterDate(data[i].created_at);
         var hours = created.getHours().toString();
         if (hours.length == 1) hours = '0' + hours;
         var minutes = created.getMinutes().toString();
@@ -48,88 +53,163 @@ function loadLatestTweets() {
 
         var createdDate = created.getDate() + '-' + (created.getMonth() + 1) + '-' + created.getFullYear() + ' at ' + hours + ':' + minutes;
         tweet = tweet.parseURL().parseUsername().parseHashtag();
-        tweet += '<div class="tweeter-info"><div class="uppercase bold"></div><div class="right"><a href="https://twitter.com/#!/OSDDMalaria/status/' + data.tweets[i].id_str + '">' + createdDate + '</a></div></div>'
+        tweet += '<div class="tweeter-info"><div class="uppercase bold"></div><div class="right"><a href="https://twitter.com/#!/OSDDMalaria/status/' + data[i].id_str + '">' + createdDate + '</a></div></div>'
         $("#twitter-feed").append('<p>' + tweet + '</p>');
       }
-    });
+      }
+  });
 }
 
 function loadLatestProjectActivity() {
   var _url = "https://api.github.com/repos/OSDDMalaria/OSDDMalaria_To_Do_List/issues";
 
-  $.ajax(_url, { "cache": false }
-  ).done(function(data) {
-    var numGithubItems = 12;
-    var lastGithubItem = Math.min(numGithubItems, data.length);
-    $("#project-activity-feed").empty();
+  $.ajax({
+    url: _url,
+    dataType: 'jsonp',
+    success: function(jsonpData){
 
-    for (var i = 0; i < lastGithubItem; i++) {
-      var itemTitle = data[i].title;
-      var itemBody = data[i].body;
-      var created = parseGithubDate(data[i].created_at);
-      var hours = created.getHours().toString();
-      if (hours.length == 1) hours = '0' + hours;
-      var minutes = created.getMinutes().toString();
-      if (minutes.length == 1) minutes = '0' + minutes;
+      data = jsonpData.data;
 
-      var createdDate = created.getDate() + '-' + (created.getMonth() + 1) + '-' + created.getFullYear() + ' at ' + hours + ':' + minutes;
-      var created = parseGithubDate(data[i].updated_at);
-      var hours = created.getHours().toString();
-      if (hours.length == 1) hours = '0' + hours;
-      var minutes = created.getMinutes().toString();
-      if (minutes.length == 1) minutes = '0' + minutes;
+      var numGithubItems = 12;
+      var lastGithubItem = Math.min(numGithubItems, data.length);
+      $("#project-activity-feed").empty();
 
-      var createdDate = created.getDate() + '-' + (created.getMonth() + 1) + '-' + created.getFullYear() + ' at ' + hours + ':' + minutes;
+      for (var i = 0; i < lastGithubItem; i++) {
+        var itemTitle = data[i].title;
+        var itemBody = data[i].body;
+        var created = parseGithubDate(data[i].created_at);
+        var hours = created.getHours().toString();
+        if (hours.length == 1) hours = '0' + hours;
+        var minutes = created.getMinutes().toString();
+        if (minutes.length == 1) minutes = '0' + minutes;
 
-      $("#project-activity-feed").append('<span><img src="images/' + data[i].state + '.png"' + 'class="project_activity_image"/><span class=title>' + createdDate + " ---" + itemTitle + '</span></span>');
-      $("#project-activity-feed").append('<div class=indented>' + itemBody + '</div>');
+        var createdDate = created.getDate() + '-' + (created.getMonth() + 1) + '-' + created.getFullYear() + ' at ' + hours + ':' + minutes;
+        var created = parseGithubDate(data[i].updated_at);
+        var hours = created.getHours().toString();
+        if (hours.length == 1) hours = '0' + hours;
+        var minutes = created.getMinutes().toString();
+        if (minutes.length == 1) minutes = '0' + minutes;
+
+        var createdDate = created.getDate() + '-' + (created.getMonth() + 1) + '-' + created.getFullYear() + ' at ' + hours + ':' + minutes;
+
+        $("#project-activity-feed").append('<span><img src="images/' + data[i].state + '.png"' + 'class="project_activity_image"/><span class=title>' + createdDate + " ---" + itemTitle + '</span></span>');
+        $("#project-activity-feed").append('<div class=indented>' + itemBody + '</div>');
+      }
     }
-  })
+  });
 }
 
 function loadSponsors() {
-  _url = "https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues";
+  var _url = "https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues";
+  $.ajax({
+    url: _url,
+    dataType: 'jsonp',
+    success: function(jsonpData){
 
-  $.ajax(_url, { "cache": false }).always(function(){alert("it's all over");})
-    .done(function(data) {
-    var perRow = 4;
-    var rowPosition = 0;
-    var numSponsors = 100;
-    var currentRow = 0;
-    var dataIndex = -1;
+      data = jsonpData.data;
 
-    for (i = 0; i < data.length; i++) {
-      if (data[i].title == "sponsors") dataIndex = i;
+      var perRow = 4;
+      var rowPosition = 0;
+      var numSponsors = 100;
+      var currentRow = 0;
+      var dataIndex = -1;
+
+      for (i = 0; i < data.length; i++) {
+        if (data[i].title == "sponsors") dataIndex = i;
+      }
+
+      if (dataIndex > -1) {
+        sponsors = $.parseJSON(data[dataIndex].body);
+        var lastSponsor = Math.min(numSponsors, sponsors.length);
+
+        for (var i = 0; i < lastSponsor; i++) {
+          var name = sponsors[i].name;
+          var url = sponsors[i].url;
+          var name = sponsors[i].name ? sponsors[i].name : url;
+          var image = sponsors[i].image;
+
+
+          if (rowPosition == 0) { // starting a new row
+            $("#sponsors").append('<div class="row-fluid offset1 makespace" id="sponsorRow' + currentRow + '">');
+          }
+
+          var sponsor;
+          if (url) {
+            sponsor = '<span class="span3 sponsor_image"><a href="http://' + url + '" target="_blank"><img src="https://' + image + '" title="' + name + '"></a></span>'
+          } else {
+            sponsor = '<span class="span3"><img src="https://' + image + '"></span>'
+          }
+
+          $("#sponsorRow" + currentRow).append(sponsor);
+          rowPosition++;
+          if (rowPosition >= perRow) {
+            $("#sponsorRow" + currentRow).append('</div>');
+            rowPosition = 0;
+            currentRow++;
+          }
+        }
+      }
     }
+  });
+}
 
-    if (dataIndex > -1) {
-      sponsors = $.parseJSON(data[dataIndex].body);
-      var lastSponsor = Math.min(numSponsors, sponsors.length);
+function loadTeam() {
+  var _url = "https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues";
 
-      for (var i = 0; i < lastSponsor; i++) {
-        var name = sponsors[i].name;
-        var url = sponsors[i].url;
-        var name = sponsors[i].name ? sponsors[i].name : url;
-        var image = sponsors[i].image;
+  $.ajax({
+    url: _url,
+    dataType: 'jsonp',
+    success: function(jsonpData){
 
+      data = jsonpData.data;
 
-        if (rowPosition == 0) { // starting a new row
-          $("#sponsors").append('<div class="row-fluid offset1 makespace" id="sponsorRow' + currentRow + '">');
-        }
+      var perRow = 6;
+      var rowPosition = 0;
+      var currentRow = 0;
+      var numTeamMembers = 100;
+      var dataIndex = -1;
 
-        var sponsor;
-        if (url) {
-          sponsor = '<span class="span3 sponsor_image"><a href="http://' + url + '" target="_blank"><img src="https://' + image + '" title="' + name + '"></a></span>'
-        } else {
-          sponsor = '<span class="span3"><img src="https://' + image + '"></span>'
-        }
+      for (i = 0; i < data.length; i++) {
+        if (data[i].title == "team") dataIndex = i;
+      }
 
-        $("#sponsorRow" + currentRow).append(sponsor);
-        rowPosition++;
-        if (rowPosition >= perRow) {
-          $("#sponsorRow" + currentRow).append('</div>');
-          rowPosition = 0;
-          currentRow++;
+      if (dataIndex > -1) {
+        teamMembers = $.parseJSON(data[dataIndex].body);
+        var lastTeamMember = Math.min(numTeamMembers, teamMembers.length);
+        for (var i = 0; i < lastTeamMember; i++) {
+          name = teamMembers[i].name || "Anonymous";
+          url = teamMembers[i].url;
+          gravatarEmail = teamMembers[i].gravatar_email;
+          if (teamMembers[i].affiliation) {
+            affiliation = teamMembers[i].affiliation;
+            affiliationWithComma = ", " + affiliation;
+          } else {
+            affiliation = "";
+            affiliationWithComma = "";
+          }
+
+          gravatarUrl = getGravatar(gravatarEmail);
+
+          if (rowPosition == 0) { // starting a new row
+            $("#team-members").append('<div class="row-fluid member-row" id="team-member-row' + currentRow + '">');
+          }
+
+          var teamMember;
+          if (url) {
+            teamMember = '<span class="span2"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
+              '<div><a href="http://' + url + '" target="_blank">' + name + '</div><div>' + affiliation + '</div></div></span>'
+
+          } else {
+            teamMember = '<span class="span2"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div>' + name + '</div><div>' + affiliation + '</div></div></span>'
+          }
+          $("#team-member-row" + currentRow).append(teamMember);
+          rowPosition++;
+
+          if (rowPosition >= perRow) {
+            $("#team-member-row").append('</div>');
+            rowPosition = 0;
+            currentRow++;
+          }
         }
       }
     }
