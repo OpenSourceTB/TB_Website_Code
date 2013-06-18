@@ -32,7 +32,7 @@ function parseGithubDate(str) {
 
 function loadLatestTweets() {
   var _url = 'https://osm-twitter.herokuapp.com/';
-
+  alert("Go to twitter");
   $.ajax(_url, { "cache": false }
   ).done(function(data) {
       alert("Back from Tweets get");
