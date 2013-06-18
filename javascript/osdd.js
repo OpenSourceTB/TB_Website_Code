@@ -35,6 +35,7 @@ function loadLatestTweets() {
 
   $.ajax(_url, { "cache": false }
   ).done(function(data) {
+      alert("Back from Tweets get");
       var numTweets = 5;
       var useTweetCount = Math.min(numTweets, data.tweets.length);
       $("#twitter-feed").empty();
