@@ -68,7 +68,7 @@ function loadLatestProjectActivity() {
     dataType: 'jsonp',
     success: function(jsonpData){
 
-      data = jsonpData.data;
+      var data = jsonpData.data;
 
       var numGithubItems = 12;
       var lastGithubItem = Math.min(numGithubItems, data.length);
@@ -106,7 +106,7 @@ function loadSponsors() {
     dataType: 'jsonp',
     success: function(jsonpData){
 
-      data = jsonpData.data;
+      var data = jsonpData.data;
 
       var perRow = 4;
       var rowPosition = 0;
@@ -119,13 +119,13 @@ function loadSponsors() {
       }
 
       if (dataIndex > -1) {
-        sponsors = $.parseJSON(data[dataIndex].body);
+        var sponsors = $.parseJSON(data[dataIndex].body);
         var lastSponsor = Math.min(numSponsors, sponsors.length);
 
         for (var i = 0; i < lastSponsor; i++) {
           var name = sponsors[i].name;
           var url = sponsors[i].url;
-          var name = sponsors[i].name ? sponsors[i].name : url;
+          name = sponsors[i].name ? sponsors[i].name : url;
           var image = sponsors[i].image;
 
 
@@ -161,7 +161,7 @@ function loadTeam() {
     dataType: 'jsonp',
     success: function(jsonpData){
 
-      data = jsonpData.data;
+      var data = jsonpData.data;
 
       var perRow = 6;
       var rowPosition = 0;
@@ -174,12 +174,14 @@ function loadTeam() {
       }
 
       if (dataIndex > -1) {
-        teamMembers = $.parseJSON(data[dataIndex].body);
+        var teamMembers = $.parseJSON(data[dataIndex].body);
         var lastTeamMember = Math.min(numTeamMembers, teamMembers.length);
         for (var i = 0; i < lastTeamMember; i++) {
-          name = teamMembers[i].name || "Anonymous";
-          url = teamMembers[i].url;
-          gravatarEmail = teamMembers[i].gravatar_email;
+          var name = teamMembers[i].name || "Anonymous";
+          var url = teamMembers[i].url;
+          var gravatarEmail = teamMembers[i].gravatar_email;
+          var affiliation;
+          var affiliationWithComma;
           if (teamMembers[i].affiliation) {
             affiliation = teamMembers[i].affiliation;
             affiliationWithComma = ", " + affiliation;
@@ -188,7 +190,7 @@ function loadTeam() {
             affiliationWithComma = "";
           }
 
-          gravatarUrl = getGravatar(gravatarEmail);
+          var gravatarUrl = getGravatar(gravatarEmail);
 
           if (rowPosition == 0) { // starting a new row
             $("#team-members").append('<div class="row-fluid member-row" id="team-member-row' + currentRow + '">');
