@@ -91,9 +91,10 @@ function loadLatestProjectActivity() {
 
 function loadSponsors() {
   _url = "https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues";
-
+  alert("Loading sponsors");
   $.ajax(_url, { "cache": false }
   ).done(function(data) {
+      alert("Sponsors loaded.");
     var perRow = 4;
     var rowPosition = 0;
     var numSponsors = 100;
