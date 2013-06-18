@@ -87,62 +87,7 @@ function loadLatestProjectActivity() {
   })
 }
 
-function loadTeam() {
-  var _url = "https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues";
 
-  $.ajax(_url, { "cache": false }
-  ).done(function(data) {
-    var perRow = 6;
-    var rowPosition = 0;
-    var currentRow = 0;
-    var numTeamMembers = 100;
-    var dataIndex = -1;
-
-    for (i = 0; i < data.length; i++) {
-      if (data[i].title == "team") dataIndex = i;
-    }
-
-    if (dataIndex > -1) {
-      teamMembers = $.parseJSON(data[dataIndex].body);
-      var lastTeamMember = Math.min(numTeamMembers, teamMembers.length);
-      for (var i = 0; i < lastTeamMember; i++) {
-        name = teamMembers[i].name || "Anonymous";
-        url = teamMembers[i].url;
-        gravatarEmail = teamMembers[i].gravatar_email;
-        if (teamMembers[i].affiliation) {
-          affiliation = teamMembers[i].affiliation;
-          affiliationWithComma = ", " + affiliation;
-        } else {
-          affiliation = "";
-          affiliationWithComma = "";
-        }
-
-        gravatarUrl = getGravatar(gravatarEmail);
-
-        if (rowPosition == 0) { // starting a new row
-          $("#team-members").append('<div class="row-fluid member-row" id="team-member-row' + currentRow + '">');
-        }
-
-        var teamMember;
-        if (url) {
-          teamMember = '<span class="span2"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
-            '<div><a href="http://' + url + '" target="_blank">' + name + '</div><div>' + affiliation + '</div></div></span>'
-
-        } else {
-          teamMember = '<span class="span2"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div>' + name + '</div><div>' + affiliation + '</div></div></span>'
-        }
-        $("#team-member-row" + currentRow).append(teamMember);
-        rowPosition++;
-
-        if (rowPosition >= perRow) {
-          $("#team-member-row").append('</div>');
-          rowPosition = 0;
-          currentRow++;
-        }
-      }
-    }
-  })
-}
 
 function loadSponsors() {
   _url = "https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues";

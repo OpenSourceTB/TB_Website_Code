@@ -8,7 +8,7 @@
     <![endif]-->
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <title>OSDD - Open Source Drug Delivery - Malaria</title>
+    <title>OSM - Open Source Malaria</title>
     <link href="css/osdd.css" rel="stylesheet" type="text/css">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="jquery-1.10.1.min.js"></script>
@@ -17,12 +17,69 @@
     <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <script type="text/javascript" src="javascript/osdd.js"></script>
+    <script type="text/javascript">
+        function loadTeam() {
+            var _url = "https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues";
+
+            $.ajax(_url, { "cache": false }
+            ).done(function(data) {
+                        var perRow = 6;
+                        var rowPosition = 0;
+                        var currentRow = 0;
+                        var numTeamMembers = 100;
+                        var dataIndex = -1;
+
+                        for (i = 0; i < data.length; i++) {
+                            if (data[i].title == "team") dataIndex = i;
+                        }
+
+                        if (dataIndex > -1) {
+                            teamMembers = $.parseJSON(data[dataIndex].body);
+                            var lastTeamMember = Math.min(numTeamMembers, teamMembers.length);
+                            for (var i = 0; i < lastTeamMember; i++) {
+                                name = teamMembers[i].name || "Anonymous";
+                                url = teamMembers[i].url;
+                                gravatarEmail = teamMembers[i].gravatar_email;
+                                if (teamMembers[i].affiliation) {
+                                    affiliation = teamMembers[i].affiliation;
+                                    affiliationWithComma = ", " + affiliation;
+                                } else {
+                                    affiliation = "";
+                                    affiliationWithComma = "";
+                                }
+
+                                gravatarUrl = getGravatar(gravatarEmail);
+
+                                if (rowPosition == 0) { // starting a new row
+                                    $("#team-members").append('<div class="row-fluid member-row" id="team-member-row' + currentRow + '">');
+                                }
+
+                                var teamMember;
+                                if (url) {
+                                    teamMember = '<span class="span2"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
+                                            '<div><a href="http://' + url + '" target="_blank">' + name + '</div><div>' + affiliation + '</div></div></span>'
+
+                                } else {
+                                    teamMember = '<span class="span2"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div>' + name + '</div><div>' + affiliation + '</div></div></span>'
+                                }
+                                $("#team-member-row" + currentRow).append(teamMember);
+                                rowPosition++;
+
+                                if (rowPosition >= perRow) {
+                                    $("#team-member-row").append('</div>');
+                                    rowPosition = 0;
+                                    currentRow++;
+                                }
+                            }
+                        }
+                    })
+        }
+    </script>
     <script>
         $(document).ready(function () {
 
             var TwitterUpdateInterval = 600000; // 10 minutes is 600000 milliseconds
             var ProjectActivityUpdateInterval = 660000;  // 11 minutes
-
             loadLatestTweets();
             setInterval(loadLatestTweets, TwitterUpdateInterval);
             loadLatestProjectActivity();
