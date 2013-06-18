@@ -87,11 +87,11 @@ function loadLatestProjectActivity() {
   })
 }
 
-
-
 function loadSponsors() {
   _url = "https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues";
   alert("Loading sponsors");
+  alert(typeof($.ajax));
+  
   $.ajax(_url, { "cache": false }
   ).done(function(data) {
       alert("Sponsors loaded.");
