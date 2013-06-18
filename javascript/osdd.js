@@ -33,7 +33,6 @@ function parseGithubDate(str) {
 function loadLatestTweets() {
   var _url = 'https://osm-twitter.herokuapp.com/';
 
-
   $.ajax(_url, { "cache": false }
   ).done(function(data) {
       var numTweets = 5;
@@ -78,8 +77,10 @@ function loadLatestTweets() {
 }
 
 function loadLatestProjectActivity() {
+  var _url = "https://api.github.com/repos/OSDDMalaria/OSDDMalaria_To_Do_List/issues";
 
-  $.getJSON("https://api.github.com/repos/OSDDMalaria/OSDDMalaria_To_Do_List/issues", function (data) {
+  $.ajax(_url, { "cache": false }
+  ).done(function(data) {
     var numGithubItems = 12;
     var lastGithubItem = Math.min(numGithubItems, data.length);
     $("#project-activity-feed").empty();
@@ -109,8 +110,10 @@ function loadLatestProjectActivity() {
 }
 
 function loadTeam() {
+  var _url = "https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues";
 
-  $.getJSON("https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues", function (data) {
+  $.ajax(_url, { "cache": false }
+  ).done(function(data) {
     var perRow = 6;
     var rowPosition = 0;
     var currentRow = 0;
@@ -164,7 +167,10 @@ function loadTeam() {
 }
 
 function loadSponsors() {
-  $.getJSON("https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues", function (data) {
+  _url = "https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues";
+
+  $.ajax(_url, { "cache": false }
+  ).done(function(data) {
     var perRow = 4;
     var rowPosition = 0;
     var numSponsors = 100;
