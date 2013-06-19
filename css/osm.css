@@ -131,6 +131,10 @@ img.project_activity_image{
     margin-top: -30px;
 }
 
+.left-nav img{
+    width: 130px;
+}
+
 .title {
     margin-left: 1%;
 }
