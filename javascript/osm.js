@@ -84,7 +84,7 @@ function loadLatestProjectActivity() {
 
           var createdDate = created.getDate() + ' ' + monthNames[created.getMonth() + 1] + ' ' + created.getFullYear() + ' at ' + hours + ':' + minutes;
 
-          $("#project-activity-feed").append('<span><img src="images/' + data[i].state + '.png"' + 'class="project_activity_image"/><span class=title>' + createdDate + " ---" + itemTitle + '</span></span>');
+          $("#project-activity-feed").append('<span><img src="images/' + data[i].state + '.png"' + 'class="project_activity_image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></span>');
           $("#project-activity-feed").append('<div class="indented text-info">' + itemBody + '</div>');
         }
     }

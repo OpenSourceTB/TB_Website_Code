@@ -52,7 +52,7 @@ img.project_activity_image{
 .para{
     display: inline-block;
     margin-top: -10%;
-    margin-left: 5%;
+    margin-left: 4%;
     margin-right: 15%;
 }
 
@@ -151,6 +151,7 @@ img.project_activity_image{
 
 .indented {
     margin-left: 5%;
+    margin-bottom: 3%;
     text-wrap:normal;
     overflow-wrap:break-word;
 }
