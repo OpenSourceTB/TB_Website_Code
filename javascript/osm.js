@@ -77,6 +77,7 @@ function loadLatestProjectActivity() {
           var itemTitle = data[i].title;
           var itemBody = data[i].body;
           var itemLink = data[i].html_url;
+          var commentCount = data[i].comments;
           var created = parseGithubDate(data[i].created_at);
           var hours = created.getHours().toString();
           if (hours.length == 1) hours = '0' + hours;
@@ -84,7 +85,15 @@ function loadLatestProjectActivity() {
           if (minutes.length == 1) minutes = '0' + minutes;
 
           var createdDate = created.getDate() + ' ' + monthNames[created.getMonth() + 1] + ' ' + created.getFullYear() + ' at ' + hours + ':' + minutes;
-          $("#project-activity-feed").append('<span><a href="' + itemLink + '"><img src="images/' + data[i].state + '.png"' + 'class="project_activity_image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>');
+          if (commentCount > 0) {
+            if (commentCount == 1){
+              $("#project-activity-feed").append('<span><a href="' + itemLink + '"><img src="images/' + data[i].state + '.png"' + 'class="project_activity_image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong>&nbsp;&nbsp;(One comment)' + '</span></a></span>');
+            } else {
+              $("#project-activity-feed").append('<span><a href="' + itemLink + '"><img src="images/' + data[i].state + '.png"' + 'class="project_activity_image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong>&nbsp;&nbsp;(' + commentCount + ' comments)' + '</strong></span></a></span>');
+            }
+          } else{
+            $("#project-activity-feed").append('<span><a href="' + itemLink + '"><img src="images/' + data[i].state + '.png"' + 'class="project_activity_image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>');
+          }
           $("#project-activity-feed").append('<div class="indented text-info"><a href="' + itemLink + '">' + itemBody + '</a></div>');
         }
     }
