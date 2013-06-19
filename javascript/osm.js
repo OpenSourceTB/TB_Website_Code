@@ -37,7 +37,7 @@ function loadLatestTweets() {
     url: _url,
     dataType: 'jsonp',
     success: function(data){
-
+      var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
       var numTweets = 5;
       var useTweetCount = Math.min(numTweets, data.length);
 
@@ -50,8 +50,8 @@ function loadLatestTweets() {
         if (hours.length == 1) hours = '0' + hours;
         var minutes = created.getMinutes().toString();
         if (minutes.length == 1) minutes = '0' + minutes;
+        var createdDate = created.getDate() + ' ' + monthNames[created.getMonth() + 1] + ' ' + created.getFullYear() + ' at ' + hours + ':' + minutes;
 
-        var createdDate = created.getDate() + '-' + (created.getMonth() + 1) + '-' + created.getFullYear() + ' at ' + hours + ':' + minutes;
         tweet = tweet.parseURL().parseUsername().parseHashtag();
         tweet += '<div class="tweeter-info"><div class="uppercase bold"></div><div class="right"><a href="https://twitter.com/#!/OSDDMalaria/status/' + data[i].id_str + '">' + createdDate + '</a></div></div>'
         $("#twitter-feed").append('<p>' + tweet + '</p>');
@@ -61,161 +61,148 @@ function loadLatestTweets() {
 }
 
 function loadLatestProjectActivity() {
-  var _url = "https://api.github.com/repos/OSDDMalaria/OSDDMalaria_To_Do_List/issues";
+//  var _url = "https://api.github.com/repos/OSDDMalaria/OSDDMalaria_To_Do_List/issues";
+  var _url = 'https://osm-twitter.herokuapp.com/project_activity';
 
   $.ajax({
     url: _url,
-    dataType: 'jsonp',
-    success: function(jsonpData){
+    dataType: 'json',
+    success: function(data){
+        var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+        var numGithubItems = 12;
+        var lastGithubItem = Math.min(numGithubItems, data.length);
+        $("#project-activity-feed").empty();
 
-      var data = jsonpData.data;
+        for (var i = 0; i < lastGithubItem; i++) {
+          var itemTitle = data[i].title;
+          var itemBody = data[i].body;
+          var created = parseGithubDate(data[i].created_at);
+          var hours = created.getHours().toString();
+          if (hours.length == 1) hours = '0' + hours;
+          var minutes = created.getMinutes().toString();
+          if (minutes.length == 1) minutes = '0' + minutes;
 
-      var numGithubItems = 12;
-      var lastGithubItem = Math.min(numGithubItems, data.length);
-      $("#project-activity-feed").empty();
+          var createdDate = created.getDate() + ' ' + monthNames[created.getMonth() + 1] + ' ' + created.getFullYear() + ' at ' + hours + ':' + minutes;
 
-      for (var i = 0; i < lastGithubItem; i++) {
-        var itemTitle = data[i].title;
-        var itemBody = data[i].body;
-        var created = parseGithubDate(data[i].created_at);
-        var hours = created.getHours().toString();
-        if (hours.length == 1) hours = '0' + hours;
-        var minutes = created.getMinutes().toString();
-        if (minutes.length == 1) minutes = '0' + minutes;
-
-        var createdDate = created.getDate() + '-' + (created.getMonth() + 1) + '-' + created.getFullYear() + ' at ' + hours + ':' + minutes;
-        var created = parseGithubDate(data[i].updated_at);
-        var hours = created.getHours().toString();
-        if (hours.length == 1) hours = '0' + hours;
-        var minutes = created.getMinutes().toString();
-        if (minutes.length == 1) minutes = '0' + minutes;
-
-        var createdDate = created.getDate() + '-' + (created.getMonth() + 1) + '-' + created.getFullYear() + ' at ' + hours + ':' + minutes;
-
-        $("#project-activity-feed").append('<span><img src="images/' + data[i].state + '.png"' + 'class="project_activity_image"/><span class=title>' + createdDate + " ---" + itemTitle + '</span></span>');
-        $("#project-activity-feed").append('<div class=indented>' + itemBody + '</div>');
-      }
+          $("#project-activity-feed").append('<span><img src="images/' + data[i].state + '.png"' + 'class="project_activity_image"/><span class=title>' + createdDate + " ---" + itemTitle + '</span></span>');
+          $("#project-activity-feed").append('<div class="indented text-info">' + itemBody + '</div>');
+        }
     }
   });
 }
 
-function loadSponsors() {
-  var _url = "https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues";
+function loadSponsorsAndTeam(){
+//  var _url = "https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues?token=63eeec0658f299289299ab9b4579d2444a722b06";
+  var _url = 'https://osm-twitter.herokuapp.com/sponsors_and_members';
+
   $.ajax({
     url: _url,
-    dataType: 'jsonp',
-    success: function(jsonpData){
-
-      var data = jsonpData.data;
-
-      var perRow = 4;
-      var rowPosition = 0;
-      var numSponsors = 100;
-      var currentRow = 0;
-      var dataIndex = -1;
-
-      for (i = 0; i < data.length; i++) {
-        if (data[i].title == "sponsors") dataIndex = i;
-      }
-
-      if (dataIndex > -1) {
-        var sponsors = $.parseJSON(data[dataIndex].body);
-        var lastSponsor = Math.min(numSponsors, sponsors.length);
-
-        for (var i = 0; i < lastSponsor; i++) {
-          var name = sponsors[i].name;
-          var url = sponsors[i].url;
-          name = sponsors[i].name ? sponsors[i].name : url;
-          var image = sponsors[i].image;
-
-
-          if (rowPosition == 0) { // starting a new row
-            $("#sponsors").append('<div class="row-fluid offset1 makespace" id="sponsorRow' + currentRow + '">');
-          }
-
-          var sponsor;
-          if (url) {
-            sponsor = '<span class="span3 sponsor_image"><a href="http://' + url + '" target="_blank"><img src="https://' + image + '" title="' + name + '"></a></span>'
-          } else {
-            sponsor = '<span class="span3"><img src="https://' + image + '"></span>'
-          }
-
-          $("#sponsorRow" + currentRow).append(sponsor);
-          rowPosition++;
-          if (rowPosition >= perRow) {
-            $("#sponsorRow" + currentRow).append('</div>');
-            rowPosition = 0;
-            currentRow++;
-          }
-        }
-      }
+    dataType: 'json',
+    success: function(data){
+      parseSponsors(data);
+      parseTeam(data);
     }
   });
 }
 
-function loadTeam() {
-  var _url = "https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues";
+function parseSponsors(data) {
 
-  $.ajax({
-    url: _url,
-    dataType: 'jsonp',
-    success: function(jsonpData){
+    var perRow = 4;
+    var rowPosition = 0;
+    var numSponsors = 100;
+    var currentRow = 0;
+    var dataIndex = -1;
 
-      var data = jsonpData.data;
+    for (i = 0; i < data.length; i++) {
+      if (data[i].title == "sponsors") dataIndex = i;
+    }
 
-      var perRow = 6;
-      var rowPosition = 0;
-      var currentRow = 0;
-      var numTeamMembers = 100;
-      var dataIndex = -1;
+    if (dataIndex > -1) {
+      var sponsors = $.parseJSON(data[dataIndex].body);
+      var lastSponsor = Math.min(numSponsors, sponsors.length);
 
-      for (i = 0; i < data.length; i++) {
-        if (data[i].title == "team") dataIndex = i;
-      }
+      for (var i = 0; i < lastSponsor; i++) {
+        var name = sponsors[i].name;
+        var url = sponsors[i].url;
+        name = sponsors[i].name ? sponsors[i].name : url;
+        var image = sponsors[i].image;
 
-      if (dataIndex > -1) {
-        var teamMembers = $.parseJSON(data[dataIndex].body);
-        var lastTeamMember = Math.min(numTeamMembers, teamMembers.length);
-        for (var i = 0; i < lastTeamMember; i++) {
-          var name = teamMembers[i].name || "Anonymous";
-          var url = teamMembers[i].url;
-          var gravatarEmail = teamMembers[i].gravatar_email;
-          var affiliation;
-          var affiliationWithComma;
-          if (teamMembers[i].affiliation) {
-            affiliation = teamMembers[i].affiliation;
-            affiliationWithComma = ", " + affiliation;
-          } else {
-            affiliation = "";
-            affiliationWithComma = "";
-          }
 
-          var gravatarUrl = getGravatar(gravatarEmail);
+        if (rowPosition == 0) { // starting a new row
+          $("#sponsors").append('<div class="row-fluid offset1 makespace" id="sponsorRow' + currentRow + '">');
+        }
 
-          if (rowPosition == 0) { // starting a new row
-            $("#team-members").append('<div class="row-fluid member-row" id="team-member-row' + currentRow + '">');
-          }
+        var sponsor;
+        if (url) {
+          sponsor = '<span class="span3 sponsor_image"><a href="http://' + url + '" target="_blank"><img src="https://' + image + '" title="' + name + '"></a></span>'
+        } else {
+          sponsor = '<span class="span3"><img src="https://' + image + '"></span>'
+        }
 
-          var teamMember;
-          if (url) {
-            teamMember = '<span class="span2"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
-              '<div><a href="http://' + url + '" target="_blank">' + name + '</div><div>' + affiliation + '</div></div></span>'
-
-          } else {
-            teamMember = '<span class="span2"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div>' + name + '</div><div>' + affiliation + '</div></div></span>'
-          }
-          $("#team-member-row" + currentRow).append(teamMember);
-          rowPosition++;
-
-          if (rowPosition >= perRow) {
-            $("#team-member-row").append('</div>');
-            rowPosition = 0;
-            currentRow++;
-          }
+        $("#sponsorRow" + currentRow).append(sponsor);
+        rowPosition++;
+        if (rowPosition >= perRow) {
+          $("#sponsorRow" + currentRow).append('</div>');
+          rowPosition = 0;
+          currentRow++;
         }
       }
     }
-  });
+}
+
+function parseTeam(data) {
+
+    var perRow = 6;
+    var rowPosition = 0;
+    var currentRow = 0;
+    var numTeamMembers = 100;
+    var dataIndex = -1;
+
+    for (i = 0; i < data.length; i++) {
+      if (data[i].title == "team") dataIndex = i;
+    }
+
+    if (dataIndex > -1) {
+      var teamMembers = $.parseJSON(data[dataIndex].body);
+      var lastTeamMember = Math.min(numTeamMembers, teamMembers.length);
+      for (var i = 0; i < lastTeamMember; i++) {
+        var name = teamMembers[i].name || "Anonymous";
+        var url = teamMembers[i].url;
+        var gravatarEmail = teamMembers[i].gravatar_email;
+        var affiliation;
+        var affiliationWithComma;
+        if (teamMembers[i].affiliation) {
+          affiliation = teamMembers[i].affiliation;
+          affiliationWithComma = ", " + affiliation;
+        } else {
+          affiliation = "";
+          affiliationWithComma = "";
+        }
+
+        var gravatarUrl = getGravatar(gravatarEmail);
+
+        if (rowPosition == 0) { // starting a new row
+          $("#team-members").append('<div class="row-fluid member-row" id="team-member-row' + currentRow + '">');
+        }
+
+        var teamMember;
+        if (url) {
+          teamMember = '<span class="span2"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
+            '<div><a href="http://' + url + '" target="_blank">' + name + '</div><div>' + affiliation + '</div></div></span>'
+
+        } else {
+          teamMember = '<span class="span2"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div>' + name + '</div><div>' + affiliation + '</div></div></span>'
+        }
+        $("#team-member-row" + currentRow).append(teamMember);
+        rowPosition++;
+
+        if (rowPosition >= perRow) {
+          $("#team-member-row").append('</div>');
+          rowPosition = 0;
+          currentRow++;
+        }
+      }
+    }
 }
 
 function getGravatar(gravatarEmail, size) {

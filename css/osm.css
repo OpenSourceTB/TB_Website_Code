@@ -2,17 +2,17 @@
     margin-top: 30px;
 }
 .activity-open {
-    background-image: url("../images/open.png");
+    background-image: url("../images/open.gif");
     background-repeat: no-repeat;
 }
 
 .activity-closed {
-    background-image: url("../images/closed.png");
+    background-image: url("../images/closed.gif");
     background-repeat: no-repeat;
 }
 
 .activity-comment {
-    background-image: url("../images/comment.jpg");
+    background-image: url("../images/comment.gif");
     background-repeat: no-repeat;
 }
 .head-text{
@@ -22,7 +22,7 @@
 }
 
 img.project_activity_image{
-    height: 30px;
+    height: 20px;
     margin-top: 1%;
     margin-left: -10%;
 }
@@ -113,7 +113,7 @@ img.project_activity_image{
 }
 
 .intro {
-    margin-top: -5%;
+    margin-top: -32px;
     margin-bottom: 5%;
     margin-left: 30px;
 }
@@ -151,7 +151,6 @@ img.project_activity_image{
 
 .indented {
     margin-left: 5%;
-    color: blue;
     text-wrap:normal;
     overflow-wrap:break-word;
 }

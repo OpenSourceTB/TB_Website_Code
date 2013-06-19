@@ -1,12 +1,12 @@
-OSDD
-====
+OS Malaria
+==========
 
-Content Management Temporary Solution
--------------------------------------
+Content Management Solution
+---------------------------
 
-Until a more permanent solution is determined, the lists of team members and sponsors are maintained on GitHub, in a public repository.
+The lists of team members and sponsors are maintained on GitHub, in a public repository.
 
-The repository is : https://github.com/chuckfitzpatricksf/OSDD_test/issues
+The repository is : https://github.com/OSDDMalaria/OSM_Website_Data/issues
 
 There are two items in the issues list. They are "team" and "sponsors".
 
