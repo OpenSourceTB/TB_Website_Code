@@ -31,7 +31,7 @@ function parseGithubDate(str) {
 // End of Twitter parsers
 
 function loadLatestTweets() {
-  var _url = 'https://osm-twitter.herokuapp.com/';
+  var _url = 'https://osm-feeds.herokuapp.com/';
 
   $.ajax({
     url: _url,
@@ -62,7 +62,7 @@ function loadLatestTweets() {
 
 function loadLatestProjectActivity() {
 //  var _url = "https://api.github.com/repos/OSDDMalaria/OSDDMalaria_To_Do_List/issues";
-  var _url = 'https://osm-twitter.herokuapp.com/project_activity';
+  var _url = 'https://osm-feeds.herokuapp.com/project_activity';
 
   $.ajax({
     url: _url,
@@ -93,7 +93,7 @@ function loadLatestProjectActivity() {
 
 function loadSponsorsAndTeam(){
 //  var _url = "https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues?token=63eeec0658f299289299ab9b4579d2444a722b06";
-  var _url = 'https://osm-twitter.herokuapp.com/sponsors_and_members';
+  var _url = 'https://osm-feeds.herokuapp.com/sponsors_and_members';
 
   $.ajax({
     url: _url,
