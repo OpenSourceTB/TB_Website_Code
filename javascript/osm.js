@@ -168,7 +168,7 @@ function parseSponsors(data) {
 
 function parseTeam(data) {
 
-    var perRow = 4;
+    var perRow = 6;
     var rowPosition = 0;
     var currentRow = 0;
     var numTeamMembers = 100;
@@ -181,6 +181,8 @@ function parseTeam(data) {
     if (dataIndex > -1) {
       var teamMembers = $.parseJSON(data[dataIndex].body);
       var lastTeamMember = Math.min(numTeamMembers, teamMembers.length);
+      for (var j=0; j<10; j++){
+
       for (var i = 0; i < lastTeamMember; i++) {
         var name = teamMembers[i].name || "Anonymous";
         var url = teamMembers[i].url;
@@ -203,11 +205,11 @@ function parseTeam(data) {
 
         var teamMember;
         if (url) {
-          teamMember = '<span class="span3"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
+          teamMember = '<span class="span2"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
             '<div><a href="http://' + url + '" target="_blank"><strong>' + name + '</strong></div><div><small>' + affiliation + '</small></div></div></span>'
 
         } else {
-          teamMember = '<span class="span3"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div><strong>' + name + '</strong></div><div><small>' + affiliation + '</small></div></div></span>'
+          teamMember = '<span class="span2"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div><strong>' + name + '</strong></div><div><small>' + affiliation + '</small></div></div></span>'
         }
         $("#team-member-row" + currentRow).append(teamMember);
         rowPosition++;
@@ -217,6 +219,7 @@ function parseTeam(data) {
           rowPosition = 0;
           currentRow++;
         }
+      }
       }
     }
 }
