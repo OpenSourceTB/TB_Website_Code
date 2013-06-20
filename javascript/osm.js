@@ -85,16 +85,23 @@ function loadLatestProjectActivity() {
           if (minutes.length == 1) minutes = '0' + minutes;
 
           var createdDate = created.getDate() + ' ' + monthNames[created.getMonth() + 1] + ' ' + created.getFullYear() + ' at ' + hours + ':' + minutes;
-          if (commentCount > 0) {
+          var commentText;
+
+          if (commentCount > 0){
             if (commentCount == 1){
-              $("#project-activity-feed").append('<span><a href="' + itemLink + '"><img src="images/' + data[i].state + '.png"' + 'class="project_activity_image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong>&nbsp;&nbsp;(One comment)' + '</span></a></span>');
+              commentText = "1 comment";
             } else {
-              $("#project-activity-feed").append('<span><a href="' + itemLink + '"><img src="images/' + data[i].state + '.png"' + 'class="project_activity_image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong>&nbsp;&nbsp;(' + commentCount + ' comments)' + '</strong></span></a></span>');
+              commentText = commentCount + ' comments';
             }
-          } else{
-            $("#project-activity-feed").append('<span><a href="' + itemLink + '"><img src="images/' + data[i].state + '.png"' + 'class="project_activity_image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>');
+          } else {
+            commentText = ""
           }
-          $("#project-activity-feed").append('<div class="indented text-info"><a href="' + itemLink + '">' + itemBody + '</a></div>');
+
+          $("#project-activity-feed").append('<span class="project-activity-item"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.png"' + 'class="project_activity_image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>');
+          $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemBody + '<strong><em>&nbsp;'+ commentText +'</em></strong>' + '</a></div>');
+//          $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemBody + '</a></div>');
+//          $("#project-activity-feed").append('<div class="comment"><strong><em>&nbsp;'+ commentText +'</em></strong></div>');
+
         }
     }
   });

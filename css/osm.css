@@ -21,10 +21,49 @@
     vertical-align: 22px;
 }
 
+#company-name{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 4%;
+}
+
+#tag-line{
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 2%;
+    margin-left: 4%;
+}
+
 img.project_activity_image{
     height: 20px;
     margin-top: 1%;
     margin-left: -10%;
+}
+
+.see-more{
+    margin-bottom: 2%;
+}
+
+.see-more a, .see-more a:hover{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#project-activity-leader{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 0%;
+    margin-bottom: 1%;
+}
+
+.project-activity-item{
+    margin-left: 10%;
+}
+
+.project-activity-item a:hover{
+    text-decoration: none;
 }
 
 #team-members{
@@ -82,12 +121,12 @@ img.project_activity_image{
 
 .center-section .center-content{
     display: block;
-    margin-top: 0px;
+    margin-top: 5px;
     margin-right: auto;
     margin-bottom: auto;
     margin-left: auto;
-    padding-left: 10%;
-    padding-right: 10%
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .center-section img{
@@ -136,6 +175,8 @@ img.project_activity_image{
 }
 
 .title {
+    color: black;
+    text-decoration: none;
     margin-left: 1%;
 }
 
@@ -148,9 +189,22 @@ img.project_activity_image{
     width: 220px;
 }
 
-.indented {
-    margin-left: 5%;
-    margin-bottom: 3%;
+.indented{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.indented a{
+    color: black;
+    text-decoration: none;
+    text-wrap:normal;
+    overflow-wrap:break-word;
+}
+
+
+.indented a:hover{
+    color: black;
+    text-decoration: none;
     text-wrap:normal;
     overflow-wrap:break-word;
 }
