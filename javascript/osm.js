@@ -181,8 +181,6 @@ function parseTeam(data) {
     if (dataIndex > -1) {
       var teamMembers = $.parseJSON(data[dataIndex].body);
       var lastTeamMember = Math.min(numTeamMembers, teamMembers.length);
-      for (var j=0; j<10; j++){
-
       for (var i = 0; i < lastTeamMember; i++) {
         var name = teamMembers[i].name || "Anonymous";
         var url = teamMembers[i].url;
@@ -219,7 +217,6 @@ function parseTeam(data) {
           rowPosition = 0;
           currentRow++;
         }
-      }
       }
     }
 }
