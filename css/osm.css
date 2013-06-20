@@ -46,7 +46,6 @@ img.project_activity_image{
 }
 
 .see-more a, .see-more a:hover{
-    text-decoration: none;
     color: black;
     font-size: 14px;
     font-weight: normal;
@@ -55,8 +54,13 @@ img.project_activity_image{
 .center-leader{
     font-size: 20px;
     font-weight: bold;
+    margin-top: 3%;
     margin-left: 2%;
     margin-bottom: 1%;
+}
+
+#project-activity{
+    padding: 10px;
 }
 
 .project-activity-item{
@@ -65,7 +69,7 @@ img.project_activity_image{
 }
 
 .project-activity-item a:hover{
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 #team-members{
@@ -113,6 +117,7 @@ img.project_activity_image{
 }
 
 .center-section{
+    margin-right: 5px;
     margin-top: -30px;
     border-radius: 10px;
     background-color: #ebf6f8;
@@ -128,8 +133,6 @@ img.project_activity_image{
     margin-right: 5%;
     margin-bottom: 5%;
     margin-left: 5%;
-    /*padding-left: 20px;*/
-    /*padding-right: 20px;*/
 }
 
 .center-section img{
@@ -162,6 +165,13 @@ img.project_activity_image{
     color: gray;
 }
 
+.linkspan{
+    /*border-radius: 10px;*/
+    /*background-color: #ebf6f8;*/
+    /*padding: 7px 0 0 15px;*/
+    text-align:center;
+}
+
 .intro {
     margin-top: -32px;
     margin-bottom: 5%;
@@ -190,11 +200,18 @@ img.project_activity_image{
     width: 130px;
 }
 
+.affiliation{
+    margin-top: -7%;
+}
+
 .title {
     display: inline-block;
     color: black;
-    text-decoration: none;
     margin-left: 1%;
+}
+
+.title:hover{
+    text-decoration: underline;
 }
 
 .makespace{
@@ -207,8 +224,7 @@ img.project_activity_image{
 }
 
 .indented{
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
     margin-left: 6%;
 }
 
@@ -219,9 +235,7 @@ img.project_activity_image{
     overflow-wrap:break-word;
 }
 
-
 .indented a:hover{
-    color: black;
     text-decoration: none;
     text-wrap:normal;
     overflow-wrap:break-word;

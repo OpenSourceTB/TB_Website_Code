@@ -99,8 +99,6 @@ function loadLatestProjectActivity() {
 
           $("#project-activity-feed").append('<span class="project-activity-item"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.png"' + 'class="project_activity_image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>');
           $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemBody + '<strong><em>&nbsp;'+ commentText +'</em></strong>' + '</a></div>');
-//          $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemBody + '</a></div>');
-//          $("#project-activity-feed").append('<div class="comment"><strong><em>&nbsp;'+ commentText +'</em></strong></div>');
 
         }
     }
@@ -173,6 +171,7 @@ function parseTeam(data) {
     var currentRow = 0;
     var numTeamMembers = 100;
     var dataIndex = -1;
+    var replicants = 10;
 
     for (i = 0; i < data.length; i++) {
       if (data[i].title == "team") dataIndex = i;
@@ -181,41 +180,43 @@ function parseTeam(data) {
     if (dataIndex > -1) {
       var teamMembers = $.parseJSON(data[dataIndex].body);
       var lastTeamMember = Math.min(numTeamMembers, teamMembers.length);
-      for (var i = 0; i < lastTeamMember; i++) {
-        var name = teamMembers[i].name || "Anonymous";
-        var url = teamMembers[i].url;
-        var gravatarEmail = teamMembers[i].gravatar_email;
-        var affiliation;
-        var affiliationWithComma;
-        if (teamMembers[i].affiliation) {
-          affiliation = teamMembers[i].affiliation;
-          affiliationWithComma = ", " + affiliation;
-        } else {
-          affiliation = "";
-          affiliationWithComma = "";
-        }
+      for (var j=0; j<replicants; j++){    // for demo purposes
+        for (var i = 0; i < lastTeamMember; i++) {
+          var name = teamMembers[i].name || "Anonymous";
+          var url = teamMembers[i].url;
+          var gravatarEmail = teamMembers[i].gravatar_email;
+          var affiliation;
+          var affiliationWithComma;
+          if (teamMembers[i].affiliation) {
+            affiliation = teamMembers[i].affiliation;
+            affiliationWithComma = ", " + affiliation;
+          } else {
+            affiliation = "";
+            affiliationWithComma = "";
+          }
 
-        var gravatarUrl = getGravatar(gravatarEmail);
+          var gravatarUrl = getGravatar(gravatarEmail);
 
-        if (rowPosition == 0) { // starting a new row
-          $("#team-members").append('<div class="row-fluid member-row" id="team-member-row' + currentRow + '">');
-        }
+          if (rowPosition == 0) { // starting a new row
+            $("#team-members").append('<div class="row-fluid member-row" id="team-member-row' + currentRow + '">');
+          }
 
-        var teamMember;
-        if (url) {
-          teamMember = '<span class="span2"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
-            '<div><a href="http://' + url + '" target="_blank"><strong>' + name + '</strong></div><div><small>' + affiliation + '</small></div></div></span>'
+          var teamMember;
+          if (url) {
+            teamMember = '<span class="span2"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
+              '<div><a href="http://' + url + '" target="_blank"><strong>' + name + '</strong></div><div class="affiliation"><small>' + affiliation + '</small></div></div></span>'
 
-        } else {
-          teamMember = '<span class="span2"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div><strong>' + name + '</strong></div><div><small>' + affiliation + '</small></div></div></span>'
-        }
-        $("#team-member-row" + currentRow).append(teamMember);
-        rowPosition++;
+          } else {
+            teamMember = '<span class="span2"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div><strong>' + name + '</strong></div><div class="affiliation"><small>' + affiliation + '</small></div></div></span>'
+          }
+          $("#team-member-row" + currentRow).append(teamMember);
+          rowPosition++;
 
-        if (rowPosition >= perRow) {
-          $("#team-member-row").append('</div>');
-          rowPosition = 0;
-          currentRow++;
+          if (rowPosition >= perRow) {
+            $("#team-member-row").append('</div>');
+            rowPosition = 0;
+            currentRow++;
+          }
         }
       }
     }
