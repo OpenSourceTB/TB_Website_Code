@@ -51,7 +51,7 @@ img.project_activity_image{
     font-weight: normal;
 }
 
-#project-activity-leader{
+.center-leader{
     font-size: 20px;
     font-weight: bold;
     margin-left: 0%;
@@ -121,16 +121,20 @@ img.project_activity_image{
 
 .center-section .center-content{
     display: block;
-    margin-top: 5px;
+    margin-top: 2%;
     margin-right: auto;
-    margin-bottom: auto;
+    margin-bottom: 5%;
     margin-left: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    /*padding-left: 20px;*/
+    /*padding-right: 20px;*/
 }
 
 .center-section img{
     max-width: 100%;
+}
+
+.center-text{
+    margin-top: 5%;
 }
 
 .emphasis{
