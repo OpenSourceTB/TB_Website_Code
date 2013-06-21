@@ -171,7 +171,10 @@ function parseTeam(data) {
     var currentRow = 0;
     var numTeamMembers = 100;
     var dataIndex = -1;
-    var replicants = 10;
+//  replicants is used for demo-ing the site.
+//  It is the number of times we show each member.
+//  For production operation, set it to 1.
+    var replicants = 1;  // TODO: Remove when dev work is done.
 
     for (i = 0; i < data.length; i++) {
       if (data[i].title == "team") dataIndex = i;
