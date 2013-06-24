@@ -15,9 +15,13 @@
     background-image: url("../images/comment.gif");
     background-repeat: no-repeat;
 }
-.head-text{
+
+#head-text{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-radius: 10px;
+    background-color: #ebf6f8;
     font-size: 20px;
-    margin-left: 60px;
     vertical-align: 22px;
 }
 
@@ -92,14 +96,13 @@ img.project_activity_image{
 
 .logo {
     margin-top: -40px;
-    height: 150px;
 }
 
 .para{
     display: inline-block;
-    margin-top: -10%;
+    margin-top: -5%;
     margin-left: 4%;
-    margin-right: 15%;
+    margin-right: 5%;
 }
 
 .logo-text {
@@ -107,10 +110,6 @@ img.project_activity_image{
     font-size: 45px;
 }
 
-.start-your-own-project img{
-    margin-left: 80%;
-    margin-top: -20%;
-}
 .outdent img{
     margin-left: -30px;
     width: 5%;
@@ -153,8 +152,11 @@ img.project_activity_image{
     color: #B0DFE4;
 }
 
-.social{
+#social{
     margin-top: -1%;
+    margin-left: 0px;
+    padding-left: 10px;
+    text-align: center;
 }
 
 .links{
@@ -166,22 +168,18 @@ img.project_activity_image{
 }
 
 .linkspan{
-    /*border-radius: 10px;*/
-    /*background-color: #ebf6f8;*/
-    /*padding: 7px 0 0 15px;*/
     margin-left: 40%;
     text-align:center;
 }
 
 .intro {
-    margin-top: -32px;
     margin-bottom: 5%;
     margin-left: 30px;
 }
 
 .right-nav{
     padding-left: 1%;
-    margin-top: -5%;
+    margin-top: 5%;
 }
 
 #spinner {
