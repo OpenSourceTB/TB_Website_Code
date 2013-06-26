@@ -61,7 +61,6 @@ function loadLatestTweets() {
 }
 
 function loadLatestProjectActivity() {
-//  var _url = "https://api.github.com/repos/OSDDMalaria/OSDDMalaria_To_Do_List/issues";
   var _url = 'https://osm-feeds.herokuapp.com/project_activity';
 
   $.ajax({
@@ -97,7 +96,7 @@ function loadLatestProjectActivity() {
             commentText = ""
           }
 
-          $("#project-activity-feed").append('<span class="project-activity-item"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project_activity_image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>');
+          $("#project-activity-feed").append('<span class="project-activity-item"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>');
           $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemBody + '<strong><em>&nbsp;'+ commentText +'</em></strong>' + '</a></div>');
 
         }
@@ -106,7 +105,6 @@ function loadLatestProjectActivity() {
 }
 
 function loadSponsorsAndTeam(){
-//  var _url = "https://api.github.com/repos/OSDDMalaria/OSM_Website_Data/issues?token=63eeec0658f299289299ab9b4579d2444a722b06";
   var _url = 'https://osm-feeds.herokuapp.com/sponsors_and_members';
 
   $.ajax({
@@ -148,7 +146,7 @@ function parseSponsors(data) {
 
         var sponsor;
         if (url) {
-          sponsor = '<span class="span3 sponsor_image"><a href="http://' + url + '" target="_blank"><img src="https://' + image + '" title="' + name + '"></a></span>'
+          sponsor = '<span class="span3 sponsor-image"><a href="http://' + url + '" target="_blank"><img src="https://' + image + '" title="' + name + '"></a></span>'
         } else {
           sponsor = '<span class="span3"><img src="https://' + image + '"></span>'
         }
@@ -206,11 +204,11 @@ function parseTeam(data) {
 
           var teamMember;
           if (url) {
-            teamMember = '<span class="span2"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
+            teamMember = '<span class="span2 member"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
               '<div><a href="http://' + url + '" target="_blank"><strong>' + name + '</strong></div><div class="affiliation"><small>' + affiliation + '</small></div></div></span>'
 
           } else {
-            teamMember = '<span class="span2"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div><strong>' + name + '</strong></div><div class="affiliation"><small>' + affiliation + '</small></div></div></span>'
+            teamMember = '<span class="span2 member"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div><strong>' + name + '</strong></div><div class="affiliation"><small>' + affiliation + '</small></div></div></span>'
           }
           $("#team-member-row" + currentRow).append(teamMember);
           rowPosition++;

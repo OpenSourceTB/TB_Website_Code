@@ -6,7 +6,7 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-space=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <title>OSM - Open Source Malaria</title>
     <link href="css/osm.css" rel="stylesheet" type="text/css">
@@ -91,25 +91,26 @@
             <div id="company-name">OPEN SOURCE MALARIA</div>
             <div id="tag-line">Looking for New Medicines for Malaria</div>
         </span>
-            <span class="span2" id="social">
-                    <a href="https://plus.google.com/u/0/b/114702323662314783325/114702323662314783325/posts">
-                        <img src="images/round-googleplus.png"
-                             onmouseover="this.src='images/hover-googleplus.png'"
-                             onmouseout="this.src='images/round-googleplus.png'" />
-                    </a>
+        <span class="span2" id="social">
+            <a href="https://plus.google.com/u/0/b/114702323662314783325/114702323662314783325/posts">
+                <img src="images/round-googleplus.png"
+                     onmouseover="this.src='images/hover-googleplus.png'"
+                     onmouseout="this.src='images/round-googleplus.png'" />
+            </a>
 
-                    <a href="http://facebook.com/OSDDforMalaria">
-                        <img src="images/round-facebook.png"
-                             onmouseover="this.src='images/hover-facebook.png'"
-                             onmouseout="this.src='images/round-facebook.png'" />
-                    </a>
+            <a href="http://facebook.com/OSDDforMalaria">
+                <img src="images/round-facebook.png"
+                     onmouseover="this.src='images/hover-facebook.png'"
+                     onmouseout="this.src='images/round-facebook.png'" />
+            </a>
 
-                    <a href="https://twitter.com/OSDDMalaria">
-                        <img src="images/round-twitter.png"
-                             onmouseover="this.src='images/hover-twitter.png'"
-                             onmouseout="this.src='images/round-twitter.png'" />
-                    </a>
-            </span>
+            <a href="https://twitter.com/OSDDMalaria">
+                <img src="images/round-twitter.png"
+                     onmouseover="this.src='images/hover-twitter.png'"
+                     onmouseout="this.src='images/round-twitter.png'" />
+            </a>
+            <span id="twitter-lead" class="emphasis">Twitter Activity</span>
+        </span>
     </div>
 
     <div class="row-fluid span12">
@@ -122,6 +123,40 @@
                 </span>
             </span>
         </div>
+    </div>
+    <div class="row-fluid span12" id="phone-links">
+        <div>
+            <span class="phone-link"><a><span class="meet-the-team-target">MEET THE TEAM</span></a></span>
+            <span class="phone-link"><a><span class="join-target">JOIN THE TEAM</span></a></span>
+            <span class="phone-link"><a><span class="project-activity-target">SEE ACTIVITY</span></a></span>
+
+        </div>
+        <div>
+            <span class="phone-link">
+                <a href="http://malaria.ourexperiment.org/" target="_blank">Lab Notebook</a>
+            </span>
+            <span class="phone-link">
+                <a href="http://openwetware.org/wiki/Open_Source_Drug_Discovery_-_Malaria" target="_blank">Project Wiki</a>
+            </span>
+        </div>
+        <div>
+            <span class="phone-link">
+                <a href="https://plus.google.com/u/0/b/114702323662314783325/114702323662314783325/posts" target="_blank">
+                    Google Plus
+             </a>
+            </span>
+            <span class="phone-link">
+                <a href="http://facebook.com/OSDDforMalaria" target="_blank">
+                    Facebook
+                </a>
+            </span>
+            <span class="phone-link">
+                <a href="https://twitter.com/OSDDMalaria" target="_blank">
+                    Twitter
+                </a>
+            </span>
+        </div>
+
     </div>
     <div class="row-fluid span12">
         <div class="span12">
@@ -139,16 +174,6 @@
                     <h4>Join The Team</h4>
                     <a href="#"><img src="images/join.png" alt="Join the Team"/></a>
                 </div>
-
-                <!--<div class="meet-the-team-target">-->
-                <!--<h4>Meet The Team</h4>-->
-                <!--<img src="images/meettheteam.jpg" alt="Meet the Team"/>-->
-                <!--</div>-->
-
-                <!--<div id="project-activity-target">-->
-                <!--<h4>See Project Activity</h4>-->
-                <!--<img src="images/seeactivity.jpg" style="height: 124px" alt="See Project Activity"/>-->
-                <!--</div>-->
             </div>
 
             <div class="span8 center-section">
@@ -160,9 +185,9 @@
                         <a href="http://github.com/OSDDMalaria/OSDDMalaria_To_Do_List/issues?page=1" target="_blank">
                             See More</a>
                     </div>
-                    <div class="center-content">
-                        <div id="project-activity-feed"></div>
-                    </div>
+                    <span class="center-content">
+                        <span id="project-activity-feed"></span>
+                    </span>
                     <div class="see-more">
                         <a href="http://github.com/OSDDMalaria/OSDDMalaria_To_Do_List/issues?page=1" target="_blank">
                             See More</a>
@@ -174,10 +199,7 @@
                         Meet The Team
                     </div>
                     <span class="center-content">
-                        <!--<img src="images/OSDD_Jan13.jpg" onload="showGroupPhoto();" alt="The team!"/>-->
-                        <span class="span12">
-                            <span id="team-members"></span>
-                        </span>
+                        <span id="team-members"></span>
                     </span>
                 </div>
 
@@ -264,7 +286,7 @@
 
     <div class="row-fluid makespace"></div>
     <hr>
-    <div class="row-fluid span10">
+    <div class="row-fluid span10" id="thanks-leader">
         <h3>Many thanks to our friends and supporters</h3>
     </div>
     <div id="sponsors"></div>

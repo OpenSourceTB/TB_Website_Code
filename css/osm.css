@@ -21,25 +21,25 @@
     padding-bottom: 2%;
     border-radius: 10px;
     background-color: #ebf6f8;
-    font-size: 20px;
-    vertical-align: 22px;
+    font-size: 145%;
+    vertical-align: 60%;
 }
 
 #company-name{
-    font-size: 20px;
+    font-size: 145%;
     font-weight: bold;
     margin-left: 4%;
 }
 
 #tag-line{
-    font-size: 14px;
+    font-size: 100%;
     font-weight: bold;
     margin-top: 2%;
     margin-left: 4%;
 }
 
-img.project_activity_image{
-    height: 20px;
+img.project-activity-image{
+    /*height: 145%;*/
     margin-top: 1%;
     margin-left: -10%;
 }
@@ -51,12 +51,12 @@ img.project_activity_image{
 
 .see-more a, .see-more a:hover{
     color: black;
-    font-size: 14px;
+    font-size: 100%;
     font-weight: normal;
 }
 
 .center-leader{
-    font-size: 20px;
+    font-size: 145%;
     font-weight: bold;
     margin-top: 3%;
     margin-left: 2%;
@@ -81,11 +81,11 @@ img.project_activity_image{
     margin-left: 45px;
     margin-bottom: 30px;
     text-align: center;
-    font-size: 12px;
+    font-size: 85%;
 }
 
 .member-row{
-    margin-bottom: 10px;
+    margin-bottom: 1%;
     text-align: center;
     width: auto;
 }
@@ -95,7 +95,7 @@ img.project_activity_image{
 }
 
 .logo {
-    margin-top: -40px;
+    margin-top: -24%;
 }
 
 .para{
@@ -106,24 +106,23 @@ img.project_activity_image{
 }
 
 .logo-text {
-    margin-top: 10px;
-    font-size: 45px;
+    margin-top: 1%;
+    font-size: 320%;
 }
 
 .outdent img{
-    margin-left: -30px;
     width: 5%;
 }
 
 .center-section{
-    margin-right: 5px;
-    margin-top: -30px;
+    margin-right: .5%;
+    margin-top: -3%;
     border-radius: 10px;
     background-color: #ebf6f8;
 }
 
 .center-section h3{
-    padding-left: 20px;
+    padding-left: 145%;
 }
 
 .center-section .center-content{
@@ -148,20 +147,114 @@ img.project_activity_image{
 }
 
 .emphasis{
-    font-size: 20px;
+    font-size: 120%;
     color: #B0DFE4;
 }
 
-.twitter-lead{
-    margin-top: 10%;
+#twitter-lead{
+    margin-left: 2%;
 }
 
 #social{
     margin-top: -1%;
+    margin-bottom: 1%;
     margin-left: 0px;
     padding-left: 10px;
     text-align: center;
 }
+
+#phone-links{
+    display: none;
+    margin-bottom: 5%;
+}
+.phone-link{
+    width: 30%;
+    float: right;
+}
+
+
+/*Examples: Not for real use*/
+
+/*max_device_width: 640px is true for iPhone Retina*/
+
+@media screen and (max-width: 1536px) {
+    .emphasis{
+        font-size: 100%;
+    }
+    #twitter-lead{
+        margin-left: 0%;
+    }
+}
+
+
+@media screen and (max-width: 640px) {
+
+    #company-name{
+        font-size: 100%;
+    }
+
+    #tag-line{
+        font-size: 70%;
+    }
+
+    #thanks-leader{
+        width: 90%%;
+    }
+
+    #sponsors{
+        width: 85%;
+    }
+
+    .sponsor-image{
+        margin-left: -15%;
+    }
+
+    #team-members .member{
+        width: 20%;
+        margin-right: 0;
+    }
+
+    #phone-links{
+        display: block;
+    }
+
+    #head-text{
+        width: 100%;
+    }
+
+    div.span8.center-section{
+        width: 100%;
+    }
+
+    div.span2.left-nav{
+        display: none;
+    }
+
+    #social {
+        display: none;
+    }
+
+    #twitter-lead{
+        display: none;
+    }
+
+    .twitter-nav{
+        display: none;
+    }
+
+    #twitter-feed{
+        display: none;
+    }
+
+    span.linkspan.offset3.span9{
+        display: none;
+    }
+
+
+
+}
+/*End example*/
+
 
 .links{
     margin-bottom: 2%;
@@ -218,10 +311,10 @@ img.project_activity_image{
 }
 
 .makespace{
-    margin-top: 20px;
+    margin-top: 5%;
 }
 
-.sponsor_image {
+.sponsor-image {
     height: 110px;
     width: 220px;
 }
