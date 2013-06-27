@@ -94,12 +94,14 @@ img.project-activity-image{
     text-align: center;
     font-size: 10px;
     line-height: 10px;
+    width: auto;
 }
 
-.member-row{
-    margin-bottom: 1%;
-    text-align: center;
-    width: auto;
+#team-members .member{
+    width: 20%;
+    margin-right: 2%;
+    float: left;
+    min-height: 150px;
 }
 
 #team-members img {
@@ -308,7 +310,7 @@ img.project-activity-image{
     }
 
     #thanks-leader{
-        width: 90%%;
+        width: 90%;
     }
 
     #sponsors{
@@ -321,7 +323,7 @@ img.project-activity-image{
 
     #team-members .member{
         width: 20%;
-        margin: 0 2%;
+        margin-right: 2%;
         float: left;
         min-height: 150px;
     }

@@ -174,7 +174,7 @@ function parseTeam(data) {
 //  replicants is used for demo-ing the site.
 //  It is the number of times we show each member.
 //  For production operation, set it to 1.
-    var replicants = 1;  // TODO: Remove when dev work is done.
+    var replicants = 5;  // TODO: Remove when dev work is done.
 
     for (i = 0; i < data.length; i++) {
       if (data[i].title == "team") dataIndex = i;
@@ -200,10 +200,6 @@ function parseTeam(data) {
 
           var gravatarUrl = getGravatar(gravatarEmail);
 
-          if (rowPosition == 0) { // starting a new row
-            $("#team-members").append('<div class="row-fluid member-row" id="team-member-row' + currentRow + '">');
-          }
-
           var teamMember;
           if (url) {
             teamMember = '<span class="span2 member"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
@@ -212,14 +208,7 @@ function parseTeam(data) {
           } else {
             teamMember = '<span class="span2 member"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div><strong>' + name + '</strong></div><div class="affiliation"><small>' + affiliation + '</small></div></div></span>'
           }
-          $("#team-member-row" + currentRow).append(teamMember);
-          rowPosition++;
-
-          if (rowPosition >= perRow) {
-            $("#team-member-row").append('</div>');
-            rowPosition = 0;
-            currentRow++;
-          }
+          $("#team-members").append(teamMember);
         }
       }
     }
