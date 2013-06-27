@@ -74,7 +74,7 @@ img.project-activity-image{
     margin-bottom: 1%;
 }
 
-#project-activity{
+#project-activity, #meet-the-team, #join-the-team{
     padding: 10px;
 }
 
@@ -87,21 +87,12 @@ img.project-activity-image{
     text-decoration: underline;
 }
 
-#team-members{
-    margin-top: 30px;
-    margin-left: 45px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: 10px;
-    line-height: 10px;
-    width: auto;
-}
-
 #team-members .member{
-    width: 20%;
-    margin-right: 2%;
+    width: 14%;
+    margin: 0 1%;
     float: left;
-    min-height: 150px;
+    min-height: 200px;
+    text-align: center;
 }
 
 #team-members img {
@@ -175,6 +166,10 @@ img.project-activity-image{
     margin-left: 0px;
     padding-left: 10px;
     text-align: center;
+}
+
+#social a:hover{
+    text-decoration: none;
 }
 
 #phone-links{
@@ -323,9 +318,10 @@ img.project-activity-image{
 
     #team-members .member{
         width: 20%;
-        margin-right: 2%;
-        float: left;
-        min-height: 150px;
+        margin: 0 2%;
+        font-size: 10px;
+        line-height: 10px;
+        min-height: 120px;
     }
 
     #phone-links{
@@ -386,6 +382,10 @@ img.project-activity-image{
 
     #social {
         display: none;
+    }
+
+    .phone-row-social a:hover{
+        text-decoration: none;
     }
 
     #twitter-lead{
