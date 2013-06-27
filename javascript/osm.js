@@ -42,6 +42,7 @@ function loadLatestTweets() {
       var useTweetCount = Math.min(numTweets, data.length);
 
       $("#twitter-feed").empty();
+      $("#mobile-twitter-feed").empty();
 
       for (var i = 0; i < useTweetCount; i++) {
         var tweet = data[i].text;
@@ -55,6 +56,7 @@ function loadLatestTweets() {
         tweet = tweet.parseURL().parseUsername().parseHashtag();
         tweet += '<div class="tweeter-info"><div class="uppercase bold"></div><div class="right"><a href="https://twitter.com/#!/OSDDMalaria/status/' + data[i].id_str + '">' + createdDate + '</a></div></div>'
         $("#twitter-feed").append('<p>' + tweet + '</p>');
+        $("#mobile-twitter-feed").append('<p>' + tweet + '</p>');
       }
       }
   });
@@ -141,7 +143,7 @@ function parseSponsors(data) {
 
 
         if (rowPosition == 0) { // starting a new row
-          $("#sponsors").append('<div class="row-fluid offset1 makespace" id="sponsorRow' + currentRow + '">');
+          $("#sponsors").append('<div class="row-fluid offset1 sponsor-row" id="sponsorRow' + currentRow + '">');
         }
 
         var sponsor;

@@ -1,6 +1,19 @@
-.container{
-    margin-top: 30px;
+/*Hide mobile view normally*/
+
+#mobile-twitter-feed{
+    display: none;
 }
+
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.container{
+    margin-top: 1%;
+}
+
 .activity-open {
     background-image: url("../images/open.gif");
     background-repeat: no-repeat;
@@ -26,8 +39,6 @@
 }
 
 #company-name{
-    font-size: 145%;
-    font-weight: bold;
     margin-left: 4%;
 }
 
@@ -81,7 +92,8 @@ img.project-activity-image{
     margin-left: 45px;
     margin-bottom: 30px;
     text-align: center;
-    font-size: 85%;
+    font-size: 10px;
+    line-height: 10px;
 }
 
 .member-row{
@@ -95,7 +107,7 @@ img.project-activity-image{
 }
 
 .logo {
-    margin-top: -24%;
+    margin-top: -25%;
 }
 
 .para{
@@ -165,96 +177,11 @@ img.project-activity-image{
 
 #phone-links{
     display: none;
-    margin-bottom: 5%;
-}
-.phone-link{
-    width: 30%;
-    float: right;
 }
 
-
-/*Examples: Not for real use*/
-
-/*max_device_width: 640px is true for iPhone Retina*/
-
-@media screen and (max-width: 1536px) {
-    .emphasis{
-        font-size: 100%;
-    }
-    #twitter-lead{
-        margin-left: 0%;
-    }
+.phone-row-meet-join-activity, .phone-row-external-links, .phone-row-social{
+    display: none;
 }
-
-
-@media screen and (max-width: 640px) {
-
-    #company-name{
-        font-size: 100%;
-    }
-
-    #tag-line{
-        font-size: 70%;
-    }
-
-    #thanks-leader{
-        width: 90%%;
-    }
-
-    #sponsors{
-        width: 85%;
-    }
-
-    .sponsor-image{
-        margin-left: -15%;
-    }
-
-    #team-members .member{
-        width: 20%;
-        margin-right: 0;
-    }
-
-    #phone-links{
-        display: block;
-    }
-
-    #head-text{
-        width: 100%;
-    }
-
-    div.span8.center-section{
-        width: 100%;
-    }
-
-    div.span2.left-nav{
-        display: none;
-    }
-
-    #social {
-        display: none;
-    }
-
-    #twitter-lead{
-        display: none;
-    }
-
-    .twitter-nav{
-        display: none;
-    }
-
-    #twitter-feed{
-        display: none;
-    }
-
-    span.linkspan.offset3.span9{
-        display: none;
-    }
-
-
-
-}
-/*End example*/
-
 
 .links{
     margin-bottom: 2%;
@@ -274,7 +201,7 @@ img.project-activity-image{
     margin-left: 30px;
 }
 
-.twitter-nav{
+#twitter-feed{
     margin-top: -10%;
     padding-left: 1%;
 }
@@ -297,7 +224,7 @@ img.project-activity-image{
 }
 
 .affiliation{
-    margin-top: -7%;
+    margin-top: 2px;
 }
 
 .title {
@@ -311,6 +238,10 @@ img.project-activity-image{
 }
 
 .makespace{
+    margin-top: 5%;
+}
+
+.sponsor-row{
     margin-top: 5%;
 }
 
@@ -336,3 +267,141 @@ img.project-activity-image{
     text-wrap:normal;
     overflow-wrap:break-word;
 }
+
+/* Handling for mobile devices*/
+
+/*iPad size tablets*/
+@media screen and (max-width: 1536px) {
+    .emphasis{
+        font-size: 100%;
+    }
+    #twitter-lead{
+        margin-left: 0%;
+    }
+}
+
+/*Phone size devices*/
+@media screen and (max-width: 640px) {
+
+    .logo {
+        margin-top: 5%;
+    }
+
+    .para{
+        margin-left: 10%;
+    }
+
+    .intro {
+        margin-bottom: 1%;
+    }
+
+    #mobile-twitter-feed{
+        display: block;
+    }
+
+    #company-name{
+        font-size: 100%;
+    }
+
+    #tag-line{
+        font-size: 70%;
+    }
+
+    #thanks-leader{
+        width: 90%%;
+    }
+
+    #sponsors{
+        width: 85%;
+    }
+
+    .sponsor-image img{
+        margin-left: -25%;
+    }
+
+    #team-members .member{
+        width: 20%;
+        margin: 0 2%;
+        float: left;
+        min-height: 150px;
+    }
+
+    #phone-links{
+        display: block;
+        margin-bottom: 5%;
+    }
+
+    .phone-row-external-links{
+        display: block;
+    }
+
+    .phone-row-meet-join-activity{
+        display: block;
+    }
+
+    .phone-row-meet-join-activity phone-link{
+        text-align: center;
+    }
+
+    .phone-row-social{
+        display: block;
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 10%;
+    }
+
+    .phone-link{
+        text-align: center;
+        margin-top: 10%;
+        width: 33%;
+        float: right;
+    }
+
+    .phone-link .link-title{
+        display: block;
+        text-align: center;
+    }
+
+    span.phone-link a{
+        font-size: 80%;
+    }
+
+    span.phone-link a img{
+        width: 50%
+    }
+
+    #head-text{
+        width: 100%;
+    }
+
+    div.span8.center-section{
+        width: 100%;
+    }
+
+    div.span2.left-nav{
+        display: none;
+    }
+
+    #social {
+        display: none;
+    }
+
+    #twitter-lead{
+        display: none;
+    }
+
+    #mobile-twitter-lead{
+        margin-top: 5%;
+        text-align: center;
+        display: block;
+    }
+
+    #twitter-feed{
+        display: none;
+    }
+
+    span.linkspan.offset3.span9{
+        display: none;
+    }
+}
+/*End example*/
