@@ -99,6 +99,11 @@ img.project-activity-image{
     border-radius: 10px;
 }
 
+#about-the-team{
+    display: block;
+    margin-top: 2%;
+}
+
 .logo {
     margin-top: -25%;
 }
