@@ -30,6 +30,7 @@
 }
 
 #head-text{
+    margin-bottom: 2%;
     padding-top: 2%;
     padding-bottom: 2%;
     border-radius: 10px;
@@ -126,7 +127,7 @@ img.project-activity-image{
 
 .center-section{
     margin-right: .5%;
-    margin-top: -3%;
+    margin-top: 2%;
     border-radius: 10px;
     background-color: #ebf6f8;
 }
@@ -204,8 +205,8 @@ img.project-activity-image{
 }
 
 #twitter-feed{
-    margin-top: -10%;
-    padding-left: 1%;
+    margin-top: 0;
+    padding-left: 0;
 }
 
 #spinner {
@@ -218,7 +219,7 @@ img.project-activity-image{
 }
 
 .left-nav{
-    margin-top: -8%;
+    margin-top: 3%;
 }
 
 .left-nav img{
