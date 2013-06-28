@@ -174,7 +174,7 @@ function parseTeam(data) {
 //  replicants is used for demo-ing the site.
 //  It is the number of times we show each member.
 //  For production operation, set it to 1.
-    var replicants = 5;  // TODO: Remove when dev work is done.
+    var replicants = 1;  // TODO: Remove when dev work is done.
 
     for (i = 0; i < data.length; i++) {
       if (data[i].title == "team") dataIndex = i;
