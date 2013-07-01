@@ -113,4 +113,4 @@ Setting up for development
 ==========================
 
 When a person is designated to do further development work, the recommended approach is to set up local git
-repositories on the development machine.  
+repositories on the development machine.
