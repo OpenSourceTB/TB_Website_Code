@@ -11,7 +11,7 @@ The opensourcemalaria.org website actually consists of two separate code bases.
 There is a website code base at the Github account/repository https://github.com/OpenSourceMalaria/OSM_Website_Code.
 This repository holds the HTML, CSS, images, and javascript of the website.
 
-### osm-feeds Coed Base ###
+### osm-feeds Code Base ###
 
 There is a separate code base stored on heroku.com. This repository creates a simple server application
 (called osm-feeds) that runs on the heroku platform. The server application is an intermediary between the code running
@@ -19,27 +19,30 @@ on the (potentially) many browsers that can be running the website code at the s
 
 osm-feeds gets requests from a browser to return one of three things, or to reset its cache.
 
-##### The things that can be returned from osm-feeds are: #####
+#### The things that can be returned from osm-feeds are: ####
 
-#### The latest twitter feed for Open Source Malaria. ####
+##### The latest twitter feed for Open Source Malaria. #####
 The osm-feeds application authenticates itself to Twitter (requirement of twitter). Since the authentication
 requires secret information, this application ensures that the secret information remains secret!
 
-#### The latest Project activity (from the OpenSourceMalaria github account) ####
-The osm-feeds application authenticates itself to github to avoid rate limiting on requests per hour. Since the authentication
-requires secret information, this application ensures that the secret information remains secret! The application also
-caches the information so that requests to github do not occur excessively if there are many users viewing the site
-at the same time.
+##### The latest Project activity (from the OpenSourceMalaria github account) #####
+The osm-feeds application authenticates itself to github to avoid rate limiting on requests per hour. Since the
+authentication requires secret information, this application ensures that the secret information remains secret! The
+application also caches the information so that requests to github do not occur excessively if there are many users
+viewing the site at the same time.
 
-#### The current list of sponsors and members from the OpenSourceMalaria github account) ####
-The osm-feeds application authenticates itself to github to avoid rate limiting on requests per hour. Since the authentication
-requires secret information, this application ensures that the secret information remains secret!
+##### The current list of sponsors and members from the OpenSourceMalaria github account) #####
+The osm-feeds application authenticates itself to github to avoid rate limiting on requests per hour. Since the
+authentication requires secret information, this application ensures that the secret information remains secret!
 
-#### Reset command ####
+##### Reset command #####
 
 The reset command is invoked to discard the contents of the cache and force the application to get and return
 the current project activity data from github the next time a request for that data is made.
 
+This is not useful in normal circumstances, but can be used to ensure that additions and updates to the project
+activity feed are immediately available to visitors to the site. Otherwise, there will be a delay of about 10 minutes
+for updated information to become available.
 
 Content Management Solution
 ---------------------------
@@ -64,7 +67,8 @@ Team
         { "name": "Stephanie Geerlings" }
       ]
 
-  The elements: url, affiliation, and gravatar_email are optional. If name is not provided, "Anonymous" is used for their name.
+  The elements: url, affiliation, and gravatar_email are optional. If name is not provided, "Anonymous" is used for
+  their name.
 
   The different display cases are:
 
@@ -103,3 +107,10 @@ Sponsors
     If the url element is not specified for a sponsor, only the image is displayed for that sponsor.
     If all three elements are specified for a sponsor, the image is displayed and is a link to the sponsor's url,
     and the hover text is the sponsor name.
+
+
+Setting up for development
+==========================
+
+When a person is designated to do further development work, the recommended approach is to set up local git
+repositories on the development machine.  
