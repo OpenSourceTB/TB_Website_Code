@@ -41,9 +41,9 @@
             $('#project-activity').show();
             $('#about-the-team').hide();
 
-            $(".about-target").bind('click', function () {
-                $('#about-the-team').toggle();
-                toggle_visibility('about-text');
+            $(".about-target").bind('click', function (e) {
+                $(".about-target").toggle();
+                $('#about-the-team').slideToggle();
             });
 
             $(".join-target").bind('click', function () {
@@ -84,16 +84,17 @@
 
     <div class="container">
         <div class="row-fluid span12 links">
-                <span class="linkspan offset3 span9">
-                    <span class="span3 project-activity-target">
-                        <small><a href="#">SEE ACTIVITY</a></small>
-                    </span>
-                    <span class="span3 join-target">
-                        <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">JOIN THE TEAM</a>&nbsp;&nbsp;&nbsp;</small>
-                    </span>
-                    <span class="span3 meet-the-team-target">
+                <span class="span10 linkspan">
+                    <span id="link-text-meet" class="meet-the-team-target">
                         <small>&nbsp;&nbsp;&nbsp;<a href="#">MEET THE TEAM</a>&nbsp;&nbsp;&nbsp;</small>
                     </span>
+                    <span id="link-text-join" class="join-target">
+                        <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">JOIN THE TEAM</a>&nbsp;&nbsp;&nbsp;</small>
+                    </span>
+                    <span id="link-text-activity" class="project-activity-target">
+                        <small><a href="#">SEE PROJECT ACTIVITY</a></small>
+                    </span>
+
                 </span>
         </div>
 
@@ -103,9 +104,7 @@
                 </span>
 
                 <span class="span8" id="head-text">
-                     <img id="company-name" src="images/OSM-header.png" alt="Open Source Malaria">
-                    <!--<div id="company-name">OPEN SOURCE MALARIA</div>-->
-                    <!--<div id="tag-line">Looking for New Medicines</div>-->
+                     <img id="title-block" src="images/OSM-header.png" alt="Open Source Malaria">
                 </span>
                 <span class="span2" id="social">
                     <a href="https://plus.google.com/u/0/b/114702323662314783325/114702323662314783325/posts" target="_blank">
@@ -146,11 +145,11 @@
         </div>
 
         <span class="span8 intro">
-            <img src="images/bluearrow.gif" class="outdent"/>
-            <span class="para">
+            <img src="images/bluearrow.gif" class="arrow"/>
+            <div class="para">
                     The Open Source Malaria project is trying a different approach to curing malaria. Guided by open
                     source principles, everything is open and anyone can contribute.
-                    <a><span id='about-text' class="about-target" style="display: inline">About</span></a>
+                    <a id='about-text' class="about-target">About</a>
 
                 <span id="about-the-team">
                         Open research is where anyone can take part at any level of the project, that all data and
@@ -165,11 +164,9 @@
                         (chemistry and biology), but there are important things you can do if you're outside those
                         fields.
                         <br/><br/>
-                        <a><span class="about-target">Show less</span></a>
-                        <br/>
-                        <span class="join-target about-target"><a href="#">JOIN THE TEAM</a></span>
+                        <a class="about-target" style="display: none">Show less</a>
                 </span>
-            </span>
+            </div>
 
                 <div class="center-section group">
                     <div id="project-activity">

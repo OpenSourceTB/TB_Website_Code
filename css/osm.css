@@ -39,8 +39,10 @@
     vertical-align: 60%;
 }
 
-#company-name{
+#title-block{
+    margin-top: 1%;
     margin-left: 4%;
+    width: 75%;
 }
 
 #tag-line{
@@ -110,10 +112,7 @@ img.project-activity-image{
 }
 
 .para{
-    display: inline-block;
-    margin-top: -5%;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 0 40px;
 }
 
 .logo-text {
@@ -168,9 +167,8 @@ img.project-activity-image{
 }
 
 #social{
-    margin-top: -1%;
-    margin-bottom: 1%;
-    margin-left: 0px;
+    margin-top: 22px;
+    margin-left: 10px;
     padding-left: 10px;
     text-align: center;
 }
@@ -197,7 +195,21 @@ img.project-activity-image{
 
 .linkspan{
     margin-left: 40%;
-    text-align:center;
+    text-align: right;
+}
+
+#link-text-meet{
+    width: 113px;
+    float: right;
+
+}
+#link-text-join{
+    width: 120px;
+    float: right;
+}
+#link-text-activity{
+    width: 134px;
+    float: right;
 }
 
 .intro {
@@ -205,8 +217,24 @@ img.project-activity-image{
     margin-left: 30px;
 }
 
-#twitter-feed{
-    margin-top: -3%;
+.intro img.arrow {
+    float: left;
+    margin-left: 10px;
+}
+
+#twitter-feed {
+    width: 136px;
+    float: left;
+    margin-top: 0px;
+    margin-left: 32px;
+}
+
+#twitter-feed p {
+    margin-bottom: 0;
+}
+
+#twitter-feed .tweeter-info {
+    margin-bottom: 12px;
 }
 
 #spinner {
@@ -298,8 +326,8 @@ img.project-activity-image{
         display: block;
     }
 
-    #company-name{
-        font-size: 100%;
+    #title-block{
+        margin-top: 1%;
     }
 
     #tag-line{
