@@ -16,6 +16,15 @@
     <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <script type="text/javascript" src="javascript/osm.js"></script>
+    <script type="text/javascript">
+        function toggle_visibility(id) {
+            var e = document.getElementById(id);
+            if(e.style.display == 'inline')
+                e.style.display = 'none';
+            else
+                e.style.display = 'inline';
+        }
+    </script>
     <script>
         $(document).ready(function () {
 
@@ -34,6 +43,7 @@
 
             $(".about-target").bind('click', function () {
                 $('#about-the-team').toggle();
+                toggle_visibility('about-text');
             });
 
             $(".join-target").bind('click', function () {
@@ -115,7 +125,7 @@
                              onmouseover="this.src='images/social/twitter_on.png'"
                              onmouseout="this.src='images/social/twitter.png'"/>
                     </a>
-                    <span id="twitter-lead" class="emphasis">Twitter Activity</span>
+                    <div id="twitter-lead" class="emphasis">Twitter Activity</div>
                 </span>
         </div>
 
@@ -140,7 +150,7 @@
             <span class="para">
                     The Open Source Malaria project is trying a different approach to curing malaria. Guided by open
                     source principles, everything is open and anyone can contribute.
-                    <a><span class="about-target">About</span></a>
+                    <a><span id='about-text' class="about-target" style="display: inline">About</span></a>
 
                 <span id="about-the-team">
                         Open research is where anyone can take part at any level of the project, that all data and
@@ -154,7 +164,7 @@
                         something called open source drug discovery. Much of what we need is based in science
                         (chemistry and biology), but there are important things you can do if you're outside those
                         fields.
-                        <br/>
+                        <br/><br/>
                         <a><span class="about-target">Show less</span></a>
                         <br/>
                         <span class="join-target about-target"><a href="#">JOIN THE TEAM</a></span>
@@ -167,7 +177,7 @@
                             Project Activity
                         </div>
                         <div class="see-more">
-                            <a href="http://github.com/OSDDMalaria/OSDDMalaria_To_Do_List/issues?page=1" target="_blank">
+                            <a href="http://github.com/OpenSourceMalaria/OSM_To_Do_List/issues?page=1" target="_blank">
                                 See More</a>
                         </div>
                             <span class="center-content">
@@ -175,7 +185,7 @@
                             </span>
 
                         <div class="see-more">
-                            <a href="http://github.com/OSDDMalaria/OSDDMalaria_To_Do_List/issues?page=1" target="_blank">
+                            <a href="http://github.com/OpenSourceMalaria/OSM_To_Do_List/issues?page=1" target="_blank">
                                 See More</a>
                         </div>
                     </div>
@@ -231,7 +241,7 @@
                                     <ul>
                                         <li>
                                             Check out the current
-                                            <a href="https://github.com/OSDDMalaria/OSDDMalaria_To_Do_List/issues?state=open" target="_blank">To Do List</a>
+                                            <a href="https://github.com/OpenSourceMalaria/OSM_To_Do_List/issues?state=open" target="_blank">To Do List</a>
                                             for details of what's needed right now - help resolve an issue, comment on things that you
                                             think need to be done, or post any of your suggestions/ideas.
                                         </li>
@@ -355,7 +365,6 @@
             <span class="span2" id="mobile-twitter-feed"></span>
         </div>
 
-        <div class="row-fluid makespace"></div>
         <hr>
         <div class="row-fluid span10" id="thanks-leader">
             <h3>Many thanks to our friends and supporters</h3>

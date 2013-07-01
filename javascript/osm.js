@@ -58,7 +58,7 @@ function loadLatestTweets() {
         $("#twitter-feed").append('<p>' + tweet + '</p>');
         $("#mobile-twitter-feed").append('<p>' + tweet + '</p>');
       }
-      }
+    }
   });
 }
 
@@ -143,7 +143,7 @@ function parseSponsors(data) {
 
 
         if (rowPosition == 0) { // starting a new row
-          $("#sponsors").append('<div class="row-fluid offset1 sponsor-row" id="sponsorRow' + currentRow + '">');
+          $("#sponsors").append('<div class="row-fluid sponsor-row" id="sponsorRow' + currentRow + '">');
         }
 
         var sponsor;
