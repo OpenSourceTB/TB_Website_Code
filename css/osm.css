@@ -193,7 +193,7 @@ img.project-activity-image{
     color: gray;
 }
 
-.linkspan{
+.links{
     margin-left: 40%;
     text-align: right;
 }
@@ -297,18 +297,45 @@ img.project-activity-image{
 
 /* Handling for mobile devices*/
 
-/*iPad size tablets*/
-@media screen and (max-width: 1536px) {
+/* iPad original */
+@media screen and (max-width: 768px) {
     .emphasis{
         font-size: 100%;
     }
     #twitter-lead{
         margin-left: 0%;
     }
+    #twitter-feed {
+        width: 100px;
+        float: left;
+        margin-top: 0px;
+        margin-left: 2px;
+        overflow: hidden;
+    }
+    #social a img{
+        width: 30%;
+    }
 }
 
-/*Phone size devices*/
-@media screen and (max-width: 640px) {
+/* iPad Retina */
+@media screen and (max-width: 1535px) {
+    .emphasis{
+        font-size: 100%;
+    }
+    #twitter-lead{
+        margin-left: 0%;
+    }
+    #twitter-feed {
+        width: 100px;
+        float: left;
+        margin-top: 0px;
+        margin-left: 2px;
+        overflow: hidden;
+    }
+}
+
+/*iPhone Retina size devices (Also scales for original iPhone size devices) */
+@media screen and (max-width: 639px) {
 
     .logo {
         margin-top: 5%;
@@ -338,12 +365,17 @@ img.project-activity-image{
         width: 90%;
     }
 
+    img.project-activity-image{
+        margin-top: 0px;
+        margin-left: -30px;
+    }
+
     #sponsors{
         width: 85%;
     }
 
     .sponsor-image img{
-        margin-left: -25%;
+        margin-left:0;
     }
 
     #team-members .member{
@@ -432,7 +464,7 @@ img.project-activity-image{
         display: none;
     }
 
-    span.linkspan.offset3.span9{
+    .links a{
         display: none;
     }
 }
