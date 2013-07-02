@@ -54,7 +54,7 @@ function loadLatestTweets() {
       for (var i = 0; i < useTweetCount; i++) {
         var tweet = data[i].text;
         var created = parseTwitterDate(data[i].created_at);
-        var hours = createdgetHours().toString();
+        var hours = created.getHours().toString();
         if (hours.length === 1) { hours = '0' + hours; }
         var minutes = created.getMinutes().toString();
         if (minutes.length === 1) { minutes = '0' + minutes; }
@@ -70,70 +70,68 @@ function loadLatestTweets() {
 }
 
 function loadLatestProjectActivity() {
+
+  var script = document.createElement( 'script' );
+  script.type = 'text/javascript';
+  script.src = "https://osm-feeds.herokuapp.com/project_activity?callback=projectActivity";
+  $("head").append( script );
+}
+
+function projectActivity(data) {
   "use strict";
-  var _url = 'https://osm-feeds.herokuapp.com/project_activity'+'?buster='+new Date().getTime();
+  var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+  var numGithubItems = 12;
+  var lastGithubItem = Math.min(numGithubItems, data.length);
+  $("#project-activity-feed").empty();
 
-  $.ajax({
-    cache: false,
-    url: _url,
-    dataType: 'json',
-    success: function(data){
-        var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
-        var numGithubItems = 12;
-        var lastGithubItem = Math.min(numGithubItems, data.length);
-        $("#project-activity-feed").empty();
+  for (var i = 0; i < lastGithubItem; i++) {
+    var itemTitle = data[i].title;
+    var itemBody = data[i].body;
+    var itemLink = data[i].html_url;
+    var commentCount = data[i].comments;
+    var created = parseGithubDate(data[i].created_at);
+    var hours = created.getHours().toString();
+    if (hours.length === 1) { hours = '0' + hours; }
+    var minutes = created.getMinutes().toString();
+    if (minutes.length === 1) { minutes = '0' + minutes; }
 
-        for (var i = 0; i < lastGithubItem; i++) {
-          var itemTitle = data[i].title;
-          var itemBody = data[i].body;
-          var itemLink = data[i].html_url;
-          var commentCount = data[i].comments;
-          var created = parseGithubDate(data[i].created_at);
-          var hours = created.getHours().toString();
-          if (hours.length === 1) { hours = '0' + hours; }
-          var minutes = created.getMinutes().toString();
-          if (minutes.length === 1) { minutes = '0' + minutes; }
+    var createdDate = created.getDate() + ' ' + monthNames[created.getMonth() + 1] + ' ' + created.getFullYear() + ' at ' + hours + ':' + minutes;
+    var commentText;
 
-          var createdDate = created.getDate() + ' ' + monthNames[created.getMonth() + 1] + ' ' + created.getFullYear() + ' at ' + hours + ':' + minutes;
-          var commentText;
-
-          if (commentCount > 0){
-            if (commentCount === 1){
-              commentText = "1 comment";
-            } else {
-              commentText = commentCount + ' comments';
-            }
-          } else {
-            commentText = "";
-          }
-
-          $("#project-activity-feed").append('<span class="project-activity-item"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>');
-          $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemBody + '<strong><em>&nbsp;'+ commentText +'</em></strong>' + '</a></div>');
-
-        }
-    },
-    error: function(data, status, error){
-        alert("Project Activity Error!!!");
-        alert(status);
-        alert(error);
-        alert(data);
+    if (commentCount > 0){
+      if (commentCount === 1){
+        commentText = "1 comment";
+      } else {
+        commentText = commentCount + ' comments';
+      }
+    } else {
+      commentText = "";
     }
-  });
+
+    $("#project-activity-feed").append('<span class="project-activity-item"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>');
+    $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemBody + '<strong><em>&nbsp;'+ commentText +'</em></strong>' + '</a></div>');
+  }
 }
 
 function loadSponsorsAndTeam(){
   "use strict";
-  var _url = 'https://osm-feeds.herokuapp.com/sponsors_and_members'+'?buster='+new Date().getTime();
+  var script = document.createElement( 'script' );
+  script.type = 'text/javascript';
+  script.src = "https://osm-feeds.herokuapp.com/sponsors_and_members?callback=sponsorsAndMembers";
+  $("head").append( script );
+}
 
-  $.ajax({
-    cache: false,
-    url: _url,
-    dataType: 'json',
-    success: function(data){
-      parseSponsors(data);
-      parseTeam(data);
-    }
-  });
+function sponsorsAndMembers(data) {
+  parseSponsors(data);
+  parseTeam(data);
+}
+
+function loadLatestProjectActivity() {
+
+  var script = document.createElement( 'script' );
+  script.type = 'text/javascript';
+  script.src = "https://osm-feeds.herokuapp.com/project_activity?callback=projectActivity";
+  $("head").append( script );
 }
 
 function parseSponsors(data) {
