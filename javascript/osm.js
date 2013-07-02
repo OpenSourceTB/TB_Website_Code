@@ -1,36 +1,42 @@
 //Twitter Parsers
 String.prototype.parseURL = function () {
+  "use strict";
   return this.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&~\?\/.=]+/g, function (url) {
     return url.link(url);
   });
 };
 
 String.prototype.parseUsername = function () {
+  "use strict";
   return this.replace(/[@]+[A-Za-z0-9-_]+/g, function (u) {
-    var username = u.replace("@", "")
+    var username = u.replace("@", "");
     return u.link("http://twitter.com/" + username);
   });
 };
 
 String.prototype.parseHashtag = function () {
+  "use strict";
   return this.replace(/[#]+[A-Za-z0-9-_]+/g, function (t) {
-    var tag = t.replace("#", "%23")
+    var tag = t.replace("#", "%23");
     return t.link("http://search.twitter.com/search?q=" + tag);
   });
 };
 
 function parseTwitterDate(str) {
+  "use strict";
   var v = str.split(' ');
   return new Date(Date.parse(v[1] + " " + v[2] + ", " + v[5] + " " + v[3] + " UTC"));
-};
+}
 
 function parseGithubDate(str) {
+  "use strict";
   return new Date(Date.parse(str));
-};
+}
 
 // End of Twitter parsers
 
 function loadLatestTweets() {
+  "use strict";
   var _url = 'https://osm-feeds.herokuapp.com/';
 
   $.ajax({
@@ -49,13 +55,13 @@ function loadLatestTweets() {
         var tweet = data[i].text;
         var created = parseTwitterDate(data[i].created_at);
         var hours = created.getHours().toString();
-        if (hours.length == 1) hours = '0' + hours;
+        if (hours.length === 1) { hours = '0' + hours; }
         var minutes = created.getMinutes().toString();
-        if (minutes.length == 1) minutes = '0' + minutes;
+        if (minutes.length === 1) { minutes = '0' + minutes; }
         var createdDate = created.getDate() + ' ' + monthNames[created.getMonth() + 1] + ' ' + created.getFullYear() + ' at ' + hours + ':' + minutes;
 
         tweet = tweet.parseURL().parseUsername().parseHashtag();
-        tweet += '<div class="tweeter-info"><div class="uppercase bold"></div><div class="right"><a href="https://twitter.com/#!/OSDDMalaria/status/' + data[i].id_str + '">' + createdDate + '</a></div></div>'
+        tweet += '<div class="tweeter-info"><div class="uppercase bold"></div><div class="right"><a href="https://twitter.com/#!/OSDDMalaria/status/' + data[i].id_str + '">' + createdDate + '</a></div></div>';
         $("#twitter-feed").append('<p>' + tweet + '</p>');
         $("#mobile-twitter-feed").append('<p>' + tweet + '</p>');
       }
@@ -64,6 +70,7 @@ function loadLatestTweets() {
 }
 
 function loadLatestProjectActivity() {
+  "use strict";
   var _url = 'https://osm-feeds.herokuapp.com/project_activity'+'?buster='+new Date().getTime();
 
   $.ajax({
@@ -83,21 +90,21 @@ function loadLatestProjectActivity() {
           var commentCount = data[i].comments;
           var created = parseGithubDate(data[i].created_at);
           var hours = created.getHours().toString();
-          if (hours.length == 1) hours = '0' + hours;
+          if (hours.length === 1) { hours = '0' + hours; }
           var minutes = created.getMinutes().toString();
-          if (minutes.length == 1) minutes = '0' + minutes;
+          if (minutes.length === 1) { minutes = '0' + minutes; }
 
           var createdDate = created.getDate() + ' ' + monthNames[created.getMonth() + 1] + ' ' + created.getFullYear() + ' at ' + hours + ':' + minutes;
           var commentText;
 
           if (commentCount > 0){
-            if (commentCount == 1){
+            if (commentCount === 1){
               commentText = "1 comment";
             } else {
               commentText = commentCount + ' comments';
             }
           } else {
-            commentText = ""
+            commentText = "";
           }
 
           $("#project-activity-feed").append('<span class="project-activity-item"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>');
@@ -109,6 +116,7 @@ function loadLatestProjectActivity() {
 }
 
 function loadSponsorsAndTeam(){
+  "use strict";
   var _url = 'https://osm-feeds.herokuapp.com/sponsors_and_members'+'?buster='+new Date().getTime();
 
   $.ajax({
@@ -123,6 +131,7 @@ function loadSponsorsAndTeam(){
 }
 
 function parseSponsors(data) {
+  "use strict";
 
     var perRow = 4;
     var rowPosition = 0;
@@ -131,7 +140,7 @@ function parseSponsors(data) {
     var dataIndex = -1;
 
     for (i = 0; i < data.length; i++) {
-      if (data[i].title == "sponsors") dataIndex = i;
+      if (data[i].title === "sponsors") { dataIndex = i; }
     }
 
     if (dataIndex > -1) {
@@ -145,15 +154,15 @@ function parseSponsors(data) {
         var image = sponsors[i].image;
 
 
-        if (rowPosition == 0) { // starting a new row
+        if (rowPosition === 0) { // starting a new row
           $("#sponsors").append('<div class="row-fluid sponsor-row" id="sponsorRow' + currentRow + '">');
         }
 
         var sponsor;
         if (url) {
-          sponsor = '<span class="span3 sponsor-image"><a href="http://' + url + '" target="_blank"><img src="https://' + image + '" title="' + name + '"></a></span>'
+          sponsor = '<span class="span3 sponsor-image"><a href="http://' + url + '" target="_blank"><img src="https://' + image + '" title="' + name + '"></a></span>';
         } else {
-          sponsor = '<span class="span3"><img src="https://' + image + '"></span>'
+          sponsor = '<span class="span3"><img src="https://' + image + '"></span>';
         }
 
         $("#sponsorRow" + currentRow).append(sponsor);
@@ -168,15 +177,12 @@ function parseSponsors(data) {
 }
 
 function parseTeam(data) {
-
-    var perRow = 6;
-    var rowPosition = 0;
-    var currentRow = 0;
+  "use strict";
     var numTeamMembers = 100;
     var dataIndex = -1;
 
     for (i = 0; i < data.length; i++) {
-      if (data[i].title == "team") dataIndex = i;
+      if (data[i].title === "team") { dataIndex = i; }
     }
 
     if (dataIndex > -1) {
@@ -201,22 +207,22 @@ function parseTeam(data) {
         var teamMember;
         if (url) {
           teamMember = '<span class="span2 member"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
-            '<div><a href="http://' + url + '" target="_blank"><strong>' + name + '</strong></div><div class="affiliation"><small>' + affiliation + '</small></div></div></span>'
-
+            '<div><a href="http://' + url + '" target="_blank"><strong>' + name + '</strong></div><div class="affiliation"><small>' + affiliation + '</small></div></div></span>';
         } else {
-          teamMember = '<span class="span2 member"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div><strong>' + name + '</strong></div><div class="affiliation"><small>' + affiliation + '</small></div></div></span>'
+          teamMember = '<span class="span2 member"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div><strong>' + name + '</strong></div><div class="affiliation"><small>' + affiliation + '</small></div></div></span>';
         }
+
         $("#team-members").append(teamMember);
       }
     }
 }
 
 function getGravatar(gravatarEmail, size) {
-
+  "use strict";
   // MD5 (Message-Digest Algorithm) by WebToolkit
   var MD5 = function (s) {
     function L(k, d) {
-      return(k << d) | (k >>> (32 - d))
+      return(k << d) | (k >>> (32 - d));
     }
 
     function K(G, k) {
@@ -227,53 +233,53 @@ function getGravatar(gravatarEmail, size) {
       d = (k & 1073741824);
       x = (G & 1073741823) + (k & 1073741823);
       if (I & d) {
-        return(x ^ 2147483648 ^ F ^ H)
+        return(x ^ 2147483648 ^ F ^ H);
       }
       if (I | d) {
         if (x & 1073741824) {
-          return(x ^ 3221225472 ^ F ^ H)
+          return(x ^ 3221225472 ^ F ^ H);
         } else {
-          return(x ^ 1073741824 ^ F ^ H)
+          return(x ^ 1073741824 ^ F ^ H);
         }
       } else {
-        return(x ^ F ^ H)
+        return(x ^ F ^ H);
       }
     }
 
     function r(d, F, k) {
-      return(d & F) | ((~d) & k)
+      return(d & F) | ((~d) & k);
     }
 
     function q(d, F, k) {
-      return(d & k) | (F & (~k))
+      return(d & k) | (F & (~k));
     }
 
     function p(d, F, k) {
-      return(d ^ F ^ k)
+      return(d ^ F ^ k);
     }
 
     function n(d, F, k) {
-      return(F ^ (d | (~k)))
+      return(F ^ (d | (~k)));
     }
 
     function u(G, F, aa, Z, k, H, I) {
       G = K(G, K(K(r(F, aa, Z), k), I));
-      return K(L(G, H), F)
+      return K(L(G, H), F);
     }
 
     function f(G, F, aa, Z, k, H, I) {
       G = K(G, K(K(q(F, aa, Z), k), I));
-      return K(L(G, H), F)
+      return K(L(G, H), F);
     }
 
     function D(G, F, aa, Z, k, H, I) {
       G = K(G, K(K(p(F, aa, Z), k), I));
-      return K(L(G, H), F)
+      return K(L(G, H), F);
     }
 
     function t(G, F, aa, Z, k, H, I) {
       G = K(G, K(K(n(F, aa, Z), k), I));
-      return K(L(G, H), F)
+      return K(L(G, H), F);
     }
 
     function e(G) {
@@ -289,14 +295,14 @@ function getGravatar(gravatarEmail, size) {
         Z = (H - (H % 4)) / 4;
         d = (H % 4) * 8;
         aa[Z] = (aa[Z] | (G.charCodeAt(H) << d));
-        H++
+        H++;
       }
       Z = (H - (H % 4)) / 4;
       d = (H % 4) * 8;
       aa[Z] = aa[Z] | (128 << d);
       aa[I - 2] = F << 3;
       aa[I - 1] = F >>> 29;
-      return aa
+      return aa;
     }
 
     function B(x) {
@@ -304,9 +310,9 @@ function getGravatar(gravatarEmail, size) {
       for (d = 0; d <= 3; d++) {
         G = (x >>> (d * 8)) & 255;
         F = "0" + G.toString(16);
-        k = k + F.substr(F.length - 2, 2)
+        k = k + F.substr(F.length - 2, 2);
       }
-      return k
+      return k;
     }
 
     function J(k) {
@@ -315,19 +321,19 @@ function getGravatar(gravatarEmail, size) {
       for (var F = 0; F < k.length; F++) {
         var x = k.charCodeAt(F);
         if (x < 128) {
-          d += String.fromCharCode(x)
+          d += String.fromCharCode(x);
         } else {
           if ((x > 127) && (x < 2048)) {
             d += String.fromCharCode((x >> 6) | 192);
-            d += String.fromCharCode((x & 63) | 128)
+            d += String.fromCharCode((x & 63) | 128);
           } else {
             d += String.fromCharCode((x >> 12) | 224);
             d += String.fromCharCode(((x >> 6) & 63) | 128);
-            d += String.fromCharCode((x & 63) | 128)
+            d += String.fromCharCode((x & 63) | 128);
           }
         }
       }
-      return d
+      return d;
     }
 
     var C = Array();
@@ -414,12 +420,13 @@ function getGravatar(gravatarEmail, size) {
       Y = K(Y, h);
       X = K(X, E);
       W = K(W, v);
-      V = K(V, g)
+      V = K(V, g);
     }
     var i = B(Y) + B(X) + B(W) + B(V);
-    return i.toLowerCase()
+    return i.toLowerCase();
   };
-  var size = size || 80;
+
+  size = size || 80;
   if (gravatarEmail) {
     return 'http://www.gravatar.com/avatar/' + MD5(gravatarEmail) + '.jpg?s=' + size;
   } else {
