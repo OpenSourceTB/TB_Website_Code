@@ -11,6 +11,22 @@ The opensourcemalaria.org website actually consists of two separate code bases.
 There is a website code base at the Github account/repository https://github.com/OpenSourceMalaria/OSM_Website_Code.
 This repository holds the HTML, CSS, images, and javascript of the website.
 
+In order to cut down on excessive web requests to Twitter and GitHub, the following "rules" are implemented in the
+browser code:
+
+--- The sponsors and members data is requested only on initial load (or forced reload)
+--- The project activity is only requested about every 10 minutes.
+--- The twitter feed is only requested about every 10 minutes.
+
+In addition to this browser code, the osm-feeds heroku app (described below) also provides caching of the data.
+The approaches are used because they solve two different issues:
+
+The browser code keeps a single browser from making excessive calls to osm_feeds. Three on page load, and then
+two every 10 minutes thereafter while the browser has the page loaded.
+
+The osm-feeds code limits the number of requests passed onto GitHub and Twitter when there are many browsers loading
+or showing the page.  
+
 ### osm-feeds Code Base ###
 
 There is a separate code base stored on heroku.com. This repository creates a simple server application
@@ -38,11 +54,11 @@ authentication requires secret information, this application ensures that the se
 ##### Reset command #####
 
 The reset command is invoked to discard the contents of the cache and force the application to get and return
-the current project activity data from github the next time a request for that data is made.
+the current project activity and sponsor/member data from github the next time a request for that data is made.
 
 This is not useful in normal circumstances, but can be used to ensure that additions and updates to the project
-activity feed are immediately available to visitors to the site. Otherwise, there will be a delay of about 10 minutes
-for updated information to become available.
+activity or sponsor/member feeds are immediately available to visitors to the site. Otherwise, there will be a delay of
+about 10 minutes for updated information to become available.
 
 Content Management Solution
 ---------------------------
