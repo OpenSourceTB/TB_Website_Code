@@ -126,14 +126,6 @@ function sponsorsAndMembers(data) {
   parseTeam(data);
 }
 
-function loadLatestProjectActivity() {
-
-  var script = document.createElement( 'script' );
-  script.type = 'text/javascript';
-  script.src = "https://osm-feeds.herokuapp.com/project_activity?callback=projectActivity";
-  $("head").append( script );
-}
-
 function parseSponsors(data) {
   "use strict";
 
@@ -148,6 +140,7 @@ function parseSponsors(data) {
     }
 
     if (dataIndex > -1) {
+      $("#sponsors").empty();
       var sponsors = $.parseJSON(data[dataIndex].body);
       var lastSponsor = Math.min(numSponsors, sponsors.length);
 
@@ -190,6 +183,7 @@ function parseTeam(data) {
     }
 
     if (dataIndex > -1) {
+      $("#team-members").empty();
       var teamMembers = $.parseJSON(data[dataIndex].body);
       var lastTeamMember = Math.min(numTeamMembers, teamMembers.length);
       for (var i = 0; i < lastTeamMember; i++) {
