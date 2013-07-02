@@ -64,7 +64,7 @@ function loadLatestTweets() {
 }
 
 function loadLatestProjectActivity() {
-  var _url = 'https://osm-feeds.herokuapp.com/project_activity';
+  var _url = 'https://osm-feeds.herokuapp.com/project_activity'+'?buster='+new Date().getTime();
 
   $.ajax({
     cache: false,
@@ -109,7 +109,7 @@ function loadLatestProjectActivity() {
 }
 
 function loadSponsorsAndTeam(){
-  var _url = 'https://osm-feeds.herokuapp.com/sponsors_and_members';
+  var _url = 'https://osm-feeds.herokuapp.com/sponsors_and_members'+'?buster='+new Date().getTime();
 
   $.ajax({
     cache: false,
