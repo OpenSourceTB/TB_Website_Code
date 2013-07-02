@@ -30,12 +30,11 @@
 
             var TwitterUpdateInterval = 600000; // 10 minutes is 600000 milliseconds
             var ProjectActivityUpdateInterval = 660000;  // 11 minutes
-            loadLatestTweets();
-            setInterval(loadLatestTweets, TwitterUpdateInterval);
             loadLatestProjectActivity();
             setInterval(loadLatestProjectActivity, ProjectActivityUpdateInterval);
             loadSponsorsAndTeam();
-            
+            loadLatestTweets();
+            setInterval(loadLatestTweets, TwitterUpdateInterval);
 //            Set the Default view of the page
             $('#join-the-team').hide();
             $('#meet-the-team').hide();

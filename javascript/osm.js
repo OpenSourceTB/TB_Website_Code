@@ -63,7 +63,7 @@ function loadLatestTweets() {
 }
 
 function loadLatestProjectActivity() {
-  var _url = 'https://osm-feeds.herokuapp.com/project_activity';
+  var _url = 'https://osm-feeds.herokuapp.com/project_activity/';
 
   $.ajax({
     url: _url,
@@ -107,7 +107,7 @@ function loadLatestProjectActivity() {
 }
 
 function loadSponsorsAndTeam(){
-  var _url = 'https://osm-feeds.herokuapp.com/sponsors_and_members';
+  var _url = 'https://osm-feeds.herokuapp.com/sponsors_and_members/';
 
   $.ajax({
     url: _url,
@@ -171,10 +171,6 @@ function parseTeam(data) {
     var currentRow = 0;
     var numTeamMembers = 100;
     var dataIndex = -1;
-//  replicants is used for demo-ing the site.
-//  It is the number of times we show each member.
-//  For production operation, set it to 1.
-    var replicants = 1;  // TODO: Remove when dev work is done.
 
     for (i = 0; i < data.length; i++) {
       if (data[i].title == "team") dataIndex = i;
@@ -183,33 +179,31 @@ function parseTeam(data) {
     if (dataIndex > -1) {
       var teamMembers = $.parseJSON(data[dataIndex].body);
       var lastTeamMember = Math.min(numTeamMembers, teamMembers.length);
-      for (var j=0; j<replicants; j++){    // for demo purposes
-        for (var i = 0; i < lastTeamMember; i++) {
-          var name = teamMembers[i].name || "Anonymous";
-          var url = teamMembers[i].url;
-          var gravatarEmail = teamMembers[i].gravatar_email;
-          var affiliation;
-          var affiliationWithComma;
-          if (teamMembers[i].affiliation) {
-            affiliation = teamMembers[i].affiliation;
-            affiliationWithComma = ", " + affiliation;
-          } else {
-            affiliation = "";
-            affiliationWithComma = "";
-          }
-
-          var gravatarUrl = getGravatar(gravatarEmail);
-
-          var teamMember;
-          if (url) {
-            teamMember = '<span class="span2 member"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
-              '<div><a href="http://' + url + '" target="_blank"><strong>' + name + '</strong></div><div class="affiliation"><small>' + affiliation + '</small></div></div></span>'
-
-          } else {
-            teamMember = '<span class="span2 member"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div><strong>' + name + '</strong></div><div class="affiliation"><small>' + affiliation + '</small></div></div></span>'
-          }
-          $("#team-members").append(teamMember);
+      for (var i = 0; i < lastTeamMember; i++) {
+        var name = teamMembers[i].name || "Anonymous";
+        var url = teamMembers[i].url;
+        var gravatarEmail = teamMembers[i].gravatar_email;
+        var affiliation;
+        var affiliationWithComma;
+        if (teamMembers[i].affiliation) {
+          affiliation = teamMembers[i].affiliation;
+          affiliationWithComma = ", " + affiliation;
+        } else {
+          affiliation = "";
+          affiliationWithComma = "";
         }
+
+        var gravatarUrl = getGravatar(gravatarEmail);
+
+        var teamMember;
+        if (url) {
+          teamMember = '<span class="span2 member"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
+            '<div><a href="http://' + url + '" target="_blank"><strong>' + name + '</strong></div><div class="affiliation"><small>' + affiliation + '</small></div></div></span>'
+
+        } else {
+          teamMember = '<span class="span2 member"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div><strong>' + name + '</strong></div><div class="affiliation"><small>' + affiliation + '</small></div></div></span>'
+        }
+        $("#team-members").append(teamMember);
       }
     }
 }
