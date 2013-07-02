@@ -54,7 +54,7 @@ function loadLatestTweets() {
       for (var i = 0; i < useTweetCount; i++) {
         var tweet = data[i].text;
         var created = parseTwitterDate(data[i].created_at);
-        var hours = created.getHours().toString();
+        var hours = createdgetHours().toString();
         if (hours.length === 1) { hours = '0' + hours; }
         var minutes = created.getMinutes().toString();
         if (minutes.length === 1) { minutes = '0' + minutes; }
@@ -111,6 +111,12 @@ function loadLatestProjectActivity() {
           $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemBody + '<strong><em>&nbsp;'+ commentText +'</em></strong>' + '</a></div>');
 
         }
+    },
+    error: function(data, status, error){
+        alert("Project Activity Error!!!");
+        alert(status);
+        alert(error);
+        alert(data);
     }
   });
 }
