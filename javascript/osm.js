@@ -71,9 +71,12 @@ function loadLatestTweets() {
 
 function loadLatestProjectActivity() {
 
+  $("#project_activity_script").remove();
+
   var script = document.createElement( 'script' );
   script.type = 'text/javascript';
   script.src = "https://osm-feeds.herokuapp.com/project_activity?callback=projectActivity";
+  script.id = "project_activity_script";
   $("head").append( script );
 }
 
@@ -115,9 +118,11 @@ function projectActivity(data) {
 
 function loadSponsorsAndTeam(){
   "use strict";
+  $("#sponsors_and_members_script").remove();
   var script = document.createElement( 'script' );
   script.type = 'text/javascript';
   script.src = "https://osm-feeds.herokuapp.com/sponsors_and_members?callback=sponsorsAndMembers";
+  script.id = 'sponsors_and_members_script'
   $("head").append( script );
 }
 
