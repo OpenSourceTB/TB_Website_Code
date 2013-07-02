@@ -34,6 +34,7 @@ function loadLatestTweets() {
   var _url = 'https://osm-feeds.herokuapp.com/';
 
   $.ajax({
+    cache: false,
     url: _url,
     dataType: 'jsonp',
     success: function(data){
@@ -66,6 +67,7 @@ function loadLatestProjectActivity() {
   var _url = 'https://osm-feeds.herokuapp.com/project_activity';
 
   $.ajax({
+    cache: false,
     url: _url,
     dataType: 'json',
     success: function(data){
@@ -110,6 +112,7 @@ function loadSponsorsAndTeam(){
   var _url = 'https://osm-feeds.herokuapp.com/sponsors_and_members';
 
   $.ajax({
+    cache: false,
     url: _url,
     dataType: 'json',
     success: function(data){
