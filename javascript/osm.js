@@ -194,6 +194,7 @@ function parseTeam(data) {
       for (var i = 0; i < lastTeamMember; i++) {
         var name = teamMembers[i].name || "Anonymous";
         var url = teamMembers[i].url;
+        var discipline = teamMembers[i].discipline || "" ;
         var gravatarEmail = teamMembers[i].gravatar_email;
         var affiliation;
         var affiliationWithComma;
@@ -209,10 +210,20 @@ function parseTeam(data) {
 
         var teamMember;
         if (url) {
-          teamMember = '<span class="span2 member"><a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>' +
-            '<div><a href="http://' + url + '" target="_blank"><strong>' + name + '</strong></div><div class="affiliation"><small>' + affiliation + '</small></div></div></span>';
+          teamMember = '<span class="span2 member">'
+          teamMember = teamMember + '<a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>'
+          teamMember = teamMember + '<div><a href="http://' + url + '" target="_blank"><strong>' + name + '</strong></div>'
+          teamMember = teamMember + '<div class="discipline"><small>' + discipline + '</small></div>'
+          teamMember = teamMember + '<div class="affiliation"><small>' + affiliation + '</small></div>'
+          teamMember = teamMember + '</span>';
         } else {
-          teamMember = '<span class="span2 member"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/><div><strong>' + name + '</strong></div><div class="affiliation"><small>' + affiliation + '</small></div></div></span>';
+          teamMember = '<span class="span2 member">'
+          teamMember = teamMember + '<img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>'
+          teamMember = teamMember + '<div><strong>' + name + '</strong></div>'
+          teamMember = teamMember + '<div class="discipline"><small>' + discipline + '</small></div>'
+          teamMember = teamMember + '<div class="affiliation"><small>' + affiliation + '</small></div>'
+//          teamMember = teamMember + '</div>'
+          teamMember = teamMember + '</span>';
         }
 
         $("#team-members").append(teamMember);
