@@ -25,7 +25,7 @@ The browser code keeps a single browser from making excessive calls to osm_feeds
 two every 10 minutes thereafter while the browser has the page loaded.
 
 The osm-feeds code limits the number of requests passed onto GitHub and Twitter when there are many browsers loading
-or showing the page.  
+or showing the page.
 
 ### osm-feeds Code Base ###
 
