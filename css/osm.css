@@ -3,6 +3,9 @@
 #mobile-twitter-feed{
     display: none;
 }
+#mobile-twitter-lead{
+    display: none;
+}
 
 .group:after {
     content: "";
@@ -91,10 +94,10 @@ img.project-activity-image{
 }
 
 #team-members .member{
-    width: 14%;
+    width: 120px;
     margin: 0 1%;
     float: left;
-    min-height: 200px;
+    min-height: 180px;
     text-align: center;
 }
 
@@ -186,7 +189,7 @@ img.project-activity-image{
 }
 
 .links{
-    margin-bottom: 2%;
+    margin-bottom: 0;
 }
 
 .links a{
@@ -195,7 +198,6 @@ img.project-activity-image{
 
 .links{
     margin-left: 40%;
-    text-align: right;
 }
 
 #link-text-meet{
@@ -254,8 +256,18 @@ img.project-activity-image{
     width: 130px;
 }
 
+.name{
+    margin-top: 10px;
+    margin-bottom: 0;
+    line-height: 13px;
+}
+
+.discipline{
+}
+
 .affiliation{
-    margin-top: 2px;
+    margin-top: 8px;
+    line-height: 10px;
 }
 
 .title {
@@ -315,6 +327,24 @@ img.project-activity-image{
     #social a img{
         width: 30%;
     }
+
+    #linkspan{
+        margin-left: 0;
+    }
+
+    #link-text-meet{
+        width: 123px;
+        float: right;
+
+    }
+    #link-text-join{
+        width: 130px;
+        float: right;
+    }
+    #link-text-activity{
+        width: 144px;
+        float: right;
+    }
 }
 
 /* iPad Retina */
@@ -332,13 +362,16 @@ img.project-activity-image{
         margin-left: 2px;
         overflow: hidden;
     }
+    #linkspan{
+        margin-left: 0;
+    }
 }
 
 /*iPhone Retina size devices (Also scales for original iPhone size devices) */
 @media screen and (max-width: 639px) {
 
     .logo {
-        margin-top: 5%;
+        margin-top: 0;
     }
 
     .para{
@@ -379,11 +412,11 @@ img.project-activity-image{
     }
 
     #team-members .member{
-        width: 20%;
-        margin: 0 2%;
+        width: 70px;
+        margin: 0 20px;
         font-size: 10px;
         line-height: 10px;
-        min-height: 120px;
+        min-height: 180px;
     }
 
     #phone-links{
@@ -391,6 +424,9 @@ img.project-activity-image{
         margin-bottom: 5%;
     }
 
+    #linkspan{
+        display: none;
+    }
     .phone-row-external-links{
         display: block;
     }
@@ -463,9 +499,17 @@ img.project-activity-image{
     #twitter-feed{
         display: none;
     }
+    #link-text-meet{
+        width: 113px;
+        float: none;
 
-    .links a{
-        display: none;
+    }
+    #link-text-join{
+        width: 120px;
+        float: none;
+    }
+    #link-text-activity{
+        width: 134px;
+        float: none;
     }
 }
-/*End example*/

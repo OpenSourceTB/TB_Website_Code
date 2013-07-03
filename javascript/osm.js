@@ -212,17 +212,16 @@ function parseTeam(data) {
         if (url) {
           teamMember = '<span class="span2 member">'
           teamMember = teamMember + '<a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>'
-          teamMember = teamMember + '<div><a href="http://' + url + '" target="_blank"><strong>' + name + '</strong></div>'
+          teamMember = teamMember + '<div class="name"><a href="http://' + url + '" target="_blank"><strong>' + name + '</strong></div>'
           teamMember = teamMember + '<div class="discipline"><small>' + discipline + '</small></div>'
           teamMember = teamMember + '<div class="affiliation"><small>' + affiliation + '</small></div>'
           teamMember = teamMember + '</span>';
         } else {
           teamMember = '<span class="span2 member">'
           teamMember = teamMember + '<img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>'
-          teamMember = teamMember + '<div><strong>' + name + '</strong></div>'
+          teamMember = teamMember + '<div class="name"><strong>' + name + '</strong></div>'
           teamMember = teamMember + '<div class="discipline"><small>' + discipline + '</small></div>'
           teamMember = teamMember + '<div class="affiliation"><small>' + affiliation + '</small></div>'
-//          teamMember = teamMember + '</div>'
           teamMember = teamMember + '</span>';
         }
 
