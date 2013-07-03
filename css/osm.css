@@ -223,10 +223,10 @@ img.project-activity-image{
 }
 
 #twitter-feed {
-    width: 136px;
+    width: 160px;
     float: left;
     margin-top: 0px;
-    margin-left: 32px;
+    margin-left: 25px;
 }
 
 #twitter-feed p {
@@ -326,10 +326,10 @@ img.project-activity-image{
         margin-left: 0%;
     }
     #twitter-feed {
-        width: 100px;
+        width: 145px;
         float: left;
         margin-top: 0px;
-        margin-left: 2px;
+        margin-left: 25px;
         overflow: hidden;
     }
 }

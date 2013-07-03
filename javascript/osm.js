@@ -58,7 +58,7 @@ function loadLatestTweets() {
         if (hours.length === 1) { hours = '0' + hours; }
         var minutes = created.getMinutes().toString();
         if (minutes.length === 1) { minutes = '0' + minutes; }
-        var createdDate = created.getDate() + ' ' + monthNames[created.getMonth() + 1] + ' ' + created.getFullYear() + ' at ' + hours + ':' + minutes;
+        var createdDate = created.getDate() + ' ' + monthNames[created.getMonth()] + ' ' + created.getFullYear() + ' at ' + hours + ':' + minutes;
 
         tweet = tweet.parseURL().parseUsername().parseHashtag();
         tweet += '<div class="tweeter-info"><div class="uppercase bold"></div><div class="right"><a href="https://twitter.com/#!/OSDDMalaria/status/' + data[i].id_str + '">' + createdDate + '</a></div></div>';
@@ -98,7 +98,7 @@ function projectActivity(data) {
     var minutes = created.getMinutes().toString();
     if (minutes.length === 1) { minutes = '0' + minutes; }
 
-    var createdDate = created.getDate() + ' ' + monthNames[created.getMonth() + 1] + ' ' + created.getFullYear() + ' at ' + hours + ':' + minutes;
+    var createdDate = created.getDate() + ' ' + monthNames[created.getMonth()] + ' ' + created.getFullYear() + ' at ' + hours + ':' + minutes;
     var commentText;
 
     if (commentCount > 0){
