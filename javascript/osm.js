@@ -197,7 +197,7 @@ function parseTeam(data) {
         var discipline = teamMembers[i].discipline || "" ;
         var gravatarEmail = teamMembers[i].gravatar_email;
         var affiliation;
-        var affilitation_url = teamMembers[i].affilitation_url;
+        var affiliation_url = teamMembers[i].affiliation_url;
         var affiliationWithComma;
         if (teamMembers[i].affiliation) {
           affiliation = teamMembers[i].affiliation;
@@ -222,7 +222,7 @@ function parseTeam(data) {
           teamMember = teamMember + '<div class="discipline"><small>' + discipline + '</small></div>'
         }
 
-        if (affilitation_url) {
+        if (affiliation_url) {
           teamMember = teamMember + '<div class="affiliation"><a href="http://' + affiliation_url + '" target="_blank"><strong>' + affiliation + '</strong></div>'
         } else {
           teamMember = teamMember + '<div class="affiliation">' + affiliation + '</div>'
