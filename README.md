@@ -81,7 +81,7 @@ Team
           "affiliation_url": "sydney.edu.au",
           "discipline": "Chemist",
           "url": "groups.chem.usyd.edu.au/todd/the-boss.html",
-          "gravatar_email": "},
+          "gravatar_email": "mat@mat.com"},
         { "name": "Stephanie Geerlings" }
       ]
 
@@ -93,7 +93,10 @@ Team
    If name, affiliation, and url provided: "Member Name, letters" as a link to the url.
    If name, url provided: "Member Name" as a link to the url.
    If name, affiliation provided: "Member Name, affiliation" without a link.
-   If gravatar_email provided, the member's gravatar is obtained and shown. If missing, a default image is shown.
+   If gravatar_email provided, the member's gravatar is obtained and shown.
+      If missing, a default image (blue outline figure) is shown.
+      If an entry does not correspond to an actual gravatar, a stylistic G image (the gravatar standard) is shown.
+        If the G image is shown, it could be due to a misspelling.
 
    Discipline is intended to identify the individual's area of expertise, such as "Chemist", "Biologist", etc.
 
