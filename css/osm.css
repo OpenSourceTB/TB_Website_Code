@@ -117,6 +117,22 @@ img.project-activity-image{
     border-radius: 10px;
 }
 
+.discipline-chemist{
+    border:3px solid blue;
+}
+
+.discipline-informatician{
+    border:3px solid green;
+}
+
+.discipline-biologist{
+    border:3px solid red;
+}
+
+.discipline-{
+    border:3px solid yellow;
+}
+
 #about-the-team{
     display: inline-block;
     margin-top: 2%;
