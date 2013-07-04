@@ -197,6 +197,7 @@ function parseTeam(data) {
         var discipline = teamMembers[i].discipline || "" ;
         var gravatarEmail = teamMembers[i].gravatar_email;
         var affiliation;
+        var affilitation_url = teamMembers[i].affilitation_url;
         var affiliationWithComma;
         if (teamMembers[i].affiliation) {
           affiliation = teamMembers[i].affiliation;
@@ -214,16 +215,20 @@ function parseTeam(data) {
           teamMember = teamMember + '<a href="http://' + url + '" target="_blank"><img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>'
           teamMember = teamMember + '<div class="name"><a href="http://' + url + '" target="_blank"><strong>' + name + '</strong></div>'
           teamMember = teamMember + '<div class="discipline"><small>' + discipline + '</small></div>'
-          teamMember = teamMember + '<div class="affiliation"><small>' + affiliation + '</small></div>'
-          teamMember = teamMember + '</span>';
         } else {
           teamMember = '<span class="span2 member">'
           teamMember = teamMember + '<img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>'
           teamMember = teamMember + '<div class="name"><strong>' + name + '</strong></div>'
           teamMember = teamMember + '<div class="discipline"><small>' + discipline + '</small></div>'
-          teamMember = teamMember + '<div class="affiliation"><small>' + affiliation + '</small></div>'
-          teamMember = teamMember + '</span>';
         }
+
+        if (affilitation_url) {
+          teamMember = teamMember + '<div class="affiliation"><a href="http://' + affiliation_url + '" target="_blank"><strong>' + affiliation + '</strong></div>'
+        } else {
+          teamMember = teamMember + '<div class="affiliation">' + affiliation + '</div>'
+        }
+
+        teamMember = teamMember + '</span>';
 
         $("#team-members").append(teamMember);
       }
