@@ -78,12 +78,14 @@ Team
         { "name": "Tim Connor", "affiliation": "El Hefe", "url": "www.cloudcity.io" },
         { "name": "Mat Todd",
           "affiliation": "University of Sydney",
+          "affiliation_url": "sydney.edu.au",
+          "discipline": "Chemist",
           "url": "groups.chem.usyd.edu.au/todd/the-boss.html",
           "gravatar_email": "},
         { "name": "Stephanie Geerlings" }
       ]
 
-  The elements: url, affiliation, and gravatar_email are optional. If name is not provided, "Anonymous" is used for
+  The elements: url, affiliation, discipline, and gravatar_email are optional. If name is not provided, "Anonymous" is used for
   their name.
 
   The different display cases are:
@@ -92,6 +94,8 @@ Team
    If name, url provided: "Member Name" as a link to the url.
    If name, affiliation provided: "Member Name, affiliation" without a link.
    If gravatar_email provided, the member's gravatar is obtained and shown. If missing, a default image is shown.
+
+   Discipline is intended to identify the individual's area of expertise, such as "Chemist", "Biologist", etc.
 
 Sponsors
 --------
