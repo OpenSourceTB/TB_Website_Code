@@ -229,6 +229,8 @@ function parseTeam(data) {
           teamMember = teamMember + '</div>';
         }
 
+        teamMember = teamMember + '<div class="affiliation"><small>' + affiliation + '</small></div>'
+
         teamMember = teamMember + '</span>';
 
         $("#team-members").append(teamMember);
