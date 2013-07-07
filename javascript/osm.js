@@ -62,8 +62,8 @@ function loadLatestTweets() {
 
         tweet = tweet.parseURL().parseUsername().parseHashtag();
         tweet += '<div class="tweeter-info"><div class="uppercase bold"></div><div class="right"><a href="https://twitter.com/#!/OSDDMalaria/status/' + data[i].id_str + '">' + createdDate + '</a></div></div>';
-        $("#twitter-feed").append('<p>' + tweet + '</p>');
-        $("#mobile-twitter-feed").append('<p>' + tweet + '</p>');
+        $("#twitter-feed").append('<p>' + tweet + '</p>'+'<hr>');
+        $("#mobile-twitter-feed").append('<p>' + tweet + '</p>'+ '<hr>');
       }
     }
   });
@@ -195,6 +195,7 @@ function parseTeam(data) {
         var name = teamMembers[i].name || "Anonymous";
         var url = teamMembers[i].url;
         var discipline = teamMembers[i].discipline || "" ;
+        var disciplines = teamMembers[i].disciplines || discipline ;
         var gravatarEmail = teamMembers[i].gravatar_email;
         var affiliation;
         var affiliation_url = teamMembers[i].affiliation_url;
@@ -210,22 +211,22 @@ function parseTeam(data) {
         var gravatarUrl = getGravatar(gravatarEmail);
 
         var teamMember;
-        if (url) {
-          teamMember = '<span class="span2 member">'
-          teamMember = teamMember + '<a href="http://' + url + '" target="_blank"><img class="discipline-' + discipline.toLowerCase() + '" src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>' + '</a>'
-          teamMember = teamMember + '<div class="name"><a href="http://' + url + '" target="_blank"><strong>' + name + '</strong></a></div>'
-          teamMember = teamMember + '<div class="discipline"><small>' + discipline + '</small></div>'
-        } else {
-          teamMember = '<span class="span2 member">'
-          teamMember = teamMember + '<img class="discipline-' + discipline.toLowerCase() + '" src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>'
-          teamMember = teamMember + '<div class="name"><strong>' + name + '</strong></div>'
-          teamMember = teamMember + '<div class="discipline"><small>' + discipline + '</small></div>'
-        }
 
-        if (affiliation_url) {
-          teamMember = teamMember + '<div class="affiliation"><a href="http://' + affiliation_url + '" target="_blank"><strong>' + affiliation + '</strong></div>'
+        teamMember = '<span class="span2 member">'
+        teamMember = teamMember + '<img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>'
+
+        if (url) {
+          teamMember = teamMember + '<div class="name"><a href="http://' + url + '" target="_blank"><strong>' + name + '</strong></a></div>'
         } else {
-          teamMember = teamMember + '<div class="affiliation">' + affiliation + '</div>'
+          teamMember = teamMember + '<div class="name"><strong>' + name + '</strong></div>'
+        }
+        var memberDisciplines=disciplines.split(";");
+        if ( memberDisciplines.length > 0 ) {
+          teamMember = teamMember + '<div class="disciplines' + memberDisciplines.length + '">';
+          for (var k = 0; k < memberDisciplines.length; k++) {
+            teamMember = teamMember + '<div class="circle-' + memberDisciplines[k].toLowerCase() + '"></div>';
+          }
+          teamMember = teamMember + '</div>';
         }
 
         teamMember = teamMember + '</span>';

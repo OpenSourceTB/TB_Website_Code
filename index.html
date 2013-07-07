@@ -84,23 +84,23 @@
 <body>
     <div class="container">
         <div class="row-fluid span12 links">
-            <span class="span10 linkspan" id="linkspan">
-                <span id="link-text-meet" class="meet-the-team-target">
-                    <small>&nbsp;&nbsp;&nbsp;<a href="#">MEET THE TEAM</a>&nbsp;&nbsp;&nbsp;</small>
+            <span class="offset3 span6 linkspan" id="linkspan">
+                <span id="link-text-meet" class="meet-the-team-target span4">
+                    <small><a href="#">MEET THE TEAM</a></small>
                 </span>
-                <span id="link-text-join" class="join-target">
-                    <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">JOIN THE TEAM</a>&nbsp;&nbsp;&nbsp;</small>
+                <span id="link-text-join" class="join-target span4">
+                    <small><a href="#">JOIN THE TEAM</a></small>
                 </span>
-                <span id="link-text-activity" class="project-activity-target">
-                    <small><a href="#">SEE PROJECT ACTIVITY</a></small>
+                <span id="link-text-activity" class="project-activity-target span4">
+                    <small><a href="#">SEE ACTIVITY</a></small>
                 </span>
 
             </span>
 
             <div class="phone-row-meet-join-activity">
-                <span><a class="phone-link"><span class="meet-the-team-target">MEET THE TEAM</span></a></span>
-                <span><a class="phone-link"><span class="join-target">JOIN THE TEAM</span></a></span>
                 <span><a class="phone-link"><span class="project-activity-target">SEE ACTIVITY</span></a></span>
+                <span><a class="phone-link"><span class="join-target">JOIN THE TEAM</span></a></span>
+                <span><a class="phone-link"><span class="meet-the-team-target">MEET THE TEAM</span></a></span>
             </div>
         </div>
 
@@ -142,7 +142,7 @@
 
             <div>
                 <h4>Project Wiki</h4>
-                <a href="http://openwetware.org/wiki/Open_Source_Drug_Discovery_-_Malaria" target="_blank"><img
+                <a href="http://openwetware.org/wiki/OpenSourceMalaria" target="_blank"><img
                         src="images/wiki.png" alt="Wiki"/></a>
             </div>
             <div class="join-target">
@@ -190,7 +190,7 @@
                         </a>
                     </span>
                     <span class="phone-link">
-                        <a href="http://openwetware.org/wiki/Open_Source_Drug_Discovery_-_Malaria" target="_blank"><img
+                        <a href="http://openwetware.org/wiki/OpenSourceMalaria" target="_blank"><img
                             src="images/wiki.png" alt="Wiki"/>
                             <span class="link-title">See Wiki</span>
                         </a>
@@ -250,17 +250,25 @@
                         Meet The Team
                     </div>
                     <span class="center-content">
-                    <span id="team-members" class="group"></span>
-                    <div id="team_photo">
-                        <div id="spinner">
-                            <div class="offset5 span1">
-                                <img src="images/ajax-loader.gif"/>
+                        <span id="team-members" class="group"></span>
+                        <div class="legend">
+                            Team Member Color Code<br/>
+                            <div class="legend-chemist">Chemist</div>
+                            <div class="legend-biologist">Biologist</div>
+                            <div class="legend-informatician">Informatician</div>
+                            <div class="legend-other">Other</div>
+                            <div class="legend-consultant">Consultant</div>
+                        </div>
+                        <div id="team_photo">
+                            <div id="spinner">
+                                <div class="offset5 span1">
+                                    <img src="images/ajax-loader.gif"/>
+                                </div>
+                            </div>
+                            <div id="group_photo" hidden >
+                                <img id="group_photo_image" src="images/OSM_Team.png" onload="showGroupPhoto();" alt="Some of the team!" alt="Click to see the entire team"/>
                             </div>
                         </div>
-                        <div id="group_photo" hidden >
-                            <img id="group_photo_image" src="images/OSM_Team.png" onload="showGroupPhoto();" alt="Some of the team!" alt="Click to see the entire team"/>
-                        </div>
-                    </div>
                     </span>
                 </div>
 
@@ -326,7 +334,7 @@
                             </li>
                             <li>
                                 Read up on where we are on the
-                                <a href="http://openwetware.org/wiki/Open_Source_Drug_Discovery_-_Malaria"
+                                <a href="http://openwetware.org/wiki/OpenSourceMalaria"
                                    target="_blank">Wiki
                                 </a>
                                 and sign up if you want to make changes or add pages.

@@ -121,6 +121,108 @@ img.project-activity-image{
     border:3px solid blue;
 }
 
+.disciplines{
+}
+
+.disciplines1{
+    margin-left: 52px;
+}
+.disciplines2{
+    margin-left: 45px;
+}
+.disciplines3{
+    margin-left: 37px;
+}
+.disciplines4{
+    margin-left: 29px;
+}
+.disciplines5{
+    margin-left: 22px;
+}
+
+.circle-chemist{
+    float: left;
+    width: 15px;
+    height: 15px;
+    background: blue;
+    border-radius: 999px;
+}
+.circle-other{
+    float: left;
+    width: 15px;
+    height: 15px;
+    background: yellow;
+    border-radius: 999px;
+}
+.circle-biologist{
+    float: left;
+    text-align: center;
+    width: 15px;
+    height: 15px;
+    background: red;
+    border-radius: 999px;
+}
+.circle-informatician{
+    float: left;
+    text-align: center;
+    width: 15px;
+    height: 15px;
+    background: green;
+    border-radius: 999px;
+}
+.circle-consultant{
+    float: left;
+    text-align: center;
+    width: 15px;
+    height: 15px;
+    background: purple;
+    border-radius: 999px;
+}
+
+.legend{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.legend-chemist{
+    float: left;
+    text-align: center;
+    width: 125px;
+    background: blue;
+    color: white;
+}
+.legend-other{
+    float: left;
+    text-align: center;
+    width: 125px;
+    background: yellow;
+    color: white;
+}
+.legend-biologist{
+    float: left;
+    text-align: center;
+    width: 125px;
+    background: red;
+    color: white;
+}
+.legend-informatician{
+    float: left;
+    text-align: center;
+    width: 125px;
+    background: green;
+    color: white;
+}
+.legend-consultant{
+    float: left;
+    text-align: center;
+    width: 125px;
+    background: purple;
+    color: white;
+}
+
+.key{
+    margin-left: 40px;
+}
+
 .discipline-informatician{
     border:3px solid green;
 }
@@ -139,7 +241,7 @@ img.project-activity-image{
 }
 
 .logo {
-    margin-top: -25%;
+    margin-top: 0;   // TOD: WAS -25%; TO FLOAT UPWARD
 }
 
 .para{
@@ -229,17 +331,13 @@ img.project-activity-image{
 }
 
 #link-text-meet{
-    width: 113px;
-    float: right;
-
+    text-align: center;
 }
 #link-text-join{
-    width: 120px;
-    float: right;
+    text-align: center;
 }
 #link-text-activity{
-    width: 134px;
-    float: right;
+    text-align: center;
 }
 
 .intro {
@@ -286,7 +384,7 @@ img.project-activity-image{
 
 .name{
     margin-top: 10px;
-    margin-bottom: 0;
+    margin-bottom: 2px;
     line-height: 13px;
 }
 
@@ -295,7 +393,7 @@ img.project-activity-image{
 
 .affiliation{
     font-size: small;
-    margin-top: 8px;
+    margin-top: 22px;
     line-height: 10px;
 }
 
@@ -357,25 +455,6 @@ img.project-activity-image{
         width: 30%;
     }
 
-    #linkspan{
-        margin-left: 0;
-    }
-
-    #link-text-meet{
-        width: 123px;
-        float: right;
-
-    }
-    #link-text-join{
-        width: 130px;
-        float: right;
-    }
-    #link-text-activity{
-        width: 144px;
-        float: right;
-    }
-}
-
 /* iPad Retina */
 @media screen and (max-width: 1535px) {
     .emphasis{
@@ -388,9 +467,6 @@ img.project-activity-image{
         float: left;
         margin-top: 0px;
         overflow: hidden;
-    }
-    #linkspan{
-        margin-left: 0;
     }
 }
 
@@ -446,8 +522,6 @@ img.project-activity-image{
         min-height: 180px;
     }
 
-
-
     #phone-links{
         display: block;
         margin-bottom: 5%;
@@ -458,10 +532,12 @@ img.project-activity-image{
     }
     .phone-row-external-links{
         display: block;
+        text-align: center;
     }
 
     .phone-row-meet-join-activity{
         display: block;
+        text-align: center;
     }
 
     .phone-row-meet-join-activity phone-link{
@@ -529,15 +605,18 @@ img.project-activity-image{
         display: none;
     }
     #link-text-meet{
+        text-align: center;
         width: 113px;
         float: none;
 
     }
     #link-text-join{
+        text-align: center;
         width: 120px;
         float: none;
     }
     #link-text-activity{
+        text-align: center;
         width: 134px;
         float: none;
     }
