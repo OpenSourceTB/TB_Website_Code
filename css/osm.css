@@ -443,13 +443,11 @@ img.project-activity-image {
 .indented a {
     color: black;
     text-decoration: none;
-    text-wrap: normal;
     overflow-wrap: break-word;
 }
 
 .indented a:hover {
     text-decoration: none;
-    text-wrap: normal;
     overflow-wrap: break-word;
 }
 

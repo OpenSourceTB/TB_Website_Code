@@ -110,10 +110,27 @@ function projectActivity(data) {
     } else {
       commentText = "";
     }
+    itemBody = trimLongWords(itemBody);
 
     $("#project-activity-feed").append('<span class="project-activity-item"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>');
     $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemBody + '<strong><em>&nbsp;'+ commentText +'</em></strong>' + '</a></div>');
   }
+}
+
+function trimLongWords(body){
+  var inputWords=body.split(" ");
+  var outputWords = [];
+  var longestAllowed = 40;
+  for (var k = 0; k < inputWords.length; k++) {
+    if (inputWords[k].length > longestAllowed) {
+      outputWords.push(inputWords[k].substr(0,longestAllowed-1));  // first part
+      outputWords.push(inputWords[k].substr(longestAllowed-1));      // remainder
+    } else {
+      outputWords.push(inputWords[k]);
+    }
+  }
+  var outputBody = outputWords.join(' ');
+  return outputBody;
 }
 
 function loadSponsorsAndTeam(){
