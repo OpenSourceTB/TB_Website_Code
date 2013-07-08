@@ -79,7 +79,7 @@ Team
         { "name": "Mat Todd",
           "affiliation": "University of Sydney",
           "affiliation_url": "sydney.edu.au",
-          "discipline": "Chemist",
+          "discipline": "chemistry",
           "url": "groups.chem.usyd.edu.au/todd/the-boss.html",
           "gravatar_email": "mat@mat.com"},
         { "name": "Stephanie Geerlings" }
@@ -98,7 +98,7 @@ Team
       If an entry does not correspond to an actual gravatar, a stylistic G image (the gravatar standard) is shown.
         If the G image is shown, it could be due to a misspelling.
 
-   Discipline is intended to identify the individual's area of expertise, such as "Chemist", "Biologist", etc.
+   Discipline is intended to identify the individual's area of expertise, such as "chemistry", "Biologist", etc.
 
 Sponsors
 --------

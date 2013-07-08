@@ -117,8 +117,8 @@ img.project-activity-image{
     border-radius: 10px;
 }
 
-.discipline-chemist{
-    border:3px solid blue;
+.discipline-chemistry{
+    border:3px solid #09b2ef;
 }
 
 .disciplines{
@@ -140,29 +140,29 @@ img.project-activity-image{
     margin-left: 22px;
 }
 
-.circle-chemist{
+.circle-chemistry{
     float: left;
     width: 15px;
     height: 15px;
-    background: blue;
+    background: #09b2ef;
     border-radius: 999px;
 }
-.circle-other{
+.circle-administration{
     float: left;
     width: 15px;
     height: 15px;
     background: yellow;
     border-radius: 999px;
 }
-.circle-biologist{
+.circle-biology{
     float: left;
     text-align: center;
     width: 15px;
     height: 15px;
-    background: red;
+    background: #e881a0;
     border-radius: 999px;
 }
-.circle-informatician{
+.circle-informatics{
     float: left;
     text-align: center;
     width: 15px;
@@ -170,7 +170,7 @@ img.project-activity-image{
     background: green;
     border-radius: 999px;
 }
-.circle-consultant{
+.circle-consulting{
     float: left;
     text-align: center;
     width: 15px;
@@ -180,42 +180,45 @@ img.project-activity-image{
 }
 
 .legend{
+    margin-left: 23px;
     margin-bottom: 50px;
+    text-align: center;
 }
-.legend-chemist{
+
+.legend-chemistry{
     float: left;
     text-align: center;
     width: 125px;
-    background: blue;
-    color: white;
+    color: #09b2ef;
+    background-color: #d5e3e5;
 }
-.legend-other{
+.legend-administration{
     float: left;
     text-align: center;
     width: 125px;
-    background: yellow;
-    color: black;
+    color: yellow;
+    background-color: #d5e3e5;
 }
-.legend-biologist{
+.legend-biology{
     float: left;
     text-align: center;
     width: 125px;
-    background: red;
-    color: white;
+    color: #e881a0;
+    background-color: #d5e3e5;
 }
-.legend-informatician{
+.legend-informatics{
     float: left;
     text-align: center;
     width: 125px;
-    background: green;
-    color: white;
+    color: green;
+    background-color: #d5e3e5;
 }
-.legend-consultant{
+.legend-consulting{
     float: left;
     text-align: center;
     width: 125px;
-    background: purple;
-    color: white;
+    color: purple;
+    background-color: #d5e3e5;
 }
 
 .key{
@@ -227,7 +230,7 @@ img.project-activity-image{
 }
 
 .discipline-biologist{
-    border:3px solid red;
+    border:3px solid #e881a0;
 }
 
 .discipline-{
@@ -453,6 +456,7 @@ img.project-activity-image{
     #social a img{
         width: 30%;
     }
+}
 
 /* iPad Retina */
 @media screen and (max-width: 1535px) {
@@ -484,10 +488,6 @@ img.project-activity-image{
         margin-bottom: 1%;
     }
 
-    #mobile-twitter-feed{
-        display: block;
-    }
-
     #title-block{
         margin-top: 1%;
     }
@@ -515,7 +515,7 @@ img.project-activity-image{
 
     #team-members .member{
         width: 70px;
-        margin: 0 20px;
+        margin: 0;
         font-size: 10px;
         line-height: 10px;
         min-height: 180px;
@@ -597,6 +597,10 @@ img.project-activity-image{
     #mobile-twitter-lead{
         margin-top: 5%;
         text-align: center;
+        display: block;
+    }
+
+    #mobile-twitter-feed{
         display: block;
     }
 
