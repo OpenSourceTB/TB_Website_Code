@@ -1,9 +1,10 @@
 /*Hide mobile view normally*/
 
-#mobile-twitter-feed{
+#mobile-twitter-feed {
     display: none;
 }
-#mobile-twitter-lead{
+
+#mobile-twitter-lead {
     display: none;
 }
 
@@ -13,19 +14,19 @@
     clear: both;
 }
 
-#team_photo{
+#team_photo {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-#group_photo_image{
+#group_photo_image {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-.container{
+.container {
     margin-top: 1%;
 }
 
@@ -44,7 +45,7 @@
     background-repeat: no-repeat;
 }
 
-#head-text{
+#head-text {
     margin-bottom: 2%;
     padding-top: 2%;
     padding-bottom: 2%;
@@ -54,37 +55,37 @@
     vertical-align: 60%;
 }
 
-#title-block{
+#title-block {
     margin-top: 1%;
     margin-left: 4%;
     width: 75%;
 }
 
-#tag-line{
+#tag-line {
     font-size: 100%;
     font-weight: bold;
     margin-top: 2%;
     margin-left: 4%;
 }
 
-img.project-activity-image{
+img.project-activity-image {
     /*height: 145%;*/
     margin-top: 0px;
     margin-left: -55px;
 }
 
-.see-more{
+.see-more {
     margin-left: 4%;
     margin-bottom: 2%;
 }
 
-.see-more a, .see-more a:hover{
+.see-more a, .see-more a:hover {
     color: black;
     font-size: 100%;
     font-weight: normal;
 }
 
-.center-leader{
+.center-leader {
     font-size: 145%;
     font-weight: bold;
     margin-top: 3%;
@@ -92,20 +93,20 @@ img.project-activity-image{
     margin-bottom: 1%;
 }
 
-#project-activity, #meet-the-team, #join-the-team{
+#project-activity, #meet-the-team, #join-the-team {
     padding: 10px;
 }
 
-.project-activity-item{
+.project-activity-item {
     display: block;
     margin-left: 10%;
 }
 
-.project-activity-item a:hover{
+.project-activity-item a:hover {
     text-decoration: underline;
 }
 
-#team-members .member{
+#team-members .member {
     width: 120px;
     margin: 0 1%;
     float: left;
@@ -117,44 +118,50 @@ img.project-activity-image{
     border-radius: 10px;
 }
 
-.discipline-chemistry{
-    border:3px solid #09b2ef;
+.discipline-chemistry {
+    border: 3px solid #09b2ef;
 }
 
-.disciplines{
+.disciplines {
 }
 
-.disciplines1{
+.disciplines1 {
     margin-left: 52px;
 }
-.disciplines2{
+
+.disciplines2 {
     margin-left: 45px;
 }
-.disciplines3{
+
+.disciplines3 {
     margin-left: 37px;
 }
-.disciplines4{
+
+.disciplines4 {
     margin-left: 29px;
 }
-.disciplines5{
+
+.disciplines5 {
     margin-left: 22px;
 }
 
-.circle-chemistry{
+.circle-chemistry {
     float: left;
     width: 15px;
     height: 15px;
     background: #09b2ef;
     border-radius: 999px;
 }
-.circle-administration{
+
+.circle-administration {
     float: left;
     width: 15px;
     height: 15px;
     background: yellow;
     border-radius: 999px;
 }
-.circle-biology{
+
+.circle-biology {
     float: left;
     text-align: center;
     width: 15px;
@@ -162,7 +169,8 @@ img.project-activity-image{
     background: #e881a0;
     border-radius: 999px;
 }
-.circle-informatics{
+
+.circle-informatics {
     float: left;
     text-align: center;
     width: 15px;
@@ -170,7 +178,8 @@ img.project-activity-image{
     background: green;
     border-radius: 999px;
 }
-.circle-consulting{
+
+.circle-consulting {
     float: left;
     text-align: center;
     width: 15px;
@@ -179,41 +188,45 @@ img.project-activity-image{
     border-radius: 999px;
 }
 
-.legend{
+.legend {
     margin-left: 23px;
     margin-bottom: 50px;
     text-align: center;
 }
 
-.legend-chemistry{
+.legend-chemistry {
     float: left;
     text-align: center;
     width: 125px;
     color: #09b2ef;
     background-color: #d5e3e5;
 }
-.legend-administration{
+
+.legend-administration {
     float: left;
     text-align: center;
     width: 125px;
     color: yellow;
     background-color: #d5e3e5;
 }
-.legend-biology{
+
+.legend-biology {
     float: left;
     text-align: center;
     width: 125px;
     color: #e881a0;
     background-color: #d5e3e5;
 }
-.legend-informatics{
+
+.legend-informatics {
     float: left;
     text-align: center;
     width: 125px;
     color: green;
     background-color: #d5e3e5;
 }
-.legend-consulting{
+
+.legend-consulting {
     float: left;
     text-align: center;
     width: 125px;
@@ -221,32 +234,34 @@ img.project-activity-image{
     background-color: #d5e3e5;
 }
 
-.key{
+.key {
     margin-left: 40px;
 }
 
-.discipline-informatician{
-    border:3px solid green;
+.discipline-informatician {
+    border: 3px solid green;
 }
 
-.discipline-biologist{
-    border:3px solid #e881a0;
+.discipline-biologist {
+    border: 3px solid #e881a0;
 }
 
-.discipline-{
-    border:3px solid yellow;
+.discipline- {
+    border: 3px solid yellow;
 }
 
-#about-the-team{
+#about-the-team {
     display: inline-block;
     margin-top: 2%;
 }
 
 .logo {
-    margin-top: 0;   // TOD: WAS -25%; TO FLOAT UPWARD
+    margin-top: 0;
+/ / TOD : WAS - 25 %;
+    TO FLOAT UPWARD
 }
 
-.para{
+.para {
     margin: 0 40px;
 }
 
@@ -255,22 +270,22 @@ img.project-activity-image{
     font-size: 320%;
 }
 
-.outdent img{
+.outdent img {
     width: 5%;
 }
 
-.center-section{
+.center-section {
     margin-right: .5%;
     margin-top: 2%;
     border-radius: 10px;
     background-color: #ebf6f8;
 }
 
-.center-section h3{
+.center-section h3 {
     padding-left: 145%;
 }
 
-.center-section .center-content{
+.center-section .center-content {
     display: block;
     margin-top: 2%;
     margin-right: 5%;
@@ -278,67 +293,69 @@ img.project-activity-image{
     margin-left: 5%;
 }
 
-.center-section img{
+.center-section img {
     vertical-align: top;
     max-width: 100%;
 }
 
-.center-text{
+.center-text {
     margin-top: 5%;
 }
 
-#join-laws{
+#join-laws {
     font-weight: bold;
 }
 
-.emphasis{
+.emphasis {
     font-size: 120%;
     color: #B0DFE4;
 }
 
-#twitter-lead{
+#twitter-lead {
     margin-left: 2%;
     margin-top: 15%;
 }
 
-#social{
+#social {
     margin-top: 22px;
     margin-left: 10px;
     padding-left: 10px;
     text-align: center;
 }
 
-#social a:hover{
+#social a:hover {
     text-decoration: none;
 }
 
-#phone-links{
+#phone-links {
     display: none;
 }
 
-.phone-row-meet-join-activity, .phone-row-external-links, .phone-row-social{
+.phone-row-meet-join-activity, .phone-row-external-links, .phone-row-social {
     display: none;
 }
 
-.links{
+.links {
     margin-bottom: 0;
 }
 
-.links a{
+.links a {
     color: gray;
 }
 
-.links{
+.links {
     margin-left: 40%;
 }
 
-#link-text-meet{
+#link-text-meet {
     text-align: center;
 }
-#link-text-join{
+
+#link-text-join {
     text-align: center;
 }
-#link-text-activity{
+
+#link-text-activity {
     text-align: center;
 }
 
@@ -368,32 +385,32 @@ img.project-activity-image{
 }
 
 #spinner {
-    float:none;
-    margin:0 auto;
+    float: none;
+    margin: 0 auto;
 }
 
 .gray {
     color: gray;
 }
 
-.left-nav{
+.left-nav {
     margin-top: 3%;
 }
 
-.left-nav img{
+.left-nav img {
     width: 130px;
 }
 
-.name{
+.name {
     margin-top: 10px;
     margin-bottom: 2px;
     line-height: 13px;
 }
 
-.discipline{
+.discipline {
 }
 
-.affiliation{
+.affiliation {
     font-size: small;
     margin-top: 22px;
     line-height: 10px;
@@ -405,11 +422,11 @@ img.project-activity-image{
     margin-left: 10px;
 }
 
-.title:hover{
+.title:hover {
     text-decoration: underline;
 }
 
-.sponsor-row{
+.sponsor-row {
     margin-top: 5%;
 }
 
@@ -418,34 +435,36 @@ img.project-activity-image{
     width: 220px;
 }
 
-.indented{
+.indented {
     margin-bottom: 4%;
     margin-left: 6%;
 }
 
-.indented a{
+.indented a {
     color: black;
     text-decoration: none;
-    text-wrap:normal;
-    overflow-wrap:break-word;
+    text-wrap: normal;
+    overflow-wrap: break-word;
 }
 
-.indented a:hover{
+.indented a:hover {
     text-decoration: none;
-    text-wrap:normal;
-    overflow-wrap:break-word;
+    text-wrap: normal;
+    overflow-wrap: break-word;
 }
 
 /* Handling for mobile devices*/
 
 /* iPad original */
-@media screen and (max-width: 768px) {
-    .emphasis{
+@media screen and (max-device-width: 768px) and (max-device-height: 1024px) {
+    .emphasis {
         font-size: 100%;
     }
-    #twitter-lead{
+
+    #twitter-lead {
         margin-left: 0%;
     }
+
     #twitter-feed {
         width: 100px;
         float: left;
@@ -453,19 +472,22 @@ img.project-activity-image{
         margin-left: 2px;
         overflow: hidden;
     }
-    #social a img{
+
+    #social a img {
         width: 30%;
     }
 }
 
 /* iPad Retina */
-@media screen and (max-width: 1535px) {
-    .emphasis{
+@media screen and (max-device-width: 1536px) and (max-device-height: 2048px) {
+    .emphasis {
         font-size: 100%;
     }
-    #twitter-lead{
+
+    #twitter-lead {
         margin-left: 0%;
     }
+
     #twitter-feed {
         float: left;
         margin-top: 0px;
@@ -474,13 +496,13 @@ img.project-activity-image{
 }
 
 /*iPhone Retina size devices (Also scales for original iPhone size devices) */
-@media screen and (max-width: 639px) {
+@media screen and (max-device-width: 640px) and (max-device-height: 960px) {
 
     .logo {
         margin-top: 0;
     }
 
-    .para{
+    .para {
         margin-left: 10%;
     }
 
@@ -488,32 +510,32 @@ img.project-activity-image{
         margin-bottom: 1%;
     }
 
-    #title-block{
+    #title-block {
         margin-top: 1%;
     }
 
-    #tag-line{
+    #tag-line {
         font-size: 70%;
     }
 
-    #thanks-leader{
+    #thanks-leader {
         width: 90%;
     }
 
-    img.project-activity-image{
+    img.project-activity-image {
         margin-top: 0px;
         margin-left: -30px;
     }
 
-    #sponsors{
+    #sponsors {
         width: 85%;
     }
 
-    .sponsor-image img{
-        margin-left:0;
+    .sponsor-image img {
+        margin-left: 0;
     }
 
-    #team-members .member{
+    #team-members .member {
         width: 70px;
         margin: 0;
         font-size: 10px;
@@ -521,64 +543,65 @@ img.project-activity-image{
         min-height: 180px;
     }
 
-    #phone-links{
+    #phone-links {
         display: block;
         margin-bottom: 5%;
     }
 
-    #linkspan{
+    #linkspan {
         display: none;
     }
-    .phone-row-external-links{
+
+    .phone-row-external-links {
         display: block;
         text-align: center;
     }
 
-    .phone-row-meet-join-activity{
+    .phone-row-meet-join-activity {
         display: block;
         text-align: center;
     }
 
-    .phone-row-meet-join-activity phone-link{
+    .phone-row-meet-join-activity phone-link {
         text-align: center;
     }
 
-    .phone-row-social{
+    .phone-row-social {
         display: block;
         text-align: center;
         margin-top: 5%;
         margin-bottom: 10%;
     }
 
-    .phone-link{
+    .phone-link {
         text-align: center;
         margin-top: 10%;
-        width: 33%;
+        width: 32%;
         float: right;
     }
 
-    .phone-link .link-title{
+    .phone-link .link-title {
         display: block;
         text-align: center;
     }
 
-    span.phone-link a{
+    span.phone-link a {
         font-size: 80%;
     }
 
-    span.phone-link a img{
+    span.phone-link a img {
         width: 50%
     }
 
-    #head-text{
+    #head-text {
         width: 100%;
     }
 
-    div.span8.center-section{
+    div.span8.center-section {
         width: 100%;
     }
 
-    div.span2.left-nav{
+    div.span2.left-nav {
         display: none;
     }
 
@@ -586,39 +609,198 @@ img.project-activity-image{
         display: none;
     }
 
-    .phone-row-social a:hover{
+    .phone-row-social a:hover {
         text-decoration: none;
     }
 
-    #twitter-lead{
+    #twitter-lead {
         display: none;
     }
 
-    #mobile-twitter-lead{
+    #mobile-twitter-lead {
         margin-top: 5%;
         text-align: center;
         display: block;
     }
 
-    #mobile-twitter-feed{
+    #mobile-twitter-feed {
         display: block;
     }
 
-    #twitter-feed{
+    #twitter-feed {
         display: none;
     }
-    #link-text-meet{
+
+    #link-text-meet {
         text-align: center;
         width: 113px;
         float: none;
 
     }
-    #link-text-join{
+
+    #link-text-join {
         text-align: center;
         width: 120px;
         float: none;
     }
-    #link-text-activity{
+
+    #link-text-activity {
+        text-align: center;
+        width: 134px;
+        float: none;
+    }
+}
+
+/* tiny browser window */
+@media screen and (max-width: 768px) {
+
+    .logo {
+        margin-top: 0;
+    }
+
+    .para {
+        margin-left: 10%;
+    }
+
+    .intro {
+        margin-bottom: 1%;
+    }
+
+    #title-block {
+        margin-top: 1%;
+    }
+
+    #tag-line {
+        font-size: 70%;
+    }
+
+    #thanks-leader {
+        width: 90%;
+    }
+
+    img.project-activity-image {
+        margin-top: 0px;
+        margin-left: -30px;
+    }
+
+    #sponsors {
+        width: 85%;
+    }
+
+    .sponsor-image img {
+        margin-left: 0;
+    }
+
+    #team-members .member {
+        width: 70px;
+        margin: 0;
+        font-size: 10px;
+        line-height: 10px;
+        min-height: 180px;
+    }
+
+    #phone-links {
+        display: block;
+        margin-bottom: 5%;
+    }
+
+    #linkspan {
+        display: none;
+    }
+
+    .phone-row-external-links {
+        display: block;
+        text-align: center;
+    }
+
+    .phone-row-meet-join-activity {
+        display: block;
+        text-align: center;
+    }
+
+    .phone-row-meet-join-activity phone-link {
+        text-align: center;
+    }
+
+    .phone-row-social {
+        display: block;
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 10%;
+    }
+
+    .phone-link {
+        text-align: center;
+        margin-top: 10%;
+        width: 32%;
+        float: right;
+    }
+
+    .phone-link .link-title {
+        display: block;
+        text-align: center;
+    }
+
+    span.phone-link a {
+        font-size: 80%;
+    }
+
+    span.phone-link a img {
+        width: 50%
+    }
+
+    #head-text {
+        width: 100%;
+    }
+
+    div.span8.center-section {
+        width: 100%;
+    }
+
+    div.span2.left-nav {
+        display: none;
+    }
+
+    #social {
+        display: none;
+    }
+
+    .phone-row-social a:hover {
+        text-decoration: none;
+    }
+
+    #twitter-lead {
+        display: none;
+    }
+
+    #mobile-twitter-lead {
+        margin-top: 5%;
+        text-align: center;
+        display: block;
+    }
+
+    #mobile-twitter-feed {
+        display: block;
+    }
+
+    #twitter-feed {
+        display: none;
+    }
+
+    #link-text-meet {
+        text-align: center;
+        width: 113px;
+        float: none;
+
+    }
+
+    #link-text-join {
+        text-align: center;
+        width: 120px;
+        float: none;
+    }
+
+    #link-text-activity {
         text-align: center;
         width: 134px;
         float: none;
