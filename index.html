@@ -18,14 +18,14 @@
     <script type="text/javascript" src="javascript/osm.js"></script>
 
     <script type="text/javascript">
-        function toggle_visibility(id) {
-            var e = document.getElementById(id);
-            if(e.style.display == 'inline')
-                e.style.display = 'none';
-            else
-                e.style.display = 'inline';
+        function smoothScroll(ident){
+            $target = $("#scroll-target");
+            $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+            }, 300, 'swing');
         }
     </script>
+
     <script>
         $(document).ready(function () {
 
@@ -37,9 +37,10 @@
             loadLatestTweets();
             setInterval(loadLatestTweets, TwitterUpdateInterval);
 //            Set the Default view of the page
+
+            $('#project-activity').show();
             $('#join-the-team').hide();
             $('#meet-the-team').hide();
-            $('#project-activity').show();
             $('#about-the-team').hide();
 
             $(".about-target").bind('click', function (e) {
@@ -49,26 +50,30 @@
 
             $(".join-target").bind('click', function () {
                 $('#join-the-team').show();
+                smoothScroll("#join-the-team");
                 $('#meet-the-team').hide();
                 $('#project-activity').hide();
             });
 
             $(".meet-the-team-target").bind('click', function () {
-                $('#join-the-team').hide();
                 $('#meet-the-team').show();
+                smoothScroll("#meet-the-team");
+                $('#join-the-team').hide();
                 $('#project-activity').hide();
             });
 
             $(".project-activity-target").bind('click', function () {
+                $('#project-activity').show();
+                smoothScroll("#project-activity");
                 $('#join-the-team').hide();
                 $('#meet-the-team').hide();
-                $('#project-activity').show();
             });
 
             $(".logo").bind('click', function () {
+                $('#project-activity').show();
+                smoothScroll("#project-activity");
                 $('#join-the-team').hide();
                 $('#meet-the-team').hide();
-                $('#project-activity').show();
             });
         });
     </script>
@@ -86,21 +91,21 @@
         <div class="row-fluid span12 links">
             <span class="offset3 span6 linkspan" id="linkspan">
                 <span id="link-text-meet" class="meet-the-team-target span4">
-                    <small><a href="#meet-the-team">MEET THE TEAM</a></small>
+                    <small><a>MEET THE TEAM</a></small>
                 </span>
                 <span id="link-text-join" class="join-target span4">
-                    <small><a href="#join-the-team">JOIN THE TEAM</a></small>
+                    <small><a>JOIN THE TEAM</a></small>
                 </span>
                 <span id="link-text-activity" class="project-activity-target span4">
-                    <small><a href="#project-activity">SEE ACTIVITY</a></small>
+                    <small><a>SEE ACTIVITY</a></small>
                 </span>
 
             </span>
 
             <div class="phone-row-meet-join-activity">
-                <span><a href="#project-activity" class="phone-link"><span class="project-activity-target">SEE ACTIVITY</span></a></span>
-                <span><a href="#join-the-team" phone-link"><span class="join-target">JOIN THE TEAM</span></a></span>
-                <span><a href="#meet-the-team" class="phone-link"><span class="meet-the-team-target">MEET THE TEAM</span></a></span>
+                <span><a class="phone-link"><span class="project-activity-target">SEE ACTIVITY</span></a></span>
+                <span><a class="phone-link"><span class="join-target">JOIN THE TEAM</span></a></span>
+                <span><a class="phone-link"><span class="meet-the-team-target">MEET THE TEAM</span></a></span>
             </div>
         </div>
 
@@ -177,11 +182,11 @@
             </div>
 
             <div class="row-fluid span12" id="phone-links">
-                <div class="phone-row-meet-join-activity">
-                    <span><a href="#meet-the-team" phone-link"><span class="meet-the-team-target">MEET-THE-TEAM</span></a></span>
-                    <span><a href="#join-the-team" phone-link"><span class="join-target">JOIN-THE-TEAM</span></a></span>
-                    <span><a href="#project-activity" phone-link"><span class="project-activity-target">SEE-ACTIVITY</span></a></span>
-                </div>
+                <!--<div class="phone-row-meet-join-activity">-->
+                    <!--<span><a class="phone-link"><span class="meet-the-team-target">MEET THE TEAM</span></a></span>-->
+                    <!--<span><a class="phone-link"><span class="join-target">JOIN THE TEAM</span></a></span>-->
+                    <!--<span><a class="phone-link"><span class="project-activity-target">SEE ACTIVITY</span></a></span>-->
+                <!--</div>-->
                 <div class="phone-row-external-links group">
                     <span class="phone-link">
                         <a href="http://malaria.ourexperiment.org/" target="_blank"><img src="images/lab-notebook.png"
@@ -224,7 +229,7 @@
             </div>
 
 
-            <div class="center-section group">
+            <div class="center-section group" id="scroll-target">
                 <div id="project-activity">
                     <div class="center-leader">
                         Project Activity
