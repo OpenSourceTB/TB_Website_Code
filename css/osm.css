@@ -489,9 +489,7 @@ img.project-activity-image {
 }
 
 /*iPhone (original and Retina) */
-/* And tiny browser windows */
-@media  screen and (max-device-width: 640px) and (max-device-height: 960px),
-        screen and (max-width: 768px) {
+@media  screen and (max-device-width: 640px) and (max-device-height: 960px){
 
     .phone{
         display: block;
