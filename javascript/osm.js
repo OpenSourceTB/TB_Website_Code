@@ -120,11 +120,17 @@ function projectActivity(data) {
 function trimLongWords(body){
   var inputWords=body.split(" ");
   var outputWords = [];
-  var longestAllowed = 40;
+  var longWord;
+  var longestAllowed = 30;
+  
   for (var k = 0; k < inputWords.length; k++) {
     if (inputWords[k].length > longestAllowed) {
-      outputWords.push(inputWords[k].substr(0,longestAllowed-1));  // first part
-      outputWords.push(inputWords[k].substr(longestAllowed-1));      // remainder
+      longWord = inputWords[k];
+      while (longWord.length > longestAllowed){
+        outputWords.push(longWord.substr(0,longestAllowed-1));  // initial part
+        longWord = longWord.substr(longestAllowed-1);
+      }
+      outputWords.push(longWord);  // last part
     } else {
       outputWords.push(inputWords[k]);
     }
