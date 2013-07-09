@@ -465,10 +465,11 @@ img.project-activity-image {
 
 /* Handling for mobile devices*/
 
-/* iPad original */
-@media screen and (max-device-width: 768px) and (max-device-height: 1024px) {
+/* iPad (original and Retina) */
+
+@media screen and (device-width: 768px){
     .emphasis {
-        font-size: 100%;
+        font-size: 80%;
     }
 
     #twitter-lead {
@@ -480,7 +481,6 @@ img.project-activity-image {
         float: left;
         margin-top: 0px;
         margin-left: 2px;
-        overflow: hidden;
     }
 
     #social a img {
@@ -488,26 +488,10 @@ img.project-activity-image {
     }
 }
 
-/* iPad Retina */
-@media screen and (max-device-width: 1536px) and (max-device-height: 2048px) {
-    .emphasis {
-        font-size: 100%;
-    }
-
-    #twitter-lead {
-        margin-left: 0%;
-    }
-
-    #twitter-feed {
-        float: left;
-        margin-top: 0px;
-        overflow: hidden;
-    }
-}
-
-/*iPhone Retina size devices (Also scales for original iPhone size devices) */
-@media screen and (max-device-width: 640px) and (max-device-height: 960px) {
-/*@media screen and (max-width: 640px)  {*/
+/*iPhone (original and Retina) */
+/* And tiny browser windows */
+@media  screen and (max-device-width: 640px) and (max-device-height: 960px),
+        screen and (max-width: 768px) {
 
     .phone{
         display: block;
@@ -540,10 +524,10 @@ img.project-activity-image {
         display: none;
     }
 
-    /*.logo {*/
-        /*margin-top: 0;*/
-        /*width: 10%;*/
-    /*}*/
+    .logo {
+        margin-top: 0;
+        width: 10%;
+    }
 
     .para {
         margin-left: 10%;
@@ -618,18 +602,38 @@ img.project-activity-image {
     .phone-row-social {
         display: block;
         text-align: center;
-        margin-top: 5%;
-        margin-bottom: 10%;
+        margin-top: 2%;
     }
 
     .phone-link {
         text-align: center;
-        margin-top: 10%;
+        margin-top: 5%;
         width: 32%;
         float: right;
     }
+    .phone-link-right {
+        text-align: center;
+        margin-top: 5%;
+        width: 32%;
+        float: right;
+    }
+    .phone-link-left {
+        text-align: center;
+        margin-top: 5%;
+        width: 32%;
+        float: left;
+    }
 
     .phone-link .link-title {
+        display: block;
+        text-align: center;
+    }
+
+    .phone-link-left .link-title {
+        display: block;
+        text-align: center;
+    }
+    .phone-link-right .link-title {
         display: block;
         text-align: center;
     }
@@ -639,167 +643,17 @@ img.project-activity-image {
     }
 
     span.phone-link a img {
+        width: 50%
+    }
+    span.phone-link-left a img {
+        width: 50%
+    }
+    span.phone-link-right a img {
         width: 50%
     }
 
     .head-text {
         width: 80%;
-    }
-
-    div.span8.center-section {
-        width: 100%;
-    }
-
-    div.span2.left-nav {
-        display: none;
-    }
-
-    #social {
-        display: none;
-    }
-
-    .phone-row-social a:hover {
-        text-decoration: none;
-    }
-
-    #twitter-lead {
-        display: none;
-    }
-
-    #mobile-twitter-lead {
-        margin-top: 5%;
-        text-align: center;
-        display: block;
-    }
-
-    #mobile-twitter-feed {
-        display: block;
-    }
-
-    #twitter-feed {
-        display: none;
-    }
-
-    #link-text-meet {
-        text-align: center;
-        width: 113px;
-        float: none;
-
-    }
-
-    #link-text-join {
-        text-align: center;
-        width: 120px;
-        float: none;
-    }
-
-    #link-text-activity {
-        text-align: center;
-        width: 134px;
-        float: none;
-    }
-}
-
-/* tiny browser window */
-@media screen and (max-width: 768px) {
-
-    #web-logo {
-        margin-top: 0;
-    }
-
-    .para {
-        margin-left: 10%;
-    }
-
-    .intro {
-        margin-bottom: 1%;
-    }
-
-    #title-block {
-        margin-top: 1%;
-    }
-
-    #tag-line {
-        font-size: 70%;
-    }
-
-    #thanks-leader {
-        width: 90%;
-    }
-
-    img.project-activity-image {
-        margin-top: 0px;
-        margin-left: -30px;
-    }
-
-    #sponsors {
-        width: 85%;
-    }
-
-    .sponsor-image img {
-        margin-left: 0;
-    }
-
-    #team-members .member {
-        width: 70px;
-        margin: 0;
-        font-size: 10px;
-        line-height: 10px;
-        min-height: 180px;
-    }
-
-    #phone-links {
-        display: block;
-        margin-bottom: 5%;
-    }
-
-    #linkspan {
-        display: none;
-    }
-
-    .phone-row-external-links {
-        display: block;
-        text-align: center;
-    }
-
-    /*.phone-row-meet-join-activity {*/
-        /*display: block;*/
-        /*text-align: center;*/
-    /*}*/
-
-    /*.phone-row-meet-join-activity phone-link {*/
-        /*text-align: center;*/
-    /*}*/
-
-    .phone-row-social {
-        display: block;
-        text-align: center;
-        margin-top: 5%;
-        margin-bottom: 10%;
-    }
-
-    .phone-link {
-        text-align: center;
-        margin-top: 10%;
-        width: 32%;
-        float: right;
-    }
-
-    .phone-link .link-title {
-        display: block;
-        text-align: center;
-    }
-
-    span.phone-link a {
-        font-size: 80%;
-    }
-
-    span.phone-link a img {
-        width: 50%
-    }
-
-    .head-text {
-        width: 100%;
     }
 
     div.span8.center-section {

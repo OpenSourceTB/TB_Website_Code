@@ -122,7 +122,7 @@ function trimLongWords(body){
   var outputWords = [];
   var longWord;
   var longestAllowed = 30;
-  
+
   for (var k = 0; k < inputWords.length; k++) {
     if (inputWords[k].length > longestAllowed) {
       longWord = inputWords[k];
