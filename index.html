@@ -69,7 +69,14 @@
                 $('#meet-the-team').hide();
             });
 
-            $(".logo").bind('click', function () {
+            $(".web-logo").bind('click', function () {
+                $('#project-activity').show();
+                smoothScroll("#project-activity");
+                $('#join-the-team').hide();
+                $('#meet-the-team').hide();
+            });
+
+            $(".phone-logo").bind('click', function () {
                 $('#project-activity').show();
                 smoothScroll("#project-activity");
                 $('#join-the-team').hide();
@@ -89,7 +96,7 @@
 <body>
     <div class="container">
         <div class="row-fluid span12 links">
-            <span class="offset3 span6 linkspan" id="linkspan">
+            <span class="offset3 span6" id="linkspan">
                 <span id="link-text-meet" class="meet-the-team-target span4">
                     <small><a>MEET THE TEAM</a></small>
                 </span>
@@ -102,20 +109,32 @@
 
             </span>
 
-            <div class="phone-row-meet-join-activity">
-                <span><a class="phone-link"><span class="project-activity-target">SEE ACTIVITY</span></a></span>
-                <span><a class="phone-link"><span class="join-target">JOIN THE TEAM</span></a></span>
-                <span><a class="phone-link"><span class="meet-the-team-target">MEET THE TEAM</span></a></span>
-            </div>
+            <!--<div class="phone-row-meet-join-activity">-->
+                <!--<span><a class="phone-link"><span class="project-activity-target">SEE ACTIVITY</span></a></span>-->
+                <!--<span><a class="phone-link"><span class="join-target">JOIN THE TEAM</span></a></span>-->
+                <!--<span><a class="phone-link"><span class="meet-the-team-target">MEET THE TEAM</span></a></span>-->
+            <!--</div>-->
         </div>
 
         <div class="row-fluid span12">
-            <span class="span2">
-                <img class="logo" alt="OSM Logo" src="images/OSM_Logo.png"/>
+            <span class="web">
+                <span class="span2">
+                    <img id="web-logo" alt="OSM Logo" src="images/OSM_Logo.png"/>
+                </span>
+
+                <span class="span8 head-text">
+                    <img id="web-title" src="images/OSM-header.png" alt="Open Source Malaria">
+                </span>
             </span>
 
-            <span class="span8" id="head-text">
-                 <img id="title-block" src="images/OSM-header.png" alt="Open Source Malaria">
+            <span class="phone">
+                <span class="span2">
+                    <img id="phone-logo" alt="OSM Logo" src="images/OSM_Logo.png"/>
+                </span>
+
+                <span class="span8 head-text" id="phone-head-text">
+                    <img id="phone-title" src="images/OSM-header.png" alt="Open Source Malaria">
+                </span>
             </span>
 
             <span class="span2" id="social">
@@ -182,11 +201,11 @@
             </div>
 
             <div class="row-fluid span12" id="phone-links">
-                <!--<div class="phone-row-meet-join-activity">-->
-                    <!--<span><a class="phone-link"><span class="meet-the-team-target">MEET THE TEAM</span></a></span>-->
-                    <!--<span><a class="phone-link"><span class="join-target">JOIN THE TEAM</span></a></span>-->
-                    <!--<span><a class="phone-link"><span class="project-activity-target">SEE ACTIVITY</span></a></span>-->
-                <!--</div>-->
+                <div class="phone-row-meet-join-activity">
+                    <span><a class="phone-link"><span class="meet-the-team-target">MEET THE TEAM</span></a></span>
+                    <span><a class="phone-link"><span class="join-target">JOIN THE TEAM</span></a></span>
+                    <span><a class="phone-link"><span class="project-activity-target">SEE ACTIVITY</span></a></span>
+                </div>
                 <div class="phone-row-external-links group">
                     <span class="phone-link">
                         <a href="http://malaria.ourexperiment.org/" target="_blank"><img src="images/lab-notebook.png"
@@ -335,11 +354,10 @@
                                 pages.
                             </li>
                             <li>
-                                Read up on where we are on the
-                                <a href="http://openwetware.org/wiki/OpenSourceMalaria"
-                                   target="_blank">Wiki
+                                Read up on where we are and what we've published on the
+                                <a href="http://openwetware.org/wiki/OpenSourceMalaria" target="_blank">Wiki
                                 </a>
-                                and sign up if you want to make changes or add pages.
+                                and sign up if you want to make changes.
                             </li>
                             <li>
                                 Check out the fresh chemical and biological data in the
@@ -379,10 +397,6 @@
                                 wiki, or add items to the Github To Do list or post raw data to the open lab notebooks. If you want
                                 to start your own open science project, you could launch it on the first site that was devoted to
                                 open source biomedical research: <a href="http://www.thesynapticleap.org/" target="_blank">The Synaptic Leap</a>
-                            </li>
-                            <li>
-                                <a href="http://openwetware.org/wiki/OpenSourceMalaria:Links" target="_blank">Read the papers</a>
-                                we have already written.
                             </li>
                         </ul>
                     </span>
