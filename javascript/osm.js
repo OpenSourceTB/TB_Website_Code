@@ -212,6 +212,7 @@ function parseTeam(data) {
 
     if (dataIndex > -1) {
       $("#team-members").empty();
+//      $("#team-members").append(insertLegend());
       var teamMembers = $.parseJSON(data[dataIndex].body);
       var lastTeamMember = Math.min(numTeamMembers, teamMembers.length);
       for (var i = 0; i < lastTeamMember; i++) {
@@ -244,18 +245,18 @@ function parseTeam(data) {
         teamMember = '<span class="span2 member">'
         teamMember = teamMember + '<img src="' + gravatarUrl + '" title="' + name + affiliationWithComma + '"/>'
 
+        teamMember = teamMember + '<span class="discipline-container">'
+        var memberDisciplines=disciplines.split(";");
+
+        for (var k = 0; k < memberDisciplines.length; k++) {
+          teamMember = teamMember + '<span class="indicator-' + memberDisciplines[k].toLowerCase() + '"></span>';
+        }
+        teamMember = teamMember + '</span>'
+
         if (url) {
           teamMember = teamMember + '<div class="name"><a href="http://' + url + '" target="_blank"><strong>' + name + '</strong></a></div>'
         } else {
           teamMember = teamMember + '<div class="name"><strong>' + name + '</strong></div>'
-        }
-        var memberDisciplines=disciplines.split(";");
-        if ( memberDisciplines.length > 0 ) {
-          teamMember = teamMember + '<div class="disciplines' + memberDisciplines.length + '">';
-          for (var k = 0; k < memberDisciplines.length; k++) {
-            teamMember = teamMember + '<div class="circle-' + memberDisciplines[k].toLowerCase() + '"></div>';
-          }
-          teamMember = teamMember + '</div>';
         }
 
         teamMember = teamMember + '<div class="affiliation"><small>' + affiliation + '</small></div>'
@@ -264,7 +265,28 @@ function parseTeam(data) {
 
         $("#team-members").append(teamMember);
       }
+//      $("#team-members").append(insertLegend());
     }
+}
+
+function insertLegend(){
+
+  var legend = "";
+
+  legend = legend.concat('<div class="legend clearfix">');
+  legend = legend.concat('<div class="legend-indicator-chemistry"></div>');
+  legend = legend.concat('<div class="legend-chemistry">Chemistry</div>');
+  legend = legend.concat('<div class="legend-indicator-biology"></div>');
+  legend = legend.concat('<div class="legend-biology">Biology</div>');
+  legend = legend.concat('<div class="legend-indicator-informatics"></div>');
+  legend = legend.concat('<div class="legend-informatics">Informatics</div>');
+  legend = legend.concat('<div class="legend-indicator-consulting"></div>');
+  legend = legend.concat('<div class="legend-consulting">Consulting</div>');
+  legend = legend.concat('<div class="legend-indicator-administration"></div>');
+  legend = legend.concat('<div class="legend-administration">Administration</div>');
+  legend = legend.concat('</div>');
+
+  return legend;
 }
 
 function getGravatar(gravatarEmail, size) {
