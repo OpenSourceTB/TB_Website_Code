@@ -219,6 +219,7 @@ function parseTeam(data) {
         var url = teamMembers[i].url;
         var discipline = teamMembers[i].discipline || "" ;
         var disciplines = teamMembers[i].disciplines || discipline ;
+        var avatarUrl = teamMembers[i].avatar;
         var gravatarEmail = teamMembers[i].gravatar_email;
         var affiliation;
         var affiliation_url = teamMembers[i].affiliation_url;
@@ -231,7 +232,12 @@ function parseTeam(data) {
           affiliationWithComma = "";
         }
 
-        var gravatarUrl = getGravatar(gravatarEmail);
+        var gravatarUrl;
+        if (avatarUrl) {
+          gravatarUrl = "https:\\" + avatarUrl;
+        } else {
+          gravatarUrl = getGravatar(gravatarEmail);
+        }
 
         var teamMember;
 
