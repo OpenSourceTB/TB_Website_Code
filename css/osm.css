@@ -144,6 +144,8 @@ img.project-activity-image {
 }
 
 #team-members img {
+    width: 80px;
+    height: 80px;
     border-radius: 10px;
 }
 
@@ -402,7 +404,7 @@ img.project-activity-image {
 }
 
 #twitter-feed {
-    width: 145px;
+    /*width: 145px;*/
     float: left;
     margin-top: 0px;
     margin-left: 25px;
