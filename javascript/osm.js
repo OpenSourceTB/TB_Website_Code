@@ -218,7 +218,7 @@ function parseTeam(data) {
         var name = teamMembers[i].name || "Anonymous";
         var url = teamMembers[i].url;
         var discipline = teamMembers[i].discipline || "" ;
-        var disciplines = teamMembers[i].disciplines || discipline ;
+        var disciplines = teamMembers[i].disciplines || "consulting" ;
         var avatarUrl = teamMembers[i].avatar;
         var gravatarEmail = teamMembers[i].gravatar_email;
         var affiliation;
