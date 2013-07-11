@@ -235,7 +235,7 @@ function parseTeam(data) {
 
         var gravatarUrl;
         if (avatarUrl) {
-          gravatarUrl = "https:\\" + avatarUrl;
+          gravatarUrl = "https://" + avatarUrl;
         } else {
           gravatarUrl = getGravatar(gravatarEmail);
         }
