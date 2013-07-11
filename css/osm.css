@@ -183,7 +183,7 @@ img.project-activity-image {
     width: 10px;
 }
 
-.indicator-chemistry {
+span[class^="indicator-"] {
     float: right;
     width: 10px;
     height: 10px;
@@ -191,56 +191,27 @@ img.project-activity-image {
     display: inline-block;
     margin-left: 2px;
     margin-bottom: 5px;
-    background: #e93631;
     border-radius: 3px;
+}
+
+.indicator-chemistry {
+    background: #e93631;
 }
 
 .indicator-administration {
-    float: right;
-    width: 10px;
-    height: 10px;
-    width: 10px;
-    display: inline-block;
-    margin-left: 2px;
-    margin-bottom: 5px;
     background: #f69331;
-    border-radius: 3px;
 }
 
 .indicator-biology {
-    float: right;
-    width: 10px;
-    height: 10px;
-    width: 10px;
-    display: inline-block;
-    margin-left: 2px;
-    margin-bottom: 5px;
     background: #47b3ef;
-    border-radius: 3px;
 }
 
 .indicator-informatics {
-    float: right;
-    width: 10px;
-    height: 10px;
-    width: 10px;
-    display: inline-block;
-    margin-left: 2px;
-    margin-bottom: 5px;
     background: #3f8116;
-    border-radius: 3px;
 }
 
 .indicator-consulting {
-    float: right;
-    width: 10px;
-    height: 10px;
-    width: 10px;
-    display: inline-block;
-    margin-left: 2px;
-    margin-bottom: 5px;
     background: #3a3a3a;
-    border-radius: 3px;
 }
 
 .legend {
@@ -248,10 +219,11 @@ img.project-activity-image {
     margin-top: 10px;
     margin-left: 15px;
     margin-bottom: 50px;
-    /*float: right:*/
+    font-size: 145%;
+    font-weight: bold;
 }
 
-.legend-chemistry {
+[class^="legend-"] {
     float: left;
     margin-left: 3px;
     margin-right: 4px;
@@ -261,90 +233,53 @@ img.project-activity-image {
     border-radius: 3px;
 }
 
+.legend-chemistry {
+    color: #e93631;
+}
+
 .legend-administration {
-    float: left;
-    margin-left: 3px;
-    margin-right: 4px;
-    text-align: center;
     color: #f69331;
-    font-size: small;
-    border-radius: 3px;
 }
 
 .legend-biology {
-    float: left;
-    margin-left: 3px;
-    margin-right: 4px;
-    text-align: center;
     color: #47b3ef;
-    font-size: small;
-    border-radius: 3px;
 }
 
 .legend-informatics {
-    float: left;
-    margin-left: 3px;
-    margin-right: 4px;
-    text-align: center;
     color: #3f8116;
-    font-size: small;
-    border-radius: 3px;
 }
 
 .legend-consulting {
-    float: left;
-    margin-left: 3px;
-    margin-right: 4px;
-    text-align: center;
     width: 70px;
     color: #3a3a3a;
-    font-size: small;
-    border-radius: 3px;
+}
+
+[class^="legend-indicator"] {
+    float: left;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    border-radius: 7px;
 }
 
 .legend-indicator-chemistry{
-    float: left;
-    height: 20px;
-    width: 20px;
-    display: inline-block;
     background: #e93631;
-    border-radius: 7px;
 }
 
 .legend-indicator-biology{
-    float: left;
-    height: 20px;
-    width: 20px;
-    display: inline-block;
     background: #47b3ef;
-    border-radius: 7px;
 }
 
 .legend-indicator-informatics{
-    float: left;
-    height: 20px;
-    width: 20px;
-    display: inline-block;
     background: #3f8116;
-    border-radius: 7px;
 }
 
 .legend-indicator-consulting{
-    float: left;
-    height: 20px;
-    width: 20px;
-    display: inline-block;
     background: #3a3a3a;
-    border-radius: 7px;
 }
 
 .legend-indicator-administration{
-    float: left;
-    height: 20px;
-    width: 20px;
-    display: inline-block;
     background: #f69331;
-    border-radius: 7px;
 }
 
 .key {
@@ -619,8 +554,9 @@ img.project-activity-image {
 
     img#phone-logo{
         display: block;
-        width: 10%;
+        width: 15%;
         margin-top: 0;
+        margin-left: 0;
     }
 
     #phone-head-background{
@@ -628,13 +564,12 @@ img.project-activity-image {
         margin-bottom: 4%;
         padding-top: 4%;
         padding-bottom: 2%;
-        /*padding-right: 15%;   *//* needed?*/
         border-radius: 10px;
         background-color: #ebf6f8;
         font-size: 145%;
         vertical-align: 60%;
         width: 80%;
-        margin-left: 35px;
+        margin-left: 40px;
         margin-top: -15%;
     }
 
@@ -663,7 +598,7 @@ img.project-activity-image {
 
     #phone-title {
         display: block;
-        margin-left: 0;
+        margin-left: 5px;
         width: 85%;
     }
 
@@ -696,20 +631,23 @@ img.project-activity-image {
         text-align: center;
     }
 
-    .legend-indicator-chemistry, .legend-indicator-biology, .legend-indicator-administration, .legend-indicator-consulting, .legend-indicator-informatics{
-        border-radius: 2px;
-    }
-
     .legend {
-        margin-left: 10px;
+        margin-left: 0px;
     }
 
     .legend-chemistry, .legend-biology, .legend-administration, .legend-consulting, .legend-informatics {
-        font-size: 5px;
-        width: 8%;
+        font-size: 7px;
     }
 
+    .legend-chemistry { width: 30px; margin-left: -10px; }
+    .legend-biology { width: 28px; margin-left: -12px;}
+    .legend-administration { width: 40px; margin-left: -10px;}
+    .legend-consulting { width: 31px; margin-left: -10px; }
+    .legend-informatics  { width: 36px;  margin-left: -11px; }
+
+
     .legend-indicator-chemistry, .legend-indicator-biology, .legend-indicator-administration, .legend-indicator-consulting, .legend-indicator-informatics{
+        border-radius: 2px;
         height: 6px;
         width: 6px;
     }
