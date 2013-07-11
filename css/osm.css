@@ -192,6 +192,7 @@ img.project-activity-image {
     margin-left: 2px;
     margin-bottom: 5px;
     background: #e93631;
+    border-radius: 3px;
 }
 
 .indicator-administration {
@@ -203,6 +204,7 @@ img.project-activity-image {
     margin-left: 2px;
     margin-bottom: 5px;
     background: #f69331;
+    border-radius: 3px;
 }
 
 .indicator-biology {
@@ -214,6 +216,7 @@ img.project-activity-image {
     margin-left: 2px;
     margin-bottom: 5px;
     background: #47b3ef;
+    border-radius: 3px;
 }
 
 .indicator-informatics {
@@ -225,6 +228,7 @@ img.project-activity-image {
     margin-left: 2px;
     margin-bottom: 5px;
     background: #3f8116;
+    border-radius: 3px;
 }
 
 .indicator-consulting {
@@ -236,6 +240,7 @@ img.project-activity-image {
     margin-left: 2px;
     margin-bottom: 5px;
     background: #3a3a3a;
+    border-radius: 3px;
 }
 
 .legend {
@@ -253,6 +258,7 @@ img.project-activity-image {
     text-align: center;
     color: #e93631;
     font-size: small;
+    border-radius: 3px;
 }
 
 .legend-administration {
@@ -262,6 +268,7 @@ img.project-activity-image {
     text-align: center;
     color: #f69331;
     font-size: small;
+    border-radius: 3px;
 }
 
 .legend-biology {
@@ -271,6 +278,7 @@ img.project-activity-image {
     text-align: center;
     color: #47b3ef;
     font-size: small;
+    border-radius: 3px;
 }
 
 .legend-informatics {
@@ -280,6 +288,7 @@ img.project-activity-image {
     text-align: center;
     color: #3f8116;
     font-size: small;
+    border-radius: 3px;
 }
 
 .legend-consulting {
@@ -287,9 +296,10 @@ img.project-activity-image {
     margin-left: 3px;
     margin-right: 4px;
     text-align: center;
-    width: 80px;
+    width: 70px;
     color: #3a3a3a;
     font-size: small;
+    border-radius: 3px;
 }
 
 .legend-indicator-chemistry{
@@ -298,6 +308,7 @@ img.project-activity-image {
     width: 20px;
     display: inline-block;
     background: #e93631;
+    border-radius: 7px;
 }
 
 .legend-indicator-biology{
@@ -306,6 +317,7 @@ img.project-activity-image {
     width: 20px;
     display: inline-block;
     background: #47b3ef;
+    border-radius: 7px;
 }
 
 .legend-indicator-informatics{
@@ -314,6 +326,7 @@ img.project-activity-image {
     width: 20px;
     display: inline-block;
     background: #3f8116;
+    border-radius: 7px;
 }
 
 .legend-indicator-consulting{
@@ -322,6 +335,7 @@ img.project-activity-image {
     width: 20px;
     display: inline-block;
     background: #3a3a3a;
+    border-radius: 7px;
 }
 
 .legend-indicator-administration{
@@ -330,7 +344,9 @@ img.project-activity-image {
     width: 20px;
     display: inline-block;
     background: #f69331;
+    border-radius: 7px;
 }
+
 .key {
     margin-left: 40px;
 }
