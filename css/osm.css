@@ -422,7 +422,7 @@ span[class^="indicator-"] {
 }
 
 #twitter-feed {
-    /*width: 145px;*/
+    text-align: left;
     float: left;
     margin-top: 0px;
     margin-left: 25px;
