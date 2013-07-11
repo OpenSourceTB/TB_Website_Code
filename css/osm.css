@@ -256,10 +256,11 @@ span[class^="indicator-"] {
 
 [class^="legend-indicator"] {
     float: left;
-    height: 20px;
-    width: 20px;
+    height: 10px;
+    width: 10px;
+    margin-top: 5px;
     display: inline-block;
-    border-radius: 7px;
+    border-radius: 3px;
 }
 
 .legend-indicator-chemistry{
@@ -636,20 +637,20 @@ span[class^="indicator-"] {
     }
 
     .legend-chemistry, .legend-biology, .legend-administration, .legend-consulting, .legend-informatics {
+        margin-top: 5px;
         font-size: 7px;
     }
 
-    .legend-chemistry { width: 30px; margin-left: -10px; }
-    .legend-biology { width: 28px; margin-left: -12px;}
-    .legend-administration { width: 40px; margin-left: -10px;}
-    .legend-consulting { width: 31px; margin-left: -10px; }
-    .legend-informatics  { width: 36px;  margin-left: -11px; }
+    .legend-chemistry { width: 30px; margin-left: -14px; }
+    .legend-biology { width: 28px; margin-left: -15px;}
+    .legend-administration { width: 40px; margin-left: -14px;}
+    .legend-consulting { width: 31px; margin-left: -14px; }
+    .legend-informatics  { width: 36px;  margin-left: -14px; }
 
 
     .legend-indicator-chemistry, .legend-indicator-biology, .legend-indicator-administration, .legend-indicator-consulting, .legend-indicator-informatics{
         border-radius: 2px;
-        height: 6px;
-        width: 6px;
+        margin-top: 0;
     }
 
     #phone-links {
@@ -678,7 +679,11 @@ span[class^="indicator-"] {
     .phone-row-social {
         display: block;
         text-align: center;
-        margin-top: 2%;
+        margin-top: -1%;
+    }
+
+    .phone-row-social a img{
+        width: 10%;
     }
 
     .phone-link {
@@ -686,46 +691,53 @@ span[class^="indicator-"] {
         margin-top: 5%;
         width: 32%;
         float: right;
+        font-size: 100%;
     }
+
     .phone-link-right {
         text-align: center;
         margin-top: 5%;
-        width: 32%;
+        width: 45%;
+        font-size: 100%;
         float: right;
     }
     .phone-link-left {
         text-align: center;
         margin-top: 5%;
-        width: 32%;
+        width: 45%;
+        font-size: 100%;
         float: left;
     }
 
     .phone-link .link-title {
         display: block;
         text-align: center;
+        font-size: 60%;
     }
 
     .phone-link-left .link-title {
         display: block;
         text-align: center;
+        font-size: 60%;
     }
     .phone-link-right .link-title {
         display: block;
         text-align: center;
+        font-size: 60%;
     }
 
-    span.phone-link a {
+    div.phone-link a {
         font-size: 80%;
     }
 
-    span.phone-link a img {
-        width: 50%
+    .phone-link a img {
+        width: 30%
     }
-    span.phone-link-left a img {
-        width: 50%
+    .phone-link-left a img {
+        width: 30%
     }
-    span.phone-link-right a img {
-        width: 50%
+    .phone-link-right a img {
+        width: 30%
     }
 
     div.span8.center-section {
@@ -738,10 +750,6 @@ span[class^="indicator-"] {
 
     #social {
         display: none;
-    }
-
-    .phone-row-social a:hover {
-        text-decoration: none;
     }
 
     #twitter-lead {
