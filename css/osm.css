@@ -8,6 +8,11 @@
     display: none:
 }
 
+.center{
+    text-align: center;
+    padding-left: 35px
+}
+
 #web-head-background{
     display: block;
     margin-bottom: 2%;
@@ -19,8 +24,8 @@
     background-size: 70px 70px;
     font-size: 145%;
     vertical-align: 60%;
-    width: 80%;
-    margin-left: 35px;
+    /*width: 80%;*/
+    /*margin-left: 35px;*/
 }
 
 #web-title{
@@ -305,7 +310,7 @@ span[class^="indicator-"] {
 }
 
 #web-logo {
-    margin-top: 0;
+    margin-top: -9px;
 / / TOD : WAS - 25 %;
     TO FLOAT UPWARD
 }
@@ -364,11 +369,12 @@ span[class^="indicator-"] {
     margin-left: auto;
     margin-right: auto;
     margin-top: 15%;
+    margin-bottom: 18px;
 }
 
 #social {
-    margin-top: 22px;
-    margin-left: 10px;
+    /*margin-top: 22px;*/
+    /*margin-left: 10px;*/
     padding-left: 10px;
     text-align: center;
 }
@@ -413,7 +419,7 @@ span[class^="indicator-"] {
     display: block;
     margin-top: 20px;
     margin-bottom: 5%;
-    margin-left: 30px;
+    /*margin-left: 30px;*/
 }
 
 .intro img.arrow {
@@ -425,7 +431,7 @@ span[class^="indicator-"] {
     text-align: left;
     float: left;
     margin-top: 0px;
-    margin-left: 25px;
+    /*margin-left: 25px;*/
 }
 
 #twitter-feed p {
@@ -909,12 +915,11 @@ span[class^="indicator-"] {
     }
 
     #phone-links {
-        display: block;
-        margin-bottom: 5%;
+        /*display: block;*/
+        /*margin-bottom: 5%;*/
     }
 
     #linkspan {
-        display: none;
     }
 
     .phone-row-external-links {
