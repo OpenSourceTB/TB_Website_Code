@@ -689,11 +689,15 @@ img.project-activity-image {
     }
 
     #team-members .member {
-        /*width: 60px;*/
-        margin: 0;
-        font-size: 10px;
-        line-height: 10px;
-        min-height: 170px;
+        width: 100px;
+        margin: 10px 1px;
+        float: left;
+        min-height: 160px;
+        text-align: center;
+    }
+
+    .legend-indicator-chemistry, .legend-indicator-biology, .legend-indicator-administration, .legend-indicator-consulting, .legend-indicator-informatics{
+        border-radius: 2px;
     }
 
     .legend {
