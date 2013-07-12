@@ -569,8 +569,8 @@ span[class^="indicator-"] {
     }
 }
 
-/*iPhone (original and Retina) */
-@media  screen and (max-device-width: 640px) and (max-device-height: 960px){
+/*Tiny browser width */
+@media  screen and (min-width: 0px) and (max-width: 767px) {
 
     .phone{
         display: block;
@@ -584,7 +584,290 @@ span[class^="indicator-"] {
         display: block;
         width: 15%;
         margin-top: 0;
+        margin-left: -30px;
+    }
+
+    #phone-head-background{
+        display: block;
+        margin-bottom: 4%;
+        padding-top: 4%;
+        padding-bottom: 2%;
+        border-radius: 10px;
+        background-color: #ebf6f8;
+        font-size: 145%;
+        vertical-align: 60%;
+        width: 80%;
+        margin-left: 18%;
+        margin-top: -15%;
+    }
+
+    #web-head-background{
+        display: none;
+    }
+
+    .left-nav{
+        display: none;
+    }
+
+    #web-logo{
+        display: none;
+    }
+
+    .para {
+        margin-left: 10%;
+    }
+
+    .intro {
+        margin-bottom: 1%;
+    }
+
+    #web-title{
+        display: none;
+    }
+
+    #phone-title {
+        display: block;
+        margin-left: 5px;
+        width: 85%;
+    }
+
+    #tag-line {
+        font-size: 70%;
+    }
+
+    #thanks-leader {
+        width: 90%;
+    }
+
+    img.project-activity-image {
+        margin-top: 0px;
+        margin-left: -30px;
+    }
+
+    #sponsors {
+        width: 85%;
+    }
+
+    .sponsor-image img {
         margin-left: 0;
+    }
+
+    #team-members .member {
+        width: 100px;
+        margin: 10px 1px;
+        float: left;
+        min-height: 160px;
+        text-align: center;
+    }
+
+    .legend {
+        margin-left: 0px;
+    }
+
+    .legend-chemistry, .legend-biology, .legend-administration, .legend-consulting, .legend-informatics {
+        margin-top: 5px;
+        font-size: 7px;
+    }
+
+    .legend-chemistry { width: 30px; margin-left: -14px; }
+    .legend-biology { width: 28px; margin-left: -15px;}
+    .legend-administration { width: 40px; margin-left: -14px;}
+    .legend-consulting { width: 31px; margin-left: -14px; }
+    .legend-informatics  { width: 36px;  margin-left: -14px; }
+
+
+    .legend-indicator-chemistry, .legend-indicator-biology, .legend-indicator-administration, .legend-indicator-consulting, .legend-indicator-informatics{
+        border-radius: 2px;
+        margin-top: 0;
+    }
+
+    #phone-links {
+        display: none;
+    }
+
+    .phone-row-social {
+        display: none;
+    }
+
+    .phone-row-external-links {
+        display: block;
+        text-align: center;
+    }
+
+    .phone-row-meet-join-activity {
+        display: none;
+        text-align: center;
+    }
+
+    .phone-row-meet-join-activity phone-link {
+        text-align: center;
+    }
+
+    #linkspan {
+        text-align: center;
+    }
+
+    .tiny-row-social{
+        display: block;
+        text-align: center;
+    }
+
+    #tiny-links{
+        display: block;
+    }
+
+    .tiny-row-external-links {
+        display: block;
+        text-align: center;
+    }
+
+    .tiny-row-meet-join-activity {
+        display: none;
+        text-align: center;
+    }
+
+    .tiny-row-meet-join-activity tiny-link {
+        text-align: center;
+    }
+
+    .tiny-link-join-the-team {
+        text-align: center;
+        margin-top: 5%;
+        width: 25%;
+        float: left;
+        font-size: 100%;
+    }
+
+    .tiny-link-wiki {
+        text-align: center;
+        margin-top: 5%;
+        margin-right: 14%;
+        width: 25%;
+        float: right;
+        font-size: 100%;
+    }
+
+    .tiny-link-lab-notebook {
+        text-align: center;
+        margin-top: 5%;
+        width: 25%;
+        float: right;
+        font-size: 100%;
+    }
+
+    .tiny-row-social a img{
+        width: 10%;
+    }
+
+    .phone-link {
+        text-align: center;
+        margin-top: 5%;
+        width: 32%;
+        float: right;
+        font-size: 100%;
+    }
+
+    .phone-link-right {
+        text-align: center;
+        margin-top: 5%;
+        width: 45%;
+        font-size: 100%;
+        float: right;
+    }
+    .phone-link-left {
+        text-align: center;
+        margin-top: 5%;
+        width: 45%;
+        font-size: 100%;
+        float: left;
+    }
+
+    .phone-link .link-title {
+        display: block;
+        text-align: center;
+        font-size: 60%;
+    }
+
+    .phone-link-left .link-title {
+        display: block;
+        text-align: center;
+        font-size: 60%;
+    }
+    .phone-link-right .link-title {
+        display: block;
+        text-align: center;
+        font-size: 60%;
+    }
+
+    div.phone-link a {
+        font-size: 80%;
+    }
+
+    .phone-link a img {
+        width: 30%
+    }
+    .phone-link-left a img {
+        width: 30%
+    }
+    .phone-link-right a img {
+        width: 30%
+    }
+
+    div.span8.center-section {
+        width: 100%;
+    }
+
+    div.span2.left-nav {
+        display: none;
+    }
+
+    #social {
+        display: none;
+    }
+
+    #twitter-lead {
+        display: none;
+    }
+
+    #mobile-twitter-lead {
+        margin-top: 5%;
+        text-align: center;
+        display: block;
+    }
+
+    #mobile-twitter-feed {
+        display: block;
+    }
+
+    #twitter-feed {
+        display: none;
+    }
+}
+
+/*iPhone (original and Retina) */
+@media screen and (max-device-width: 640px) and (max-device-height: 960px){
+
+    .phone{
+        display: block;
+    }
+
+    #tiny-links{
+        display: none;
+    }
+
+    .tiny-row-social{
+        display: none;
+    }
+
+    .web{
+        display: none;
+    }
+
+    img#phone-logo{
+        display: block;
+        width: 15%;
+        margin-top: 0;
+        margin-left: -36px;
     }
 
     #phone-head-background{
@@ -806,264 +1089,3 @@ span[class^="indicator-"] {
     }
 }
 
-/*Tiny browser width */
-@media  screen and (max-width: 767px) {
-
-    .phone{
-        display: block;
-    }
-
-    .web{
-        display: none;
-    }
-
-    img#phone-logo{
-        display: block;
-        width: 15%;
-        margin-top: 0;
-        margin-left: -30px;
-    }
-
-    #phone-head-background{
-        display: block;
-        margin-bottom: 4%;
-        padding-top: 4%;
-        padding-bottom: 2%;
-        border-radius: 10px;
-        background-color: #ebf6f8;
-        font-size: 145%;
-        vertical-align: 60%;
-        width: 80%;
-        margin-left: 18%;
-        margin-top: -15%;
-    }
-
-    #web-head-background{
-        display: none;
-    }
-
-    .left-nav{
-        display: none;
-    }
-
-    #web-logo{
-        display: none;
-    }
-
-    .para {
-        margin-left: 10%;
-    }
-
-    .intro {
-        margin-bottom: 1%;
-    }
-
-    #web-title{
-        display: none;
-    }
-
-    #phone-title {
-        display: block;
-        margin-left: 5px;
-        width: 85%;
-    }
-
-    #tag-line {
-        font-size: 70%;
-    }
-
-    #thanks-leader {
-        width: 90%;
-    }
-
-    img.project-activity-image {
-        margin-top: 0px;
-        margin-left: -30px;
-    }
-
-    #sponsors {
-        width: 85%;
-    }
-
-    .sponsor-image img {
-        margin-left: 0;
-    }
-
-    #team-members .member {
-        width: 100px;
-        margin: 10px 1px;
-        float: left;
-        min-height: 160px;
-        text-align: center;
-    }
-
-    .legend {
-        margin-left: 0px;
-    }
-
-    .legend-chemistry, .legend-biology, .legend-administration, .legend-consulting, .legend-informatics {
-        margin-top: 5px;
-        font-size: 7px;
-    }
-
-    .legend-chemistry { width: 30px; margin-left: -14px; }
-    .legend-biology { width: 28px; margin-left: -15px;}
-    .legend-administration { width: 40px; margin-left: -14px;}
-    .legend-consulting { width: 31px; margin-left: -14px; }
-    .legend-informatics  { width: 36px;  margin-left: -14px; }
-
-
-    .legend-indicator-chemistry, .legend-indicator-biology, .legend-indicator-administration, .legend-indicator-consulting, .legend-indicator-informatics{
-        border-radius: 2px;
-        margin-top: 0;
-    }
-
-    #phone-links {
-        display: none;
-    }
-
-    .phone-row-social {
-        display: none;
-    }
-
-    /*.phone-row-external-links {*/
-        /*display: block;*/
-        /*text-align: center;*/
-    /*}*/
-
-    /*.phone-row-meet-join-activity {*/
-        /*display: none;*/
-        /*text-align: center;*/
-    /*}*/
-
-    /*.phone-row-meet-join-activity phone-link {*/
-        /*text-align: center;*/
-    /*}*/
-
-    #linkspan {
-        text-align: center;
-    }
-
-
-    /* added tiny */
-
-    .tiny-row-social{
-        display: block;
-        text-align: center;
-    }
-
-    #tiny-links{
-        display: block;
-    }
-
-    .tiny-row-external-links {
-        display: block;
-        text-align: center;
-    }
-
-    .tiny-row-meet-join-activity {
-        display: none;
-        text-align: center;
-    }
-
-    .tiny-row-meet-join-activity tiny-link {
-        text-align: center;
-    }
-
-    .tiny-link {
-        text-align: center;
-        margin-top: 5%;
-        width: 32%;
-        float: right;
-        font-size: 100%;
-    }
-
-    .tiny-row-social a img{
-        width: 10%;
-    }
-    /* End tiny add */
-
-    /*.phone-link {*/
-        /*text-align: center;*/
-        /*margin-top: 5%;*/
-        /*width: 32%;*/
-        /*float: right;*/
-        /*font-size: 100%;*/
-    /*}*/
-
-    /*.phone-link-right {*/
-        /*text-align: center;*/
-        /*margin-top: 5%;*/
-        /*width: 45%;*/
-        /*font-size: 100%;*/
-        /*float: right;*/
-    /*}*/
-    /*.phone-link-left {*/
-        /*text-align: center;*/
-        /*margin-top: 5%;*/
-        /*width: 45%;*/
-        /*font-size: 100%;*/
-        /*float: left;*/
-    /*}*/
-
-    /*.phone-link .link-title {*/
-        /*display: block;*/
-        /*text-align: center;*/
-        /*font-size: 60%;*/
-    /*}*/
-
-    /*.phone-link-left .link-title {*/
-        /*display: block;*/
-        /*text-align: center;*/
-        /*font-size: 60%;*/
-    /*}*/
-    /*.phone-link-right .link-title {*/
-        /*display: block;*/
-        /*text-align: center;*/
-        /*font-size: 60%;*/
-    /*}*/
-
-    /*div.phone-link a {*/
-        /*font-size: 80%;*/
-    /*}*/
-
-    /*.phone-link a img {*/
-        /*width: 30%*/
-    /*}*/
-    /*.phone-link-left a img {*/
-        /*width: 30%*/
-    /*}*/
-    /*.phone-link-right a img {*/
-        /*width: 30%*/
-    /*}*/
-
-    div.span8.center-section {
-        width: 100%;
-    }
-
-    div.span2.left-nav {
-        display: none;
-    }
-
-    #social {
-        display: none;
-    }
-
-    #twitter-lead {
-        display: none;
-    }
-
-    #mobile-twitter-lead {
-        margin-top: 5%;
-        text-align: center;
-        display: block;
-    }
-
-    #mobile-twitter-feed {
-        display: block;
-    }
-
-    #twitter-feed {
-        display: none;
-    }
-}
