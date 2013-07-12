@@ -7,6 +7,9 @@
 #phone-head-background{
     display: none:
 }
+#linkspan {
+    text-align: center;
+}
 
 .center{
     text-align: center;
@@ -403,18 +406,32 @@ span[class^="indicator-"] {
     margin-left: 40%;
 }
 
+#link-text-activity{
+    /*display: inline;*/
+    /*text-align: center;*/
+    /*width: 110px;*/
+    float: left;
+    /*margin-right: 25%;*/
+}
+
+#link-text-join{
+    display: inline;
+    text-align: center;
+    width: 110px;
+    float: none;
+}
+
 #link-text-meet {
-    text-align: center;
+    /*display: inline;*/
+    /*text-align: center;*/
+    /*width: 110px;*/
+    float: right;
+    /*margin-right: 25%;*/
 }
 
-#link-text-join {
-    text-align: center;
+#link-text-meet {
+    margin-right: 0%;
 }
-
-#link-text-activity {
-    text-align: center;
-}
-
 .intro {
     display: block;
     margin-top: 20px;
@@ -777,22 +794,10 @@ span[class^="indicator-"] {
         display: none;
     }
 
-    #link-text-meet {
+    #link-text-join, #link-text-activity, #link-text-meet {
+        display: inline;
         text-align: center;
-        width: 113px;
-        float: none;
-
-    }
-
-    #link-text-join {
-        text-align: center;
-        width: 120px;
-        float: none;
-    }
-
-    #link-text-activity {
-        text-align: center;
-        width: 134px;
+        width: 33%;
         float: none;
     }
 }
@@ -818,7 +823,7 @@ span[class^="indicator-"] {
         display: block;
         width: 15%;
         margin-top: 0;
-        margin-left: 0;
+        margin-left: -30px;
     }
 
     #phone-head-background{
@@ -831,7 +836,7 @@ span[class^="indicator-"] {
         font-size: 145%;
         vertical-align: 60%;
         width: 80%;
-        margin-left: 20%;
+        margin-left: 18%;
         margin-top: -15%;
     }
 
@@ -920,6 +925,7 @@ span[class^="indicator-"] {
     }
 
     #linkspan {
+        text-align: center;
     }
 
     .phone-row-external-links {
@@ -1028,24 +1034,5 @@ span[class^="indicator-"] {
 
     #twitter-feed {
         display: none;
-    }
-
-    #link-text-meet {
-        text-align: center;
-        width: 113px;
-        float: none;
-
-    }
-
-    #link-text-join {
-        text-align: center;
-        width: 120px;
-        float: none;
-    }
-
-    #link-text-activity {
-        text-align: center;
-        width: 134px;
-        float: none;
     }
 }
