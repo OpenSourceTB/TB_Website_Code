@@ -550,7 +550,7 @@ span[class^="indicator-"] {
 
 
     .legend-indicator-chemistry, .legend-indicator-biology, .legend-indicator-administration, .legend-indicator-consulting, .legend-indicator-informatics{
-       display: none;
+       /*display: none;*/
     }
 
     #twitter-lead {
