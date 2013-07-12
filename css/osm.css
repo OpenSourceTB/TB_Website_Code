@@ -920,7 +920,7 @@ span[class^="indicator-"] {
     }
 
     #phone-links {
-        /*display: block;*/
+        display: block;
         /*margin-bottom: 5%;*/
     }
 
@@ -934,7 +934,7 @@ span[class^="indicator-"] {
     }
 
     .phone-row-meet-join-activity {
-        display: block;
+        display: none;
         text-align: center;
     }
 
