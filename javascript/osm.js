@@ -94,26 +94,40 @@ function projectActivity(data) {
     var itemBody = data[i].body;
     var itemLink = data[i].html_url;
     var commentCount = data[i].comments;
-
-//  The tempDate work is to try to handle really old phone browsers, which seem to be in vogue with Malaria researchers!
-    var tempDate = data[i].created_at;
-    tempDate = tempDate.substr(0,tempDate.length-1);
-    tempDate = tempDate + '+0000';
-    var created = parseGithubDate(tempDate);
-//
-    var hours = created.getHours().toString();
-    if (hours.length === 1) { hours = '0' + hours; }
-    var minutes = created.getMinutes().toString();
-    if (minutes.length === 1) { minutes = '0' + minutes; }
-
-    var createdDate = created.getDate() + ' ' + monthNames[created.getMonth()] + ' ' + created.getFullYear() + ' at ' + hours + ':' + minutes;
+    var createdDate;
+    var created;
+    var hours;
+    var minutes;
     var commentText;
 
-//The NaN check is also for the old phone browser issue
+    // Try date conversion as given from GitHub - the preferred way
+    // If that fails, try converting the Z to +0000
+    // If that fails, just return teh GitHub text (which is Zulu time)
+
+    var givenDate = data[i].created_at;
+    var dateFromGiven = parseGithubDate(givenDate);
+    hours = dateFromGiven.getHours().toString();
+    if (hours.length === 1) { hours = '0' + hours; }
+    minutes = dateFromGiven.getMinutes().toString();
+    if (minutes.length === 1) { minutes = '0' + minutes; }
+    createdDate = dateFromGiven.getDate() + ' ' + monthNames[dateFromGiven.getMonth()] + ' ' + dateFromGiven.getFullYear() + ' at ' + hours + ':' + minutes;
     if (createdDate.indexOf("NaN") > -1) {
-      createdDate = data[i].created_at;
+      // Try to change the Z to +0000
+      var zeroedDate = data[i].created_at;
+      zeroedDate = zeroedDate.substr(0,tempDate.length-1);
+      zeroedDate = zeroedDate + '+0000';
+      var dateFromZeroed  = parseGithubDate(zeroedDate);
+      hours = dateFromZeroed.getHours().toString();
+      if (hours.length === 1) { hours = '0' + hours; }
+      minutes = dateFromZeroed.getMinutes().toString();
+      if (minutes.length === 1) { minutes = '0' + minutes; }
+
+      createdDate = dateFromZeroed.getDate() + ' ' + monthNames[dateFromZeroed.getMonth()] + ' ' + dateFromZeroed.getFullYear() + ' at ' + hours + ':' + minutes;
+
+      if (createdDate.indexOf("NaN") > -1) {  // All else failed, just return the GitHub string
+        createdDate = data[i].created_at;
+      }
     }
-//
 
     if (commentCount > 0){
       if (commentCount === 1){
