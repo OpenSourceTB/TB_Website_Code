@@ -30,6 +30,8 @@ function parseTwitterDate(str) {
 
 function parseGithubDate(str) {
   "use strict";
+//  2013-07-11T13:58Z
+
   return new Date(Date.parse(str));
 }
 
@@ -92,7 +94,13 @@ function projectActivity(data) {
     var itemBody = data[i].body;
     var itemLink = data[i].html_url;
     var commentCount = data[i].comments;
-    var created = parseGithubDate(data[i].created_at);
+
+//  The tempDate work is to try to handle really old phone browsers, which seem to be in vogue with Malaria researchers!
+    var tempDate = data[i].created_at;
+    tempDate = tempDate.substr(0,tempDate.length-1);
+    tempDate = tempDate + '+0000';
+    var created = parseGithubDate(tempDate);
+//
     var hours = created.getHours().toString();
     if (hours.length === 1) { hours = '0' + hours; }
     var minutes = created.getMinutes().toString();
@@ -100,6 +108,12 @@ function projectActivity(data) {
 
     var createdDate = created.getDate() + ' ' + monthNames[created.getMonth()] + ' ' + created.getFullYear() + ' at ' + hours + ':' + minutes;
     var commentText;
+
+//The NaN check is also for the old phone browser issue
+    if (createdDate.indexOf("NaN") > -1) {
+      createdDate = data[i].created_at;
+    }
+//
 
     if (commentCount > 0){
       if (commentCount === 1){
