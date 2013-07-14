@@ -203,23 +203,23 @@ span[class^="indicator-"] {
 }
 
 .indicator-chemistry {
-    background: #e93631;
+    background: #ec3633;
 }
 
 .indicator-administration {
-    background: #f69331;
+    background: #f69431;
 }
 
 .indicator-biology {
-    background: #47b3ef;
+    background: #33ccff;
 }
 
 .indicator-informatics {
-    background: #3f8116;
+    background: #3d8016;
 }
 
 .indicator-consulting {
-    background: #3a3a3a;
+    background: #833580;
 }
 
 .legend {
@@ -242,24 +242,24 @@ span[class^="indicator-"] {
 }
 
 .legend-chemistry {
-    color: #e93631;
+    color: #ec3633;
 }
 
 .legend-administration {
-    color: #f69331;
+    color: #f69431;
 }
 
 .legend-biology {
-    color: #47b3ef;
+    color: #33ccff;
 }
 
 .legend-informatics {
-    color: #3f8116;
+    color: #3d8016;
 }
 
 .legend-consulting {
     width: 70px;
-    color: #3a3a3a;
+    color: #833580;
 }
 
 [class^="legend-indicator"] {
@@ -272,23 +272,23 @@ span[class^="indicator-"] {
 }
 
 .legend-indicator-chemistry{
-    background: #e93631;
+    background: #ec3633;
 }
 
 .legend-indicator-biology{
-    background: #47b3ef;
+    background: #33ccff;
 }
 
 .legend-indicator-informatics{
-    background: #3f8116;
+    background: #3d8016;
 }
 
 .legend-indicator-consulting{
-    background: #3a3a3a;
+    background: #833580;
 }
 
 .legend-indicator-administration{
-    background: #f69331;
+    background: #f69431;
 }
 
 .key {
