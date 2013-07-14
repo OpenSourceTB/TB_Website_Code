@@ -95,14 +95,12 @@ function projectActivity(data) {
     var itemLink = data[i].html_url;
     var commentCount = data[i].comments;
     var createdDate;
-    var created;
     var hours;
     var minutes;
     var commentText;
 
     // Try date conversion as given from GitHub - the preferred way
-    // If that fails, try converting the Z to +0000
-    // If that fails, just return teh GitHub text (which is Zulu time)
+    // If that fails, just return the GitHub text (which is Zulu time)
 
     var givenDate = data[i].created_at;
     var dateFromGiven = parseGithubDate(givenDate);
@@ -111,22 +109,9 @@ function projectActivity(data) {
     minutes = dateFromGiven.getMinutes().toString();
     if (minutes.length === 1) { minutes = '0' + minutes; }
     createdDate = dateFromGiven.getDate() + ' ' + monthNames[dateFromGiven.getMonth()] + ' ' + dateFromGiven.getFullYear() + ' at ' + hours + ':' + minutes;
-    if (createdDate.indexOf("NaN") > -1) {
-      // Try to change the Z to +0000
-      var zeroedDate = data[i].created_at;
-      zeroedDate = zeroedDate.substr(0,tempDate.length-1);
-      zeroedDate = zeroedDate + '+0000';
-      var dateFromZeroed  = parseGithubDate(zeroedDate);
-      hours = dateFromZeroed.getHours().toString();
-      if (hours.length === 1) { hours = '0' + hours; }
-      minutes = dateFromZeroed.getMinutes().toString();
-      if (minutes.length === 1) { minutes = '0' + minutes; }
 
-      createdDate = dateFromZeroed.getDate() + ' ' + monthNames[dateFromZeroed.getMonth()] + ' ' + dateFromZeroed.getFullYear() + ' at ' + hours + ':' + minutes;
-
-      if (createdDate.indexOf("NaN") > -1) {  // All else failed, just return the GitHub string
-        createdDate = data[i].created_at;
-      }
+    if (createdDate.indexOf("NaN") > -1) {  // All else failed, just return the GitHub string
+      createdDate = data[i].created_at;
     }
 
     if (commentCount > 0){
@@ -533,4 +518,32 @@ function getGravatar(gravatarEmail, size) {
     return 'images/Gravatar.jpg';
   }
 
+}
+
+function testDates() {
+  "use strict";
+
+  var dateFromZulu = parseGithubDate("2013-07-03T02:34:25Z");
+  var dateFromZero = parseGithubDate("2013-07-03T02:34:25+0000");
+
+  var zuluFormat = "2013-07-03T02:34:25Z";
+
+  $("#input").append(zuluFormat);
+
+  $("#length").append(zuluFormat.length);
+
+  $("#zulu").append(dateFromZulu);
+  $("#zero").append(dateFromZero);
+  $("#indexOf").append(zuluFormat.indexOf('T'));
+
+  var pos=-1;
+  for (var i=0; i<zuluFormat.length; i++){
+    if (zuluFormat[i] === 'T') {
+      pos = i;
+    }
+  }
+  $("#index").append(zuluFormat.indexOf('T'));
+
+  $("#match").append(zuluFormat.match('T'));
+  $("#nomatch").append(zuluFormat.match('NaN'));
 }
