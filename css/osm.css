@@ -526,6 +526,7 @@ span[class^="indicator-"] {
 
 .overflow-wrap{
     overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .indented a:hover {
