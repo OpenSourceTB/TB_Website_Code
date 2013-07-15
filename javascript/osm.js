@@ -138,11 +138,7 @@ function trimLongWords(body){
 
   for (var k = 0; k < inputWords.length; k++) {
     if (inputWords[k].length > longestAllowed) {
-      longWord = inputWords[k];
-      while (longWord.length > longestAllowed){
-        outputWords.push(longWord.substr(0,longestAllowed-1));  // initial part
-        longWord = longWord.substr(longestAllowed-1);
-      }
+      longWord = '<span class="overflow-wrap">' + inputWords[k] + '</span>';
       outputWords.push(longWord);  // last part
     } else {
       outputWords.push(inputWords[k]);
@@ -526,6 +522,8 @@ function testDates() {
   var dateFromZulu = parseGithubDate("2013-07-03T02:34:25Z");
   var dateFromZero = parseGithubDate("2013-07-03T02:34:25+0000");
 
+  var dateFromZeroColon = parseGithubDate("2013-07-03T02:34:25+00:00");
+
   var zuluFormat = "2013-07-03T02:34:25Z";
 
   $("#input").append(zuluFormat);
@@ -546,4 +544,8 @@ function testDates() {
 
   $("#match").append(zuluFormat.match('T'));
   $("#nomatch").append(zuluFormat.match('NaN'));
+  $("#tzd").append(new Date().getTimezoneOffset());
+  $("#noTZ").append(parseGithubDate("2013-07-03 02:34:25Z"));
+  $("#noT0000").append(parseGithubDate("2013-07-03 02:34:25+0000"));
+  $("#noT00").append(parseGithubDate("2013-07-03 02:34:25+00"));
 }

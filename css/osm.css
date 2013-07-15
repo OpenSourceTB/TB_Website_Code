@@ -522,6 +522,9 @@ span[class^="indicator-"] {
 .indented a {
     color: black;
     text-decoration: none;
+}
+
+.overflow-wrap{
     overflow-wrap: break-word;
 }
 
