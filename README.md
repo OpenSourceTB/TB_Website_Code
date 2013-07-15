@@ -169,47 +169,47 @@ currently git-1.8.3.2-intel-universal-snow-leopard.dmg .
 
 After it downloads, double click the downloaded packages, and follow the instructions to install it on your Mac.
 
-\*In a Terminal window,
+In a Terminal window,
 
-  \* For the website code:
+For the website code:
 
-    \* create a directory /osm_website_code
+: create a directory /osm_website_code
 
-    \* switch to that directory.
+: switch to that directory.
 
-    \* initialize a git repo: git init
+: initialize a git repo: git init
 
-    \* clone the GitHub repository to your machine:
+: clone the GitHub repository to your machine:
 
-    \* git clone git@github.com:OpenSourceMalaria/OSM_Website_Code.git
+: git clone git@github.com:OpenSourceMalaria/OSM_Website_Code.git
 
 
-  \* For the osm-feeds code
+For the osm-feeds code
 
-    \* create a directory /osm-feeds
+: create a directory /osm-feeds
 
-    \* switch to that directory.
+: switch to that directory.
 
-    \* initialize a git repo: git init
+: initialize a git repo: git init
 
-    \* clone the GitHub repository to your machine:
-       git clone git@github.com:OpenSourceMalaria/osm-feeds.git
+: clone the GitHub repository to your machine:
+: git clone git@github.com:OpenSourceMalaria/osm-feeds.git
 
 Maintaining and improving the software requires someone familiar with the following:
 
-\*In general:
+In general:
 
-  \* git
+: git
 
-  \* text editing tool of some sort
+: text editing tool of some sort
 
-\*website:
+website:
 
-  \* JavaScript, CSS, HTML
+: JavaScript, CSS, HTML
 
-\*osm-feeds:
+osm-feeds:
 
-  \* Ruby, Sinatra framework, heroku.com
+: Ruby, Sinatra framework, heroku.com
 
 Additional Items of interest:
 -----------------------------
