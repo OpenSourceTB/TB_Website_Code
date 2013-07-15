@@ -548,4 +548,12 @@ function testDates() {
   $("#noTZ").append(parseGithubDate("2013-07-03 02:34:25Z"));
   $("#noT0000").append(parseGithubDate("2013-07-03 02:34:25+0000"));
   $("#noT00").append(parseGithubDate("2013-07-03 02:34:25+00"));
+
+  var addedFiveHours = dateFromZulu.addHours(5);
+  $("#added5").append(addedFiveHours);
+}
+
+Date.prototype.addHours = function(h) {
+  this.setTime(this.getTime() + (h*60*60*1000));
+  return this;
 }
