@@ -162,37 +162,58 @@ Roger Dudler’s site gives a good overview for this process:
 
 http://rogerdudler.github.io/git-guide/
 
-+On his page, click Download Git for OSX,
-+On the the download page, click on the most recent package (at the top of the list),
+On his page, click Download Git for OSX,
+
+On the the download page, click on the most recent package (at the top of the list),
 currently git-1.8.3.2-intel-universal-snow-leopard.dmg .
 
-+After it downloads, double click the downloaded packages, and follow the instructions to install it on your Mac.
-++ In a Terminal window,
-+++For the website code:
-++++create a directory /osm_website_code
-++++switch to that directory.
-++++initialize a git repo: git init
-++++clone the GitHub repository to your machine:
-++++git clone git@github.com:OpenSourceMalaria/OSM_Website_Code.git
+After it downloads, double click the downloaded packages, and follow the instructions to install it on your Mac.
 
-+++For the osm-feeds code
-++++create a directory /osm-feeds
-++++switch to that directory.
-++++initialize a git repo: git init
-++++clone the GitHub repository to your machine:
-++++git clone git@github.com:OpenSourceMalaria/osm-feeds.git
+In a Terminal window,
+
+For the website code:
+
+: create a directory /osm_website_code
+
+: switch to that directory.
+
+: initialize a git repo: git init
+
+: clone the GitHub repository to your machine:
+
+: git clone git@github.com:OpenSourceMalaria/OSM_Website_Code.git
+
+
+For the osm-feeds code
+
+: create a directory /osm-feeds
+
+: switch to that directory.
+
+: initialize a git repo: git init
+
+: clone the GitHub repository to your machine:
+: git clone git@github.com:OpenSourceMalaria/osm-feeds.git
 
 Maintaining and improving the software requires someone familiar with the following:
-+In general:
-++git
-++text editing tool of some sort
-++website:
-+++JavaScript, CSS, HTML
-++osm-feeds:
-+++Ruby, Sinatra framework, heroku.com
+
+In general:
+
+: git
+
+: text editing tool of some sort
+
+website:
+
+: JavaScript, CSS, HTML
+
+osm-feeds:
+
+: Ruby, Sinatra framework, heroku.com
 
 Additional Items of interest:
+-----------------------------
 
-+The website code is actually hosted as a GitHub page, which is served from the gh-pages branch. When making changes to
+The website code is actually hosted as a GitHub page, which is served from the gh-pages branch. When making changes to
 the website code, make sure to push those changes to the gh-pages branch of the osm_website_code repository. Changes
 made on any other branch, such as master,will not be seen on the actual web page.
