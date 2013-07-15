@@ -168,9 +168,9 @@ On the the download page, click on the most recent package (at the top of the li
 currently git-1.8.3.2-intel-universal-snow-leopard.dmg .
 
 After it downloads, double click the downloaded packages, and follow the instructions to install it on your Mac.
-  In a Terminal window,
-    For the website code:
-      create a directory /osm_website_code
+* In a Terminal window,
+** For the website code:
+*** create a directory /osm_website_code
       switch to that directory.
       initialize a git repo: git init
       clone the GitHub repository to your machine:
