@@ -76,17 +76,28 @@ Team
 
       [
         { "name": "Tim Connor", "affiliation": "El Hefe", "url": "www.cloudcity.io" },
-        { "name": "Mat Todd",
-          "affiliation": "University of Sydney",
-          "affiliation_url": "sydney.edu.au",
-          "discipline": "chemistry",
-          "url": "groups.chem.usyd.edu.au/todd/the-boss.html",
-          "gravatar_email": "mat@mat.com"},
+        { "name": "Mat Todd", "affiliation": "University of Sydney",
+        "affiliation_url": "sydney.edu.au",
+        "url": "openwetware.org/wiki/User:Matthew_Todd",
+        "gravatar_email": "matthew.todd@sydney.edu.au",
+        "disciplines": "chemistry;consulting;administration"},
         { "name": "Stephanie Geerlings" }
       ]
 
-  The elements: url, affiliation, discipline, and gravatar_email are optional. If name is not provided, "Anonymous" is used for
-  their name.
+      The elements of a given team member entry are:
+        "name":             The person's name
+        "affiliation":      The name of the person's organization
+        "affiliation_url":  The url of the person's organization
+        "url":              The url of the person's personal web page
+        "gravatar_email":   The email address associated with the person's Gravatar image.
+        "avatar":           The url of the person's personal image (use this only if they do not have a Gravatar)
+        "disciplines":      The semi-colon separated list of disciplines that the person brings to the team
+
+                            The entire set of possible disciplines is:
+                                  "chemistry;biology;consulting;administration;informatics"
+
+  The elements: url, affiliation, affiliation_url, disciplines, gravatar_email, and avatar are optional. If name is
+  not provided, "Anonymous" is used for their name.
 
   The different display cases are:
 
@@ -94,11 +105,14 @@ Team
    If name, url provided: "Member Name" as a link to the url.
    If name, affiliation provided: "Member Name, affiliation" without a link.
    If gravatar_email provided, the member's gravatar is obtained and shown.
-      If missing, a default image (blue outline figure) is shown.
-      If an entry does not correspond to an actual gravatar, a stylistic G image (the gravatar standard) is shown.
-        If the G image is shown, it could be due to a misspelling.
+      If missing, the "avatar" (if provided) image is shown.
 
-   Discipline is intended to identify the individual's area of expertise, such as "chemistry", "Biologist", etc.
+      If neither gravatar_image nor avatar is provided, a default image (blue outline figure) is shown.
+
+      If a gravatar_email is provided but does not correspond to an actual Gravatar (possibly a misspelling),
+        a stylistic G image (the gravatar standard) is shown.
+
+   If both gravatar_email and avatar entries are provided for a given team member, the gravatar image is used.
 
 Sponsors
 --------
@@ -137,3 +151,48 @@ Setting up for development
 
 When a person is designated to do further development work, the recommended approach is to set up local git
 repositories on the development machine.
+
+The following describes how to set up a developer to maintain the OSM code for the website and the osm-feeds web
+application.
+
+The assumption is that the Developer will be working on a Mac. Setting up for a Windows environment is similar, but not
+covered in this guide.
+
+Roger Dudler’s site gives a good overview for this process:
+
+http://rogerdudler.github.io/git-guide/
+
++On his page, click Download Git for OSX,
++On the the download page, click on the most recent package (at the top of the list),
+currently git-1.8.3.2-intel-universal-snow-leopard.dmg .
+
++After it downloads, double click the downloaded packages, and follow the instructions to install it on your Mac.
+++ In a Terminal window,
++++For the website code:
+++++create a directory /osm_website_code
+++++switch to that directory.
+++++initialize a git repo: git init
+++++clone the GitHub repository to your machine:
+++++git clone git@github.com:OpenSourceMalaria/OSM_Website_Code.git
+
++++For the osm-feeds code
+++++create a directory /osm-feeds
+++++switch to that directory.
+++++initialize a git repo: git init
+++++clone the GitHub repository to your machine:
+++++git clone git@github.com:OpenSourceMalaria/osm-feeds.git
+
+Maintaining and improving the software requires someone familiar with the following:
++In general:
+++git
+++text editing tool of some sort
+++website:
++++JavaScript, CSS, HTML
+++osm-feeds:
++++Ruby, Sinatra framework, heroku.com
+
+Additional Items of interest:
+
++The website code is actually hosted as a GitHub page, which is served from the gh-pages branch. When making changes to
+the website code, make sure to push those changes to the gh-pages branch of the osm_website_code repository. Changes
+made on any other branch, such as master,will not be seen on the actual web page.
