@@ -84,6 +84,7 @@ function loadLatestProjectActivity() {
 
 function projectActivity(data) {
   "use strict";
+  var FIRST_PORTION = 100;
   var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
   var numGithubItems = 12;
   var lastGithubItem = Math.min(numGithubItems, data.length);
@@ -126,8 +127,8 @@ function projectActivity(data) {
       commentText = "";
     }
     itemBody = trimLongWords(itemBody);
-    itemLead = itemBody.substring(0, 499);
-    itemFollow = itemBody.substring(499);
+    itemLead = itemBody.substring(0, FIRST_PORTION);
+    itemFollow = itemBody.substring(FIRST_PORTION);
 
     $("#project-activity-feed").append('<span class="project-activity-item"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>');
     $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a style="display:none">' + itemFollow + '</a><span><a class="tog"> See More </a><a a class="tog" style="display:none"> See Less </a></span><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>');
