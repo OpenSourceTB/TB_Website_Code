@@ -126,13 +126,48 @@ function projectActivity(data) {
     } else {
       commentText = "";
     }
-    itemBody = trimLongWords(itemBody);
-    itemLead = itemBody.substring(0, FIRST_PORTION);
-    itemFollow = itemBody.substring(FIRST_PORTION);
+    var itemOut = convertImages(itemBody);
+    if (itemOut.length == itemBody.length) {
+      itemBody = trimLongWords(itemBody);
+      itemLead = itemBody.substring(0, FIRST_PORTION);
+      itemFollow = itemBody.substring(FIRST_PORTION);
+    } else {
+      itemLead = itemOut;
+      itemFollow = "";
+    }
+
+//    itemLead = itemBody.substring(0, FIRST_PORTION);
+//    itemFollow = itemBody.substring(FIRST_PORTION);
+//    itemLead = itemBody;
+//    itemFollow = "";
 
     $("#project-activity-feed").append('<span class="project-activity-item"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>');
-    $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a style="display:none">' + itemFollow + '</a><span><a class="tog"> See More </a><a a class="tog" style="display:none"> See Less </a></span><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>');
+    if (itemFollow.length == 0){
+      $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a></span><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>');
+    } else {
+      $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a style="display:none">' + itemFollow + '</a><span><a class="tog"> See More </a><a a class="tog" style="display:none"> See Less </a></span><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>');
+    }
   }
+}
+
+function convertImages(itemBody){
+
+  var outString = itemBody;
+  var n = itemBody.indexOf("![");
+
+  if (n >= 0) {
+    outString = itemBody.substring(0,n);
+    var m = itemBody.substring(n).indexOf("](");
+    if (m >= 0) {
+      var url = itemBody.substring(n+m+2);
+      var o = url.indexOf(")");
+      url = url.substring(0,o);
+
+      var img="<img src='" + url + "' width=150>";
+      outString = outString + img + itemBody.substring(n+m+o+3);
+    }
+  }
+  return outString;
 }
 
 function trimLongWords(body){
