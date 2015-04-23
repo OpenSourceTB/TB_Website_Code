@@ -92,6 +92,8 @@ function projectActivity(data) {
   for (var i = 0; i < lastGithubItem; i++) {
     var itemTitle = data[i].title;
     var itemBody = data[i].body;
+    var itemLead;
+    var itemFollow;
     var itemLink = data[i].html_url;
     var commentCount = data[i].comments;
     var createdDate;
@@ -124,9 +126,11 @@ function projectActivity(data) {
       commentText = "";
     }
     itemBody = trimLongWords(itemBody);
+    itemLead = itemBody.substring(0, 499);
+    itemFollow = itemBody.substring(499);
 
     $("#project-activity-feed").append('<span class="project-activity-item"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>');
-    $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemBody + '<strong><em>&nbsp;'+ commentText +'</em></strong>' + '</a></div>');
+    $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a style="display:none">' + itemFollow + '</a><span><a class="tog"> See More </a><a a class="tog" style="display:none"> See Less </a></span><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>');
   }
 }
 
