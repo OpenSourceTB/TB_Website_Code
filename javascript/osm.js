@@ -141,7 +141,7 @@ function projectActivity(data) {
     if (itemLabels.length > 0) {
       labelText = "<div>";
       for (var idx = 0; idx < itemLabels.length; ++idx) {
-        labelText = labelText + '<button style="background-color:' + '#' + itemLabels[idx].color
+        labelText = labelText + '<button class ="gitbutton" style="background-color:' + '#' + itemLabels[idx].color
         labelText = labelText + '" type="button" onclick="window.open(\'' + baseLink
         labelText = labelText + encodeURIComponent(itemLabels[idx].name) + "')\">" + itemLabels[idx].name + '</button>';
       }
@@ -151,7 +151,7 @@ function projectActivity(data) {
     if (itemFollow.length == 0){
       $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a></span><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>');
     } else {
-      $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a style="display:none">' + itemFollow + '</a><div><a class="tog"> See More </a><a a class="tog" style="display:none"> See Less </a></div><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>');
+      $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a href="' + itemLink + '" target="_blank" style="display:none">' + itemFollow + '</a><div><a class="tog"> See More </a><a a class="tog" style="display:none"> See Less </a></div><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>');
     }
   }
 }
