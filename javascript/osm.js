@@ -74,7 +74,6 @@ function loadLatestTweets() {
 function loadLatestProjectActivity() {
 
   $("#project_activity_script").remove();
-
   var script = document.createElement( 'script' );
   script.type = 'text/javascript';
   script.src = "https://osm-feeds.herokuapp.com/project_activity?callback=projectActivity";
@@ -93,6 +92,7 @@ function projectActivity(data) {
   for (var i = 0; i < lastGithubItem; i++) {
     var itemTitle = data[i].title;
     var itemBody = data[i].body;
+    var itemLabels = data[i].labels;
     var itemLead;
     var itemFollow;
     var itemLink = data[i].html_url;
@@ -126,26 +126,32 @@ function projectActivity(data) {
     } else {
       commentText = "";
     }
-    var itemOut = convertImages(itemBody);
-    if (itemOut.length == itemBody.length) {
-      itemBody = trimLongWords(itemBody);
-      itemLead = itemBody.substring(0, FIRST_PORTION);
-      itemFollow = itemBody.substring(FIRST_PORTION);
-    } else {
-      itemLead = itemOut;
-      itemFollow = "";
-    }
 
-//    itemLead = itemBody.substring(0, FIRST_PORTION);
-//    itemFollow = itemBody.substring(FIRST_PORTION);
-//    itemLead = itemBody;
-//    itemFollow = "";
+    itemBody = trimLongWords(itemBody);
+    itemBody = convertImages(itemBody);
+    itemLead = itemBody.substring(0, FIRST_PORTION);
+    itemFollow = itemBody.substring(FIRST_PORTION);
 
     $("#project-activity-feed").append('<span class="project-activity-item"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>');
+
+    var labelText;
+
+    var baseLink = "https://github.com/OpenSourceMalaria/OSM_To_Do_List/labels/";
+
+    if (itemLabels.length > 0) {
+      labelText = "<div>";
+      for (var idx = 0; idx < itemLabels.length; ++idx) {
+        labelText = labelText + '<button style="background-color:' + '#' + itemLabels[idx].color
+        labelText = labelText + '" type="button" onclick="window.open(\'' + baseLink
+        labelText = labelText + encodeURIComponent(itemLabels[idx].name) + "')\">" + itemLabels[idx].name + '</button>';
+      }
+      labelText = labelText + "</div>";
+      $("#project-activity-feed").append(labelText);
+    }
     if (itemFollow.length == 0){
       $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a></span><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>');
     } else {
-      $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a style="display:none">' + itemFollow + '</a><span><a class="tog"> See More </a><a a class="tog" style="display:none"> See Less </a></span><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>');
+      $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a style="display:none">' + itemFollow + '</a><div><a class="tog"> See More </a><a a class="tog" style="display:none"> See Less </a></div><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>');
     }
   }
 }
@@ -164,7 +170,7 @@ function convertImages(itemBody){
       url = url.substring(0,o);
 
       var img="<img src='" + url + "' width=150>";
-      outString = outString + img + itemBody.substring(n+m+o+3);
+      outString = outString + "<div>" + img + "</div>" + itemBody.substring(n+m+o+3);
     }
   }
   return outString;
@@ -178,6 +184,7 @@ function trimLongWords(body){
 
   for (var k = 0; k < inputWords.length; k++) {
     if (inputWords[k].length > longestAllowed) {
+
       longWord = '<span class="overflow-wrap">' + inputWords[k] + '</span>';
       outputWords.push(longWord);  // last part
     } else {

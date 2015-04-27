@@ -1,3 +1,10 @@
+.indented .tog{
+    text-decoration: none;
+}
+.indented .tog:hover{
+     text-decoration: underline;
+ }
+
 /*Hide mobile view normally*/
 
 .phone{
