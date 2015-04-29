@@ -83,10 +83,12 @@ function loadLatestProjectActivity() {
 
 function projectActivity(data) {
   "use strict";
-  var FIRST_PORTION = 100;
+  var FIRST_PORTION = 300;
   var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
   var numGithubItems = 12;
   var lastGithubItem = Math.min(numGithubItems, data.length);
+  var allLabels=[];
+
   $("#project-activity-feed").empty();
 
   for (var i = 0; i < lastGithubItem; i++) {
@@ -126,12 +128,23 @@ function projectActivity(data) {
     } else {
       commentText = "";
     }
+    debugger;
 
-    itemBody = trimLongWords(itemBody);
-    itemBody = convertImages(itemBody);
-    itemLead = itemBody.substring(0, FIRST_PORTION);
-    itemFollow = itemBody.substring(FIRST_PORTION);
-
+    itemBody = prepareImages(itemBody);
+    var endFirst;
+    var imageAt = convertImages(itemBody);
+    itemBody = imageAt[1];
+    if (imageAt[0] > FIRST_PORTION) {
+      endFirst = imageAt[0];
+    } else {
+      endFirst = FIRST_PORTION;
+    }
+//    itemBody = trimLongWords(itemBody);
+//    itemLead = itemBody;
+//    itemFollow = "";
+    itemLead = itemBody.substr(0, endFirst);
+    itemFollow = itemBody.substr(endFirst);
+//    debugger;
     $("#project-activity-feed").append('<span class="project-activity-item"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>');
 
     var labelText;
@@ -143,7 +156,17 @@ function projectActivity(data) {
       for (var idx = 0; idx < itemLabels.length; ++idx) {
         labelText = labelText + '<button class ="gitbutton" style="background-color:' + '#' + itemLabels[idx].color
         labelText = labelText + '" type="button" onclick="window.open(\'' + baseLink
-        labelText = labelText + encodeURIComponent(itemLabels[idx].name) + "')\">" + itemLabels[idx].name + '</button>';
+        labelText = labelText + encodeURIComponent(itemLabels[idx].name) + "')\">" + itemLabels[idx].name.substr(0,1) + '</button>';
+
+        var foundIt = false;
+        for (var ii = 0; ii < allLabels.length; ii++){
+          if (allLabels[ii].name == itemLabels[idx].name) {
+            foundIt = true;
+          }
+        }
+        if (foundIt == false) {
+          allLabels.push(itemLabels[idx]);
+        }
       }
       labelText = labelText + "</div>";
       $("#project-activity-feed").append(labelText);
@@ -151,15 +174,32 @@ function projectActivity(data) {
     if (itemFollow.length == 0){
       $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a></span><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>');
     } else {
-      $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a href="' + itemLink + '" target="_blank" style="display:none">' + itemFollow + '</a><div><a class="tog"> See More </a><a a class="tog" style="display:none"> See Less </a></div><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>');
+      $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a href="' + itemLink + '" target="_blank" style="display:none">' + itemFollow + '</a><div><a class="tog"> read more </a><a class="tog" style="display:none"> read less </a></div><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>');
     }
   }
+  if (allLabels.length > 0) {
+    labelText = "<div>";
+    for (var idx = 0; idx < allLabels.length; ++idx) {
+      labelText = labelText + '<button class ="gitbutton" style="background-color:' + '#' + allLabels[idx].color
+//      labelText = labelText + '" type="button" onclick="window.open(\'' + baseLink
+//      labelText = labelText + encodeURIComponent(allLabels[idx].name) + "')\">" + allLabels[idx].name + '</button>';
+
+      labelText = labelText + '" type="button" ';
+      labelText = labelText + "')\">" + allLabels[idx].name + '</button>';
+    }
+    labelText = labelText + "</div>";
+    $("#label-list").append(labelText);
+
+  }
+//  Now sort the array of labels; eliminate duplicates; create buttons
+
+
 }
 
 function convertImages(itemBody){
-
   var outString = itemBody;
   var n = itemBody.indexOf("![");
+  var rtn = [0,0];
 
   if (n >= 0) {
     outString = itemBody.substring(0,n);
@@ -170,9 +210,34 @@ function convertImages(itemBody){
       url = url.substring(0,o);
 
       var img="<img src='" + url + "' width=150>";
-      outString = outString + "<div>" + img + "</div>" + itemBody.substring(n+m+o+3);
+      outString = outString + "<div>" + img + "</div>";
+      rtn[0] = outString.length;
+      outString = outString + itemBody.substring(n+m+o+3);
     }
   }
+  rtn[1]  = outString;
+
+  return rtn;
+}
+function prepareImages(itemBody){
+
+  var outString = "";
+  var inString = itemBody;
+  var n;
+  n = inString.indexOf("![");
+
+  while (n >= 0) {
+    outString = inString.substr(0,n);
+    inString = inString.substr(n);
+    var m = inString.indexOf("](");
+    if (m >= 0) {
+      var sub = inString.substr(0,m+1);
+      inString = inString.substr(m+1);
+      outString = outString + sub.replace(/ /g, "_");
+      n = inString.indexOf("![");
+    }
+  }
+  outString = outString + inString
   return outString;
 }
 
@@ -181,8 +246,7 @@ function trimLongWords(body){
   var outputWords = [];
   var longWord;
   var longestAllowed = 30;
-
-  for (var k = 0; k < inputWords.length; k++) {
+    for (var k = 0; k < inputWords.length; k++) {
     if (inputWords[k].length > longestAllowed) {
 
       longWord = '<span class="overflow-wrap">' + inputWords[k] + '</span>';
@@ -604,3 +668,5 @@ Date.prototype.addHours = function(h) {
   this.setTime(this.getTime() + (h*60*60*1000));
   return this;
 }
+
+
