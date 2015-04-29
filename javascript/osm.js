@@ -71,6 +71,11 @@ function loadLatestTweets() {
   });
 }
 
+function showLabel(lName){
+  $(".allLabels").hide();
+  $("." + lName).show();
+}
+
 function loadLatestProjectActivity() {
 
   $("#project_activity_script").remove();
@@ -128,7 +133,6 @@ function projectActivity(data) {
     } else {
       commentText = "";
     }
-    debugger;
 
     itemBody = prepareImages(itemBody);
     var endFirst;
@@ -154,7 +158,7 @@ function projectActivity(data) {
     if (itemLabels.length > 0) {
       labelText = "<div>";
       for (var idx = 0; idx < itemLabels.length; ++idx) {
-        labelText = labelText + '<button class ="gitbutton" style="background-color:' + '#' + itemLabels[idx].color
+        labelText = labelText + '<button class ="gitbutton alllabels ' + itemLabels[idx].name.substr(0,3) + '" style="background-color:' + '#' + itemLabels[idx].color
         labelText = labelText + '" type="button" onclick="window.open(\'' + baseLink
         labelText = labelText + encodeURIComponent(itemLabels[idx].name) + "')\">" + itemLabels[idx].name.substr(0,1) + '</button>';
 
@@ -184,7 +188,7 @@ function projectActivity(data) {
 //      labelText = labelText + '" type="button" onclick="window.open(\'' + baseLink
 //      labelText = labelText + encodeURIComponent(allLabels[idx].name) + "')\">" + allLabels[idx].name + '</button>';
 
-      labelText = labelText + '" type="button" ';
+      labelText = labelText + '" type="button" onclick="showLabel(\' ' + allLabels[idx].name.substr(0,3) ;
       labelText = labelText + "')\">" + allLabels[idx].name + '</button>';
     }
     labelText = labelText + "</div>";

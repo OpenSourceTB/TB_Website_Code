@@ -1,5 +1,20 @@
-.gitbutton{
+.gitbutton {
     color: white;
+    border: 0px;
+    border-radius: 2px;
+    margin: 3px;
+}
+
+img.project-activity-image{
+    display: none !important
+}
+
+.project-activity-item, .title, .indented{
+    margin-left: 0px !important
+}
+
+.indented{
+    margin-bottom: 30px !important;
 }
 
 .indented .tog{
