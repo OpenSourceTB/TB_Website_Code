@@ -5,6 +5,10 @@
     margin: 3px;
 }
 
+.created_date {
+    color: black;
+}
+
 img.project-activity-image{
     display: none !important
 }
@@ -18,11 +22,20 @@ img.project-activity-image{
 }
 
 .indented .tog{
+    color: blue;
     text-decoration: none;
 }
 .indented .tog:hover{
-     text-decoration: underline;
+    color: blue;
+    text-decoration: underline;
  }
+hr{
+    height: 1px;
+    color: red;
+    background: red;
+    font-size: 0;
+    border: 0;
+}
 
 /*Hide mobile view normally*/
 
@@ -503,7 +516,7 @@ span[class^="indicator-"] {
 }
 
 .left-nav img {
-    width: 130px;
+    width: 30px;
 }
 
 .name {
@@ -523,7 +536,8 @@ span[class^="indicator-"] {
 
 .title {
     display: inline-block;
-    color: black;
+    color: blue;
+    font-size: 20px;
     margin-left: 10px;
 }
 

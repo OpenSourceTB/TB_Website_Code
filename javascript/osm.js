@@ -133,7 +133,7 @@ function projectActivity(data) {
         commentText = commentCount + ' comments';
       }
     } else {
-      commentText = "";
+      commentText = "No comments";
     }
 
     itemBody = prepareImages(itemBody);
@@ -156,7 +156,12 @@ function projectActivity(data) {
       labels = labels + " " + tempLabel;
     }
 
-    projectActivity = '<div class="project-activity-item allTheLabels' + labels + '"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>';
+//    createdDate
+//    itemTitle
+//    commentText
+
+
+    projectActivity = '<div class="project-activity-item allTheLabels' + labels + '"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' +  "<strong>" + itemTitle + '</strong></span></a></span>';
 
     var labelText;
     var baseLink = "https://github.com/OpenSourceMalaria/OSM_To_Do_List/labels/";
@@ -181,13 +186,17 @@ function projectActivity(data) {
       labelText = labelText + "</div>";
       projectActivity = projectActivity + labelText;
     }
+    projectActivity = projectActivity + "<div class='created_date'>" + createdDate;
+
+    projectActivity = projectActivity + '<span><img src="images/comment.gif"/>' + commentText + '</span></div>';
     if (itemFollow.length == 0){
-      projectActivity = projectActivity + '<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a></span><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>';
+      projectActivity = projectActivity + '<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a></span>' + '</a></div>';
     } else {
-      projectActivity = projectActivity + '<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a href="' + itemLink + '" target="_blank" style="display:none">' + itemFollow + '</a><div><a class="tog"> read more </a><a class="tog" style="display:none"> read less </a></div><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>';
+      projectActivity = projectActivity + '<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a href="' + itemLink + '" target="_blank" style="display:none">' + itemFollow + '</a><div><a class="tog"> read more </a><a class="tog" style="display:none"> read less </a></div></a></div>';
     }
-    projectActivity = projectActivity + "</div>";
-      $("#project-activity-feed").append(projectActivity);
+    projectActivity = projectActivity + "<hr></div>";
+
+    $("#project-activity-feed").append(projectActivity);
     $(".allTheLabels").show();
   }
 
