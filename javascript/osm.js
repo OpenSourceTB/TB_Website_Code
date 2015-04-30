@@ -72,8 +72,8 @@ function loadLatestTweets() {
 }
 
 function showLabel(lName){
-  $(".allLabels").hide();
-  $("." + lName).show();
+  $(".allTheLabels").hide();
+  $("." + lName.trim()).show();
 }
 
 function loadLatestProjectActivity() {
@@ -108,6 +108,8 @@ function projectActivity(data) {
     var hours;
     var minutes;
     var commentText;
+    var labels;
+    var projectActivity = "";
 
     // Try date conversion as given from GitHub - the preferred way
     // If that fails, just return the GitHub text (which is Zulu time)
@@ -143,24 +145,28 @@ function projectActivity(data) {
     } else {
       endFirst = FIRST_PORTION;
     }
-//    itemBody = trimLongWords(itemBody);
-//    itemLead = itemBody;
-//    itemFollow = "";
     itemLead = itemBody.substr(0, endFirst);
     itemFollow = itemBody.substr(endFirst);
-//    debugger;
-    $("#project-activity-feed").append('<span class="project-activity-item"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>');
+
+    labels = "";
+    var tempLabel = "";
+    for (var lidx = 0; lidx < itemLabels.length; ++lidx) {
+      tempLabel = itemLabels[lidx].name.replace(/ /g, "_");
+      tempLabel = tempLabel.split("/").join("_");
+      labels = labels + " " + tempLabel;
+    }
+
+    projectActivity = '<div class="project-activity-item allTheLabels' + labels + '"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' + createdDate + " | " + "<strong>" + itemTitle + '</strong></span></a></span>';
 
     var labelText;
-
     var baseLink = "https://github.com/OpenSourceMalaria/OSM_To_Do_List/labels/";
 
     if (itemLabels.length > 0) {
       labelText = "<div>";
       for (var idx = 0; idx < itemLabels.length; ++idx) {
-        labelText = labelText + '<button class ="gitbutton alllabels ' + itemLabels[idx].name.substr(0,3) + '" style="background-color:' + '#' + itemLabels[idx].color
+        labelText = labelText + '<button class ="gitbutton ' + itemLabels[idx].name.replace(/ /g, "_").split("/").join("_") + '" style="background-color:' + '#' + itemLabels[idx].color
         labelText = labelText + '" type="button" onclick="window.open(\'' + baseLink
-        labelText = labelText + encodeURIComponent(itemLabels[idx].name) + "')\">" + itemLabels[idx].name.substr(0,1) + '</button>';
+        labelText = labelText + encodeURIComponent(itemLabels[idx].name) + "')\">" + itemLabels[idx].name + '</button>';
 
         var foundIt = false;
         for (var ii = 0; ii < allLabels.length; ii++){
@@ -173,31 +179,33 @@ function projectActivity(data) {
         }
       }
       labelText = labelText + "</div>";
-      $("#project-activity-feed").append(labelText);
+      projectActivity = projectActivity + labelText;
     }
     if (itemFollow.length == 0){
-      $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a></span><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>');
+      projectActivity = projectActivity + '<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a></span><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>';
     } else {
-      $("#project-activity-feed").append('<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a href="' + itemLink + '" target="_blank" style="display:none">' + itemFollow + '</a><div><a class="tog"> read more </a><a class="tog" style="display:none"> read less </a></div><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>');
+      projectActivity = projectActivity + '<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a href="' + itemLink + '" target="_blank" style="display:none">' + itemFollow + '</a><div><a class="tog"> read more </a><a class="tog" style="display:none"> read less </a></div><span><strong><em>&nbsp;'+ commentText +'</em></strong></span>' + '</a></div>';
     }
+    projectActivity = projectActivity + "</div>";
+      $("#project-activity-feed").append(projectActivity);
+    $(".allTheLabels").show();
   }
+
   if (allLabels.length > 0) {
     labelText = "<div>";
+    labelText = labelText + '<button class ="gitbutton" style="background-color:' + '#0f0f0f';
+    labelText = labelText + '" type="button" onclick="showLabel(\'allTheLabels\')"';
+    labelText = labelText + "')\">" + "Recently Active" + '</button>';
     for (var idx = 0; idx < allLabels.length; ++idx) {
       labelText = labelText + '<button class ="gitbutton" style="background-color:' + '#' + allLabels[idx].color
-//      labelText = labelText + '" type="button" onclick="window.open(\'' + baseLink
-//      labelText = labelText + encodeURIComponent(allLabels[idx].name) + "')\">" + allLabels[idx].name + '</button>';
-
-      labelText = labelText + '" type="button" onclick="showLabel(\' ' + allLabels[idx].name.substr(0,3) ;
+      labelText = labelText + '" type="button" onclick="showLabel(\' ' + allLabels[idx].name.replace(/ /g, "_").split("/").join("_");
       labelText = labelText + "')\">" + allLabels[idx].name + '</button>';
     }
     labelText = labelText + "</div>";
+    $("#label-list").empty();
     $("#label-list").append(labelText);
 
   }
-//  Now sort the array of labels; eliminate duplicates; create buttons
-
-
 }
 
 function convertImages(itemBody){
@@ -237,7 +245,10 @@ function prepareImages(itemBody){
     if (m >= 0) {
       var sub = inString.substr(0,m+1);
       inString = inString.substr(m+1);
-      outString = outString + sub.replace(/ /g, "_");
+      sub = sub.replace(/ /g, "_");
+      sub = sub.split("/").join("_");
+
+      outString = outString + sub;
       n = inString.indexOf("![");
     }
   }
