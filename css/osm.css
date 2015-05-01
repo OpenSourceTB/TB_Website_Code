@@ -4,6 +4,23 @@
     border-radius: 2px;
     margin: 3px;
 }
+.big-button-container{
+    margin-bottom: 30px;
+}
+
+.big-button{
+    height: 50px;
+    width: 200px;
+    border-radius: 5px;
+}
+.big-button.set{
+    background-color: blue;
+    color: white;
+}
+
+.created_date {
+    color: black;
+}
 
 img.project-activity-image{
     display: none !important
@@ -18,11 +35,20 @@ img.project-activity-image{
 }
 
 .indented .tog{
+    color: blue;
     text-decoration: none;
 }
 .indented .tog:hover{
-     text-decoration: underline;
+    color: blue;
+    text-decoration: underline;
  }
+hr{
+    height: 1px;
+    color: red;
+    background: red;
+    font-size: 0;
+    border: 0;
+}
 
 /*Hide mobile view normally*/
 
@@ -361,7 +387,6 @@ span[class^="indicator-"] {
     margin-right: .5%;
     margin-top: 2%;
     border-radius: 10px;
-    background-color: #ebf6f8;
 }
 
 .center-section h3 {
@@ -399,6 +424,7 @@ span[class^="indicator-"] {
     margin-right: auto;
     margin-top: 15%;
     margin-bottom: 18px;
+    display: block;
 }
 
 #social {
@@ -503,7 +529,7 @@ span[class^="indicator-"] {
 }
 
 .left-nav img {
-    width: 130px;
+    width: 30px;
 }
 
 .name {
@@ -523,7 +549,8 @@ span[class^="indicator-"] {
 
 .title {
     display: inline-block;
-    color: black;
+    color: blue;
+    font-size: 20px;
     margin-left: 10px;
 }
 
@@ -584,7 +611,8 @@ span[class^="indicator-"] {
     }
 
     #twitter-lead {
-        margin-left: 0%;
+        display: block;
+        margin-left: 0;
     }
 
     #twitter-feed {
