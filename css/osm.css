@@ -4,6 +4,19 @@
     border-radius: 2px;
     margin: 3px;
 }
+.big-button-container{
+    margin-bottom: 30px;
+}
+
+.big-button{
+    height: 50px;
+    width: 200px;
+    border-radius: 5px;
+}
+.big-button.set{
+    background-color: blue;
+    color: white;
+}
 
 .created_date {
     color: black;
@@ -374,7 +387,6 @@ span[class^="indicator-"] {
     margin-right: .5%;
     margin-top: 2%;
     border-radius: 10px;
-    background-color: #ebf6f8;
 }
 
 .center-section h3 {
@@ -412,6 +424,7 @@ span[class^="indicator-"] {
     margin-right: auto;
     margin-top: 15%;
     margin-bottom: 18px;
+    display: block;
 }
 
 #social {
@@ -598,7 +611,8 @@ span[class^="indicator-"] {
     }
 
     #twitter-lead {
-        margin-left: 0%;
+        display: block;
+        margin-left: 0;
     }
 
     #twitter-feed {
