@@ -5,16 +5,20 @@
     margin: 3px;
 }
 .big-button-container{
-    height: 60px;
+    height: 100px;
     margin-top: 5px;
     margin-bottom: 15px;
     display: inline-block;
 }
 
 .big-button{
-    height: 50px;
-    width: 200px;
+    height: 85px;
+    width: 250px;
     border-radius: 5px;
+}
+
+.big-button img{
+    padding-right: 10px;
 }
 .big-button.set{
     background-color: blue;
@@ -78,21 +82,20 @@ hr{
 
 #web-head-background{
     display: block;
+    margin-left:28px;
     margin-bottom: 2%;
-    padding-top: 4%;
-    padding-bottom: 4%;
+    padding-top: 2%;
+    padding-bottom: 1%;
     padding-right: 15%;
     border-radius: 10px;
     background-color: #ebf6f8;
     background-size: 70px 70px;
     font-size: 145%;
     vertical-align: 60%;
-    /*width: 80%;*/
-    /*margin-left: 35px;*/
 }
 
 #web-title{
-    margin-left: 30px;
+    margin-left: 15px;
     width: 80%;
 }
 
@@ -172,7 +175,7 @@ img.project-activity-image {
 }
 
 .see-more {
-    margin-left: 4%;
+    /*margin-left: 4%;*/
     margin-bottom: 2%;
 }
 
@@ -186,7 +189,7 @@ img.project-activity-image {
     font-size: 145%;
     font-weight: bold;
     margin-top: 3%;
-    margin-left: 4%;
+    /*margin-left: 4%;*/
     margin-bottom: 1%;
 }
 
@@ -374,12 +377,13 @@ span[class^="indicator-"] {
 
 #web-logo {
     margin-top: -9px;
-/ / TOD : WAS - 25 %;
-    TO FLOAT UPWARD
+    margin-left: 60px;
+/ / TOD : WAS - 25 %;    TO FLOAT UPWARD
 }
 
 .para {
-    margin: 0 40px;
+    margin-left: 8px;
+    /*margin: 0 40px;*/
 }
 
 .logo-text {
@@ -392,7 +396,7 @@ span[class^="indicator-"] {
 }
 
 .center-section {
-    margin-right: .5%;
+    /*margin-right: .5%;*/
     margin-top: 2%;
     border-radius: 10px;
 }
@@ -406,7 +410,7 @@ span[class^="indicator-"] {
     margin-top: 2%;
     margin-right: 5%;
     margin-bottom: 5%;
-    margin-left: 5%;
+    /*margin-left: 5%;*/
 }
 
 .center-section img {
@@ -551,6 +555,7 @@ span[class^="indicator-"] {
 
 .left-nav img {
     width: 30px;
+    margin-right: 10px;
 }
 
 .name {
