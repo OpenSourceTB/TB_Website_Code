@@ -135,7 +135,6 @@ function projectActivity(data) {
     } else {
       commentText = "No comments";
     }
-
     itemBody = prepareImages(itemBody);
     var endFirst;
     var imageAt = convertImages(itemBody);
@@ -155,11 +154,6 @@ function projectActivity(data) {
       tempLabel = tempLabel.split("/").join("_");
       labels = labels + " " + tempLabel;
     }
-
-//    createdDate
-//    itemTitle
-//    commentText
-
 
     projectActivity = '<div class="project-activity-item allTheLabels' + labels + '"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' +  "<strong>" + itemTitle + '</strong></span></a></span>';
 
@@ -218,24 +212,40 @@ function projectActivity(data) {
 }
 
 function convertImages(itemBody){
-  var outString = itemBody;
-  var n = itemBody.indexOf("![");
+  var inString = itemBody;
+  var outString = "";
+  var n = inString.indexOf("![");
   var rtn = [0,0];
+  var firstImage;
 
-  if (n >= 0) {
-    outString = itemBody.substring(0,n);
-    var m = itemBody.substring(n).indexOf("](");
+  firstImage = true;
+  n = inString.indexOf("![");
+
+  while (n >= 0) {
+    if (firstImage) {
+      outString = inString.substring(0,n);
+    } else{
+      outString = outString + inString.substring(0,n);
+    }
+
+    inString = inString.substr(n);
+    var m = inString.indexOf("](");
     if (m >= 0) {
-      var url = itemBody.substring(n+m+2);
+      var url = inString.substring(m+2);
+      inString = inString.substr(m+2);
       var o = url.indexOf(")");
       url = url.substring(0,o);
-
+      inString = inString.substring(o+1);
       var img="<img src='" + url + "' width=150>";
       outString = outString + "<div>" + img + "</div>";
-      rtn[0] = outString.length;
-      outString = outString + itemBody.substring(n+m+o+3);
+      if (firstImage) {
+        rtn[0] = outString.length;
+        firstImage = false;
+      }
     }
+    n = inString.indexOf("![");
   }
+  outString = outString + inString;
   rtn[1]  = outString;
 
   return rtn;
@@ -248,7 +258,7 @@ function prepareImages(itemBody){
   n = inString.indexOf("![");
 
   while (n >= 0) {
-    outString = inString.substr(0,n);
+    outString = outString + inString.substr(0,n);
     inString = inString.substr(n);
     var m = inString.indexOf("](");
     if (m >= 0) {
