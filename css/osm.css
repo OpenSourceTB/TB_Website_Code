@@ -5,13 +5,14 @@
     margin: 3px;
 }
 .big-button-container{
-    height: 100px;
+    display: inline-block;
+    /*height: 100px;*/
     margin-top: 5px;
     margin-bottom: 15px;
-    display: inline-block;
 }
 
 .big-button{
+    display: inline;
     height: 85px;
     width: 250px;
     border-radius: 5px;
@@ -396,8 +397,7 @@ span[class^="indicator-"] {
 }
 
 .center-section {
-    /*margin-right: .5%;*/
-    margin-top: 2%;
+    margin-top: 5%;
     border-radius: 10px;
 }
 
@@ -406,8 +406,8 @@ span[class^="indicator-"] {
 }
 
 .center-section .center-content {
-    display: block;
-    margin-top: 2%;
+    display: inline-block;
+    /*margin-top: 5%;*/
     margin-right: 5%;
     margin-bottom: 5%;
     /*margin-left: 5%;*/
@@ -516,7 +516,7 @@ span[class^="indicator-"] {
 .intro {
     display: block;
     margin-top: 20px;
-    margin-bottom: 5%;
+    /*margin-bottom: 5%;*/
     /*margin-left: 30px;*/
 }
 
@@ -902,7 +902,7 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
         width: 100%;
     }
 
-    div.span2.left-nav {
+    div.span3.left-nav {
         display: none;
     }
 
