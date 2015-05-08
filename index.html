@@ -43,7 +43,16 @@
         $(document).ready(function () {
             $('.big-button').on("click", function() {
                 $(this).addClass("set");
+                var temp = this.children[0].src;
+                temp = temp.substr(0,temp.length-7) + 'two.png';
+                this.children[0].src = temp;
                 $(this).siblings().removeClass("set");
+                $.each($(this).siblings().children(0), function(k,v){
+                    temp = v.src;
+                    temp = temp.substr(0,temp.length-7) + 'one.png';
+                    v.src = temp;
+                });
+
             });
         })
     </script>
@@ -130,7 +139,7 @@
 <div class="container">
     <div class="row-fluid span12">
         <span id="web-head-background">
-            <img id="web-logo" alt="OSM Logo" src="images/OSM-logo.png"/>
+            <img id="web-logo" alt="OSM Logo" src="images/join.png"/>
             <img id="web-title" src="images/OSM-header.png" alt="Open Source Malaria">
         </span>
 
@@ -148,6 +157,10 @@
                 <span class = "off-page">
                     <a href="http://openwetware.org/wiki/OpenSourceMalaria" target="_blank"><img
                             src="images/wiki.png" alt="Wiki"/>Project Wiki</a>
+                </span>
+                <span class = "off-page">
+                    <a href="http://www.cheminfo.org/Chemistry/Parsing data/Tab_delimited_Parallel_Coordinates.html?tsvURL=http%3A%2F%2Fgoogledocs.cheminfo.org%2Fspreadsheets%2Fd%2F1Rvy6OiM291d1GN_cyT6eSw_C3lSuJ1jaR7AJa8hgGsc%2Fexport%3Fgid%3D0%26format%3Dtsv" target="_blank"><img
+                            src="images/molecule-icon.png" alt="Wiki"/><span class="imagelabel">OSM Molecule Database</span></a>
                 </span>
                 <span id="social">
                     <a  href="https://plus.google.com/u/0/b/114702323662314783325/114702323662314783325/posts"
@@ -256,9 +269,9 @@
             </div>
             <div class="row-fluid span12 links">
                 <span class="big-button-container">
-                    <button class ="project-activity-target big-button set" type="button"><img src="images/Activity-white.png">Activity</button>
-                    <button class ="join-target big-button" type="button"><img src="images/team-gray.png">Join the Team</button>
-                    <button class ="meet-the-team-target big-button" type="button"><img src="images/meet-gray.png">Meet Us</button>
+                    <div class ="project-activity-target big-button set"><img src="images/actv-one.png">Activity</div>
+                    <div class ="join-target big-button"><img src="images/team-two.png">Join the Team</div>
+                    <div class ="meet-the-team-target big-button"><img src="images/meet-two.png">Meet Us</div>
                 </span>
             </div>
             <div class="center-section group" id="scroll-target">

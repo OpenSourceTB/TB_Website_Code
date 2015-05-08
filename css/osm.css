@@ -1,5 +1,12 @@
 .project-activity-target.big-button.set{
-    background: url('images/Activity-white.png');
+    width:250px;
+    height:100px;
+    border:1px solid #000;
+}
+.project-activity-target.big-button{
+    width:250px;
+    height:100px;
+    border:1px solid #000;
 }
 .gitbutton {
     color: white;
@@ -9,21 +16,23 @@
 }
 .big-button-container{
     display: inline-block;
-    /*height: 100px;*/
     margin-top: 5px;
     margin-bottom: 15px;
 }
 
 .big-button{
-    display: inline;
+    display: block;
+    margin-top: 10px;
     height: 85px;
     width: 250px;
     border-radius: 5px;
     background-color: lightgrey;
+
 }
 
 .big-button img{
-    padding-right: 10px;
+    width: 15%;
+    padding: 30px 50px;
 }
 .big-button.set{
     background-color: blue;
