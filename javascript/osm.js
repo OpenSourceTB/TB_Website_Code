@@ -155,7 +155,7 @@ function projectActivity(data) {
       labels = labels + " " + tempLabel;
     }
 
-    projectActivity = '<div class="project-activity-item allTheLabels' + labels + '"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' +  "<strong>" + itemTitle + '</strong></span></a></span>';
+    projectActivity = '<div class="project-activity-item allTheLabels' + labels + '"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' +  "<strong>" + itemTitle + '</strong></span></a>';
 
     var labelText;
     var baseLink = "https://github.com/OpenSourceMalaria/OSM_To_Do_List/labels/";
@@ -182,13 +182,16 @@ function projectActivity(data) {
     }
     projectActivity = projectActivity + "<div class='created_date'>" + createdDate;
 
-    projectActivity = projectActivity + '<span><img src="images/Comment.gif"/>' + commentText + '</span></div>';
+    projectActivity = projectActivity + '<div><img src="images/Comment.gif"/>' + commentText + '</div></div>';
+
     if (itemFollow.length == 0){
-      projectActivity = projectActivity + '<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a></span>' + '</a></div>';
+      projectActivity = projectActivity + '<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a></div>';
     } else {
-      projectActivity = projectActivity + '<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a href="' + itemLink + '" target="_blank" style="display:none">' + itemFollow + '</a><div><a class="tog"> read more </a><a class="tog" style="display:none"> read less </a></div></a></div>';
+      projectActivity = projectActivity + '<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a href="' + itemLink + '" target="_blank" style="display:none">' + itemFollow + '</a><div><a class="tog"> read more </a><a class="tog" style="display:none"> read less </a></div></div>';
     }
     projectActivity = projectActivity + "<hr></div>";
+    console.log(projectActivity);
+    debugger;
 
     $("#project-activity-feed").append(projectActivity);
     $(".allTheLabels").show();
