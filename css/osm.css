@@ -439,11 +439,8 @@ span[class^="indicator-"] {
 }
 
 .center-section .center-content {
-    display: inline-block;
-    /*margin-top: 5%;*/
     margin-right: 5%;
     margin-bottom: 5%;
-    /*margin-left: 5%;*/
 }
 
 .center-section img {
