@@ -41,12 +41,12 @@
     </script>
     <script>
         $(document).ready(function () {
-            $('.big-button, .little-button').on("click", function() {
+            $('.big-button').on("click", function() {
                 $(this).addClass("set");
-                this.children[0].src = this.children[0].src.replace("-deselected", "-selected");
+                this.children[0].src = this.children[0].src.replace("_deselected", "_selected");
                 $(this).siblings().removeClass("set");
                 $.each($(this).siblings().children(0), function(k,v){
-                    v.src = v.src.replace("-selected", "-deselected");
+                    v.src = v.src.replace("_selected", "_deselected");
                 });
 
             });
@@ -152,12 +152,11 @@
                 </span>
                 <span class = "off-page">
                     <a href="http://openwetware.org/wiki/OpenSourceMalaria" target="_blank"><img
-                            src="images/wiki.png" alt="Wiki" onmouseover="this.src='images/wiki-hover.png'"
-                            onmouseout="this.src='images/wiki.png'"/>Project Wiki</a>
+                            src="images/wiki.png" alt="Wiki"/>Project Wiki</a>
                 </span>
                 <span class = "off-page">
                     <a href="http://www.cheminfo.org/Chemistry/Parsing data/Tab_delimited_Parallel_Coordinates.html?tsvURL=http%3A%2F%2Fgoogledocs.cheminfo.org%2Fspreadsheets%2Fd%2F1Rvy6OiM291d1GN_cyT6eSw_C3lSuJ1jaR7AJa8hgGsc%2Fexport%3Fgid%3D0%26format%3Dtsv" target="_blank"><img
-                            src="images/molecule-icon.png" alt="Molecules"/><span class="imagelabel">OSM Molecule Database</span></a>
+                            src="images/molecule-icon.png" alt="Wiki"/><span class="imagelabel">OSM Molecule Database</span></a>
                 </span>
                 <span id="social">
                     <a  href="https://plus.google.com/u/0/b/114702323662314783325/114702323662314783325/posts"
@@ -227,8 +226,7 @@
                     </div>
                     <div class="tiny-link-wiki">
                         <a href="http://openwetware.org/wiki/OpenSourceMalaria" target="_blank"><img
-                                src="images/wiki.png" alt="Wiki"onmouseover="this.src='images/wiki-hover.png'"
-                                onmouseout="this.src='images/wiki.png'"/>
+                                src="images/wiki.png" alt="Wiki"/>
                             <span class="link-title">See Wiki</span>
                         </a>
                     </div>
@@ -256,8 +254,7 @@
                     </div>
                     <div class="phone-link">
                         <a href="http://openwetware.org/wiki/OpenSourceMalaria" target="_blank"><img
-                                src="images/wiki.png" alt="Wiki"onmouseover="this.src='images/wiki-hover.png'"
-                                onmouseout="this.src='images/wiki.png'"/>
+                                    src="images/wiki.png" alt="Wiki"/>
                             <span class="link-title">See Wiki</span>
                         </a>
                     </div>
@@ -292,14 +289,9 @@
             </div>
             <div class="row-fluid span12 links">
                 <span class="big-button-container">
-                    <div class ="project-activity-target big-button set"><img src="images/Activity-selected.png">Activity</div>
-                    <div class ="join-target big-button"><img src="images/team-deselected.png">Join the Team</div>
-                    <div class ="meet-the-team-target big-button"><img src="images/meet-deselected.png">Meet Us</div>
-                </span>
-                <span class="little-button-container">
-                    <div class ="project-activity-target little-button set"><img src="images/Activity-selected.png">Activity</div>
-                    <div class ="join-target little-button"><img src="images/team-deselected.png">Join</div>
-                    <div class ="meet-the-team-target little-button"><img src="images/meet-deselected.png">Meet</div>
+                    <div class ="project-activity-target big-button set"><img src="images/Activity-deselected.png">Activity</div>
+                    <div class ="join-target big-button"><img src="images/team-selected.png">Join the Team</div>
+                    <div class ="meet-the-team-target big-button"><img src="images/meet-selected.png">Meet Us</div>
                 </span>
             </div>
             <div class="center-section group" id="scroll-target">

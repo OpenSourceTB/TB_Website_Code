@@ -17,6 +17,7 @@
     width: 250px;
     border-radius: 5px;
     background-color: lightgrey;
+
 }
 
 .big-button img{
@@ -25,30 +26,23 @@
 }
 .big-button.set{
     background-color: blue;
+    color: white;
 }
 
 .little-button-container{
     display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 5px;
     margin-bottom: 15px;
 }
 
 .little-button{
     display: inline-block;
-    margin-right: 2%;
-    margin-left: 5%;
     margin-top: 10px;
     height: 85px;
     width: 85px;
     border-radius: 5px;
     background-color: lightgrey;
-    text-align: center;
-    position: relative;
-    background-position: 50% 50%;
-    background-repeat:   no-repeat;
-    background-size:     cover;
+
 }
 
 .little-button img{
@@ -57,7 +51,10 @@
 }
 .little-button.set{
     background-color: blue;
+    color: white;
 }
+
+
 
 .created_date {
     color: black;
@@ -439,8 +436,11 @@ span[class^="indicator-"] {
 }
 
 .center-section .center-content {
+    display: inline-block;
+    /*margin-top: 5%;*/
     margin-right: 5%;
     margin-bottom: 5%;
+    /*margin-left: 5%;*/
 }
 
 .center-section img {
@@ -474,7 +474,6 @@ span[class^="indicator-"] {
     padding-left: 10px;
     text-align: center;
     display: inline-block;
-    clear: both;
 }
 
 .social-img{
@@ -510,7 +509,7 @@ span[class^="indicator-"] {
     display: none;
 }
 
-.phone-row-meet-join-activity, .phone-row-external-links, .phone-row-social, .little-button-container{
+.phone-row-meet-join-activity, .phone-row-external-links, .phone-row-social, .littler{
     display: none;
 }
 
@@ -696,14 +695,6 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
         display: none;
     }
 
-    .little-button-container{
-        display: block;
-    }
-
-    .big-button-container{
-        display: none;
-    }
-
     img#phone-logo{
         display: block;
         width: 15%;
@@ -862,20 +853,12 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
         font-size: 100%;
     }
 
-    .tiny-link-wiki{
+    .tiny-link-wiki {
         text-align: center;
         margin-top: 5%;
         margin-right: 14%;
         width: 25%;
         float: right;
-        font-size: 100%;
-    }
-
-    .tiny-link-chem-database {
-        text-align: center;
-        margin-top: 5%;
-        margin-right: 14%;
-        width: 25%;
         font-size: 100%;
     }
 
