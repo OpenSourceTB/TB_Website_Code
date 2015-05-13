@@ -26,11 +26,12 @@
 }
 .big-button.set{
     background-color: blue;
-    color: white;
+    /*color: white;*/
 }
 
 .little-button-container{
-    display: inline-block;
+    display: none;
+    width: 100%;
     margin-top: 5px;
     margin-bottom: 15px;
 }
@@ -38,10 +39,12 @@
 .little-button{
     display: inline-block;
     margin-top: 10px;
+    margin-left: 5%;
     height: 85px;
     width: 85px;
     border-radius: 5px;
     background-color: lightgrey;
+    text-align: center;
 
 }
 
@@ -51,10 +54,7 @@
 }
 .little-button.set{
     background-color: blue;
-    color: white;
 }
-
-
 
 .created_date {
     color: black;
@@ -691,6 +691,14 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
         display: block;
     }
 
+    .big-button-container{
+        display: none;
+    }
+
+    .little-button-container{
+        display: inline-block;
+    }
+
     .web{
         display: none;
     }
@@ -845,7 +853,7 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
         text-align: center;
     }
 
-    .tiny-link-join-the-team {
+    .tiny-link-chem-database{
         text-align: center;
         margin-top: 5%;
         width: 25%;

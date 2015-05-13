@@ -41,14 +41,13 @@
     </script>
     <script>
         $(document).ready(function () {
-            $('.big-button').on("click", function() {
+            $('.big-button, .little-button').on("click", function() {
                 $(this).addClass("set");
                 this.children[0].src = this.children[0].src.replace("_deselected", "_selected");
                 $(this).siblings().removeClass("set");
                 $.each($(this).siblings().children(0), function(k,v){
                     v.src = v.src.replace("_selected", "_deselected");
                 });
-
             });
         })
     </script>
@@ -292,6 +291,11 @@
                     <div class ="project-activity-target big-button set"><img src="images/Activity-deselected.png">Activity</div>
                     <div class ="join-target big-button"><img src="images/team-selected.png">Join the Team</div>
                     <div class ="meet-the-team-target big-button"><img src="images/meet-selected.png">Meet Us</div>
+                </span>
+                <span class="little-button-container">
+                    <div class ="project-activity-target little-button set"><img src="images/Activity-deselected.png">Activity</div>
+                    <div class ="join-target little-button"><img src="images/team-selected.png">Join Us</div>
+                    <div class ="meet-the-team-target little-button"><img src="images/meet-selected.png">Meet Us</div>
                 </span>
             </div>
             <div class="center-section group" id="scroll-target">

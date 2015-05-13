@@ -190,8 +190,6 @@ function projectActivity(data) {
       projectActivity = projectActivity + '<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a href="' + itemLink + '" target="_blank" style="display:none">' + itemFollow + '</a><div><a class="tog"> read more </a><a class="tog" style="display:none"> read less </a></div></div>';
     }
     projectActivity = projectActivity + "<hr></div>";
-    console.log(projectActivity);
-    debugger;
 
     $("#project-activity-feed").append(projectActivity);
     $(".allTheLabels").show();
