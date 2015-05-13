@@ -182,7 +182,7 @@ function projectActivity(data) {
     }
     projectActivity = projectActivity + "<div class='created_date'>" + createdDate;
 
-    projectActivity = projectActivity + '<div><img src="images/Comment.gif"/>' + commentText + '</div></div>';
+    projectActivity = projectActivity + '<span><img src="images/Comment.gif"/>' + commentText + '</span></div>';
 
     if (itemFollow.length == 0){
       projectActivity = projectActivity + '<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a></div>';
