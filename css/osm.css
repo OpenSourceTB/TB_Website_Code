@@ -16,7 +16,7 @@
     height: 85px;
     width: 250px;
     border-radius: 5px;
-    background-color: lightgrey;
+    background-color: #6AB0BC;
 
 }
 
@@ -25,13 +25,14 @@
     padding: 30px 50px;
 }
 .big-button.set{
-    background-color: blue;
+    background-color: #D3D3D3;
     /*color: white;*/
 }
 
 .little-button-container{
     display: none;
     width: 100%;
+    margin-left: 20px;
     margin-top: 5px;
     margin-bottom: 15px;
 }
@@ -40,20 +41,20 @@
     display: inline-block;
     margin-top: 10px;
     margin-left: 5%;
-    height: 85px;
-    width: 85px;
+    height: 70px;
+    width: 70px;
     border-radius: 5px;
-    background-color: lightgrey;
+    background-color: #6AB0BC;
     text-align: center;
 
 }
 
 .little-button img{
     width: 50%;
-    padding: 20px 22px;
+    padding: 20px 20px;
 }
 .little-button.set{
-    background-color: blue;
+    background-color: #D3D3D3;
 }
 
 .created_date {

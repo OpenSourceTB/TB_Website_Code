@@ -42,12 +42,24 @@
     <script>
         $(document).ready(function () {
             $('.big-button, .little-button').on("click", function() {
+//                var a = $("." + this.classList[0]);
+//                $.each(a, function(b,c) {
+//                    debugger;
+//                    $(c).addClass("set");
+//                    $(c).children[0].src = $(c).children[0].src.replace("-deselected", "-selected");
+//                    $(c).siblings().removeClass("set");
+//                    $.each($(c).siblings().children(0), function(k,v){
+//                        v.src = v.src.replace("-selected", "-deselected");
+//                    });$()
+<!---->
+//                })
+
                 $(this).addClass("set");
-                this.children[0].src = this.children[0].src.replace("_deselected", "_selected");
+                this.children[0].src = this.children[0].src.replace("-deselected", "-selected");
                 $(this).siblings().removeClass("set");
                 $.each($(this).siblings().children(0), function(k,v){
-                    v.src = v.src.replace("_selected", "_deselected");
-                });
+                    v.src = v.src.replace("-selected", "-deselected");
+                });$()
             });
         })
     </script>
