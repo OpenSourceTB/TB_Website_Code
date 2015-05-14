@@ -41,25 +41,43 @@
     </script>
     <script>
         $(document).ready(function () {
-            $('.big-button, .little-button').on("click", function() {
-//                var a = $("." + this.classList[0]);
-//                $.each(a, function(b,c) {
-//                    debugger;
-//                    $(c).addClass("set");
-//                    $(c).children[0].src = $(c).children[0].src.replace("-deselected", "-selected");
-//                    $(c).siblings().removeClass("set");
-//                    $.each($(c).siblings().children(0), function(k,v){
-//                        v.src = v.src.replace("-selected", "-deselected");
-//                    });$()
-<!---->
-//                })
-
+            $('.little-button').on("click", function() {
                 $(this).addClass("set");
                 this.children[0].src = this.children[0].src.replace("-deselected", "-selected");
                 $(this).siblings().removeClass("set");
                 $.each($(this).siblings().children(0), function(k,v){
                     v.src = v.src.replace("-selected", "-deselected");
-                });$()
+                });
+
+                var dual = $("." + this.classList[0] + ".big-button");
+
+                dual.addClass("set");
+                dual[0].children[0].src = dual[0].children[0].src.replace("-deselected", "-selected");
+                dual.siblings().removeClass("set");
+                $.each($(dual).siblings().children(0), function(k,v){
+                    v.src = v.src.replace("-selected", "-deselected");
+                });
+            });
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.big-button').on("click", function() {
+                $(this).addClass("set");
+                this.children[0].src = this.children[0].src.replace("-deselected", "-selected");
+                $(this).siblings().removeClass("set");
+                $.each($(this).siblings().children(0), function(k,v){
+                    v.src = v.src.replace("-selected", "-deselected");
+                });x`
+
+                var dual = $("." + this.classList[0] + ".little-button");
+
+                dual.addClass("set");
+                dual[0].children[0].src = dual[0].children[0].src.replace("-deselected", "-selected");
+                dual.siblings().removeClass("set");
+                $.each($(dual).siblings().children(0), function(k,v){
+                    v.src = v.src.replace("-selected", "-deselected");
+                });
             });
         })
     </script>
