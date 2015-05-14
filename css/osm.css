@@ -792,11 +792,11 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
         font-size: 7px;
     }
 
-    .legend-chemistry { width: 30px; margin-left: -14px; }
-    .legend-biology { width: 28px; margin-left: -15px;}
-    .legend-administration { width: 40px; margin-left: -14px;}
-    .legend-consulting { width: 31px; margin-left: -14px; }
-    .legend-informatics  { width: 36px;  margin-left: -14px; }
+    .legend-chemistry { width: 35px; margin-left: -14px; }
+    .legend-biology { width: 33px; margin-left: -18px;}
+    .legend-administration { width: 49px; margin-left: -14px;}
+    .legend-consulting { width: 38px; margin-left: -14px; }
+    .legend-informatics  { width: 43px;  margin-left: -16px; }
 
 
     .legend-indicator-chemistry, .legend-indicator-biology, .legend-indicator-administration, .legend-indicator-consulting, .legend-indicator-informatics{
