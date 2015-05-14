@@ -16,8 +16,8 @@
     height: 85px;
     width: 250px;
     border-radius: 5px;
-    background-color: #6AB0BC;
-
+    background-color: #D3D3D3;
+    font-size: 16px;
 }
 
 .big-button img{
@@ -25,7 +25,7 @@
     padding: 30px 50px;
 }
 .big-button.set{
-    background-color: #D3D3D3;
+    background-color: #6AB0BC;
     /*color: white;*/
 }
 
@@ -44,7 +44,7 @@
     height: 70px;
     width: 70px;
     border-radius: 5px;
-    background-color: #6AB0BC;
+    background-color: #D3D3D3;
     text-align: center;
 
 }
@@ -54,7 +54,7 @@
     padding: 20px 20px;
 }
 .little-button.set{
-    background-color: #D3D3D3;
+    background-color: #6AB0BC;
 }
 
 .created_date {
@@ -88,8 +88,8 @@ img.project-activity-image{
  }
 hr{
     height: 1px;
-    color: red;
-    background: red;
+    color: #D3D3D3;
+    background: #D3D3D3;
     font-size: 0;
     border: 0;
 }
@@ -519,7 +519,7 @@ span[class^="indicator-"] {
 }
 
 .links a {
-    color: gray;
+    color: #0088CC;
 }
 
 .links {
@@ -582,6 +582,8 @@ span[class^="indicator-"] {
 
 .left-nav {
     margin-top: 3%;
+    text-aligh: left;
+    font-size: 16px;
 }
 
 .left-nav img {
