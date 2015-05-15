@@ -21,13 +21,8 @@
     font-size: 16px;
 }
 
-.big-button img{
-    width: 15%;
-    padding: 25px 36px;
-}
 .big-button.set{
     background-color: #6AB0BC;
-    /*color: white;*/
 }
 
 .little-button-container{
@@ -57,6 +52,18 @@
 }
 .little-button.set{
     background-color: #6AB0BC;
+}
+
+.inner-button{
+    margin: 0px auto;
+    display: block;
+    /*width: 50%;*/
+    line-height: 85px;
+    text-align: center;
+}
+
+.inner-button span{
+    margin-left: 10px;
 }
 
 .created_date {
