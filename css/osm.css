@@ -906,6 +906,7 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
 
     .tiny-row-social a img{
         height: 50px;
+        width: 50px;
     }
 
     .phone-link {
