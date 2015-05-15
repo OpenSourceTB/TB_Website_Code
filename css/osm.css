@@ -488,6 +488,7 @@ span[class^="indicator-"] {
 }
 
 .social-img{
+    height: 30px;
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -698,7 +699,7 @@ span[class^="indicator-"] {
     }
 
     #social a img {
-        width: 30%;
+        height: 30px;
     }
 }
 
@@ -897,7 +898,7 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
     }
 
     .tiny-row-social a img{
-        width: 10%;
+        height: 50px;
     }
 
     .phone-link {
