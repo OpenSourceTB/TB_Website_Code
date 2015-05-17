@@ -736,7 +736,10 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
         text-align: center;
 
     }
-
+    .created_date img{
+        padding-left: 12px;
+        padding-right: 4px;
+    }
 
     .web{
         display: none;
