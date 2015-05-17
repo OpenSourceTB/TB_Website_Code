@@ -50,13 +50,11 @@
                 });
 
                 var dual = $("." + this.classList[0] + ".big-button");
-
-                dual.addClass("set");
-                dual[0].children[0].src = dual[0].children[0].src.replace("-deselected", "-selected");
-                dual.siblings().removeClass("set");
-                $.each($(dual).siblings().children(0), function(k,v){
-                    v.src = v.src.replace("-selected", "-deselected");
-                });
+                var a = $(".inner-button" + "." + this.classList[0])
+                a.parent().addClass("set");
+                a[0].children[0].src = a[0].children[0].src.replace("-deselected", "-selected");
+                a.parent().siblings().removeClass("set");
+                a.parent(0).siblings().children().removeClass("set")
             });
         })
     </script>
@@ -65,18 +63,17 @@
             $('.big-button').on("click", function() {
                 $(this).addClass("set");
                 this.children[0].children[0].src = this.children[0].children[0].src.replace("-deselected", "-selected");
-                debugger;
                 $(this).siblings().removeClass("set");
-                $.each($(this).siblings().children(0).children(0), function(k,v){
-                    v.src = v.src.replace("-selected", "-deselected");
+                $.each($(this).siblings().children(0), function(k,v){
+                    v.children[0].src = v.children[0].src.replace("-selected", "-deselected");
                 });
 
-                var dual = $("." + this.classList[0] + ".little-button");
-
+                var a = $(this.children[0].classList)
+                var dual = $("." + a[1] + ".little-button")
                 dual.addClass("set");
-                dual[0].children[0].children[0].src = dual[0].children[0].children[0].src.replace("-deselected", "-selected");
+                dual[0].children[0].src = dual[0].children[0].src.replace("-deselected", "-selected");
                 dual.siblings().removeClass("set");
-                $.each($(dual).siblings().children(0).children(0), function(k,v){
+                $.each($(dual).siblings().children(0), function(k,v){
                     v.src = v.src.replace("-selected", "-deselected");
                 });
             });
@@ -106,35 +103,30 @@
             });
             $(".join-target").bind('click', function () {
                 $('#join-the-team').show();
-                smoothScroll("#join-the-team");
                 $('#meet-the-team').hide();
                 $('#project-activity').hide();
             });
 
             $(".meet-the-team-target").bind('click', function () {
                 $('#meet-the-team').show();
-                smoothScroll("#meet-the-team");
                 $('#join-the-team').hide();
                 $('#project-activity').hide();
             });
 
             $(".project-activity-target").bind('click', function () {
                 $('#project-activity').show();
-                smoothScroll("#project-activity");
                 $('#join-the-team').hide();
                 $('#meet-the-team').hide();
             });
 
             $(".web-logo").bind('click', function () {
                 $('#project-activity').show();
-                smoothScroll("#project-activity");
                 $('#join-the-team').hide();
                 $('#meet-the-team').hide();
             });
 
             $(".phone-logo").bind('click', function () {
                 $('#project-activity').show();
-                smoothScroll("#project-activity");
                 $('#join-the-team').hide();
                 $('#meet-the-team').hide();
             });
