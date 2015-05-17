@@ -73,7 +73,7 @@
 
 .created_date img{
     padding-left: 15px;
-    padding-right: 10px;
+    padding-right: 6px;
 }
 
 img.project-activity-image{
@@ -723,6 +723,20 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
     .little-button-container{
         display: inline-block;
     }
+
+    .little-button{
+        display: inline-block;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-left: 5%;
+        height: 70px;
+        width: 70px;
+        border-radius: 5px;
+        background-color: #D3D3D3;
+        text-align: center;
+
+    }
+
 
     .web{
         display: none;
