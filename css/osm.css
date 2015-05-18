@@ -1,7 +1,7 @@
 .gitbutton {
     color: white;
     border: 0px;
-    border-radius: 2px;
+    border-radius: 5px;
     margin: 3px 6px 3px 0px;
 }
 
@@ -98,8 +98,8 @@ img.project-activity-image{
  }
 hr{
     height: 1px;
-    color: #D3D3D3;
-    background: #D3D3D3;
+    color: #F23D2E;
+    background: #F23D2E;
     font-size: 0;
     border: 0;
 }
@@ -150,7 +150,7 @@ hr{
 
 #web-title{
     margin-left: 90px;
-    width: 70%;
+    /*width: 70%;*/
 }
 
 #phone-title{
@@ -438,7 +438,7 @@ span[class^="indicator-"] {
 .para {
     margin-left: 8px;
     font-size: 16px;
-    line-height: 23px;
+    line-height: 28px;
     font-weight: 700
     /*margin: 0 40px;*/
 }
@@ -493,7 +493,7 @@ span[class^="indicator-"] {
     margin-top: 15%;
     margin-bottom: 18px;
     text-align: center;
-    font:size: 14px;
+    font-size: 12px;
     display: block;
     color: #D3D3D3;
 }
@@ -605,6 +605,7 @@ span[class^="indicator-"] {
 
 #twitter-feed .tweeter-info {
     margin-bottom: 12px;
+    font-size: 12px;
 }
 
 #spinner {
