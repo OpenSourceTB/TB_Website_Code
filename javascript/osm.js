@@ -64,8 +64,8 @@ function loadLatestTweets() {
 
         tweet = tweet.parseURL().parseUsername().parseHashtag();
         tweet += '<div class="tweeter-info"><div class="uppercase bold"></div><div class="right"><a href="https://twitter.com/#!/OSDDMalaria/status/' + data[i].id_str + '">' + createdDate + '</a></div></div>';
-        $("#twitter-feed").append('<p>' + tweet + '</p>'+'<hr>');
-        $("#mobile-twitter-feed").append('<p>' + tweet + '</p>'+ '<hr>');
+        $("#twitter-feed").append('<p>' + tweet + '</p>'+'<hr class="tweet">');
+        $("#mobile-twitter-feed").append('<p>' + tweet + '</p>'+ '<hr class="tweet">');
       }
     }
   });

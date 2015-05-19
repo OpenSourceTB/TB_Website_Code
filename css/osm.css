@@ -24,6 +24,7 @@
 
 .big-button.set{
     background-color: #6AB0BC;
+    color: white;
 }
 
 .little-button-container{
@@ -114,7 +115,6 @@ hr{
 #social > a > img{
     height: 50px;
     width: 50px;
-    margin-right: 30px;
 }
 
 /*Hide mobile view normally*/
@@ -140,7 +140,6 @@ hr{
     margin-bottom: 2%;
     padding-top: 2%;
     padding-bottom: 1%;
-    border-radius: 10px;
     background-color: #ebf6f8;
     background-size: 70px 70px;
     font-size: 145%;
@@ -606,6 +605,11 @@ span[class^="indicator-"] {
     font-size: 12px;
 }
 
+hr.tweet{
+    color: #D3D3D3;
+    background: #D3D3D3;
+}
+
 #spinner {
     float: none;
     margin: 0 auto;
@@ -749,7 +753,6 @@ span[class^="indicator-"] {
         margin-bottom: 2%;
         padding-top: 2%;
         padding-bottom: 1%;
-        border-radius: 10px;
         background-color: #ebf6f8;
         background-size: 70px 70px;
         font-size: 145%;
@@ -830,7 +833,6 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
         margin-bottom: 4%;
         padding-top: 4%;
         padding-bottom: 2%;
-        border-radius: 10px;
         background-color: #ebf6f8;
         font-size: 145%;
         vertical-align: 60%;

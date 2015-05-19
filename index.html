@@ -43,16 +43,16 @@
         $(document).ready(function () {
             $('.little-button').on("click", function() {
                 $(this).addClass("set");
-                this.children[0].src = this.children[0].src.replace("-deselected", "-selected");
+                this.children[0].src = this.children[0].src.replace("-gray", "-white");
                 $(this).siblings().removeClass("set");
                 $.each($(this).siblings().children(0), function(k,v){
-                    v.src = v.src.replace("-selected", "-deselected");
+                    v.src = v.src.replace("-white", "-gray");
                 });
 
                 var dual = $("." + this.classList[0] + ".big-button");
                 var a = $(".inner-button" + "." + this.classList[0])
                 a.parent().addClass("set");
-                a[0].children[0].src = a[0].children[0].src.replace("-deselected", "-selected");
+                a[0].children[0].src = a[0].children[0].src.replace("-gray", "-white");
                 a.parent().siblings().removeClass("set");
                 a.parent(0).siblings().children().removeClass("set")
             });
@@ -62,19 +62,19 @@
         $(document).ready(function () {
             $('.big-button').on("click", function() {
                 $(this).addClass("set");
-                this.children[0].children[0].src = this.children[0].children[0].src.replace("-deselected", "-selected");
+                this.children[0].children[0].src = this.children[0].children[0].src.replace("-gray", "-white");
                 $(this).siblings().removeClass("set");
                 $.each($(this).siblings().children(0), function(k,v){
-                    v.children[0].src = v.children[0].src.replace("-selected", "-deselected");
+                    v.children[0].src = v.children[0].src.replace("-white", "-gray");
                 });
 
                 var a = $(this.children[0].classList)
                 var dual = $("." + a[1] + ".little-button")
                 dual.addClass("set");
-                dual[0].children[0].src = dual[0].children[0].src.replace("-deselected", "-selected");
+                dual[0].children[0].src = dual[0].children[0].src.replace("-gray", "-white");
                 dual.siblings().removeClass("set");
                 $.each($(dual).siblings().children(0), function(k,v){
-                    v.src = v.src.replace("-selected", "-deselected");
+                    v.src = v.src.replace("-white", "-gray");
                 });
             });
         })
@@ -153,18 +153,21 @@
 </head>
 
 <body>
-<div class="container">
-    <div class="row-fluid span12">
-        <span id="web-head-background">
+    <div id="web-head-background">
+        <div class="container">
             <img id="web-logo" alt="OSM Logo" src="images/OSM_Logo.png"/>
             <img id="web-title" src="images/OSM-header.png" alt="Open Source Malaria">
-        </span>
+        </div>
+    </div>
 
-        <span id="phone-head-background">
+    <div id="phone-head-background">
+        <div class="container">
             <img id="phone-logo" alt="OSM Logo" src="images/OSM-logo.png"/>
             <img id="phone-title" src="images/OSM-header.png" alt="Open Source Malaria">
-        </span>
-
+        </div>
+     </div>
+<div class="container">
+    <div class="row-fluid span12">
         <span class = "span3">
             <span class="left-nav">
                 <span class="also-check-out">Also check out</span>
@@ -307,24 +310,24 @@
                 <span class="big-button-container">
                     <span class ="big-button set">
                         <span class="inner-button project-activity-target">
-                            <img src="images/Activity-selected.png"><span>Activity</span>
+                            <img src="images/Activity-white.png"><span>Activity</span>
                         </span>
                     </span>
                     <span class ="big-button">
                         <span class="inner-button join-target">
-                            <img src="images/team-deselected.png"><span>Join the Team</span>
+                            <img src="images/team-gray.png"><span>Join the Team</span>
                         </span>
                     </span>
                     <span class ="big-button">
                         <span class="inner-button meet-the-team-target">
-                            <img src="images/meet-deselected.png"><span>Meet Us</span>
+                            <img src="images/meet-gray.png"><span>Meet Us</span>
                         </span>
                     </span>
                 </span>
                 <span class="little-button-container">
-                    <div class ="project-activity-target little-button set"><img src="images/Activity-selected.png">Activity</div>
-                    <div class ="join-target little-button"><img src="images/team-deselected.png">Join Us</div>
-                    <div class ="meet-the-team-target little-button"><img src="images/meet-deselected.png">Meet Us</div>
+                    <div class ="project-activity-target little-button set"><img src="images/Activity-white.png">Activity</div>
+                    <div class ="join-target little-button"><img src="images/team-gray.png">Join Us</div>
+                    <div class ="meet-the-team-target little-button"><img src="images/meet-gray.png">Meet Us</div>
                 </span>
             </div>
             <div class="center-section group" id="scroll-target">
