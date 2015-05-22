@@ -10,8 +10,8 @@
 }
 
 .molecule-disclaimer{
-    margin-left: 30%;
 }
+
 .big-button-container{
     display: inline-block;
     margin-top: 5px;
@@ -125,11 +125,6 @@ hr{
     margin-top: 22px;
     text-align: center;
     display: inline-block;
-}
-
-#social > a > img{
-    height: 50px;
-    width: 50px;
 }
 
 /*Hide mobile view normally*/
@@ -545,6 +540,10 @@ span[class^="indicator-"] {
     font-weight:500;
     margin-top: 15px;
 }
+
+.off-page-image{
+    float: left;
+}
 #phone-links {
     display: none;
 }
@@ -762,9 +761,9 @@ hr.tweet{
     }
 
     #social > a > img{
-        height: 30px;
-        width: 30px;
-        margin-right: 10px;
+        /*height: 30px;*/
+        /*width: 30px;*/
+        /*margin-right: 10px;*/
     }
 
     #web-head-background{
@@ -849,7 +848,6 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
 
     #phone-head-background{
         display: block;
-        margin-bottom: 4%;
         padding-top: 4%;
         padding-bottom: 2%;
         background-color: #ebf6f8;
@@ -1012,8 +1010,8 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
     }
 
     .tiny-row-social a img{
-        height: 50px;
-        width: 50px;
+        /*height: 50px;*/
+        /*width: 50px;*/
     }
 
     .phone-link {
