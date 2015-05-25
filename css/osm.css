@@ -18,6 +18,15 @@
     border: 0px;
     border-radius: 5px;
     margin: 3px 6px 3px 0px;
+    padding: 2px 5px;
+    font-size: 12px;
+}
+
+#project-activity-feed .gitbutton {
+    font-size: 10px;
+    padding: 0 3px;
+    line-height: 16px;
+    border-radius: 3px;
 }
 
 .molecule-disclaimer{
@@ -52,9 +61,9 @@
 .little-button-container{
     display: none;
     width: 100%;
-    margin-left: 20px;
     margin-top: 5px;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .little-button{
@@ -75,8 +84,12 @@
 }
 
 .little-button img{
-    width: 50%;
-    padding: 20px 20px;
+    width: 35px;
+    padding: 20px 18px;
+}
+
+.little-button.meet-the-team-target img {
+    padding-bottom: 16px;
 }
 .little-button.set{
     background-color: #6AB0BC;
@@ -110,6 +123,7 @@
 }
 
 .created_date img{
+    margin-top: 5px;
     padding-left: 15px;
     padding-right: 6px;
 }
@@ -142,22 +156,12 @@ hr{
     border: 0;
 }
 
-#social {
-    width: 100%;
-    margin-top: 22px;
-    text-align: center;
-    display: inline-block;
-}
-
 /*Hide mobile view normally*/
 
 .phone{
     display: none;
 }
 
-#phone-head-background{
-    display: none;
-}
 #linkspan {
     text-align: center;
 }
@@ -170,29 +174,23 @@ hr{
 #web-head-background{
     display: block;
     margin-bottom: 0px;
-    padding-top: 2%;
-    padding-bottom: 1%;
+    padding-top: 30px;
     background-color: #ebf6f8;
     background-size: 70px 70px;
     font-size: 145%;
     vertical-align: 60%;
     width: 100%;
+    height: 142px;
 }
 
 #web-title{
     margin-left: 90px;
-    width: 70%;
+    width: 600px;
+    vertical-align: top;
 }
 
-#phone-title{
-    display: none;
-}
 .web{
     display: block;
-}
-
-#phone-logo{
-    display: none;
 }
 
 #mobile-twitter-feed {
@@ -466,6 +464,7 @@ span[class^="indicator-"] {
 }
 
 #web-logo {
+    width: 150px;
     margin-top: -9px;
     margin-left: 60px;
 }
@@ -534,10 +533,17 @@ span[class^="indicator-"] {
 
 #social {
     width: 100%;
-    margin-top: 22px;
-    padding-left: 10px;
+    margin-top: 40px;
     text-align: center;
     display: inline-block;
+}
+
+#social a {
+    margin: 0 5px;
+}
+
+#social a:hover {
+    text-decoration: none;
 }
 
 .social-img{
@@ -546,9 +552,6 @@ span[class^="indicator-"] {
     width: 35px;
 }
 
-#social a:hover {
-    text-decoration: none;
-}
 
 .also-check-out{
     display: block;
@@ -734,7 +737,6 @@ hr.tweet{
 @media only screen
     and (min-device-width: 768px)
     and (max-device-width: 1024px)
-    and (orientation: portrait)
     and (-webkit-min-device-pixel-ratio: 1) {
 
     .emphasis {
@@ -791,13 +793,13 @@ hr.tweet{
     #web-head-background{
         display: block;
         margin-bottom: 0px;
-        padding-top: 2%;
-        padding-bottom: 1%;
+        padding-top: 15px;
         background-color: #ebf6f8;
         background-size: 70px 70px;
         font-size: 145%;
         vertical-align: 60%;
         width: 100%;
+        height: 133px;
     }
 
     #web-title{
@@ -806,6 +808,7 @@ hr.tweet{
     }
 
     #web-logo {
+        width: 150px;
         margin-top: -9px;
         margin-left: 0px;
     / / TOD : WAS - 25 %;    TO FLOAT UPWARD
@@ -819,7 +822,7 @@ hr.tweet{
         width: 150px;
         border-radius: 5px;
         background-color: #D3D3D3;
-        font-size: 18px;
+        font-size: 12px;
     }
 
 }
@@ -837,7 +840,7 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
     }
 
     .little-button-container{
-        display: inline-block;
+        display: block;
     }
 
     .little-button{
@@ -861,24 +864,10 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
         display: none;
     }
 
-    img#phone-logo{
-        display: inline-block;
-        width: 15%;
-        margin-top: 0;
-        /*margin-left: -30px;*/
-    }
-
-    #phone-head-background{
-        display: block;
-        padding-top: 4%;
-        padding-bottom: 2%;
-        background-color: #ebf6f8;
-        font-size: 145%;
-        vertical-align: 60%;
-    }
-
     #web-head-background{
-        display: none;
+        margin: 0 -20px;
+        padding: 30px 20px 0 20px;
+        height: auto;
     }
 
     .left-nav{
@@ -886,7 +875,8 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
     }
 
     #web-logo{
-        display: none;
+        display: block;
+        margin: 0 auto;
     }
 
     .para {
@@ -898,12 +888,8 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
     }
 
     #web-title{
-        display: none;
-    }
-
-    #phone-title {
-        display: inline-block;
-        width: 80%;
+        margin: 20px 0;
+        width: 280px;
     }
 
     #tag-line {
