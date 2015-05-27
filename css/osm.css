@@ -13,6 +13,9 @@
     margin: 0px 0px 20px 0px;
 }
 
+.admonishment{
+    font-size: 14px;
+}
 .gitbutton {
     color: white;
     border: 0px;

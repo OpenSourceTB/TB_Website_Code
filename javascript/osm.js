@@ -81,7 +81,8 @@ function loadLatestProjectActivity() {
   $("#project_activity_script").remove();
   var script = document.createElement( 'script' );
   script.type = 'text/javascript';
-  script.src = "https://osm-feeds.herokuapp.com/project_activity_with_leaders?callback=projectActivity";
+//  script.src = "https://osm-feeds.herokuapp.com/project_activity_with_leaders?callback=projectActivity";
+  script.src = "https://osm-feeds.herokuapp.com/project_activity?callback=projectActivity";
   script.id = "project_activity_script";
   $("head").append( script );
 }
@@ -91,13 +92,14 @@ function projectActivity(feed) {
   var FIRST_PORTION = 300;
   var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
   var numGithubItems = 12;
-  debugger;
-  var lastGithubItem = Math.min(numGithubItems, feed["activity"].length);
+//  var lastGithubItem = Math.min(numGithubItems, feed["activity"].length);
+  var lastGithubItem = Math.min(numGithubItems, feed.length);
   var allLabels=[];
 
   $("#project-activity-feed").empty();
 
-  var data = feed["activity"]
+//  var data = feed["activity"]
+  var data = feed
 
   for (var i = 0; i < lastGithubItem; i++) {
     var itemTitle = data[i].title;
@@ -215,19 +217,19 @@ function projectActivity(feed) {
   }
 
 //Handle the leaders
-  $("#leader-feed").empty();
-  var leaders = feed["leaders"]
-  debugger;
-  var lastLeader = leaders.length
-
-  for (i = 0; i < lastLeader; i++) {
-    var leaderName = leaders[i].key;
-    var leaderActivityCount = leaders[i].value;
-
-    var leader = "<div>" + leaderName + "</div>"
-
-    $("#leader-feed").append(leader);
-  }
+//  $("#leader-feed").empty();
+//  var leaders = feed["leaders"]
+//  var lastLeader = 5
+//
+//  debugger;
+//  for (i = 0; i < lastLeader; i++) {
+//    var leaderName = leaders[i].key;
+//    var leaderActivityCount = leaders[i].value;
+//
+//    var leader = "<div>" + leaderName + "</div>"
+//
+//    $("#leader-feed").append(leader);
+//  }
 
 
 }
