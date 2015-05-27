@@ -11,28 +11,29 @@
 [id^="leader-"] {
     margin-top: 5px;
     margin-bottom: 5px;
-    height: 40px;
+    height: 25px;
+    border-radius: 2px;
 }
 
 #leader-1{
-    background-color: #a73e39;
+    background-color: #A53F3C;
 }
 #leader-2{
-    background-color: #9f5f54;
+    background-color: #9E5F56;
 }
 #leader-3{
-    background-color: #947992;
+    background-color: #937972;
 }
 #leader-4{
-    background-color: #829292;
+    background-color: #839393;
 }
 #leader-5{
-    background-color: #b9c8cb;
+    background-color: #B8C7C7;
 }
 
 .leader-count{
     float: right;
-    margin-top: 9px;
+    margin-top: 3px;
     margin-right: 10px;
     color: white;
 }
@@ -564,7 +565,7 @@ span[class^="indicator-"] {
 #twitter-lead {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15%;
+    margin-top: 40px;
     margin-bottom: 18px;
     text-align: center;
     font-size: 16px;
@@ -620,7 +621,7 @@ span[class^="indicator-"] {
     color: #D3D3D3;
     font-size: 16px;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 40px;
     margin-bottom: 15px;
 }
 
@@ -792,6 +793,7 @@ hr.tweet{
 
 .indented a:hover {
     text-decoration: none;
+    color: black;
     overflow-wrap: break-word;
 }
 
