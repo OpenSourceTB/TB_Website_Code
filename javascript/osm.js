@@ -81,20 +81,23 @@ function loadLatestProjectActivity() {
   $("#project_activity_script").remove();
   var script = document.createElement( 'script' );
   script.type = 'text/javascript';
-  script.src = "https://osm-feeds.herokuapp.com/project_activity?callback=projectActivity";
+  script.src = "https://osm-feeds.herokuapp.com/project_activity_with_leaders?callback=projectActivity";
   script.id = "project_activity_script";
   $("head").append( script );
 }
 
-function projectActivity(data) {
+function projectActivity(feed) {
   "use strict";
   var FIRST_PORTION = 300;
   var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
   var numGithubItems = 12;
-  var lastGithubItem = Math.min(numGithubItems, data.length);
+  debugger;
+  var lastGithubItem = Math.min(numGithubItems, feed["activity"].length);
   var allLabels=[];
 
   $("#project-activity-feed").empty();
+
+  var data = feed["activity"]
 
   for (var i = 0; i < lastGithubItem; i++) {
     var itemTitle = data[i].title;
@@ -128,12 +131,12 @@ function projectActivity(data) {
 
     if (commentCount > 0){
       if (commentCount === 1){
-        commentText = "1 comment";
+        commentText = "1 Comment";
       } else {
-        commentText = commentCount + ' comments';
+        commentText = commentCount + ' Comments';
       }
     } else {
-      commentText = "No comments";
+      commentText = "No Comments";
     }
     itemBody = prepareImages(itemBody);
     var endFirst;
@@ -187,7 +190,7 @@ function projectActivity(data) {
     if (itemFollow.length == 0){
       projectActivity = projectActivity + '<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a></div>';
     } else {
-      projectActivity = projectActivity + '<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a href="' + itemLink + '" target="_blank" style="display:none">' + itemFollow + '</a><div><a class="tog"> read more </a><a class="tog" style="display:none"> read less </a></div></div>';
+      projectActivity = projectActivity + '<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a><a href="' + itemLink + '" target="_blank" style="display:none">' + itemFollow + '</a><div><a class="tog"> Read More </a><a class="tog" style="display:none"> Read Less </a></div></div>';
     }
     projectActivity = projectActivity + "<hr></div>";
 
@@ -210,6 +213,23 @@ function projectActivity(data) {
     $("#label-list").append(labelText);
 
   }
+
+//Handle the leaders
+  $("#leader-feed").empty();
+  var leaders = feed["leaders"]
+  debugger;
+  var lastLeader = leaders.length
+
+  for (i = 0; i < lastLeader; i++) {
+    var leaderName = leaders[i].key;
+    var leaderActivityCount = leaders[i].value;
+
+    var leader = "<div>" + leaderName + "</div>"
+
+    $("#leader-feed").append(leader);
+  }
+
+
 }
 
 function convertImages(itemBody){
@@ -704,4 +724,8 @@ Date.prototype.addHours = function(h) {
   return this;
 }
 
+function leaders(data) {
+  "use strict";
 
+
+}
