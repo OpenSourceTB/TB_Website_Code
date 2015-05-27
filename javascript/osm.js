@@ -81,8 +81,8 @@ function loadLatestProjectActivity() {
   $("#project_activity_script").remove();
   var script = document.createElement( 'script' );
   script.type = 'text/javascript';
-//  script.src = "https://osm-feeds.herokuapp.com/project_activity_with_leaders?callback=projectActivity";
-  script.src = "https://osm-feeds.herokuapp.com/project_activity?callback=projectActivity";
+  script.src = "https://osm-feeds.herokuapp.com/project_activity_with_leaders?callback=projectActivity";
+//  script.src = "https://osm-feeds.herokuapp.com/project_activity?callback=projectActivity";
   script.id = "project_activity_script";
   $("head").append( script );
 }
@@ -92,14 +92,12 @@ function projectActivity(feed) {
   var FIRST_PORTION = 300;
   var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
   var numGithubItems = 12;
-//  var lastGithubItem = Math.min(numGithubItems, feed["activity"].length);
-  var lastGithubItem = Math.min(numGithubItems, feed.length);
+  var lastGithubItem = Math.min(numGithubItems, feed["activity"].length);
   var allLabels=[];
 
   $("#project-activity-feed").empty();
 
-//  var data = feed["activity"]
-  var data = feed
+  var data = feed["activity"]
 
   for (var i = 0; i < lastGithubItem; i++) {
     var itemTitle = data[i].title;
@@ -217,19 +215,41 @@ function projectActivity(feed) {
   }
 
 //Handle the leaders
-//  $("#leader-feed").empty();
-//  var leaders = feed["leaders"]
-//  var lastLeader = 5
-//
-//  debugger;
-//  for (i = 0; i < lastLeader; i++) {
-//    var leaderName = leaders[i].key;
-//    var leaderActivityCount = leaders[i].value;
-//
-//    var leader = "<div>" + leaderName + "</div>"
-//
-//    $("#leader-feed").append(leader);
-//  }
+  $("#leader-feed").empty();
+  var leaders = feed["leaders"]
+
+  for (i = 0; i < leaders.length-2; i++) {
+    for (var j = i+1; j< leaders.length-1; j++) {
+      var NameI = Object.keys(leaders[i]);
+      var CountI = leaders[i][NameI];
+      var NameJ = Object.keys(leaders[j]);
+      var CountJ = leaders[j][NameJ];
+
+      if (CountJ > CountI){
+        var HolderI = leaders[i];
+
+        leaders[i] = leaders[j];
+        leaders[j] = HolderI;
+      }
+
+    }
+  }
+
+  var lastLeader = 5;
+  var baseWidth = 140;
+  var maxCount = 0;
+  var thisWidth;
+  for (i = 0; i < lastLeader; i++) {
+    var leaderName = Object.keys(leaders[i]);
+    var leaderActivityCount = leaders[i][leaderName];
+    if (i == 0) {
+      maxCount = leaderActivityCount;
+    }
+    thisWidth = Math.floor(baseWidth * (1+ (leaderActivityCount / maxCount )));
+    var leader = '<div >' + leaderName[0]+ "</div>"
+    leader = leader + '<div id="leader-' + (i+1) + '" style="width:' + thisWidth + 'px;"><div class="leader-count">' +  leaderActivityCount + "</div>"
+    $("#leader-feed").append(leader);
+  }
 
 
 }

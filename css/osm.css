@@ -8,6 +8,34 @@
     /*filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.9999619230641713, M12=-0.008726535498373935, M21=0.008726535498373935, M22=0.9999619230641713,SizingMethod='auto expand');*/
 /*}​*/
 
+[id^="leader-"] {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 40px;
+}
+
+#leader-1{
+    background-color: #a73e39;
+}
+#leader-2{
+    background-color: #9f5f54;
+}
+#leader-3{
+    background-color: #947992;
+}
+#leader-4{
+    background-color: #829292;
+}
+#leader-5{
+    background-color: #b9c8cb;
+}
+
+.leader-count{
+    float: right;
+    margin-top: 9px;
+    margin-right: 10px;
+    color: white;
+}
 
 #label-list{
     margin: 0px 0px 20px 0px;
@@ -15,6 +43,7 @@
 
 .admonishment{
     font-size: 14px;
+
 }
 .gitbutton {
     color: white;
