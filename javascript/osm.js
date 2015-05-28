@@ -172,6 +172,7 @@ function projectActivity(feed) {
     if (itemLabels.length > 0) {
       labelText = "<div>";
       for (var idx = 0; idx < itemLabels.length; ++idx) {
+
         labelText = labelText + '<button class ="gitbutton ' + itemLabels[idx].name.replace(/ /g, "_").split("/").join("_") + '" style="background-color:' + '#' + itemLabels[idx].color
         labelText = labelText + '" type="button" onclick="window.open(\'' + baseLink
         labelText = labelText + encodeURIComponent(itemLabels[idx].name) + "')\">" + itemLabels[idx].name + '</button>';
@@ -213,7 +214,7 @@ function projectActivity(feed) {
     labelText = labelText + '" type="button" onclick="showLabel(\'allTheLabels\')"';
     labelText = labelText + "')\">" + "Recently Active" + '</button>';
     for (var idx = 0; idx < allLabels.length; ++idx) {
-      labelText = labelText + '<button class ="gitbutton ' + allLabels[idx].name.replace(/ /g, "_") + ' " style="background-color:' + '#' + allLabels[idx].color
+      labelText = labelText + '<button class ="gitbutton ' + allLabels[idx].name.replace(/ /g, "_").split("/").join("_")  + ' " style="background-color:' + '#' + allLabels[idx].color
       labelText = labelText + '" type="button" onclick="showLabel(\' ' + allLabels[idx].name.replace(/ /g, "_").split("/").join("_");
       labelText = labelText + "')\">" + allLabels[idx].name + '</button>';
     }
