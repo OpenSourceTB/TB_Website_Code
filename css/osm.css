@@ -11,6 +11,7 @@
 .dropshadow{
     box-shadow: 0px 3px 0px 0px #1D7989;
 }
+
 [id^="leader-"] {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -97,6 +98,21 @@
 .big-button.set{
     background-color: #6AB0BC;
     color: white;
+}
+
+#phone-leaderboard{
+    display: none;
+}
+
+#phone-leader-feed{
+    display: none;
+    width: 80%;
+    margin: 20px auto 20px auto;
+}
+
+#phone-leader-feed > div{
+    text-align: left;
+    color: black;
 }
 
 .little-button-container{
@@ -619,17 +635,21 @@ span[class^="indicator-"] {
     text-align: center;
     margin-top: 24px;
 }
-.leaderboard{
+
+#leaderboard{
     display: block;
     color: #D3D3D3;
     font-size: 16px;
     text-align: center;
+    margin-left: auto;
+    margin-right:auto;
     margin-top: 40px;
     margin-bottom: 15px;
 }
 
 #leader-feed{
     color: black;
+    text-align: left;
 }
 .off-page{
     display: block;
@@ -705,7 +725,7 @@ span[class^="indicator-"] {
 #twitter-feed {
     text-align: left;
     float: left;
-    margin-top: 0px;
+    /*margin-top: 0px;*/
 }
 
 #twitter-feed p {
@@ -839,7 +859,7 @@ hr.tweet{
     #twitter-feed {
         width: 100px;
         float: left;
-        margin-top: 0px;
+        /*margin-top: 0px;*/
         margin-left: 2px;
     }
 
@@ -913,6 +933,18 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
     }
 
     .little-button-container{
+        display: block;
+    }
+    #phone-leaderboard{
+        display: block;
+        color: #D3D3D3;
+        font-size: 16px;
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 15px;
+    }
+
+    #phone-leader-feed{
         display: block;
     }
 

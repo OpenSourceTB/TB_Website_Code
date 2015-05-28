@@ -245,7 +245,7 @@ function projectActivity(feed) {
   }
 
   var lastLeader = 5;
-  var baseWidth = 140;
+  var baseWidth = 50;
   var maxCount = 0;
   var thisWidth;
   for (i = 0; i < lastLeader; i++) {
@@ -254,12 +254,12 @@ function projectActivity(feed) {
     if (i == 0) {
       maxCount = leaderActivityCount;
     }
-    thisWidth = Math.floor(baseWidth * (1+ (leaderActivityCount / maxCount )));
+    thisWidth = Math.floor(baseWidth * ( 1 + (leaderActivityCount / maxCount )));
     var leader = '<div >' + leaderName[0]+ "</div>"
-    leader = leader + '<div id="leader-' + (i+1) + '" style="width:' + thisWidth + 'px;"><div class="leader-count">' +  leaderActivityCount + "</div>"
+    leader = leader + '<div id="leader-' + (i+1) + '" style="width:' + thisWidth + '%;"><div class="leader-count">' +  leaderActivityCount + "</div>"
     $("#leader-feed").append(leader);
+    $("#phone-leader-feed").append(leader);
   }
-
 
 }
 
