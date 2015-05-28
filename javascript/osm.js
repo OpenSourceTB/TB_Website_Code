@@ -76,9 +76,9 @@ function showLabel(lName){
   $(".gitbutton").removeClass("dropshadow");
   $("." + lName.trim()).show();
   if (lName == "allTheLabels") {
-    $(".Recently_Active").addClass("dropshadow");
+    $(".View_All").addClass("dropshadow");
   } else{
-    $("." + lName.trim()).addClass("dropshadow");
+    $("." + lName.trim() + ".gitbutton").addClass("dropshadow");
   }
 }
 
@@ -210,9 +210,9 @@ function projectActivity(feed) {
 
   if (allLabels.length > 0) {
     labelText = "<div>";
-    labelText = labelText + '<button class ="gitbutton Recently_Active dropshadow" style="background-color:' + '#6AB0BC';
+    labelText = labelText + '<button class ="gitbutton View_All dropshadow" style="background-color:' + '#6AB0BC';
     labelText = labelText + '" type="button" onclick="showLabel(\'allTheLabels\')"';
-    labelText = labelText + "')\">" + "Recently Active" + '</button>';
+    labelText = labelText + "')\">" + "View All" + '</button>';
     for (var idx = 0; idx < allLabels.length; ++idx) {
       labelText = labelText + '<button class ="gitbutton ' + allLabels[idx].name.replace(/ /g, "_").split("/").join("_")  + ' " style="background-color:' + '#' + allLabels[idx].color
       labelText = labelText + '" type="button" onclick="showLabel(\' ' + allLabels[idx].name.replace(/ /g, "_").split("/").join("_");
