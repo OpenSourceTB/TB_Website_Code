@@ -191,8 +191,11 @@ function projectActivity(feed) {
     }
     projectActivity = projectActivity + "<div class='created_date'>" + createdDate;
 
-    projectActivity = projectActivity + '<span><img src="images/comment-bubble.png"/>' + commentText + '</span></div>';
-
+    if (commentCount > 0){
+      projectActivity = projectActivity + '<span><a href="' + itemLink + '" target="_blank"><img src="images/comment-bubble.png"/>' + commentText + '</a></span></div>';
+    } else {
+      projectActivity = projectActivity + '<span><img src="images/comment-bubble.png"/>' + commentText + '</span></div>';
+    }
     if (itemFollow.length == 0){
       projectActivity = projectActivity + '<div class="indented"><a href="' + itemLink + '" target="_blank">' + itemLead +'</a></div>';
     } else {
