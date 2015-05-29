@@ -20,19 +20,19 @@
 }
 
 #leader-1{
-    background-color: #A53F3C;
+    background-color: #227280;
 }
 #leader-2{
-    background-color: #9E5F56;
+    background-color: #48929e;
 }
 #leader-3{
-    background-color: #937972;
+    background-color: #6ab0bc;
 }
 #leader-4{
-    background-color: #839393;
+    background-color: #74cad8;
 }
 #leader-5{
-    background-color: #B8C7C7;
+    background-color: #92dde9;
 }
 
 .leader-count{
@@ -437,7 +437,7 @@ span[class^="indicator-"] {
     display: block;
     margin-top: 10px;
     margin-left: 0px;
-    margin-bottom: 50px;
+    margin-bottom: 32px;
     font-size: 145%;
     font-weight: bold;
 }
