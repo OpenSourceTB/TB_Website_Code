@@ -594,7 +594,7 @@ span[class^="indicator-"] {
 
 #social {
     width: 100%;
-    margin-top: 40px;
+    margin-top: 30px;
     text-align: center;
     display: inline-block;
 }
@@ -878,9 +878,6 @@ hr.tweet{
     }
 
     #social > a > img{
-        /*height: 30px;*/
-        /*width: 30px;*/
-        /*margin-right: 10px;*/
     }
 
     #web-head-background{
