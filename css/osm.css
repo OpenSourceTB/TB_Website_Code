@@ -85,9 +85,9 @@
     cursor: pointer;
     margin-top: 10px;
     height: 85px;
-    width: 250px;
+    width: 200px;
     border-radius: 5px;
-    background-color: #D3D3D3;
+    background-color: #F4F4F4;
     font-size: 18px;
 }
 
@@ -96,7 +96,7 @@
 }
 
 .big-button.set{
-    background-color: teal;
+    background-color: #6AA7AE;
     color: white;
 }
 
@@ -131,7 +131,7 @@
     height: 70px;
     width: 70px;
     border-radius: 5px;
-    background-color: #D3D3D3;
+    background-color: #F4F4F4;
     text-align: center;
 }
 
@@ -148,7 +148,7 @@
     padding-bottom: 16px;
 }
 .little-button.set{
-    background-color: teal;
+    background-color: #6AA7AE;
 }
 
 .inner-button{
@@ -157,7 +157,6 @@
     line-height: 85px;
     text-align: center;
 }
-
 .inner-button span{
     margin-left: 10px;
 }
@@ -633,7 +632,7 @@ span[class^="indicator-"] {
     color: #D3D3D3;
     font-size: 24px;
     text-align: center;
-    margin-top: 54px;
+    margin-top: 26px;
 }
 
 #leaderboard{
@@ -913,7 +912,7 @@ hr.tweet{
         height: 85px;
         width: 150px;
         border-radius: 5px;
-        background-color: #D3D3D3;
+        background-color: #F4F4F4;
         font-size: 12px;
     }
 
@@ -955,7 +954,7 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
         height: 70px;
         width: 70px;
         border-radius: 5px;
-        background-color: #D3D3D3;
+        background-color: #F4F4F4;
         text-align: center;
 
     }
