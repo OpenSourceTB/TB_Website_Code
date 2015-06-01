@@ -92,11 +92,11 @@
 }
 
 .big-button:hover{
-    background-color: #EFEFEF;
+    background-color: #FFF;
 }
 
 .big-button.set{
-    background-color: #6AB0BC;
+    background-color: #F4F4F4;
     color: white;
 }
 
@@ -136,7 +136,7 @@
 }
 
 .little-button:hover{
-    background-color: #EFEFEF;
+    background-color: #FFF;
 }
 
 .little-button img{
@@ -148,7 +148,7 @@
     padding-bottom: 16px;
 }
 .little-button.set{
-    background-color: #6AB0BC;
+    background-color: #F4F4F4;
 }
 
 .inner-button{
