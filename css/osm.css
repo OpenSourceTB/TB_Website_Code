@@ -92,7 +92,7 @@
 }
 
 .big-button:hover{
-    background-color: #FFF;   
+    background-color: #FFF;
 }
 
 .big-button.set{
@@ -613,18 +613,18 @@ span[class^="indicator-"] {
     height: 39px;}
 
 .notebook-img{
-    height: 40px;
-    width: 34px;
+    height: 80px;
+    width: 68px;
 }
 
 .wiki-img{
-    height: 32px;
-    width: 32px;
+    height: 64px;
+    width: 64px;
 }
 
 .molecule-img{
-    height: 30px;
-    width: 30px;
+    height: 60px;
+    width: 60px;
 }
 
 .also-check-out {
