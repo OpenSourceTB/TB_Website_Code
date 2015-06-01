@@ -43,16 +43,16 @@
         $(document).ready(function () {
             $('.little-button').on("click", function() {
                 $(this).addClass("set");
-                this.children[0].src = this.children[0].src.replace("-teal", "-white");
+                this.children[0].src = this.children[0].src.replace("-white", "-teal");
                 $(this).siblings().removeClass("set");
                 $.each($(this).siblings().children(0), function(k,v){
-                    v.src = v.src.replace("-white", "-teal");
+                    v.src = v.src.replace("-teal", "-white");
                 });
 
                 var dual = $("." + this.classList[0] + ".big-button");
                 var a = $(".inner-button" + "." + this.classList[0])
                 a.parent().addClass("set");
-                a[0].children[0].src = a[0].children[0].src.replace("-teal", "-white");
+                a[0].children[0].src = a[0].children[0].src.replace("-white", "-teal");
                 a.parent().siblings().removeClass("set");
                 a.parent(0).siblings().children().removeClass("set")
             });
@@ -62,19 +62,19 @@
         $(document).ready(function () {
             $('.big-button').on("click", function() {
                 $(this).addClass("set");
-                this.children[0].children[0].src = this.children[0].children[0].src.replace("-teal", "-white");
+                this.children[0].children[0].src = this.children[0].children[0].src.replace("-white", "-teal");
                 $(this).siblings().removeClass("set");
                 $.each($(this).siblings().children(0), function(k,v){
-                    v.children[0].src = v.children[0].src.replace("-white", "-teal");
+                    v.children[0].src = v.children[0].src.replace("-teal", "-white");
                 });
 
                 var a = $(this.children[0].classList)
                 var dual = $("." + a[1] + ".little-button")
                 dual.addClass("set");
-                dual[0].children[0].src = dual[0].children[0].src.replace("-teal", "-white");
+                dual[0].children[0].src = dual[0].children[0].src.replace("-white", "-teal");
                 dual.siblings().removeClass("set");
                 $.each($(dual).siblings().children(0), function(k,v){
-                    v.src = v.src.replace("-white", "-teal");
+                    v.src = v.src.replace("-teal", "-white");
                 });
             });
         })
@@ -320,17 +320,17 @@
                 <span class="big-button-container">
                     <span class ="big-button set">
                         <span class="inner-button project-activity-target">
-                            <img class="activity-image" src="images/nav-buttons/activity-white.png"><span>Activity</span>
+                            <img class="activity-image" src="images/nav-buttons/activity-teal.png"><span>Activity</span>
                         </span>
                     </span>
                     <span class ="big-button">
                         <span class="inner-button join-target">
-                            <img class="join-image" src="images/nav-buttons/team-teal.png"><span>Join the Team</span>
+                            <img class="join-image" src="images/nav-buttons/team-white.png"><span>Join the Team</span>
                         </span>
                     </span>
                     <span class ="big-button">
                         <span class="inner-button meet-the-team-target">
-                            <img class="meet-image" src="images/nav-buttons/meet-teal.png"><span>Meet Us</span>
+                            <img class="meet-image" src="images/nav-buttons/meet-white.png"><span>Meet Us</span>
                         </span>
                     </span>
                 </span>
@@ -341,9 +341,9 @@
                  </div>
 
                 <span class="little-button-container">
-                    <div class ="project-activity-target little-button set"><img src="images/nav-buttons/activity-white.png">Activity</div>
-                    <div class ="join-target little-button"><img src="images/nav-buttons/team-teal.png">Join Us</div>
-                    <div class ="meet-the-team-target little-button"><img src="images/nav-buttons/meet-teal.png">Meet Us</div>
+                    <div class ="project-activity-target little-button set"><img src="images/nav-buttons/activity-teal.png">Activity</div>
+                    <div class ="join-target little-button"><img src="images/nav-buttons/team-white.png">Join Us</div>
+                    <div class ="meet-the-team-target little-button"><img src="images/nav-buttons/meet-white.png">Meet Us</div>
                 </span>
             </div>
             <div class="center-section group" id="scroll-target">
