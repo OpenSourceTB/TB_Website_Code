@@ -841,8 +841,6 @@ hr.tweet{
 
 /* iPad (original and Retina) */
 
-/*@media screen and (device-width: 768px) and (device-height: 1024px){*/
-
 @media only screen
     and (min-device-width: 768px)
     and (max-device-width: 1024px)
@@ -930,6 +928,19 @@ hr.tweet{
         border-radius: 5px;
         background-color: #F4F4F4;
         font-size: 12px;
+    }
+
+}
+
+@media  screen and (min-width: 767px) and (max-width: 1000px){
+    .notebook-label{
+        font-size: 65%;
+    }
+    .molecule-label{
+        font-size: 65%;
+    }
+    .wiki-label{
+        font-size: 65%;
     }
 
 }
@@ -1028,6 +1039,9 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
     #sponsors {
         width: 85%;
     }
+    .sponsor-row {
+        margin-left: 10%;
+    }
 
     .sponsor-image img {
         margin-left: 0;
@@ -1123,17 +1137,18 @@ screen and (max-device-width: 640px) and (max-device-height: 960px){
     .tiny-link-wiki {
         text-align: center;
         margin-top: 5%;
-        margin-right: 14%;
+        margin-right: 10%;
         width: 25%;
-        float: right;
+        float: left;
         font-size: 100%;
     }
 
     .tiny-link-lab-notebook {
         text-align: center;
         margin-top: 5%;
+        margin-right: 10%;
         width: 25%;
-        float: right;
+        float: left;
         font-size: 100%;
     }
 
