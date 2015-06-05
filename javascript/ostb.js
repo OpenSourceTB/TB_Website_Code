@@ -39,7 +39,7 @@ function parseGithubDate(str) {
 
 function loadLatestTweets() {
   "use strict";
-  var _url = 'https://osm-feeds.herokuapp.com/';
+  var _url = 'https://osm-feeds.herokuapp.com/ostb/';
 
   $.ajax({
     cache: false,
@@ -87,8 +87,7 @@ function loadLatestProjectActivity() {
   $("#project_activity_script").remove();
   var script = document.createElement( 'script' );
   script.type = 'text/javascript';
-  script.src = "https://osm-feeds.herokuapp.com/project_activity_with_leaders?callback=projectActivity";
-//  script.src = "https://osm-feeds.herokuapp.com/project_activity?callback=projectActivity";
+  script.src = "https://osm-feeds.herokuapp.com/ostb/project_activity_with_leaders?callback=projectActivity";
   script.id = "project_activity_script";
   $("head").append( script );
 }
@@ -167,7 +166,7 @@ function projectActivity(feed) {
     projectActivity = '<div class="project-activity-item allTheLabels' + labels + '"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' +  "<strong>" + itemTitle + '</strong></span></a>';
 
     var labelText;
-    var baseLink = "https://github.com/OpenSourceMalaria/OSM_To_Do_List/labels/";
+    var baseLink = "https://github.com/OpenSourceTB/OSTB_To_Do_List/labels/";
 
     if (itemLabels.length > 0) {
       labelText = "<div>";
@@ -351,7 +350,7 @@ function loadSponsorsAndTeam(){
   $("#sponsors_and_members_script").remove();
   var script = document.createElement( 'script' );
   script.type = 'text/javascript';
-  script.src = "https://osm-feeds.herokuapp.com/sponsors_and_members?callback=sponsorsAndMembers";
+  script.src = "https://osm-feeds.herokuapp.com/ostb/sponsors_and_members?callback=sponsorsAndMembers";
   script.id = 'sponsors_and_members_script'
   $("head").append( script );
 }
