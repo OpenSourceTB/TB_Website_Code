@@ -39,7 +39,7 @@ function parseGithubDate(str) {
 
 function loadLatestTweets() {
   "use strict";
-  var _url = 'https://osm-feeds.herokuapp.com/ostb/';
+  var _url = 'https://osm-feeds.herokuapp.com/ostb/tweets';
 
   $.ajax({
     cache: false,
