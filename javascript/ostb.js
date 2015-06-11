@@ -102,7 +102,7 @@ function projectActivity(feed) {
 
   $("#project-activity-feed").empty();
 
-  var data = feed["activity"]
+  var data = feed["activity"];
 
   for (var i = 0; i < lastGithubItem; i++) {
     var itemTitle = data[i].title;
@@ -166,17 +166,15 @@ function projectActivity(feed) {
     projectActivity = '<div class="project-activity-item allTheLabels' + labels + '"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' +  "<strong>" + itemTitle + '</strong></span></a>';
 
     var labelText;
-    var baseLink = "https://github.com/OpenSourceTB/OSTB_To_Do_List/labels/";
-
     if (itemLabels.length > 0) {
       labelText = "<div>";
       for (var idx = 0; idx < itemLabels.length; ++idx) {
-
         labelText = labelText + '<button class ="gitbutton ' + itemLabels[idx].name.replace(/ /g, "_").split("/").join("_") + '" style="background-color:' + '#' + itemLabels[idx].color
-        labelText = labelText + '" type="button" onclick="window.open(\'' + baseLink
-        labelText = labelText + encodeURIComponent(itemLabels[idx].name) + "')\">" + itemLabels[idx].name + '</button>';
-
+        labelText = labelText + '" type="button" onclick="window.open(\''
+        labelText = labelText + "https://github.com/" + data[i].labels[idx].url.split("/")[4] + "/" + data[i].labels[idx].url.split("/")[5] + "/" + data[i].labels[idx].url.split("/")[6] + "/" + data[i].labels[idx].url.split("/")[7]
+        labelText = labelText + "')\">" + itemLabels[idx].name + '</button>';
         var foundIt = false;
+
         for (var ii = 0; ii < allLabels.length; ii++){
           if (allLabels[ii].name == itemLabels[idx].name) {
             foundIt = true;
@@ -227,8 +225,8 @@ function projectActivity(feed) {
   $("#leader-feed").empty();
   var leaders = feed["leaders"]
 
-  for (i = 0; i < leaders.length-2; i++) {
-    for (var j = i+1; j< leaders.length-1; j++) {
+  for (i = 0; i < leaders.length-1; i++) {
+    for (var j = i+1; j< leaders.length; j++) {
       var NameI = Object.keys(leaders[i]);
       var CountI = leaders[i][NameI];
       var NameJ = Object.keys(leaders[j]);
