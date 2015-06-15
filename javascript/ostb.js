@@ -165,6 +165,7 @@ function projectActivity(feed) {
 
     projectActivity = '<div class="project-activity-item allTheLabels' + labels + '"><a href="' + itemLink + '" target="_blank"><img src="images/' + data[i].state + '.gif"' + 'class="project-activity-image"/><span class=title>' +  "<strong>" + itemTitle + '</strong></span></a>';
 
+
     var labelText;
     if (itemLabels.length > 0) {
       labelText = "<div>";
@@ -242,7 +243,7 @@ function projectActivity(feed) {
     }
   }
 
-  var lastLeader = 5;
+  var lastLeader = Math.min(5,leaders.length);
   var baseWidth = 50;
   var maxCount = 0;
   var thisWidth;
@@ -753,8 +754,3 @@ Date.prototype.addHours = function(h) {
   return this;
 }
 
-function leaders(data) {
-  "use strict";
-
-
-}
