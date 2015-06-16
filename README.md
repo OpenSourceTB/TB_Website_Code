@@ -1,14 +1,14 @@
-OS Malaria
-==========
+Opensource TB
+=============
 
 Background
 ----------
 
-The opensourcemalaria.org website actually consists of two separate code bases.
+The opensourcetb.org website actually consists of two separate code bases.
 
 ### Website Code Base ###
 
-There is a website code base at the Github account/repository https://github.com/OpenSourceMalaria/OSM_Website_Code.
+There is a website code base at the Github account/repository https://github.com/OpenSourceTB/TB_Website_Code.
 This repository holds the HTML, CSS, images, and javascript of the website.
 
 In order to cut down on excessive web requests to Twitter and GitHub, the following "rules" are implemented in the
@@ -37,17 +37,17 @@ osm-feeds gets requests from a browser to return one of three things, or to rese
 
 #### The things that can be returned from osm-feeds are: ####
 
-##### The latest twitter feed for Open Source Malaria. #####
+##### The latest twitter feed for Open Source Tuberculosis. #####
 The osm-feeds application authenticates itself to Twitter (requirement of twitter). Since the authentication
 requires secret information, this application ensures that the secret information remains secret!
 
-##### The latest Project activity (from the OpenSourceMalaria github account) #####
+##### The latest Project activity (from the OpenSourceTB github account) #####
 The osm-feeds application authenticates itself to github to avoid rate limiting on requests per hour. Since the
 authentication requires secret information, this application ensures that the secret information remains secret! The
 application also caches the information so that requests to github do not occur excessively if there are many users
 viewing the site at the same time.
 
-##### The current list of sponsors and members from the OpenSourceMalaria github account) #####
+##### The current list of sponsors and members from the OpenSourceTB github account) #####
 The osm-feeds application authenticates itself to github to avoid rate limiting on requests per hour. Since the
 authentication requires secret information, this application ensures that the secret information remains secret!
 
@@ -63,11 +63,12 @@ about 10 minutes for updated information to become available.
 Content Management Solution
 ---------------------------
 
-The lists of team members and sponsors are maintained on GitHub, in a public repository.
+The lists of team members, sponsors, and the Github repositories used for populating the Project Activity list
+ are maintained on GitHub, in a public repository.
 
-The repository is : https://github.com/OpenSourceMalaria/OSM_Website_Data/issues
+The repository is : https://github.com/OpenSourceTB/TB_Website_Data/issues
 
-There are two items in the issues list. They are "team" and "sponsors".
+There are three items in the issues list. They are "team", "sponsors", and "issue_lists".
 
 Team
 ----
@@ -146,6 +147,16 @@ Sponsors
     and the hover text is the sponsor name.
 
 
+Issue_lists
+===========
+
+The body of the "issues_lists" issue is just the name(s) of the issue list repositories where each repository
+name is on its own line, as follows:
+
+OpensourceTB_To_Do_List
+Second_Repo
+Third_Repo
+
 Setting up for development
 ==========================
 
@@ -173,7 +184,7 @@ In a Terminal window,
 
 For the website code:
 
-: create a directory /osm_website_code
+: create a directory /TB_website_code
 
 : switch to that directory.
 
@@ -181,10 +192,10 @@ For the website code:
 
 : clone the GitHub repository to your machine:
 
-: git clone git@github.com:OpenSourceMalaria/OSM_Website_Code.git
+: git clone git@github.com:OpenSourceTB/TB_Website_Code.git
 
 
-For the osm-feeds code
+For the osm-feeds code (Which is actually stored in the OpenSourceMalaria github account.)
 
 : create a directory /osm-feeds
 
