@@ -161,8 +161,13 @@
 }
 
 .little-button.meet-the-team-target img {
-    padding-bottom: 16px;
+    padding: 20px 18px;
 }
+
+.little-button.join-target img {
+    padding: 18px 18px;
+}
+
 .little-button.set{
     background-color: #98c68f;
 }
@@ -950,12 +955,18 @@ hr.tweet{
     }
 }
 
-/*@media  screen and (max-width: 1200px){*/
-    /*.big-button{*/
-        /*width: 150px;*/
-        /*font-size: 10px;*/
-    /*}*/
-/*}*/
+@media  screen and (min-width:1000px) and (max-width: 1200px){
+    .big-button{
+        width: 200px;
+        font-size: 10px;
+    }
+}
+@media  screen and (min-width:768px) and (max-width: 1000px){
+    .big-button{
+        width: 150px;
+        font-size: 10px;
+    }
+}
 
 /*Tiny browser width and iPhone */
 @media  screen and (min-width: 0px) and (max-width: 767px),
