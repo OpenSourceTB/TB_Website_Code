@@ -623,6 +623,10 @@ span[class^="indicator-"] {
     display: inline-block;
 }
 
+.social-icon:hover{
+    text-decoration: none;
+}
+
 #social a {
     margin: 0 5px;
 }
