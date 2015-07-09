@@ -153,9 +153,9 @@ Issue_lists
 The body of the "issues_lists" issue is just the name(s) of the issue list repositories where each repository
 name is on its own line, as follows:
 
-OpensourceTB_To_Do_List
-Second_Repo
-Third_Repo
+OpensourceTB_To_Do_List  
+Second_Repo  
+Third_Repo  
 
 Setting up for development
 ==========================
